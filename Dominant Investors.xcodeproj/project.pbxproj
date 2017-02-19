@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4592F76B1E591A8B004C85F4 /* FXBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76A1E591A8B004C85F4 /* FXBlurView.swift */; };
 		4592F76D1E59AAC6004C85F4 /* FXBlurView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4592F76C1E59AAC6004C85F4 /* FXBlurView.framework */; };
+		4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76E1E59B35E004C85F4 /* Constants.swift */; };
 		45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */; };
 		45B4E7371E58ED5C00D56BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7361E58ED5C00D56BDE /* Assets.xcassets */; };
 		45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */; };
@@ -54,8 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4592F76A1E591A8B004C85F4 /* FXBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXBlurView.swift; sourceTree = "<group>"; };
 		4592F76C1E59AAC6004C85F4 /* FXBlurView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FXBlurView.framework; sourceTree = "<group>"; };
+		4592F76E1E59B35E004C85F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dominant Investors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B4E7361E58ED5C00D56BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,14 +127,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4592F7691E591A75004C85F4 /* Blur view */ = {
-			isa = PBXGroup;
-			children = (
-				4592F76A1E591A8B004C85F4 /* FXBlurView.swift */,
-			);
-			name = "Blur view";
-			sourceTree = "<group>";
-		};
 		45B4E7231E58ED5C00D56BDE = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */,
+				4592F76E1E59B35E004C85F4 /* Constants.swift */,
 				45B4E7461E58EE1D00D56BDE /* Custom Views */,
 				45B4E7451E58EDA500D56BDE /* Storyboards */,
 				45B4E7441E58ED8900D56BDE /* Models */,
@@ -183,14 +176,14 @@
 			isa = PBXGroup;
 			children = (
 				45B4E75D1E58F9C200D56BDE /* DMViewController.swift */,
+				45B4E7601E58F9DD00D56BDE /* Launch Screen */,
+				45B4E75F1E58F9C800D56BDE /* Tab Bar */,
 				45B7A0351E59168A000CB062 /* Login */,
 				45B7A0341E591683000CB062 /* Sign Up */,
 				45B4E7861E59107900D56BDE /* Ratings */,
 				45B4E7631E58F9FE00D56BDE /* Signals */,
 				45B4E7621E58F9EE00D56BDE /* Analytics */,
 				45B4E7611E58F9E600D56BDE /* Portfolio */,
-				45B4E7601E58F9DD00D56BDE /* Launch Screen */,
-				45B4E75F1E58F9C800D56BDE /* Tab Bar */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -236,7 +229,6 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				4592F7691E591A75004C85F4 /* Blur view */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -425,13 +417,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				45B4E78A1E59120B00D56BDE /* DMLaunchViewController.swift in Sources */,
-				4592F76B1E591A8B004C85F4 /* FXBlurView.swift in Sources */,
 				45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */,
 				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
 				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
+				4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */,
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
 				45B4E74A1E58EE9E00D56BDE /* DMNetworkService.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,

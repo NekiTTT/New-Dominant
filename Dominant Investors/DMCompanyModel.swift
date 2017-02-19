@@ -11,17 +11,22 @@ import Foundation
 class DMCompanyModel: NSObject {
 
     
-    var id = ""
+    var id                          : String!
+    var ticker                      : String!
+    var name                        : String!
+    var companyPictureFileLocalPath : String!
+    var companyPictureURL           : String!
+    var IPODate                     : String!
     
-    var companySymbol  = ""
-    var companyName  = ""
-    var companyPictureFileLocalPath = ""
-    var companyPictureURL  = ""
-    var IPODate  = ""
-    var marketCapitalization  = ""
-    var averageSales  = ""
-    var annualSales  = ""
-    var companyDescription = ""
-    var forecast = ""
-    var potentialProfitability = ""
+    var marketCapitalization        : String!
+    var averageSales                : String!
+    var annualSales                 : String!
+    var companyDescription          : String!
+    var forecast                    : String!
+    var potentialProfitability      : String!
+    
+    init(response : Any) {
+        super.init()
+        
+    }
 }

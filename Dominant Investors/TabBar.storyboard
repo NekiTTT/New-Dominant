@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jPr-Kk-bnH">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,18 +24,27 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-nL-frd">
                                 <rect key="frame" x="0.0" y="601" width="375" height="66"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-up-3He">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-up-3He">
                                         <rect key="frame" x="125" y="0.0" width="125" height="66"/>
                                         <state key="normal" image="folio"/>
+                                        <connections>
+                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="hC2-0T-m5G"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riu-Em-95C">
                                         <rect key="frame" x="0.0" y="0.0" width="125" height="66"/>
                                         <state key="normal" image="analytic"/>
+                                        <connections>
+                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="ddW-xl-p1a"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-jd-Wfm">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-jd-Wfm">
                                         <rect key="frame" x="250" y="0.0" width="125" height="66"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                         <state key="normal" image="ideas"/>
+                                        <connections>
+                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="0rV-uf-KBr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -65,33 +74,22 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNC-rc-JAd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tmd-kV-aeQ">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgQ-a3-yD5">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MNC-rc-JAd" firstAttribute="top" secondItem="zBe-gh-a0m" secondAttribute="top" id="36r-Ej-5FO"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="BBU-Ih-XFU"/>
-                            <constraint firstItem="ntn-nL-frd" firstAttribute="top" secondItem="qgQ-a3-yD5" secondAttribute="bottom" id="HqS-SD-XnB"/>
                             <constraint firstAttribute="trailing" secondItem="MNC-rc-JAd" secondAttribute="trailing" id="KwG-ie-unp"/>
-                            <constraint firstItem="qgQ-a3-yD5" firstAttribute="top" secondItem="zBe-gh-a0m" secondAttribute="top" id="PDR-7e-6gi"/>
-                            <constraint firstItem="ntn-nL-frd" firstAttribute="top" secondItem="Tmd-kV-aeQ" secondAttribute="bottom" id="Tww-AH-ffK"/>
-                            <constraint firstAttribute="trailing" secondItem="Tmd-kV-aeQ" secondAttribute="trailing" id="V7d-ma-k89"/>
                             <constraint firstItem="MNC-rc-JAd" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="X09-ZS-JEv"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="top" secondItem="MNC-rc-JAd" secondAttribute="bottom" id="bxA-a2-LFF"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="height" secondItem="zBe-gh-a0m" secondAttribute="height" multiplier="0.1" id="c9P-ux-gzL"/>
                             <constraint firstAttribute="trailing" secondItem="ntn-nL-frd" secondAttribute="trailing" id="fIx-qe-Nna"/>
                             <constraint firstItem="sqx-j5-Y2v" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="bottom" id="fLy-cB-Gyp"/>
-                            <constraint firstItem="qgQ-a3-yD5" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="frX-zY-oW0"/>
-                            <constraint firstAttribute="trailing" secondItem="qgQ-a3-yD5" secondAttribute="trailing" id="lBl-jy-gun"/>
-                            <constraint firstItem="Tmd-kV-aeQ" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="sP2-h2-Pzs"/>
-                            <constraint firstItem="Tmd-kV-aeQ" firstAttribute="top" secondItem="zBe-gh-a0m" secondAttribute="top" id="sd5-fg-wuH"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tabContainer" destination="MNC-rc-JAd" id="dQ6-7B-hME"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp9-15-rpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

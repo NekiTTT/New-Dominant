@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VwB-wc-rbZ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -58,10 +57,27 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="S4z-18-Xpo"/>
+                    <nil key="simulatedTopBarMetrics"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoG-YX-vs4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153" y="669"/>
+            <point key="canvasLocation" x="-1038" y="593"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E45-uy-IpO">
+            <objects>
+                <navigationController id="VwB-wc-rbZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kkd-oS-eYJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vN0-e5-H65" kind="relationship" relationship="rootViewController" id="Bwc-ca-Ae5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Oq7-fL-8To" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1753" y="592"/>
         </scene>
         <!--Company Detail View Controller-->
         <scene sceneID="xH7-LD-r9C">
@@ -435,90 +451,7 @@ IPO Date 08-14-1010</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICZ-5X-7uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-174" y="707"/>
-        </scene>
-        <!--SwiftStock-->
-        <scene sceneID="pfw-7X-ODM">
-            <objects>
-                <viewController storyboardIdentifier="detailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8RS-yd-gxL" customClass="DMStockDetailViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="UBJ-Yc-Nmg"/>
-                        <viewControllerLayoutGuide type="bottom" id="ebx-ty-5dW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="IEk-ZY-qiQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xPm-1J-PqN">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="230"/>
-                                <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="230" id="7Qe-15-j9V"/>
-                                    <constraint firstAttribute="height" constant="230" id="AgY-Pp-EQs"/>
-                                    <constraint firstAttribute="height" constant="230" id="IOf-kp-1hT"/>
-                                    <constraint firstAttribute="height" constant="280" id="Uas-hI-FBP"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="c8J-U7-BNH"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="7Qe-15-j9V"/>
-                                        <exclude reference="IOf-kp-1hT"/>
-                                        <exclude reference="Uas-hI-FBP"/>
-                                        <exclude reference="c8J-U7-BNH"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="09I-dO-ZWI">
-                                <rect key="frame" x="0.0" y="230" width="375" height="437"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="360" id="W9F-hE-iR3"/>
-                                    <constraint firstAttribute="height" constant="338" id="gR1-Bc-XcS"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="szy-bD-wv7"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="gWE-Z1-zh5">
-                                    <size key="itemSize" width="185" height="44"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="W9F-hE-iR3"/>
-                                        <exclude reference="gR1-Bc-XcS"/>
-                                    </mask>
-                                </variation>
-                            </collectionView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="09I-dO-ZWI" secondAttribute="trailing" id="85G-kv-IY4"/>
-                            <constraint firstItem="09I-dO-ZWI" firstAttribute="leading" secondItem="IEk-ZY-qiQ" secondAttribute="leading" id="IPi-fi-7gu"/>
-                            <constraint firstItem="xPm-1J-PqN" firstAttribute="leading" secondItem="IEk-ZY-qiQ" secondAttribute="leading" id="Jfm-zz-VPO"/>
-                            <constraint firstItem="xPm-1J-PqN" firstAttribute="height" secondItem="IEk-ZY-qiQ" secondAttribute="height" multiplier="0.5" id="g3Q-CL-jv2"/>
-                            <constraint firstItem="09I-dO-ZWI" firstAttribute="top" secondItem="xPm-1J-PqN" secondAttribute="bottom" id="lg6-wq-wF9"/>
-                            <constraint firstItem="ebx-ty-5dW" firstAttribute="top" secondItem="09I-dO-ZWI" secondAttribute="bottom" id="o97-Kh-Wn0"/>
-                            <constraint firstItem="xPm-1J-PqN" firstAttribute="top" secondItem="IEk-ZY-qiQ" secondAttribute="top" id="vNy-cm-bbt"/>
-                            <constraint firstAttribute="trailing" secondItem="xPm-1J-PqN" secondAttribute="trailing" id="x5I-JI-VSv"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="g3Q-CL-jv2"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <navigationItem key="navigationItem" title="SwiftStock" id="QSD-ib-XwB"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
-                    <connections>
-                        <outlet property="collectionView" destination="09I-dO-ZWI" id="3Yk-Ng-bGl"/>
-                        <outlet property="viewOfChart" destination="xPm-1J-PqN" id="PqI-73-xHv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fxm-cT-cvN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="458" y="669"/>
+            <point key="canvasLocation" x="-331" y="592"/>
         </scene>
     </scenes>
     <resources>

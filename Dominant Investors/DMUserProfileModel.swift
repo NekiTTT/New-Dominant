@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Quickblox
 
 class DMUserProfileModel: NSObject {
 
@@ -16,7 +17,7 @@ class DMUserProfileModel: NSObject {
     
     var userRating        : UInt!
     
-    init(response : Any) {
+    init(QBUser : QBUUser) {
         super.init()
         
     }
