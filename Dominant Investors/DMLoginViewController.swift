@@ -61,12 +61,22 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         self.passwordTextField.delegate = self
     }
     
+    private func showTabBar() {
+        let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
+        self.present(tabBar!, animated: false, completion: nil)
+    }
+    
     // MARK : Actions
     
     @IBAction func loginButtonPressed(sender : UIButton) {
-        DMAPIService.sharedInstance.loginWith(login: self.usernameTextField.text!,
-                                              password: self.passwordTextField.text!) { (success) in
+        DMAuthorizationManager.sharedInstance.loginWith(login: self.usernameTextField.text!,
+                                              password: self.passwordTextField.text!) { (success, error) in
                                                 
+                                                if (success) {
+                                                    DispatchQueue.main.async {
+                                                        self.showTabBar()
+                                                    }
+                                                }
         }
     }
     

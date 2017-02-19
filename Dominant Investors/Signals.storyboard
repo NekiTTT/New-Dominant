@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="W8b-Xn-kuw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,18 +11,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Museo Cyrl 100.otf">
+        <array key="MuseoCyrl100.otf">
             <string>MuseoCyrl-100</string>
         </array>
-        <array key="Museo Cyrl 900.otf">
+        <array key="MuseoCyrl900.otf">
             <string>MuseoCyrl-900</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Sign Up View Controller-->
+        <!--Signals View Controller-->
         <scene sceneID="v9h-Gi-rsr">
             <objects>
-                <viewController storyboardIdentifier="DMSignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W8b-Xn-kuw" customClass="DMSignUpViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMSignalsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="W8b-Xn-kuw" customClass="DMSignalsViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jaJ-Yo-6hI"/>
                         <viewControllerLayoutGuide type="bottom" id="Gse-e1-xhw"/>
@@ -168,6 +168,10 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ztb-Wq-XOf"/>
+                    <connections>
+                        <outlet property="subscriptionContainer" destination="hXl-5V-zZx" id="9gE-77-Zdi"/>
+                        <outlet property="tableView" destination="VKl-hX-tDJ" id="d7F-ME-Wde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m9m-GR-9ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -203,9 +207,12 @@
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                                 <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="BUY"/>
+                                                <connections>
+                                                    <action selector="buy" destination="8Hc-u4-XZx" eventType="touchUpInside" id="OcX-gJ-4jm"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-V1-2yJ">
-                                                <rect key="frame" x="23" y="155.5" width="255" height="90"/>
+                                                <rect key="frame" x="23" y="156" width="255" height="90"/>
                                                 <string key="text">Subscribe to accurate trading signals from the professional portfolio managers to get a maximum profitability on investment shares</string>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -230,6 +237,9 @@
                                                 <state key="normal" title="RESTORE">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="restore" destination="8Hc-u4-XZx" eventType="touchUpInside" id="5AM-3C-Qc5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -265,6 +275,9 @@
                                             <constraint firstAttribute="width" constant="24" id="iuF-Bv-uBD"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="cancel_buy"/>
+                                        <connections>
+                                            <action selector="closeAction" destination="8Hc-u4-XZx" eventType="touchUpInside" id="q3u-mh-oLd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -301,6 +314,10 @@
                             <constraint firstItem="hFd-cU-8XY" firstAttribute="leading" secondItem="zKS-PV-c4a" secondAttribute="leading" id="SUV-Nn-dHC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="sLl-Bm-ZH0" id="WlO-9V-vc6"/>
+                        <outlet property="overlayView" destination="hE4-vi-Ia9" id="Ro0-uN-RRw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cG3-nr-fwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

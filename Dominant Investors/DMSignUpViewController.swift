@@ -52,11 +52,17 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     // MARK : Actions
     
     @IBAction func signUpButtonPressed(sender : UIButton) {
-        DMAPIService.sharedInstance.signUpWith(login: self.loginTextField.text!,
-                                               email: self.emailTextField.text!,
-                                               password: self.passwordTextField.text!,
-                                               confirm: self.confirmPasswordTextField.text!) { (success) in
+        DMAuthorizationManager.sharedInstance.signUpWith(login    : self.loginTextField.text!,
+                                               email    : self.emailTextField.text!,
+                                               password : self.passwordTextField.text!,
+                                               confirm  : self.confirmPasswordTextField.text!) {
+                                                (success, error) in
                                                 
+                                                if (success) {
+                                                    DispatchQueue.main.async {
+                                                        self.dismiss(animated: true, completion: nil)
+                                                    }
+                                                }
         }
     }
     

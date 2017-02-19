@@ -8,9 +8,10 @@
 
 import UIKit
 
-class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableViewDelegate {
-
-    @IBOutlet weak var tableView : UITableView!
+class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableViewDelegate, DMContainerDelegate {
+   
+    @IBOutlet weak var tableView             : UITableView!
+    @IBOutlet weak var subscriptionContainer : UIView!
     
     var signals : [DMInvestmentSignalModel]!
     
@@ -47,5 +48,11 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
         cell.setupWith(model: signals[indexPath.row])
         return cell
     }
-
+    
+    // MARK : DMContainerDelegate
+    
+    internal func hideContainer() {    
+        self.subscriptionContainer.isHidden = true
+    }
+    
 }

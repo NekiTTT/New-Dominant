@@ -14,4 +14,16 @@ class DMAuthorizationManager: NSObject {
     
     var userProfile : DMUserProfileModel!
     
+    open func isAuthorized() -> Bool {
+        return false
+    }
+    
+    open func loginWith(login : String, password : String, completion : @escaping (Bool, String?) -> Void) {
+        DMQuickBloxService.sharedInstance.loginWith(login: login, password: password, competion: completion)
+    }
+    
+    open func signUpWith(login : String, email : String, password : String, confirm : String , completion : @escaping (Bool, String?) -> Void) {
+        DMQuickBloxService.sharedInstance.signUpWith(login: login, email: email, password: password, confirm: confirm, completion: completion)
+    }
+    
 }

@@ -48,5 +48,4 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
         return cell
     }
     
-    
 }

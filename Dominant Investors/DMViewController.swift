@@ -12,8 +12,12 @@ class DMViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    }
+    
+    // MARK : Own func
+    
+    private func showAlertWith(text : String) {
+        
     }
 
 }

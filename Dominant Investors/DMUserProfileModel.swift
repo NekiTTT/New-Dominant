@@ -19,6 +19,9 @@ class DMUserProfileModel: NSObject {
     
     init(QBUser : QBUUser) {
         super.init()
-        
+        self.userID           = String(QBUser.id)
+        self.userName         = QBUser.login
+        self.userProfileImage = QBUser.customData
+        self.userRating       = 0
     }
 }

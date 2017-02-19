@@ -11,4 +11,9 @@ import UIKit
 class DMDominantPortfolioService: NSObject {
 
     static let sharedInstance = DMDominantPortfolioService()
+    
+    open func getDominantPortfolio(completion : @escaping ([DMDominantPortfolioModel]) -> Void) {
+        DMQuickBloxService.sharedInstance.getDominantPortfolio(completion: completion)
+    }
+    
 }

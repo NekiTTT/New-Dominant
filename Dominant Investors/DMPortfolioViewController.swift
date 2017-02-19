@@ -10,26 +10,54 @@ import UIKit
 
 class DMPortfolioViewController: DMViewController {
 
+    var refreshControl: UIRefreshControl!
+    var dropdownViewController: DMDropdownViewController!
+    var searchResults: [StockSearchResult] = []
+    var total = 0.0
+
+    var formatter = DateFormatter()
+    
+    
+    // MARK: Outlets
+    @IBOutlet  weak var searchBar: UITextField!
+    @IBOutlet  weak var priceTextField: UITextField!
+    @IBOutlet  weak var searchDropdown: UIView!
+    @IBOutlet  weak var searchBarContainer: UIView!
+    @IBOutlet  weak var tickerFieldContainer: UIView!
+    @IBOutlet  weak var priceFieldContainer: UIView!
+    @IBOutlet  weak var dateFieldContainer: UIView!
+    @IBOutlet  weak var dateTextField: UITextField!
+    
+    @IBOutlet  weak var segmentSelector : UISegmentedControl!
+    @IBOutlet  weak var FisrstHeight : NSLayoutConstraint!
+    @IBOutlet  weak var SecondHeight : NSLayoutConstraint!
+    @IBOutlet  weak var dominantImageHeight : NSLayoutConstraint!
+    
+    @IBOutlet  weak var firstContainer: UIView!
+    @IBOutlet  weak var secondContainer: UIView!
+    @IBOutlet  weak var ratingContainer: UIView!
+    @IBOutlet  weak var dominantImageContainer : UIView!
+    
+    @IBOutlet  weak var dominantContainer: UIView!
+    @IBOutlet  weak var personalContainer: UIView!
+    
+    @IBOutlet  weak var fisrtLabel  : UILabel!
+    @IBOutlet  weak var secondLabel : UILabel!
+    @IBOutlet  weak var thirdLabel  : UILabel!
+    @IBOutlet  weak var fourthLabel : UILabel!
+    
+    @IBOutlet  weak var dropShadowView : UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    // MARK : Private
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // MARK : Actions
+    
+    @IBAction func portfolioTypeChanged(sender : UISegmentedControl) {
+        
     }
-    */
 
 }
