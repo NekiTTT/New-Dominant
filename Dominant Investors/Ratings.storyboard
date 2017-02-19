@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Museo Cyrl 300.otf">
+        <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
         </array>
         <array key="MuseoSansLight.ttf">
@@ -142,6 +142,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gLd-8U-oeE"/>
+                    <connections>
+                        <outlet property="tableView" destination="D8P-4d-eyq" id="OB5-Uv-lnx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DUY-Qq-Yxn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

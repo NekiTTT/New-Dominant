@@ -18,12 +18,12 @@ class DMTabBarViewController: DMViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        setupChildControllers()
     }
     
     // MARK : Private
     
-    private func setupUI() {
+    private func setupChildControllers() {
         let analytics = UIStoryboard(name: "Analytics", bundle: nil).instantiateInitialViewController()!
         let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
         let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!

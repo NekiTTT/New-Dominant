@@ -1,28 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WYA-Wt-9PR">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Museo Cyrl 100.otf">
-            <string>MuseoCyrl-100</string>
-        </array>
         <array key="Museo Cyrl 300.otf">
             <string>MuseoCyrl-300</string>
         </array>
+        <array key="MuseoCyrl100.otf">
+            <string>MuseoCyrl-100</string>
+        </array>
     </customFonts>
     <scenes>
-        <!--Login View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="fsA-MV-cSR">
             <objects>
-                <viewController storyboardIdentifier="DMLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RCZ-dQ-T9G" customClass="DMLoginViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RCZ-dQ-T9G" customClass="DMSignUpViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iLl-xs-6ND"/>
                         <viewControllerLayoutGuide type="bottom" id="smd-mV-W7X"/>
@@ -50,6 +49,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                         <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="SIGN UP"/>
+                                        <connections>
+                                            <action selector="signUpButtonPressedWithSender:" destination="RCZ-dQ-T9G" eventType="touchUpInside" id="Bft-ss-yQU"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CREATE YOUR ACCOUNT" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="loe-W8-Jh1">
                                         <rect key="frame" x="8" y="37" width="256" height="20"/>
@@ -66,6 +68,9 @@
                                                 <state key="normal" title="ALREADY HAVE AN ACCOUNT">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="backToLoginButtonPressedWithSender:" destination="RCZ-dQ-T9G" eventType="touchUpInside" id="xZ6-aN-xDk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -268,15 +273,25 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="alreadyHaveAccount" destination="tNu-LR-h6s" id="6Rk-El-idx"/>
+                        <outlet property="backgroundImageView" destination="4CS-F1-h1o" id="au4-ER-uvR"/>
+                        <outlet property="confirmPasswordTextField" destination="W3X-qu-iJa" id="L1I-ip-fDh"/>
+                        <outlet property="emailTextField" destination="ugo-ib-Z6f" id="aMv-ml-qhe"/>
+                        <outlet property="loginTextField" destination="LjO-qn-pOj" id="2I5-5g-12b"/>
+                        <outlet property="overlayView" destination="k1A-zt-hf6" id="Vqg-I9-B4U"/>
+                        <outlet property="passwordTextField" destination="bVS-X2-qoe" id="pmt-O6-sc3"/>
+                        <outlet property="signUpButton" destination="ddF-Xy-SJi" id="MN4-Q0-W4g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcU-z0-eMZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-130.40000000000001" y="-43.628185907046479"/>
+            <point key="canvasLocation" x="457" y="-49"/>
         </scene>
-        <!--Sign Up View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="loR-ZS-cHB">
             <objects>
-                <viewController storyboardIdentifier="DMSignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WYA-Wt-9PR" customClass="DMSignUpViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMSignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WYA-Wt-9PR" customClass="DMLoginViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wfx-QG-e0c"/>
                         <viewControllerLayoutGuide type="bottom" id="Dzd-7A-GQE"/>
@@ -300,6 +315,9 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                         <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="LOGIN"/>
+                                        <connections>
+                                            <action selector="loginButtonPressedWithSender:" destination="WYA-Wt-9PR" eventType="touchUpInside" id="3Uf-AP-AcB"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PLEASE SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Seq-FT-Jps">
                                         <rect key="frame" x="8" y="32" width="234" height="20"/>
@@ -353,6 +371,9 @@
                                                 <state key="normal" title="CREATE ACCOUNT">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="signUpButtonPressedWithSender:" destination="WYA-Wt-9PR" eventType="touchUpInside" id="WvU-Q1-waR"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -452,10 +473,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="kH7-Fj-38q" id="Muh-M8-OJB"/>
+                        <outlet property="createNewAccount" destination="Erc-KX-zIx" id="jgd-69-F8P"/>
+                        <outlet property="overlayView" destination="c6G-SZ-i1R" id="PhW-LV-V2z"/>
+                        <outlet property="passwordTextField" destination="etB-0a-uLH" id="YBr-zV-5Vq"/>
+                        <outlet property="usernameTextField" destination="Emo-io-ONH" id="K01-UC-dGw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xb6-oW-dmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="512.79999999999995" y="-44.527736131934034"/>
+            <point key="canvasLocation" x="-239" y="-49"/>
         </scene>
     </scenes>
     <resources>

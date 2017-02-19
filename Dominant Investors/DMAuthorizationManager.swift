@@ -10,4 +10,6 @@ import UIKit
 
 class DMAuthorizationManager: NSObject {
 
+    static let sharedInstance = DMAuthorizationManager()
+    
 }

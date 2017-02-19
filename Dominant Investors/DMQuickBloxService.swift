@@ -10,4 +10,5 @@ import UIKit
 
 class DMQuickBloxService: NSObject {
 
+    static let sharedInstance = DMQuickBloxService()
 }

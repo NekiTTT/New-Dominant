@@ -10,4 +10,5 @@ import UIKit
 
 class DMSignalsStoreService: NSObject {
 
+    static let sharedInstance = DMSignalsStoreService()
 }

@@ -10,4 +10,5 @@ import UIKit
 
 class DMPersonalPortfolioService: NSObject {
 
+    static let sharedInstance = DMPersonalPortfolioService()
 }

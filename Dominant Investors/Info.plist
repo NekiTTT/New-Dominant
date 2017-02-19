@@ -2,6 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>$(PRODUCT_NAME) need permission to access galery.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>$(PRODUCT_NAME) need permission to access camera.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>FacebookDisplayName</key>
+	<string>Dominant Investors</string>
+	<key>FacebookAppID</key>
+	<string>1298754013522771</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>a57b2bc2dfde54edc4d69735a3034939a67ed90d</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict>
+					<key>branch_key</key>
+					<string>Branch Key</string>
+				</dict>
+				<key>KitName</key>
+				<string>Branch</string>
+			</dict>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -24,11 +60,11 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Museo Cyrl 100.otf</string>
-		<string>Museo Cyrl 300.otf</string>
-		<string>Museo Cyrl 500.otf</string>
-		<string>Museo Cyrl 700.otf</string>
-		<string>Museo Cyrl 900.otf</string>
+		<string>MuseoCyrl100.otf</string>
+		<string>MuseoCyrl300.otf</string>
+		<string>MuseoCyrl500.otf</string>
+		<string>MuseoCyrl700.otf</string>
+		<string>MuseoCyrl900.otf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>

@@ -10,4 +10,5 @@ import UIKit
 
 class DMDominantPortfolioService: NSObject {
 
+    static let sharedInstance = DMDominantPortfolioService()
 }

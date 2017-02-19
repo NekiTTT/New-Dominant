@@ -17,6 +17,11 @@ class DMLaunchViewController: DMViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        launchApp()
+    }
 
     private func setupUI() {
         self.backgroundImage.image = Backgrounds().DMAuthScreensBackground
