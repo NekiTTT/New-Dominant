@@ -1,0 +1,625 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4592F76B1E591A8B004C85F4 /* FXBlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76A1E591A8B004C85F4 /* FXBlurView.swift */; };
+		4592F76D1E59AAC6004C85F4 /* FXBlurView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4592F76C1E59AAC6004C85F4 /* FXBlurView.framework */; };
+		45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */; };
+		45B4E7371E58ED5C00D56BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7361E58ED5C00D56BDE /* Assets.xcassets */; };
+		45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */; };
+		45B4E74A1E58EE9E00D56BDE /* DMNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7491E58EE9E00D56BDE /* DMNetworkService.swift */; };
+		45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */; };
+		45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */; };
+		45B4E7501E58EF4200D56BDE /* DMDominantPortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */; };
+		45B4E7521E58EF5700D56BDE /* DMPersonalPortfolioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */; };
+		45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */; };
+		45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E75D1E58F9C200D56BDE /* DMViewController.swift */; };
+		45B4E7671E58FBB100D56BDE /* Authorzation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7661E58FBB100D56BDE /* Authorzation.storyboard */; };
+		45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7681E58FBC900D56BDE /* TabBar.storyboard */; };
+		45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */; };
+		45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76C1E58FC0400D56BDE /* Launch.storyboard */; };
+		45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76E1E58FC1100D56BDE /* Signals.storyboard */; };
+		45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7701E58FCB000D56BDE /* Analytics.storyboard */; };
+		45B4E7731E58FCF600D56BDE /* DMDominantPortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */; };
+		45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */; };
+		45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */; };
+		45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */; };
+		45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E77B1E58FE0500D56BDE /* SwiftStockKit.swift */; };
+		45B4E77E1E58FE7200D56BDE /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; };
+		45B4E7821E5901A800D56BDE /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E7811E5901A800D56BDE /* Alamofire.framework */; };
+		45B4E7841E59106B00D56BDE /* Ratings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7831E59106B00D56BDE /* Ratings.storyboard */; };
+		45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */; };
+		45B4E78A1E59120B00D56BDE /* DMLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */; };
+		45B4E78C1E59123400D56BDE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */; };
+		45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78D1E59126A00D56BDE /* Bolts.framework */; };
+		45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */; };
+		45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */; };
+		45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0261E591433000CB062 /* DMSignalsViewController.swift */; };
+		45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */; };
+		45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */; };
+		45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A02C1E59146F000CB062 /* DMTabBarViewController.swift */; };
+		45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */; };
+		45B7A0311E591525000CB062 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0301E591525000CB062 /* Fabric.framework */; };
+		45B7A0331E591629000CB062 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0321E591629000CB062 /* Crashlytics.framework */; };
+		45B7A0371E5916A2000CB062 /* DMLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0361E5916A2000CB062 /* DMLoginViewController.swift */; };
+		45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0381E5916B0000CB062 /* DMSignUpViewController.swift */; };
+		45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */; };
+		45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */; };
+		45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4592F76A1E591A8B004C85F4 /* FXBlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FXBlurView.swift; sourceTree = "<group>"; };
+		4592F76C1E59AAC6004C85F4 /* FXBlurView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FXBlurView.framework; sourceTree = "<group>"; };
+		45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dominant Investors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		45B4E7361E58ED5C00D56BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		45B4E7391E58ED5C00D56BDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		45B4E73B1E58ED5D00D56BDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45B4E7491E58EE9E00D56BDE /* DMNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMNetworkService.swift; sourceTree = "<group>"; };
+		45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMQuickBloxService.swift; sourceTree = "<group>"; };
+		45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMAuthorizationManager.swift; sourceTree = "<group>"; };
+		45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDominantPortfolioService.swift; sourceTree = "<group>"; };
+		45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPersonalPortfolioService.swift; sourceTree = "<group>"; };
+		45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalsStoreService.swift; sourceTree = "<group>"; };
+		45B4E7561E58F12800D56BDE /* Museo Cyrl 100.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo Cyrl 100.otf"; sourceTree = "<group>"; };
+		45B4E7571E58F12800D56BDE /* Museo Cyrl 300.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo Cyrl 300.otf"; sourceTree = "<group>"; };
+		45B4E7581E58F12800D56BDE /* Museo Cyrl 500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo Cyrl 500.otf"; sourceTree = "<group>"; };
+		45B4E7591E58F12800D56BDE /* Museo Cyrl 700.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo Cyrl 700.otf"; sourceTree = "<group>"; };
+		45B4E75A1E58F12800D56BDE /* Museo Cyrl 900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Museo Cyrl 900.otf"; sourceTree = "<group>"; };
+		45B4E75D1E58F9C200D56BDE /* DMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMViewController.swift; sourceTree = "<group>"; };
+		45B4E7661E58FBB100D56BDE /* Authorzation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authorzation.storyboard; sourceTree = "<group>"; };
+		45B4E7681E58FBC900D56BDE /* TabBar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
+		45B4E76C1E58FC0400D56BDE /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		45B4E76E1E58FC1100D56BDE /* Signals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signals.storyboard; sourceTree = "<group>"; };
+		45B4E7701E58FCB000D56BDE /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
+		45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDominantPortfolioModel.swift; sourceTree = "<group>"; };
+		45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPersonalPortfolioModel.swift; sourceTree = "<group>"; };
+		45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMInvestmentSignalModel.swift; sourceTree = "<group>"; };
+		45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyModel.swift; sourceTree = "<group>"; };
+		45B4E77B1E58FE0500D56BDE /* SwiftStockKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftStockKit.swift; sourceTree = "<group>"; };
+		45B4E77D1E58FE7200D56BDE /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		45B4E7811E5901A800D56BDE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		45B4E7831E59106B00D56BDE /* Ratings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ratings.storyboard; sourceTree = "<group>"; };
+		45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRatingsViewController.swift; sourceTree = "<group>"; };
+		45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLaunchViewController.swift; sourceTree = "<group>"; };
+		45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		45B4E78D1E59126A00D56BDE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		45B7A0261E591433000CB062 /* DMSignalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalsViewController.swift; sourceTree = "<group>"; };
+		45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMAnalyticsViewController.swift; sourceTree = "<group>"; };
+		45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioViewController.swift; sourceTree = "<group>"; };
+		45B7A02C1E59146F000CB062 /* DMTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMTabBarViewController.swift; sourceTree = "<group>"; };
+		45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMUserProfileModel.swift; sourceTree = "<group>"; };
+		45B7A0301E591525000CB062 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		45B7A0321E591629000CB062 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		45B7A0361E5916A2000CB062 /* DMLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLoginViewController.swift; sourceTree = "<group>"; };
+		45B7A0381E5916B0000CB062 /* DMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignUpViewController.swift; sourceTree = "<group>"; };
+		45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownViewController.swift; sourceTree = "<group>"; };
+		45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionViewController.swift; sourceTree = "<group>"; };
+		45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyDetailViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		45B4E7291E58ED5C00D56BDE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B7A0311E591525000CB062 /* Fabric.framework in Frameworks */,
+				45B4E77E1E58FE7200D56BDE /* Quickblox.framework in Frameworks */,
+				4592F76D1E59AAC6004C85F4 /* FXBlurView.framework in Frameworks */,
+				45B7A0331E591629000CB062 /* Crashlytics.framework in Frameworks */,
+				45B4E78C1E59123400D56BDE /* FBSDKCoreKit.framework in Frameworks */,
+				45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */,
+				45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */,
+				45B4E7821E5901A800D56BDE /* Alamofire.framework in Frameworks */,
+				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4592F7691E591A75004C85F4 /* Blur view */ = {
+			isa = PBXGroup;
+			children = (
+				4592F76A1E591A8B004C85F4 /* FXBlurView.swift */,
+			);
+			name = "Blur view";
+			sourceTree = "<group>";
+		};
+		45B4E7231E58ED5C00D56BDE = {
+			isa = PBXGroup;
+			children = (
+				45B4E72E1E58ED5C00D56BDE /* Dominant Investors */,
+				45B4E7431E58ED7D00D56BDE /* Resources */,
+				45B4E7471E58EE2B00D56BDE /* Framewroks */,
+				45B4E72D1E58ED5C00D56BDE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		45B4E72D1E58ED5C00D56BDE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45B4E72E1E58ED5C00D56BDE /* Dominant Investors */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */,
+				45B4E7461E58EE1D00D56BDE /* Custom Views */,
+				45B4E7451E58EDA500D56BDE /* Storyboards */,
+				45B4E7441E58ED8900D56BDE /* Models */,
+				45B4E7421E58ED7100D56BDE /* Controllers */,
+				45B4E7411E58ED6900D56BDE /* Managers */,
+			);
+			path = "Dominant Investors";
+			sourceTree = "<group>";
+		};
+		45B4E7411E58ED6900D56BDE /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7491E58EE9E00D56BDE /* DMNetworkService.swift */,
+				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
+				45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */,
+				45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */,
+				45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */,
+				45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		45B4E7421E58ED7100D56BDE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E75D1E58F9C200D56BDE /* DMViewController.swift */,
+				45B7A0351E59168A000CB062 /* Login */,
+				45B7A0341E591683000CB062 /* Sign Up */,
+				45B4E7861E59107900D56BDE /* Ratings */,
+				45B4E7631E58F9FE00D56BDE /* Signals */,
+				45B4E7621E58F9EE00D56BDE /* Analytics */,
+				45B4E7611E58F9E600D56BDE /* Portfolio */,
+				45B4E7601E58F9DD00D56BDE /* Launch Screen */,
+				45B4E75F1E58F9C800D56BDE /* Tab Bar */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		45B4E7431E58ED7D00D56BDE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7551E58F0B300D56BDE /* Fonts */,
+				45B4E7361E58ED5C00D56BDE /* Assets.xcassets */,
+				45B4E73B1E58ED5D00D56BDE /* Info.plist */,
+			);
+			name = Resources;
+			path = "Dominant Investors";
+			sourceTree = "<group>";
+		};
+		45B4E7441E58ED8900D56BDE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */,
+				45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */,
+				45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */,
+				45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */,
+				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		45B4E7451E58EDA500D56BDE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */,
+				45B4E76C1E58FC0400D56BDE /* Launch.storyboard */,
+				45B4E7661E58FBB100D56BDE /* Authorzation.storyboard */,
+				45B4E7681E58FBC900D56BDE /* TabBar.storyboard */,
+				45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */,
+				45B4E7831E59106B00D56BDE /* Ratings.storyboard */,
+				45B4E76E1E58FC1100D56BDE /* Signals.storyboard */,
+				45B4E7701E58FCB000D56BDE /* Analytics.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				4592F7691E591A75004C85F4 /* Blur view */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		45B4E7471E58EE2B00D56BDE /* Framewroks */ = {
+			isa = PBXGroup;
+			children = (
+				4592F76C1E59AAC6004C85F4 /* FXBlurView.framework */,
+				45B7A0321E591629000CB062 /* Crashlytics.framework */,
+				45B4E78D1E59126A00D56BDE /* Bolts.framework */,
+				45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */,
+				45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */,
+				45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */,
+				45B4E7811E5901A800D56BDE /* Alamofire.framework */,
+				45B7A0301E591525000CB062 /* Fabric.framework */,
+				45B4E77D1E58FE7200D56BDE /* Quickblox.framework */,
+				45B4E77A1E58FDE700D56BDE /* SwiftStockKit */,
+			);
+			name = Framewroks;
+			sourceTree = "<group>";
+		};
+		45B4E7551E58F0B300D56BDE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7561E58F12800D56BDE /* Museo Cyrl 100.otf */,
+				45B4E7571E58F12800D56BDE /* Museo Cyrl 300.otf */,
+				45B4E7581E58F12800D56BDE /* Museo Cyrl 500.otf */,
+				45B4E7591E58F12800D56BDE /* Museo Cyrl 700.otf */,
+				45B4E75A1E58F12800D56BDE /* Museo Cyrl 900.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		45B4E75F1E58F9C800D56BDE /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A02C1E59146F000CB062 /* DMTabBarViewController.swift */,
+			);
+			name = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		45B4E7601E58F9DD00D56BDE /* Launch Screen */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */,
+			);
+			name = "Launch Screen";
+			sourceTree = "<group>";
+		};
+		45B4E7611E58F9E600D56BDE /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */,
+				45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */,
+			);
+			name = Portfolio;
+			sourceTree = "<group>";
+		};
+		45B4E7621E58F9EE00D56BDE /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */,
+				45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */,
+			);
+			name = Analytics;
+			sourceTree = "<group>";
+		};
+		45B4E7631E58F9FE00D56BDE /* Signals */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A0261E591433000CB062 /* DMSignalsViewController.swift */,
+				45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */,
+			);
+			name = Signals;
+			sourceTree = "<group>";
+		};
+		45B4E77A1E58FDE700D56BDE /* SwiftStockKit */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E77B1E58FE0500D56BDE /* SwiftStockKit.swift */,
+			);
+			name = SwiftStockKit;
+			sourceTree = "<group>";
+		};
+		45B4E7861E59107900D56BDE /* Ratings */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */,
+			);
+			name = Ratings;
+			sourceTree = "<group>";
+		};
+		45B7A0341E591683000CB062 /* Sign Up */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A0381E5916B0000CB062 /* DMSignUpViewController.swift */,
+			);
+			name = "Sign Up";
+			sourceTree = "<group>";
+		};
+		45B7A0351E59168A000CB062 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				45B7A0361E5916A2000CB062 /* DMLoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		45B4E72B1E58ED5C00D56BDE /* Dominant Investors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 45B4E73E1E58ED5D00D56BDE /* Build configuration list for PBXNativeTarget "Dominant Investors" */;
+			buildPhases = (
+				45B4E7281E58ED5C00D56BDE /* Sources */,
+				45B4E7291E58ED5C00D56BDE /* Frameworks */,
+				45B4E72A1E58ED5C00D56BDE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dominant Investors";
+			productName = "Dominant Investors";
+			productReference = 45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45B4E7241E58ED5C00D56BDE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Dominant;
+				TargetAttributes = {
+					45B4E72B1E58ED5C00D56BDE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 45F26FVHGB;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 45B4E7271E58ED5C00D56BDE /* Build configuration list for PBXProject "Dominant Investors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 45B4E7231E58ED5C00D56BDE;
+			productRefGroup = 45B4E72D1E58ED5C00D56BDE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				45B4E72B1E58ED5C00D56BDE /* Dominant Investors */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		45B4E72A1E58ED5C00D56BDE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
+				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
+				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
+				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
+				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
+				45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */,
+				45B4E7841E59106B00D56BDE /* Ratings.storyboard in Resources */,
+				45B4E7671E58FBB100D56BDE /* Authorzation.storyboard in Resources */,
+				45B4E7371E58ED5C00D56BDE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		45B4E7281E58ED5C00D56BDE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45B4E78A1E59120B00D56BDE /* DMLaunchViewController.swift in Sources */,
+				4592F76B1E591A8B004C85F4 /* FXBlurView.swift in Sources */,
+				45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */,
+				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
+				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
+				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
+				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
+				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
+				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
+				45B4E74A1E58EE9E00D56BDE /* DMNetworkService.swift in Sources */,
+				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,
+				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,
+				45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */,
+				45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */,
+				45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */,
+				45B4E7731E58FCF600D56BDE /* DMDominantPortfolioModel.swift in Sources */,
+				45B4E7501E58EF4200D56BDE /* DMDominantPortfolioService.swift in Sources */,
+				45B4E7521E58EF5700D56BDE /* DMPersonalPortfolioService.swift in Sources */,
+				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
+				45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */,
+				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
+				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
+				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,
+				45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */,
+				45B7A0371E5916A2000CB062 /* DMLoginViewController.swift in Sources */,
+				45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				45B4E7391E58ED5C00D56BDE /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		45B4E73C1E58ED5D00D56BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		45B4E73D1E58ED5D00D56BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45B4E73F1E58ED5D00D56BDE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 45F26FVHGB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Dominant Investors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		45B4E7401E58ED5D00D56BDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 45F26FVHGB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = "Dominant Investors/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		45B4E7271E58ED5C00D56BDE /* Build configuration list for PBXProject "Dominant Investors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B4E73C1E58ED5D00D56BDE /* Debug */,
+				45B4E73D1E58ED5D00D56BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		45B4E73E1E58ED5D00D56BDE /* Build configuration list for PBXNativeTarget "Dominant Investors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45B4E73F1E58ED5D00D56BDE /* Debug */,
+				45B4E7401E58ED5D00D56BDE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45B4E7241E58ED5C00D56BDE /* Project object */;
+}
