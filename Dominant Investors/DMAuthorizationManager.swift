@@ -12,4 +12,6 @@ class DMAuthorizationManager: NSObject {
 
     static let sharedInstance = DMAuthorizationManager()
     
+    var userProfile : DMUserProfileModel!
+    
 }

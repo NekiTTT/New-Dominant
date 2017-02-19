@@ -12,10 +12,23 @@ class DMCompanyDetailViewController: DMViewController {
 
     var company : DMCompanyModel!
     
+    // MARK: Outlets
+    @IBOutlet weak var infoLabel        : UILabel!
+    @IBOutlet weak var infoTextLabel    : UILabel!
+    @IBOutlet weak var companyNameLabel : UILabel!
+    @IBOutlet weak var getSignalsButton : UIButton!
+    @IBOutlet weak var companyLogo      : UIImageView!
+    @IBOutlet weak var chartContainer   : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+    }
+    
+    // MARK : Private
+    
+    private func setupUI() {
         
     }
-
+    
 }
