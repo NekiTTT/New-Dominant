@@ -95,7 +95,7 @@
 
 /* Begin PBXFileReference section */
 		4592F76E1E59B35E004C85F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Dominant Investors-Bridging-Header.h"; sourceTree = "<group>"; };
+		4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dominant Investors-Bridging-Header.h"; path = "Dominant Investors/Dominant Investors-Bridging-Header.h"; sourceTree = "<group>"; };
 		45A1078D1E59C24100591170 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
 		45A1078E1E59C24100591170 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
 		45A107AB1E59D35400591170 /* DMRatingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRatingTableViewCell.swift; sourceTree = "<group>"; };
@@ -226,6 +226,7 @@
 		45B4E7231E58ED5C00D56BDE = {
 			isa = PBXGroup;
 			children = (
+				4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */,
 				45B4E72E1E58ED5C00D56BDE /* Dominant Investors */,
 				45B4E7431E58ED7D00D56BDE /* Resources */,
 				45B4E7471E58EE2B00D56BDE /* Framewroks */,
@@ -246,7 +247,6 @@
 			children = (
 				45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */,
 				4592F76E1E59B35E004C85F4 /* Constants.swift */,
-				4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */,
 				45B4E7461E58EE1D00D56BDE /* Custom Views */,
 				45B4E7451E58EDA500D56BDE /* Storyboards */,
 				45B4E7441E58ED8900D56BDE /* Models */,

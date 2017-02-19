@@ -44,11 +44,11 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.clearPortfolio(completion: completion)
     }
     
-    open func loginWith(login : String, password : String, completion : (Bool) -> Void) {
+    open func loginWith(login : String, password : String, completion : (Bool, String?) -> Void) {
         DMQuickBloxService.sharedInstance.loginWith(login: login, password: password, competion: completion)
     }
     
-    open func signUpWith(login : String, email : String, password : String, confirm : String , completion : (Bool) -> Void) {
+    open func signUpWith(login : String, email : String, password : String, confirm : String , completion : (Bool, String?) -> Void) {
         DMQuickBloxService.sharedInstance.signUpWith(login: login, email: email, password: password, confirm: confirm, completion: completion)
     }
     
