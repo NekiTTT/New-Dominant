@@ -16,7 +16,6 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     @IBOutlet weak var createNewAccount   : UIButton!
     @IBOutlet var backgroundImageView     : UIImageView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -65,17 +64,36 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     // MARK : Actions
     
     @IBAction func loginButtonPressed(sender : UIButton) {
-        
+        DMAPIService.sharedInstance.loginWith(login: self.usernameTextField.text!,
+                                              password: self.passwordTextField.text!) { (success) in
+                                                
+        }
     }
     
     @IBAction func signUpButtonPressed(sender : UIButton) {
+        let signUp = UIStoryboard(name: "Authorization", bundle: nil).instantiateViewController(withIdentifier: "DMSignUpViewController")
         
+        self.present(signUp, animated: false, completion: nil)
     }
     
     // MARK : UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+        
+        if (textField.tag == 3) {
+            self.signUpButtonPressed(sender: UIButton())
+        }
+        
+        let nextTage = textField.tag + 1
+        let nextResponder=textField.superview?.viewWithTag(nextTage) as UIResponder!
+        
+        if (nextResponder != nil){
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
@@ -85,6 +103,5 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.configureTextFields()
     }
- 
 
 }

@@ -52,7 +52,12 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     // MARK : Actions
     
     @IBAction func signUpButtonPressed(sender : UIButton) {
-        
+        DMAPIService.sharedInstance.signUpWith(login: self.loginTextField.text!,
+                                               email: self.emailTextField.text!,
+                                               password: self.passwordTextField.text!,
+                                               confirm: self.confirmPasswordTextField.text!) { (success) in
+                                                
+        }
     }
     
     @IBAction func backToLoginButtonPressed(sender : UIButton) {

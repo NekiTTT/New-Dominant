@@ -10,18 +10,18 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Museo Cyrl 300.otf">
-            <string>MuseoCyrl-300</string>
-        </array>
         <array key="MuseoCyrl100.otf">
             <string>MuseoCyrl-100</string>
+        </array>
+        <array key="MuseoCyrl300.otf">
+            <string>MuseoCyrl-300</string>
         </array>
     </customFonts>
     <scenes>
         <!--Sign Up View Controller-->
         <scene sceneID="fsA-MV-cSR">
             <objects>
-                <viewController storyboardIdentifier="DMLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RCZ-dQ-T9G" customClass="DMSignUpViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMSignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RCZ-dQ-T9G" customClass="DMSignUpViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iLl-xs-6ND"/>
                         <viewControllerLayoutGuide type="bottom" id="smd-mV-W7X"/>
@@ -291,7 +291,7 @@
         <!--Login View Controller-->
         <scene sceneID="loR-ZS-cHB">
             <objects>
-                <viewController storyboardIdentifier="DMSignUpViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WYA-Wt-9PR" customClass="DMLoginViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMLoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WYA-Wt-9PR" customClass="DMLoginViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Wfx-QG-e0c"/>
                         <viewControllerLayoutGuide type="bottom" id="Dzd-7A-GQE"/>
