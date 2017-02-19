@@ -31,6 +31,8 @@
 		45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A107AD1E59D3E600591170 /* DMRatingModel.swift */; };
 		45A107B51E59DCF300591170 /* DMSignalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A107B31E59DCF300591170 /* DMSignalCell.swift */; };
 		45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A107B41E59DCF300591170 /* DMSignalCell.xib */; };
+		45A107B91E59DF9B00591170 /* DMCompanyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A107B71E59DF9B00591170 /* DMCompanyCollectionCell.swift */; };
+		45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A107B81E59DF9B00591170 /* DMCompanyCollectionCell.xib */; };
 		45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */; };
 		45B4E7371E58ED5C00D56BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7361E58ED5C00D56BDE /* Assets.xcassets */; };
 		45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */; };
@@ -100,6 +102,8 @@
 		45A107AD1E59D3E600591170 /* DMRatingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRatingModel.swift; sourceTree = "<group>"; };
 		45A107B31E59DCF300591170 /* DMSignalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalCell.swift; sourceTree = "<group>"; };
 		45A107B41E59DCF300591170 /* DMSignalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMSignalCell.xib; sourceTree = "<group>"; };
+		45A107B71E59DF9B00591170 /* DMCompanyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyCollectionCell.swift; sourceTree = "<group>"; };
+		45A107B81E59DF9B00591170 /* DMCompanyCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMCompanyCollectionCell.xib; sourceTree = "<group>"; };
 		45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dominant Investors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B4E7361E58ED5C00D56BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 		45A107B11E59D52C00591170 /* DMCompanyCollectionCell */ = {
 			isa = PBXGroup;
 			children = (
+				45A107B71E59DF9B00591170 /* DMCompanyCollectionCell.swift */,
+				45A107B81E59DF9B00591170 /* DMCompanyCollectionCell.xib */,
 			);
 			name = DMCompanyCollectionCell;
 			sourceTree = "<group>";
@@ -504,6 +510,7 @@
 				45A107A81E59CFED00591170 /* MuseoCyrl700.otf in Resources */,
 				45A107A91E59CFED00591170 /* MuseoCyrl900.otf in Resources */,
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
+				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
 				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
 				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
@@ -546,6 +553,7 @@
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
 				4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */,
+				45A107B91E59DF9B00591170 /* DMCompanyCollectionCell.swift in Sources */,
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
 				45B4E74A1E58EE9E00D56BDE /* DMAPIService.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,

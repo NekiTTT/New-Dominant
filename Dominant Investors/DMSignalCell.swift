@@ -1,10 +1,11 @@
 //
 //  DMSignalCell.swift
-//  Dominant
+//  Dominant Investors
 //
-//  Created by Nekit on 19.02.17.
+//  Created by Nekit on 18.02.17.
 //  Copyright © 2017 Dominant. All rights reserved.
 //
+
 
 import UIKit
 
@@ -19,7 +20,7 @@ class DMSignalCell: UITableViewCell {
         super.awakeFromNib()
     }
 
-    open func configureWith(model : DMInvestmentSignalModel) {
+    open func setupWith(model : DMInvestmentSignalModel) {
         
     }
     

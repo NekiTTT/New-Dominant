@@ -23,6 +23,7 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
                 self.tableView.reloadData()
             }
         }
+    }
     
     // MARK : Private
     
