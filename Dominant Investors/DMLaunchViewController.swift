@@ -30,12 +30,12 @@ class DMLaunchViewController: DMViewController {
     
     private func launchApp() {
         if (!DMAuthorizationManager.sharedInstance.isAuthorized()) {
-        let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+            let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
             self.present(auth!, animated: false, completion: nil)
         } else {
             let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
             self.present(tabBar!, animated: false, completion: nil)
         }
     }
-
+    
 }

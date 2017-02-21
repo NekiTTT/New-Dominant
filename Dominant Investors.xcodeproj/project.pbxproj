@@ -13,6 +13,9 @@
 		452A44001E5A5C5E0058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		452A44011E5A5C720058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		452A44021E5A5C720058D11C /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
+		453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
+		453CA0BB1E5C7B3F004A6A5C /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76E1E59B35E004C85F4 /* Constants.swift */; };
 		45A1078F1E59C24100591170 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A1078E1E59C24100591170 /* FXBlurView.m */; };
@@ -94,6 +97,7 @@
 				45A107991E59C3AC00591170 /* FBSDKShareKit.framework in Embed Frameworks */,
 				45A107931E59C3AC00591170 /* Crashlytics.framework in Embed Frameworks */,
 				45A107951E59C3AC00591170 /* Bolts.framework in Embed Frameworks */,
+				453CA0BB1E5C7B3F004A6A5C /* MBProgressHUD.framework in Embed Frameworks */,
 				45A107971E59C3AC00591170 /* FBSDKLoginKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -106,6 +110,7 @@
 		452A43F91E5A4DCD0058D11C /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerDelegate.swift; sourceTree = "<group>"; };
 		452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMFileManager.swift; sourceTree = "<group>"; };
 		4592F76E1E59B35E004C85F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dominant Investors-Bridging-Header.h"; path = "Dominant Investors/Dominant Investors-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -178,8 +183,10 @@
 				45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */,
 				45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */,
 				45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */,
+				453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */,
 				45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */,
+				453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */,
 				45A1079C1E59C3AC00591170 /* Alamofire.framework in Frameworks */,
 				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
@@ -376,6 +383,7 @@
 		45B4E7471E58EE2B00D56BDE /* Framewroks */ = {
 			isa = PBXGroup;
 			children = (
+				453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */,
 				452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */,
 				45B7A0321E591629000CB062 /* Crashlytics.framework */,
 				45B4E78D1E59126A00D56BDE /* Bolts.framework */,

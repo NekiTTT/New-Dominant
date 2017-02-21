@@ -12,7 +12,7 @@ import Alamofire
 class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
 
     var company   : DMCompanyModel!
-    var chartView : ChartView!
+    var chartView : ChartView? = nil
     var chart     : SwiftStockChart!
     
     // MARK: Outlets
@@ -21,28 +21,31 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     @IBOutlet weak var companyNameLabel : UILabel!
     @IBOutlet weak var getSignalsButton : UIButton!
     @IBOutlet weak var companyLogo      : UIImageView!
-    @IBOutlet weak var chartContainer   : UIView!
+    @IBOutlet weak var chartContainer   : UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         loadChart()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         setupUI()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
+            
     // MARK : Private
     
     private func setupUI() {
         self.infoLabel.text        = self.company!.companyDescription
         self.companyLogo.image     = UIImage()
         self.companyNameLabel.text = self.company.name
+
+        fillCompanyData()
+    }
+    
+    private func fillCompanyData() {
+        
+        DMAPIService.sharedInstance.downloadCompanyLogoWith(ID: company.id) { (image) in
+            DispatchQueue.main.async {
+                self.companyLogo.image = image
+            }
+        }
         
         var annualSales_String = "Sector "
         annualSales_String = annualSales_String.appending(company.annualSales)
@@ -87,32 +90,28 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     }
     
     
-    
     private func loadChart() {
-  
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        
+
         chartView = ChartView.create()
-        chartView.delegate = self
-        chartView.frame = CGRect(x: 10, y: 0, width : self.view.frame.size.width-20, height : self.chartContainer.frame.size.height)
-        chartContainer.addSubview(chartView)
+        chartView?.delegate = self
+        chartView?.frame = CGRect(x: 10, y: 0, width : self.view.frame.size.width-20, height : (self.chartContainer?.frame.size.height)!)
+        chartContainer?.addSubview(chartView!)
         
         chart = SwiftStockChart(frame: CGRect(x :5,
-                                              y:  self.chartContainer.frame.size.height * 0.1,
+                                              y:  (self.chartContainer?.frame.size.height)! * 0.1,
                                               width: self.view.frame.size.width - 10,
-                                              height :self.chartContainer.frame.size.height * 0.8 - (chartView.btnIndicatorView.frame.size.height + 5)))
+                                              height :(self.chartContainer?.frame.size.height)! * 0.8 - ((chartView?.btnIndicatorView.frame.size.height)! + 5)))
         
-        chartView.backgroundColor = UIColor.clear
+        chartView?.backgroundColor = UIColor.clear
         
         chart.axisColor = UIColor.red
         chart.verticalGridStep = 5
         chart.horizontalGridStep = 5
         
-        chartView.addSubview(chart)
-        chartView.backgroundColor = UIColor.black
+        chartView?.addSubview(chart)
+        chartView?.backgroundColor = UIColor.black
         loadChartWithRange(range: .OneDay)
-        self.navigationController!.navigationBar.barStyle = .blackTranslucent
+    
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
 
@@ -148,8 +147,11 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     // MARK : Actions
     
     @IBAction func showSignals(sender : UIButton) {
-        let signals = UIStoryboard(name: "Signals", bundle: nil).instantiateInitialViewController()
-        self.present(signals!, animated: false, completion: nil)
+        self.performSegue(withIdentifier: "DMSignalsSegue", sender: self)
+    }
+    
+    @IBAction func backButtonAction(sender : UIButton) {
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
 }

@@ -9,14 +9,19 @@
 import UIKit
 
 protocol ChartViewDelegate {
-
     func didChangeTimeRange(range: ChartTimeRange)
 }
 
 class ChartView: UIView {
     
-    @IBOutlet weak var btnIndicatorView: UIView!
+    @IBOutlet weak var btnIndicatorView : UIView!
+    @IBOutlet weak var stackView        : UIStackView!
     var delegate: ChartViewDelegate!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.btnIndicatorView.backgroundColor = UIColor.clear
+    }
     
     class func create() -> ChartView {
         let chartView = UINib(nibName: "ChartView", bundle:nil).instantiate(withOwner: nil, options: nil)[0] as! ChartView
@@ -29,7 +34,7 @@ class ChartView: UIView {
         
         let btn = sender as! UIButton
        
-        btnIndicatorView.center = btn.center
+        btnIndicatorView.frame = btn.frame
 
         var range: ChartTimeRange = .OneDay
         
@@ -51,14 +56,15 @@ class ChartView: UIView {
         default:
             range = .OneDay
         }
+        
         delegate.didChangeTimeRange(range: range)
         
-        for view in subviews {
+        for view in self.stackView.subviews {
             
             if view is UIButton {
                 let subBtn = view as! UIButton
                 if btn.tag == subBtn.tag {
-                    subBtn.setTitleColor(UIColor(red: (127/255), green: (50/255), blue: (198/255), alpha: 1), for: .normal)
+                    subBtn.setTitleColor(UIColor.red, for: .normal)
                     subBtn.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 14)
                 } else {
                     subBtn.setTitleColor(UIColor.white, for: .normal)

@@ -7,17 +7,23 @@
 //
 
 import Foundation
+import Quickblox
 
 class DMRatingModel: NSObject {
 
     var id               : String!
-    var userID           : Int!
+    var userID           : String!
     var userName         : String!
     var invesmentStocks  = [DMPersonalPortfolioModel]()
     var totalValue       = 0.0
+    var position : Int   = 1
     
-    init(response : Any) {
+    init(response : QBCOCustomObject) {
         super.init()
+        self.id = response.id
+        self.userName   = response.fields["userName"] as! String
+        self.totalValue = response.fields["portfolioTotalValue"] as! Double
+        self.userID     = response.fields["userID"] as! String
         
     }
     

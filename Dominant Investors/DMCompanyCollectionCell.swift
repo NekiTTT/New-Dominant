@@ -23,17 +23,28 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     }
     
     open func setupWith(model : DMCompanyModel) {
-        if (model.companyPictureURL == nil) {
+        
+        if (model.companyPictureURL != nil) {
+            self.companyImage.image = model.companyPictureURL
+            self.activity.stopAnimating()
+            return
+        }
+        
+        let image = DMFileManager.sharedInstance.getImageFromDocuments(filename: model.id)
+        if (image != nil) {
+            model.companyPictureURL = image
+            self.companyImage.image = image
+            self.activity.stopAnimating()
+        } else {
+            
             DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image) in
                 DispatchQueue.main.async {
                     model.companyPictureURL = image
                     self.companyImage.image = image
+                    DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
                     self.activity.stopAnimating()
                 }
             }
-        } else {
-            self.companyImage.image = model.companyPictureURL
-            self.activity.stopAnimating()
         }
     }
 

@@ -9,7 +9,8 @@
 import UIKit
 
 struct Values {
-    static let DMTabsCount : Int = 3
+    static let DMTabsCount     : Int = 3
+    static let DMDefaultScreen : Int = 0
 }
 
 struct Fonts {

@@ -13,6 +13,7 @@ class DMTabBarViewController: DMViewController {
     var viewControllers : [UIViewController]!
     var buttons         = [UIButton]()
     var containers      = [UIView]()
+    var loaded          = false
 
     let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas")]
     let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active")]
@@ -24,27 +25,31 @@ class DMTabBarViewController: DMViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        setupChildControllers()
-        setupTabButtons()
+        if (!loaded) {
+            setupChildControllers()
+            setupTabButtons()
+            showDefaultPage()
+            loaded = true
+        }
     }
     
     // MARK : Private
     
     private func setupTabButtons() {
-
         for index in 0...self.viewControllers.count - 1 {
             let newButton = UIButton()
             newButton.setImage(tabIcons[index], for: .normal)
             newButton.imageView?.contentMode = .scaleAspectFill
             newButton.tag = index
             newButton.addTarget(self, action: #selector(showTab(_:)), for: .touchUpInside)
+            buttons.append(newButton)
             stackView.addArrangedSubview(newButton)
         }
-
     }
     
     private func setupChildControllers() {
@@ -91,11 +96,16 @@ class DMTabBarViewController: DMViewController {
     private func showTab(index : Int) {
         self.view.bringSubview(toFront: containers[index])
     }
+    
+    private func showDefaultPage() {
+        self.showTab(index: Values.DMDefaultScreen)
+    }
 
     // MARK : Actions
     
     @objc private func showTab(_ sender : UIButton) {
         showTab(index: sender.tag)
+        for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
         sender.setImage(activeIcons[sender.tag], for: .normal)
     }
     

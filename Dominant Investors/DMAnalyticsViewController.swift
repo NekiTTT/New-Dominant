@@ -12,28 +12,13 @@ class DMAnalyticsViewController: UICollectionViewController {
 
     var companies = [DMCompanyModel]()
     
-    var counter : Int = 0 {
-        didSet {
-            if (self.counter == self.companies.count) {
-                self.collectionView?.reloadData()
-            }
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
             DispatchQueue.main.async {
                 self.companies = companies
-                for company in self.companies {
-                    DMAPIService.sharedInstance.downloadCompanyImageWith(ID: company.id) { (image) in
-                        DispatchQueue.main.async {
-                            company.companyPictureURL = image
-                            self.counter += 1
-                        }
-                    }
-                }
+                self.collectionView?.reloadData()
             }
         }
     }

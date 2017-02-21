@@ -43,7 +43,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "userPortfolioTotal", successBlock: { (response, objects) in
             var ratings = [DMRatingModel]()
             for object in objects! {
-                ratings.append(DMRatingModel.init(response: object))
+                ratings.append(DMRatingModel.init(response: object as! QBCOCustomObject))
             }
             completion(ratings)
         }) { (error) in
@@ -100,8 +100,10 @@ class DMQuickBloxService: NSObject {
     
     open func loginWith(login : String, password : String, competion : @escaping (Bool, String?) -> Void) {
         QBRequest.logIn(withUserLogin: login, password: password, successBlock: { (response, user) in
-            DMAuthorizationManager.sharedInstance.userProfile = DMUserProfileModel.init(QBUser: user!)
-            UserDefaults().set(DMAuthorizationManager.sharedInstance.userProfile, forKey: "Authorized")
+            let userModel = DMUserProfileModel.init(QBUser: user!)
+            DMAuthorizationManager.sharedInstance.userProfile = userModel
+            let data  = NSKeyedArchiver.archivedData(withRootObject: userModel)
+            UserDefaults.standard.set(data, forKey : "Authorized")
             competion(true, nil)
         }) { (error) in
             competion(false, error.error.debugDescription)
@@ -131,7 +133,19 @@ class DMQuickBloxService: NSObject {
         }, statusBlock: { (request, status) in
             
         }) { (errorResponse) in
+            print(errorResponse.error.debugDescription)
+        }
+    }
+    
+    open func downloadCompanyLogoWith(ID : String, completion : @escaping (UIImage) -> Void) {
+        QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyLogoImage", successBlock: { (response, imageData) in
+            guard let data   = imageData else { return }
+            guard UIImage(data : data) != nil else { return }
+            completion(UIImage(data : data)!)
+        }, statusBlock: { (request, status) in
             
+        }) { (errorResponse) in
+            print(errorResponse.error.debugDescription)
         }
     }
     

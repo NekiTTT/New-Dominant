@@ -30,4 +30,8 @@ class DMAPIService: NSObject {
     DMQuickBloxService.sharedInstance.downloadCompanyImageWith(ID : ID, completion : completion)
     }
     
+    open func downloadCompanyLogoWith(ID : String, completion : @escaping (UIImage) -> Void) {
+        DMQuickBloxService.sharedInstance.downloadCompanyLogoWith(ID : ID, completion : completion)
+    }
+    
 }

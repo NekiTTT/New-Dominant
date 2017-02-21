@@ -14,13 +14,24 @@ class DMAuthorizationManager: NSObject {
     
     var userProfile : DMUserProfileModel!
     
+    override init() {
+        super.init()
+        if (self.isAuthorized()) {
+            if let data = UserDefaults.standard.object(forKey: "Authorized") as? NSData {
+                self.userProfile = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! DMUserProfileModel
+            }
+        }
+    }
+    
     open func isAuthorized() -> Bool {
         
-        if (UserDefaults.standard.value(forKey: "Authorized") == nil) {
-            return false
+        if (UserDefaults.standard.value(forKey: "Authorized") != nil) {
+            if (UserDefaults.standard.value(forKey: "Authorized") is NSData) {
+                return true
+            }
         }
-    
-        return true
+        
+        return false
     }
     
     open func loginWith(login : String, password : String, completion : @escaping (Bool, String?) -> Void) {
