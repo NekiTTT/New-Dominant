@@ -20,7 +20,7 @@
         <scene sceneID="2Cd-oj-V5I">
             <objects>
                 <collectionViewController storyboardIdentifier="DMAnalyticsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vN0-e5-H65" customClass="DMAnalyticsViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tQ5-zO-9Mm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="tQ5-zO-9Mm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6hp-3y-VeD">
@@ -67,7 +67,7 @@
         <scene sceneID="E45-uy-IpO">
             <objects>
                 <navigationController id="VwB-wc-rbZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kkd-oS-eYJ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Kkd-oS-eYJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -173,7 +173,7 @@
                                                     <constraint firstAttribute="height" constant="300" id="v6k-kI-hzh"/>
                                                 </constraints>
                                                 <string key="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
@@ -235,6 +235,9 @@ IPO Date 08-14-1010</string>
                                                         <exclude reference="prU-0Y-rAN"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="showSignalsWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="4qt-5Y-aYL"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-dq-ljj">
                                                 <rect key="frame" x="24" y="328" width="272" height="0.0"/>

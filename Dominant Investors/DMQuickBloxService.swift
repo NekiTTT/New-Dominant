@@ -55,7 +55,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "Company", successBlock: { (response, objects) in
             var companies = [DMCompanyModel]()
             for object in objects! {
-                companies.append(DMCompanyModel.init(response: object))
+                companies.append(DMCompanyModel.init(response: object as! QBCOCustomObject))
             }
             completion(companies)
         }) { (error) in
@@ -123,7 +123,20 @@ class DMQuickBloxService: NSObject {
         })
     }
     
-    open func updateUserRating() {
+    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage) -> Void) {
+        QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
+            guard let data   = imageData else { return }
+            guard UIImage(data : data) != nil else { return }
+            completion(UIImage(data : data)!)
+        }, statusBlock: { (request, status) in
+            
+        }) { (errorResponse) in
+            
+        }
+    }
+    
+    
+    open func updateUser(rating : DMRatingModel) {
         
     }
 }

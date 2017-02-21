@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMPersonalPortfolioService: NSObject {
+class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate {
 
     static let sharedInstance = DMPersonalPortfolioService()
     
@@ -25,7 +25,30 @@ class DMPersonalPortfolioService: NSObject {
     }
     
     open func updateUserRating() {
-        DMQuickBloxService.sharedInstance.updateUserRating()
+        DMAPIService.sharedInstance.getUserRatings { (ratings) in
+            for rate in ratings {
+                if (rate.id == DMAuthorizationManager.sharedInstance.userProfile.userID) {
+                    
+                    break
+                } else {
+                    // TODO : Create user portfoioTotal.
+                }
+            }
+        }
+    }
+    
+    // MARK : UITableViewDataSource
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 
 }

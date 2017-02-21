@@ -15,7 +15,12 @@ class DMAuthorizationManager: NSObject {
     var userProfile : DMUserProfileModel!
     
     open func isAuthorized() -> Bool {
-        return false
+        
+        if (UserDefaults.standard.value(forKey: "Authorized") == nil) {
+            return false
+        }
+    
+        return true
     }
     
     open func loginWith(login : String, password : String, completion : @escaping (Bool, String?) -> Void) {

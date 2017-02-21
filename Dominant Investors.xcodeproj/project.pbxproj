@@ -13,6 +13,7 @@
 		452A44001E5A5C5E0058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		452A44011E5A5C720058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		452A44021E5A5C720058D11C /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76E1E59B35E004C85F4 /* Constants.swift */; };
 		45A1078F1E59C24100591170 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A1078E1E59C24100591170 /* FXBlurView.m */; };
 		45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0321E591629000CB062 /* Crashlytics.framework */; };
@@ -105,6 +106,7 @@
 		452A43F91E5A4DCD0058D11C /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerDelegate.swift; sourceTree = "<group>"; };
 		452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
+		454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMFileManager.swift; sourceTree = "<group>"; };
 		4592F76E1E59B35E004C85F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dominant Investors-Bridging-Header.h"; path = "Dominant Investors/Dominant Investors-Bridging-Header.h"; sourceTree = "<group>"; };
 		45A1078D1E59C24100591170 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -337,6 +339,7 @@
 				45A107AD1E59D3E600591170 /* DMRatingModel.swift */,
 				45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */,
 				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
+				454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -590,6 +593,7 @@
 				4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */,
 				45A107B91E59DF9B00591170 /* DMCompanyCollectionCell.swift in Sources */,
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
+				454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */,
 				45B4E74A1E58EE9E00D56BDE /* DMAPIService.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,
 				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,

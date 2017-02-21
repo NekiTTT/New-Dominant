@@ -269,11 +269,11 @@ class SwiftStockKit {
 
         let chartURL = SwiftStockKit.chartUrlForRange(symbol: symbol, range: range)
         
-        Alamofire.request(chartURL, method: .get, parameters: nil, headers : nil).responseJSON { (response) in
+        Alamofire.request(chartURL, method: .get, parameters: nil, headers : nil).responseData { (response) in
             
             if let data = response.result.value {
                 
-                var jsonString =  NSString(data: data as! Data, encoding: String.Encoding.utf8.rawValue)!
+                var jsonString =  NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
                 
                 jsonString = jsonString.substring(from: 30) as NSString
                 jsonString = jsonString.substring(to: jsonString.length-1) as NSString
@@ -503,9 +503,7 @@ class SwiftStockChart: UIView {
             let p = CGPoint(x: (valueLabelPosition! == .Right ? axisWidth! : 0), y: yVal)
             
             let text = labelForValue(minValue! + (maxValue! - minValue!) / CGFloat(verticalGridStep!) * CGFloat((i + 1)))
-                
-    //labelForValue(value: minValue! + (maxValue! - minValue!) / CGFloat(verticalGridStep!) * CGFloat((i + 1)))
-            
+                            
             let rect = CGRect(x : margin!,  y: p.y + 2, width: self.frame.size.width - margin! * 2 - 4.0, height: 14.0)
             let width = text.boundingRect(with: rect.size,
                 options: NSStringDrawingOptions.usesLineFragmentOrigin,

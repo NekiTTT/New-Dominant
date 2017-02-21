@@ -18,6 +18,15 @@ class DMTabBarViewController: DMViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         setupChildControllers()
     }
     
@@ -25,10 +34,10 @@ class DMTabBarViewController: DMViewController {
     
     private func setupChildControllers() {
         let analytics = UIStoryboard(name: "Analytics", bundle: nil).instantiateInitialViewController()!
-        let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
-        let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!
+        //let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
+        //let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!
         
-        self.viewControllers = [analytics,portfolio,ratings]
+        self.viewControllers = [analytics]
         setupContainers()
     }
     
@@ -51,13 +60,15 @@ class DMTabBarViewController: DMViewController {
             controller.view.trailingAnchor.constraint(equalTo: container.trailingAnchor),
             controller.view.topAnchor.constraint(equalTo: container.topAnchor),
             controller.view.bottomAnchor.constraint(equalTo: container.bottomAnchor)
-            ])
+        ])
         
         controller.didMove(toParentViewController: self)
     }
     
     private func createContainer(index : Int) {
         let container = UIView(frame: self.tabContainer.frame)
+        self.view.addSubview(container)
+        self.view.bringSubview(toFront: container)
         containers.append(container)
     }
     

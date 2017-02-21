@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Quickblox
 
 class DMCompanyModel: NSObject {
 
@@ -14,8 +15,8 @@ class DMCompanyModel: NSObject {
     var id                          : String!
     var ticker                      : String!
     var name                        : String!
-    var companyPictureFileLocalPath : String!
-    var companyPictureURL           : String!
+    var companylogo                 : UIImage!
+    var companyPictureURL           : UIImage!
     var IPODate                     : String!
     
     var marketCapitalization        : String!
@@ -25,8 +26,19 @@ class DMCompanyModel: NSObject {
     var forecast                    : String!
     var potentialProfitability      : String!
     
-    init(response : Any) {
+    init(response : QBCOCustomObject) {
         super.init()
+        self.id = response.id
+        let fields = response.fields!
         
+        self.ticker                 = fields["companySymbol"] as! String
+        self.name                   = fields["companyName"] as! String
+        self.IPODate                = fields["IPODate"] as! String
+        self.marketCapitalization   = fields["marketCapitalization"] as! String
+        self.companyDescription     = fields["description"]  as! String
+        self.annualSales            = fields["annualSales"]  as! String
+        self.averageSales           = fields["averageSales"] as! String
+
+        self.potentialProfitability = fields["potantialProfitability"] as! String
     }
 }

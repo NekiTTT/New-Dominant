@@ -26,4 +26,8 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.getInvestmentSignals(completion: completion)
     }
     
+    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage) -> Void) {
+    DMQuickBloxService.sharedInstance.downloadCompanyImageWith(ID : ID, completion : completion)
+    }
+    
 }

@@ -17,20 +17,29 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var activity : UIActivityIndicatorView!
     
     override func awakeFromNib() {
+        activity.hidesWhenStopped = true
         activity.startAnimating()
         super.awakeFromNib()
     }
     
     open func setupWith(model : DMCompanyModel) {
-        
+        if (model.companyPictureURL == nil) {
+            DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image) in
+                DispatchQueue.main.async {
+                    model.companyPictureURL = image
+                    self.companyImage.image = image
+                    self.activity.stopAnimating()
+                }
+            }
+        } else {
+            self.companyImage.image = model.companyPictureURL
+            self.activity.stopAnimating()
+        }
     }
 
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.activity.startAnimating()
-        self.activity.isHidden = false
-        self.companyImage.image = nil
     }
 }
 

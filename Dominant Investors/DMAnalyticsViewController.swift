@@ -10,24 +10,57 @@ import UIKit
 
 class DMAnalyticsViewController: UICollectionViewController {
 
-    var companies : [DMCompanyModel]!
+    var companies = [DMCompanyModel]()
+    
+    var counter : Int = 0 {
+        didSet {
+            if (self.counter == self.companies.count) {
+                self.collectionView?.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
+            DispatchQueue.main.async {
+                self.companies = companies
+                for company in self.companies {
+                    DMAPIService.sharedInstance.downloadCompanyImageWith(ID: company.id) { (image) in
+                        DispatchQueue.main.async {
+                            company.companyPictureURL = image
+                            self.counter += 1
+                        }
+                    }
+                }
+            }
+        }
     }
     
     // MARK : Private
     
     private func setupUI() {
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/2, height: screenWidth/2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
+        self.collectionView?.setCollectionViewLayout(layout, animated: true)
+        
         let cellNib = UINib.init(nibName: "DMCompanyCollectionCell", bundle: Bundle.main)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier:"DMCompanyCollectionCell")
     }
     
     private func showCompanyDetail(company : DMCompanyModel) {
-        let companyDetail = UIStoryboard(name: "Authorization", bundle: nil).instantiateViewController(withIdentifier: "DMCompanyDetailViewController") as! DMCompanyDetailViewController
+        let companyDetail = UIStoryboard(name: "Analytics", bundle: nil).instantiateViewController(withIdentifier: "DMCompanyDetailViewController") as! DMCompanyDetailViewController
         companyDetail.company = company
-        self.present(companyDetail, animated: false, completion: nil)
+        self.navigationController?.pushViewController(companyDetail, animated: true)
     }
     
     // MARK : UICollectionViewDelegate
@@ -47,9 +80,11 @@ class DMAnalyticsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DMCompanyCollectionCell", for: indexPath) as! DMCompanyCollectionCell
+        let company = self.companies[indexPath.row]
         
-        cell.setupWith(model: companies[indexPath.row])
+        cell.setupWith(model: company)
         
         return cell
     }
