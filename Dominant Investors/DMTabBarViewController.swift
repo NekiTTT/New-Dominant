@@ -11,38 +11,54 @@ import UIKit
 class DMTabBarViewController: DMViewController {
 
     var viewControllers : [UIViewController]!
+    var buttons         = [UIButton]()
     var containers      = [UIView]()
+
+    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas")]
+    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active")]
     
     // MARK: Outlets
     @IBOutlet weak var tabContainer : UIView!
+    @IBOutlet weak var stackView  : UIStackView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupChildControllers()
+        setupTabButtons()
     }
     
     // MARK : Private
     
+    private func setupTabButtons() {
+
+        for index in 0...self.viewControllers.count - 1 {
+            let newButton = UIButton()
+            newButton.setImage(tabIcons[index], for: .normal)
+            newButton.imageView?.contentMode = .scaleAspectFill
+            newButton.tag = index
+            newButton.addTarget(self, action: #selector(showTab(_:)), for: .touchUpInside)
+            stackView.addArrangedSubview(newButton)
+        }
+
+    }
+    
     private func setupChildControllers() {
-        let analytics = UIStoryboard(name: "Analytics", bundle: nil).instantiateInitialViewController()!
-        //let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
-        //let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!
         
-        self.viewControllers = [analytics]
+        let analytics = UIStoryboard(name: "Analytics", bundle: nil).instantiateInitialViewController()!
+        let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
+        let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!
+        
+        self.viewControllers = [analytics,portfolio,ratings]
         setupContainers()
     }
     
     private func setupContainers() {
-        for index in 0...self.viewControllers.count - 1 {
+        for index in 0...2 {
             createContainer(index: index)
             addTab(tabIndex: index, controller: self.viewControllers[index])
         }
@@ -78,8 +94,9 @@ class DMTabBarViewController: DMViewController {
 
     // MARK : Actions
     
-    @IBAction func showTab(sender : UIButton) {
+    @objc private func showTab(_ sender : UIButton) {
         showTab(index: sender.tag)
+        sender.setImage(activeIcons[sender.tag], for: .normal)
     }
     
 }

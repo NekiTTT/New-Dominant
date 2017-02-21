@@ -47,6 +47,8 @@ class DMPortfolioViewController: DMViewController {
     @IBOutlet  weak var fourthLabel : UILabel!
     
     @IBOutlet  weak var dropShadowView : UIView!
+    
+    @IBOutlet  weak var tableView : UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

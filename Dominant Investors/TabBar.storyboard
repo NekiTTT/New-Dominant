@@ -24,46 +24,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntn-nL-frd">
                                 <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0X-up-3He">
-                                        <rect key="frame" x="125" y="0.0" width="125" height="66.5"/>
-                                        <state key="normal" image="folio"/>
-                                        <connections>
-                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="hC2-0T-m5G"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riu-Em-95C">
-                                        <rect key="frame" x="0.0" y="0.0" width="125" height="66.5"/>
-                                        <state key="normal" image="analytic"/>
-                                        <connections>
-                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="ddW-xl-p1a"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqA-jd-Wfm">
-                                        <rect key="frame" x="250" y="0.0" width="125" height="66.5"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <state key="normal" image="ideas"/>
-                                        <connections>
-                                            <action selector="showTabWithSender:" destination="jPr-Kk-bnH" eventType="touchUpInside" id="0rV-uf-KBr"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hQM-DJ-To9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="C0X-up-3He" firstAttribute="leading" secondItem="Riu-Em-95C" secondAttribute="trailing" id="3ql-2P-a8t"/>
-                                    <constraint firstItem="gqA-jd-Wfm" firstAttribute="leading" secondItem="C0X-up-3He" secondAttribute="trailing" id="Brl-lr-yKA"/>
-                                    <constraint firstAttribute="bottom" secondItem="Riu-Em-95C" secondAttribute="bottom" id="Cvr-xW-0lF"/>
-                                    <constraint firstAttribute="bottom" secondItem="gqA-jd-Wfm" secondAttribute="bottom" id="Iei-26-xBZ"/>
-                                    <constraint firstItem="C0X-up-3He" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="top" id="KGa-hp-N2o"/>
-                                    <constraint firstItem="gqA-jd-Wfm" firstAttribute="width" secondItem="Riu-Em-95C" secondAttribute="width" id="Kor-0i-hbY"/>
-                                    <constraint firstItem="gqA-jd-Wfm" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="top" id="Nss-2a-8TV"/>
-                                    <constraint firstItem="Riu-Em-95C" firstAttribute="leading" secondItem="ntn-nL-frd" secondAttribute="leading" id="ONN-Q6-ClA"/>
-                                    <constraint firstAttribute="trailing" secondItem="gqA-jd-Wfm" secondAttribute="trailing" id="a6e-0W-iR1"/>
-                                    <constraint firstItem="C0X-up-3He" firstAttribute="width" secondItem="Riu-Em-95C" secondAttribute="width" id="csr-Gj-2xB"/>
-                                    <constraint firstItem="Riu-Em-95C" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="top" id="lYA-cu-BKQ"/>
-                                    <constraint firstItem="C0X-up-3He" firstAttribute="leading" secondItem="Riu-Em-95C" secondAttribute="trailing" id="lnj-ru-UGc"/>
+                                    <constraint firstAttribute="trailing" secondItem="hQM-DJ-To9" secondAttribute="trailing" id="2RO-NI-aNm"/>
+                                    <constraint firstItem="hQM-DJ-To9" firstAttribute="leading" secondItem="ntn-nL-frd" secondAttribute="leading" id="8Ot-U2-pgg"/>
+                                    <constraint firstAttribute="bottom" secondItem="hQM-DJ-To9" secondAttribute="bottom" id="8rm-Ln-Wvj"/>
+                                    <constraint firstItem="hQM-DJ-To9" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="top" id="BpD-5H-PfS"/>
                                     <constraint firstAttribute="height" constant="55" id="xeV-Ri-iIc"/>
-                                    <constraint firstItem="gqA-jd-Wfm" firstAttribute="leading" secondItem="C0X-up-3He" secondAttribute="trailing" id="yES-xi-POc"/>
-                                    <constraint firstAttribute="bottom" secondItem="C0X-up-3He" secondAttribute="bottom" id="yqh-Bs-qaT"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -88,17 +59,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="tabContainer" destination="MNC-rc-JAd" id="xz8-Mw-2Yb"/>
+                        <outlet property="stackView" destination="hQM-DJ-To9" id="LVZ-RO-1V8"/>
+                        <outlet property="tabContainer" destination="MNC-rc-JAd" id="g5J-Vv-jed"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp9-15-rpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-45"/>
+            <point key="canvasLocation" x="1152.8" y="-45.42728635682159"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="analytic" width="597" height="247"/>
-        <image name="folio" width="298" height="123"/>
-        <image name="ideas" width="298" height="123"/>
-    </resources>
 </document>
