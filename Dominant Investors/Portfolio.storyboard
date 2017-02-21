@@ -245,6 +245,9 @@
                                         <state key="normal" title="ADD">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addTickerActionWithSender:" destination="L3o-vy-kWj" eventType="touchUpInside" id="GYt-JG-eea"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="587-4I-rvv">
                                         <rect key="frame" x="251" y="10" width="120" height="30"/>
@@ -254,6 +257,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoSansCyrl-100" family="Museo Sans Cyrl" pointSize="13"/>
                                         <state key="normal" title="NEW PORTFOLIO"/>
+                                        <connections>
+                                            <action selector="createNewPortfolioWithSender:" destination="L3o-vy-kWj" eventType="touchUpInside" id="6jt-6a-0z6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.94340195289999995" green="0.94340195289999995" blue="0.94340195289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -463,6 +469,9 @@
                                             <segment title="Personal"/>
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="portfolioTypeChangedWithSender:" destination="L3o-vy-kWj" eventType="valueChanged" id="u7q-oS-7rV"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -496,11 +505,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-b0-iyx">
-                                <rect key="frame" x="-4" y="359" width="383" height="308"/>
-                            </containerView>
                             <containerView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kg7-TA-HhA">
-                                <rect key="frame" x="12" y="118" width="134" height="0.0"/>
+                                <rect key="frame" x="12" y="118" width="159" height="0.0"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="NL2-eJ-moZ"/>
@@ -548,6 +554,10 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="12"/>
                                         <state key="normal" title="GET SIGNALS"/>
+                                        <connections>
+                                            <action selector="getSignalsWithSender:" destination="L3o-vy-kWj" eventType="touchUpInside" id="Hps-uG-7lR"/>
+                                            <segue destination="5Pl-wE-ek9" kind="presentation" identifier="" modalPresentationStyle="fullScreen" id="AX3-Y4-9WD"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qgM-dv-xgD">
                                         <rect key="frame" x="0.0" y="97" width="375" height="4"/>
@@ -632,21 +642,17 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.94340195289999995" green="0.94340195289999995" blue="0.94340195289999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="dEt-b0-iyx" secondAttribute="trailing" constant="-20" id="0K6-x6-NYw"/>
                             <constraint firstItem="MiJ-xE-rEb" firstAttribute="top" secondItem="j2h-gQ-rnT" secondAttribute="bottom" constant="8" id="26j-rg-xed"/>
                             <constraint firstItem="hVU-JP-gWo" firstAttribute="top" secondItem="MiJ-xE-rEb" secondAttribute="bottom" id="2z8-SX-FcY"/>
                             <constraint firstAttribute="trailing" secondItem="hVU-JP-gWo" secondAttribute="trailing" id="4FH-ac-gGm"/>
                             <constraint firstItem="b9L-Fb-rjm" firstAttribute="top" secondItem="hVU-JP-gWo" secondAttribute="bottom" id="6xP-6b-t89"/>
                             <constraint firstAttribute="trailing" secondItem="OeO-NH-WHF" secondAttribute="trailing" id="7fe-wz-enT"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="dEt-b0-iyx" secondAttribute="leading" constant="20" id="91s-cn-7jH"/>
                             <constraint firstItem="b9L-Fb-rjm" firstAttribute="top" secondItem="Ttx-aw-UXl" secondAttribute="bottom" id="9m4-Mx-O0d"/>
                             <constraint firstItem="j2h-gQ-rnT" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leadingMargin" constant="-20" id="FEo-zP-jVf"/>
                             <constraint firstItem="Qbz-Gt-297" firstAttribute="centerX" secondItem="RPV-JA-Vkk" secondAttribute="centerX" id="JPy-ab-3dz"/>
-                            <constraint firstItem="b9L-Fb-rjm" firstAttribute="top" secondItem="dEt-b0-iyx" secondAttribute="bottom" id="ME1-LA-M3r"/>
                             <constraint firstItem="hVU-JP-gWo" firstAttribute="top" secondItem="kg7-TA-HhA" secondAttribute="bottom" constant="48" id="NUG-AZ-amy"/>
                             <constraint firstItem="KbS-wd-p0E" firstAttribute="top" secondItem="wJB-e4-F6q" secondAttribute="bottom" id="Npd-PH-jKW"/>
                             <constraint firstItem="kg7-TA-HhA" firstAttribute="leading" secondItem="Nxm-gS-fvm" secondAttribute="leading" id="QJC-Bd-BHb"/>
-                            <constraint firstItem="kg7-TA-HhA" firstAttribute="width" secondItem="dEt-b0-iyx" secondAttribute="width" multiplier="0.35" id="Rez-kw-HDp"/>
                             <constraint firstItem="j2h-gQ-rnT" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leadingMargin" id="RyH-bh-3eV"/>
                             <constraint firstItem="Ttx-aw-UXl" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leadingMargin" constant="-20" id="Ult-Er-j8k"/>
                             <constraint firstAttribute="trailing" secondItem="j2h-gQ-rnT" secondAttribute="trailing" id="ZHp-eA-k8k"/>
@@ -663,11 +669,11 @@
                             <constraint firstItem="kg7-TA-HhA" firstAttribute="height" relation="lessThanOrEqual" secondItem="kYg-kR-uga" secondAttribute="height" id="pJG-K4-OAK"/>
                             <constraint firstItem="MiJ-xE-rEb" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leading" id="pTH-iz-G69"/>
                             <constraint firstItem="j2h-gQ-rnT" firstAttribute="top" secondItem="kYg-kR-uga" secondAttribute="top" constant="32" id="qGN-iz-FhX"/>
+                            <constraint firstItem="dcR-HO-jzn" firstAttribute="leading" secondItem="kg7-TA-HhA" secondAttribute="trailing" constant="8" id="rgo-nI-vFA"/>
                             <constraint firstItem="OeO-NH-WHF" firstAttribute="top" secondItem="j2h-gQ-rnT" secondAttribute="bottom" id="rh1-Qt-6GN"/>
                             <constraint firstItem="j2h-gQ-rnT" firstAttribute="top" secondItem="wJB-e4-F6q" secondAttribute="bottom" id="sP7-dX-HmZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ttx-aw-UXl" secondAttribute="trailing" constant="-20" id="upO-Np-76p"/>
                             <constraint firstItem="j2h-gQ-rnT" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leading" id="xOa-bc-M6w"/>
-                            <constraint firstItem="dEt-b0-iyx" firstAttribute="top" secondItem="j2h-gQ-rnT" secondAttribute="bottom" id="xy7-UR-ffx"/>
                             <constraint firstItem="OeO-NH-WHF" firstAttribute="leading" secondItem="kYg-kR-uga" secondAttribute="leading" id="zdB-0C-olP"/>
                         </constraints>
                         <variation key="default">
@@ -689,50 +695,51 @@
                     </navigationItem>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="FisrstHeight" destination="bsC-2p-oYk" id="Tl2-Yr-9Fp"/>
-                        <outlet property="SecondHeight" destination="hbk-3p-hW8" id="WYc-ly-dVu"/>
-                        <outlet property="dateFieldContainer" destination="oVO-be-AEJ" id="Ppy-eJ-mNd"/>
-                        <outlet property="dateTextField" destination="P9J-bh-Xac" id="V0K-YS-dEF"/>
-                        <outlet property="dominantContainer" destination="Iub-a4-t51" id="IaX-u7-vF7"/>
-                        <outlet property="dominantImageContainer" destination="OeO-NH-WHF" id="7ul-Ln-zoN"/>
-                        <outlet property="dominantImageHeight" destination="bGl-B6-W7m" id="zY5-Qz-4MR"/>
+                        <outlet property="dominantButton" destination="Iub-a4-t51" id="337-uc-yWw"/>
+                        <outlet property="dominantImageContainer" destination="OeO-NH-WHF" id="grg-9t-lkD"/>
                         <outlet property="dropShadowView" destination="qgM-dv-xgD" id="AT0-p7-gRz"/>
                         <outlet property="firstContainer" destination="j2h-gQ-rnT" id="8FH-3Y-SS6"/>
-                        <outlet property="fisrtLabel" destination="Qir-va-KGP" id="y6x-H9-hwx"/>
-                        <outlet property="fourthLabel" destination="RPV-JA-Vkk" id="rMh-cW-3A5"/>
-                        <outlet property="personalContainer" destination="oVg-A3-eVz" id="taO-oG-ht3"/>
-                        <outlet property="priceFieldContainer" destination="pIU-zv-SaU" id="Adj-5H-7kk"/>
-                        <outlet property="priceTextField" destination="hhg-NI-9QE" id="FF4-1k-zop"/>
-                        <outlet property="ratingContainer" destination="dEt-b0-iyx" id="5fl-f7-lwo"/>
-                        <outlet property="searchBar" destination="Nxm-gS-fvm" id="7Vz-ki-nry"/>
+                        <outlet property="firstHeaderHeight" destination="hbk-3p-hW8" id="UaY-0H-h4G"/>
+                        <outlet property="fisrtColumnTitle" destination="Qir-va-KGP" id="s3v-Mm-H2C"/>
+                        <outlet property="fourthColumnTitle" destination="RPV-JA-Vkk" id="6dn-ig-ENJ"/>
+                        <outlet property="personalButton" destination="oVg-A3-eVz" id="Vrt-jv-0Au"/>
+                        <outlet property="portfolioTypeSwitcher" destination="Rx3-hy-cn3" id="Twz-jm-iBu"/>
                         <outlet property="searchBarContainer" destination="LF9-RU-gUG" id="PkQ-jX-4r0"/>
-                        <outlet property="searchDropdown" destination="kg7-TA-HhA" id="vBd-U2-BMN"/>
+                        <outlet property="searchDropdown" destination="kg7-TA-HhA" id="hAD-nH-cfW"/>
+                        <outlet property="secondColumnTitle" destination="rVo-j4-1Cy" id="05W-QO-CAr"/>
                         <outlet property="secondContainer" destination="MiJ-xE-rEb" id="nz0-08-seA"/>
-                        <outlet property="secondLabel" destination="rVo-j4-1Cy" id="v3b-Vh-ETY"/>
-                        <outlet property="segmentSelector" destination="Rx3-hy-cn3" id="JJB-9k-KgK"/>
+                        <outlet property="secondHeaderHeight" destination="bGl-B6-W7m" id="Tnw-48-ss8"/>
                         <outlet property="tableView" destination="hVU-JP-gWo" id="ucn-BW-cmQ"/>
-                        <outlet property="thirdLabel" destination="2aI-Ow-nbK" id="GLI-c8-CVV"/>
-                        <outlet property="tickerFieldContainer" destination="LF9-RU-gUG" id="9m8-Cs-BQs"/>
+                        <outlet property="thirdColumnTitle" destination="2aI-Ow-nbK" id="1eT-Df-Fet"/>
+                        <outlet property="tickerField" destination="Nxm-gS-fvm" id="kCD-kb-Rx3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMG-A6-iv6" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1856.8" y="668.81559220389806"/>
         </scene>
-        <!--Drop Down View Controller-->
+        <!--Signals-->
+        <scene sceneID="TTq-qq-nht">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Signals" id="5Pl-wE-ek9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qz0-p4-oW8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1872" y="163"/>
+        </scene>
+        <!--Dropdown View Controller-->
         <scene sceneID="eGG-X7-Y2W">
             <objects>
-                <viewController storyboardIdentifier="DMDropDownViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiQ-s4-vp9" customClass="DMDropDownViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DMDropDownViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TiQ-s4-vp9" customClass="DMDropdownViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fWW-5c-gQp"/>
                         <viewControllerLayoutGuide type="bottom" id="LGy-FW-fLZ"/>
                     </layoutGuides>
                     <view key="view" alpha="0.80000001192092896" contentMode="scaleToFill" id="iUr-gE-EAQ">
-                        <rect key="frame" x="0.0" y="0.0" width="134" height="0.0"/>
+                        <rect key="frame" x="0.0" y="0.0" width="159" height="0.0"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKN-ND-erI">
-                                <rect key="frame" x="0.0" y="0.0" width="134" height="0.0"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kKN-ND-erI">
+                                <rect key="frame" x="0.0" y="0.0" width="159" height="0.0"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <sections/>
@@ -746,6 +753,9 @@
                             <constraint firstItem="kKN-ND-erI" firstAttribute="leading" secondItem="iUr-gE-EAQ" secondAttribute="leading" id="t8m-aW-OBf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="kKN-ND-erI" id="ytl-G2-lgj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgD-HS-Qhy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

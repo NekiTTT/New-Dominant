@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */; };
+		45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */; };
+		45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */; };
 		452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43F81E5A4DCD0058D11C /* ChartView.swift */; };
 		452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452A43F91E5A4DCD0058D11C /* ChartView.xib */; };
 		452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */; };
@@ -106,6 +109,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMDropDownTableViewCell.xib; sourceTree = "<group>"; };
+		45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownListDelegate.swift; sourceTree = "<group>"; };
 		452A43F81E5A4DCD0058D11C /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		452A43F91E5A4DCD0058D11C /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerDelegate.swift; sourceTree = "<group>"; };
@@ -196,6 +202,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45121B7F1E5CB04C00D83C4E /* DMDropDownTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */,
+				45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */,
+			);
+			name = DMDropDownTableViewCell;
+			sourceTree = "<group>";
+		};
 		452A43F71E5A4DBB0058D11C /* DMChartView */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */,
+				45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */,
 			);
 			name = Protocols;
 			path = "Dominant Investors";
@@ -369,6 +385,7 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				45121B7F1E5CB04C00D83C4E /* DMDropDownTableViewCell */,
 				452A43F71E5A4DBB0058D11C /* DMChartView */,
 				45A107B21E59DC0800591170 /* DMSignalCell */,
 				45A107B11E59D52C00591170 /* DMCompanyCollectionCell */,
@@ -552,6 +569,7 @@
 				45A107A61E59CFED00591170 /* MuseoCyrl300.otf in Resources */,
 				45A107A71E59CFED00591170 /* MuseoCyrl500.otf in Resources */,
 				45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */,
+				45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */,
 				45A107A81E59CFED00591170 /* MuseoCyrl700.otf in Resources */,
 				45A107A91E59CFED00591170 /* MuseoCyrl900.otf in Resources */,
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
@@ -607,6 +625,7 @@
 				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,
 				45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */,
 				452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */,
+				45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */,
 				45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */,
 				45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */,
 				45A107B51E59DCF300591170 /* DMSignalCell.swift in Sources */,
@@ -614,6 +633,7 @@
 				45B4E7501E58EF4200D56BDE /* DMDominantPortfolioService.swift in Sources */,
 				45B4E7521E58EF5700D56BDE /* DMPersonalPortfolioService.swift in Sources */,
 				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
+				45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */,
 				45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */,
 				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
@@ -741,6 +761,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 45F26FVHGB;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -764,6 +785,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 45F26FVHGB;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
