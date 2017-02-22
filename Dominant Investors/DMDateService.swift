@@ -28,8 +28,18 @@ class DMDateService: NSObject {
         return self.dateFormatter.string(from: date)
     }
     
-    open func differenceBetweenDates(dateOne : Date, dayeTwo : Date) -> String {
-    
-    return ""
+    open func differenceBetweenDates(dateOne : Date, dateTwo : Date) -> String {
+        
+        let calendar = NSCalendar.current
+        let components = calendar.dateComponents([.day], from: dateOne, to: dateTwo)
+        
+        var answer = String(format: "(%d days)" ,components.day!)
+        
+        if (components.day! >= 30) {
+            let month = components.day! / 30
+            answer = String(format: "(%d month %d days)" ,month, components.day! % 30)
+        }
+        
+        return answer
     }
 }

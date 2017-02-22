@@ -8,11 +8,14 @@
 
 import UIKit
 
-class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate{
+class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate, DMStockCellDelegate {
 
     static let sharedInstance = DMDominantPortfolioService()
     
     var portfolios = [DMDominantPortfolioModel]()
+    var totalData = [String : Double]()
+    var portfolioTotal : Double = 0
+    var totalCell : DMPortfolioTotalCell?
     
     var tableView : UITableView?
     
@@ -49,11 +52,28 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         
         if (indexPath.row == portfolios.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DMPortfolioTotalCell") as! DMPortfolioTotalCell
+            self.totalCell = cell
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
+        cell.delegate = self
         cell.setupWithDominant(stock: portfolios[indexPath.row])
         return cell
+    }
+    
+    // MARK : DMStockCellDelegate
+    
+    func setToTotalValue(ticker : String, value : Double) {
+        totalData[ticker] = value
+        calculateTotal()
+    }
+    
+    private func calculateTotal() {
+        self.portfolioTotal = 0
+        for value in totalData.values {
+            self.portfolioTotal += value
+        }
+        self.totalCell?.totalLabel.text = String(format: "%.2f%", self.portfolioTotal).appending("%")
     }
 }

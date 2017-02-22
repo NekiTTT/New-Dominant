@@ -8,12 +8,16 @@
 
 import UIKit
 
-class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate {
+class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate, DMStockCellDelegate {
 
     static let sharedInstance = DMPersonalPortfolioService()
     
     var portfolios     = [DMPersonalPortfolioModel]()
     var selectedTicker : StockSearchResult?
+    
+    var totalData = [String : Double]()
+    var portfolioTotal : Double = 0
+    var totalCell : DMPortfolioTotalCell?
     
     var tableView : UITableView?
     
@@ -93,12 +97,29 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         
         if (indexPath.row == portfolios.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DMPortfolioTotalCell") as! DMPortfolioTotalCell
+            self.totalCell = cell
             return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
+        cell.delegate = self
         cell.setupWithPersonal(stock: portfolios[indexPath.row])
         return cell
+    }
+    
+    // MARK : DMStockCellDelegate
+    
+    func setToTotalValue(ticker : String, value : Double) {
+        totalData[ticker] = value
+        calculateTotal()
+    }
+    
+    private func calculateTotal() {
+        self.portfolioTotal = 0
+        for value in totalData.values {
+            self.portfolioTotal += value
+        }
+        self.totalCell?.totalLabel.text = String(format: "%.2f", self.portfolioTotal).appending("%")
     }
 
 }

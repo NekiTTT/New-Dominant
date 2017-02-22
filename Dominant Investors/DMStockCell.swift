@@ -16,6 +16,7 @@ class DMStockCell: UITableViewCell {
     @IBOutlet weak var profitability      : UILabel!
     @IBOutlet weak var investmentPeriod   : UILabel!
 
+    var delegate : DMStockCellDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,7 +32,10 @@ class DMStockCell: UITableViewCell {
                 let yearAgoPrice = Double(chartPoints.first!.close!)
                 let currentPrice = Double(chartPoints.last!.close!)
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
-                self.profitability.text = String(format: "%.2f", yearAgoPrice)
+                let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: yearAgoPrice, currentPrice: currentPrice)
+                self.profitability.text = String(format: "%.2f", profitability).appending("%")
+            
+                self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
             }
         }
         
@@ -41,12 +45,15 @@ class DMStockCell: UITableViewCell {
     public func setupWithPersonal(stock: DMPersonalPortfolioModel) {
         self.ticker.text = stock.ticker
         self.exchangeOrBuyPoint.text = stock.entry_price
-        self.investmentPeriod.text = DMDateService.sharedInstance.differenceBetweenDates(dateOne: stock.entry_date!, dayeTwo: Date())
+        self.investmentPeriod.text = DMDateService.sharedInstance.differenceBetweenDates(dateOne: stock.entry_date!, dateTwo: Date())
         
         SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
             DispatchQueue.main.async {
                 let currentPrice = Double(chartPoints.last!.close!)
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
+                let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: Double(stock.entry_price!)!, currentPrice: currentPrice)
+                self.profitability.text = String(format: "%.2f", profitability).appending("%")
+                self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
             }
         }
     }
