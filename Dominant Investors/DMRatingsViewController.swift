@@ -30,12 +30,17 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
     private func setupUI() {
        self.tableView.dataSource = self
        self.tableView.delegate = self
+       self.tableView.register(UINib(nibName: "DMRatingTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "DMRatingTableViewCell")
     }
     
     // MARK : UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 65
     }
 
     // MARK : UITableViewDataSource

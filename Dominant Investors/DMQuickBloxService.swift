@@ -31,7 +31,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "dominantPortfolio", successBlock: { (response, objects) in
             var dominant = [DMDominantPortfolioModel]()
             for object in objects! {
-                dominant.append(DMDominantPortfolioModel.init(response: object))
+                dominant.append(DMDominantPortfolioModel.init(response: object as! QBCOCustomObject))
             }
             completion(dominant)
         }) { (error) in

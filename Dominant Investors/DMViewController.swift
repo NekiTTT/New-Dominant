@@ -10,6 +10,21 @@ import UIKit
 
 class DMViewController: UIViewController {
 
+    var DMAuthScreensBackground : UIImage {
+        get {
+            switch UIDevice.current.userInterfaceIdiom {
+            case .phone:
+                return UIImage(named: "ratingIPHONE")!
+            case .pad:
+                return UIImage(named: "ratingIPAD")!
+            case .unspecified:
+                return UIImage(named: "ratingIPHONE")!
+            default:
+                return UIImage(named: "ratingIPAD")!
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -19,5 +34,7 @@ class DMViewController: UIViewController {
     private func showAlertWith(text : String) {
         
     }
+    
+    
 
 }

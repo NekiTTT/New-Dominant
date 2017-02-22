@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class DMLaunchViewController: DMViewController {
 
     @IBOutlet weak var backgroundImage   : UIImageView!
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView!
+    
+    var progressHUD : MBProgressHUD!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +23,12 @@ class DMLaunchViewController: DMViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
         launchApp()
     }
 
     private func setupUI() {
-        self.backgroundImage.image = Backgrounds().DMAuthScreensBackground
+        self.backgroundImage.image = self.DMAuthScreensBackground
         self.activityIndicator.startAnimating()
     }
     
@@ -36,6 +40,7 @@ class DMLaunchViewController: DMViewController {
             let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
             self.present(tabBar!, animated: false, completion: nil)
         }
+        progressHUD.hide(animated: true)
     }
     
 }

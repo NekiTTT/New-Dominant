@@ -12,6 +12,18 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
 
     static let sharedInstance = DMDominantPortfolioService()
     
+    var portfolios = [DMDominantPortfolioModel]()
+    
+    var tableView : UITableView?
+    
+    override init() {
+        super.init()
+        self.getDominantPortfolio { (portfolios) in
+            self.portfolios = portfolios
+            self.tableView?.reloadData()
+        }
+    }
+
     open func getDominantPortfolio(completion : @escaping ([DMDominantPortfolioModel]) -> Void) {
         DMQuickBloxService.sharedInstance.getDominantPortfolio(completion: completion)
     }
@@ -23,10 +35,12 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return portfolios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
+        cell.setupWithDominant(stock: portfolios[indexPath.row])
+        return cell
     }
 }

@@ -260,7 +260,6 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
         self.delegate.hideContainer()
     }
     
-    
     func backgroundImage() -> UIImage {
         switch UIDevice.current.userInterfaceIdiom {
         case .phone:

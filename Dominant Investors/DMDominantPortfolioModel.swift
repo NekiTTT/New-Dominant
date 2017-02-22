@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Quickblox
 
 class DMDominantPortfolioModel: NSObject {
 
@@ -14,9 +15,12 @@ class DMDominantPortfolioModel: NSObject {
     var ticker : String!
     var exchange : String!
     
-    init(response : Any) {
+    init(response : QBCOCustomObject) {
         super.init()
-        
+    
+        self.id       = response.id
+        self.ticker   = response.fields["ticker"] as! String
+        self.exchange = response.fields["exchange"] as! String
     }
     
     

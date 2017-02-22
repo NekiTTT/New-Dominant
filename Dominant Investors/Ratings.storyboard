@@ -5,13 +5,9 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MuseoCyrl300.otf">
-            <string>MuseoCyrl-300</string>
-        </array>
         <array key="MuseoSansLight.ttf">
             <string>MuseoSansCyrl-100</string>
         </array>
@@ -75,56 +71,6 @@
                                 <rect key="frame" x="0.0" y="66" width="375" height="601"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DMRatingTableViewCell" rowHeight="50" id="uCB-Uy-82O" customClass="DMRatingTableViewCell" customModule="Dominant_Investors" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uCB-Uy-82O" id="zLq-LW-SHx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="jD2-ZT-VHg">
-                                                    <rect key="frame" x="16" y="12" width="109" height="25"/>
-                                                    <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vangos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="gtc-C9-qtQ">
-                                                    <rect key="frame" x="133" y="12" width="109" height="25"/>
-                                                    <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="+300%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="Lpr-9F-WtW">
-                                                    <rect key="frame" x="250" y="12" width="109" height="25"/>
-                                                    <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
-                                                    <color key="textColor" red="0.47058823529999999" green="0.73333333329999995" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="gtc-C9-qtQ" firstAttribute="width" secondItem="jD2-ZT-VHg" secondAttribute="width" id="9WF-m4-H0H"/>
-                                                <constraint firstItem="Lpr-9F-WtW" firstAttribute="top" secondItem="zLq-LW-SHx" secondAttribute="topMargin" constant="4" id="Che-Lh-yfB"/>
-                                                <constraint firstItem="Lpr-9F-WtW" firstAttribute="width" secondItem="jD2-ZT-VHg" secondAttribute="width" id="SrE-ay-Oke"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Lpr-9F-WtW" secondAttribute="trailing" constant="8" id="T6W-4w-NwC"/>
-                                                <constraint firstItem="jD2-ZT-VHg" firstAttribute="top" secondItem="zLq-LW-SHx" secondAttribute="topMargin" constant="4" id="Y7E-yU-TTr"/>
-                                                <constraint firstItem="gtc-C9-qtQ" firstAttribute="top" secondItem="zLq-LW-SHx" secondAttribute="topMargin" constant="4" id="Ygh-vi-TFb"/>
-                                                <constraint firstItem="gtc-C9-qtQ" firstAttribute="leading" secondItem="jD2-ZT-VHg" secondAttribute="trailing" constant="8" id="fiP-ON-84w"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="jD2-ZT-VHg" secondAttribute="bottom" constant="4" id="kOT-pO-r1j"/>
-                                                <constraint firstItem="jD2-ZT-VHg" firstAttribute="leading" secondItem="zLq-LW-SHx" secondAttribute="leadingMargin" constant="8" id="rXT-bY-aah"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gtc-C9-qtQ" secondAttribute="bottom" constant="4" id="xLc-Is-EhJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Lpr-9F-WtW" secondAttribute="bottom" constant="4" id="xrB-yt-5cJ"/>
-                                                <constraint firstItem="Lpr-9F-WtW" firstAttribute="leading" secondItem="gtc-C9-qtQ" secondAttribute="trailing" constant="8" id="yoA-HJ-8C0"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="investorLabel" destination="gtc-C9-qtQ" id="ap7-Vp-IaI"/>
-                                            <outlet property="overallLabel" destination="Lpr-9F-WtW" id="o1s-nH-35R"/>
-                                            <outlet property="positionLabel" destination="jD2-ZT-VHg" id="ahO-vE-6g2"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>

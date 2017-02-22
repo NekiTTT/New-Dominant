@@ -21,6 +21,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     var total = 0.0
 
     var formatter = DateFormatter()
+    var selectedTicker : StockSearchResult?
     var portfolioType = DMPortfolioType.DMPersonalPortfolio
     
     // MARK: Outlets
@@ -28,6 +29,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     
     @IBOutlet  weak var firstHeaderHeight        : NSLayoutConstraint!
     @IBOutlet  weak var secondHeaderHeight       : NSLayoutConstraint!
+    @IBOutlet  weak var dropdownListHeight       : NSLayoutConstraint!
     
     @IBOutlet  weak var portfolioTypeSwitcher    : UISegmentedControl!
     
@@ -36,7 +38,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     @IBOutlet  weak var secondContainer        : UIView!
     @IBOutlet  weak var dominantImageContainer : UIView!
     @IBOutlet  weak var searchBarContainer     : UIView!
-    @IBOutlet  weak var dropShadowView : UIView!
+    @IBOutlet  weak var dropShadowView         : UIView!
     
     @IBOutlet  weak var fisrtColumnTitle    : UILabel!
     @IBOutlet  weak var secondColumnTitle   : UILabel!
@@ -54,19 +56,10 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
         showPersonal()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "containerSegue") {
-            let dropdownViewController = segue.destination as! DMDropdownViewController
-            dropdownViewController.portfolioController = self
+            self.dropdownViewController = segue.destination as! DMDropdownViewController
+            self.dropdownViewController.portfolioController = self
         }
     }
 
@@ -74,11 +67,19 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     
     private func setupUI() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.tableView.register(UINib(nibName: "DMStockCell", bundle: Bundle.main), forCellReuseIdentifier: "DMStockCell")
         self.personalButton.layer.borderWidth = 1
         self.dominantButton.layer.borderWidth = 1
+        
+        self.firstContainer.layer.borderWidth = 0.5
+        self.firstContainer.layer.borderColor = UIColor.lightGray.cgColor
+        
+        DMPersonalPortfolioService.sharedInstance.tableView = self.tableView
+        DMDominantPortfolioService.sharedInstance.tableView = self.tableView
     }
     
     private func showPersonal() {
+        
         self.tableView.delegate   = DMPersonalPortfolioService.sharedInstance
         self.tableView.dataSource = DMPersonalPortfolioService.sharedInstance
         
@@ -97,12 +98,13 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
             self.personalButton.layer.borderColor = UIColor.red.cgColor
         }
        
-        self.setColumnTitles(titles: ["TICKER","BUY \nPOINT $","CURRENT PRICE $","PROFITABILITY"])
+        self.setColumnTitles(titles: ["TICKER","BUY\nPOINT $","CURRENT PRICE $","PROFITABILITY"])
     
         self.portfolioType = .DMPersonalPortfolio
     }
     
     private func showDominant() {
+        
         self.tableView.delegate   = DMDominantPortfolioService.sharedInstance
         self.tableView.dataSource = DMDominantPortfolioService.sharedInstance
         
@@ -140,6 +142,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     }
     
     @IBAction func addTickerAction(sender : UIButton) {
+        if (self.selectedTicker == nil) { return }
         
     }
     
@@ -147,16 +150,46 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
         
     }
     
-    @IBAction func getSignals(sender : UIButton) {
+    private func showDropdownList(listHeight : Int, tickers : [StockSearchResult]) {
+        self.dropdownViewController.dataSource = tickers
+        self.dropdownViewController.tableView.reloadData()
         
+        UIView.animate(withDuration: 0.4) {
+            self.dropdownListHeight.constant = CGFloat(30 * listHeight)
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func hideDropdownList() {
+        UIView.animate(withDuration: 0.4) {
+            self.dropdownListHeight.constant = 0
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    // MARK : UITextFieldDelegate (Actions)
+    
+    @IBAction func tickerInputHandler(sender : UITextField) {
+        if (sender.text?.characters.count == 0) {
+            hideDropdownList()
+        } else {
+            SwiftStockKit.fetchStocksFromSearchTerm(term: sender.text!) { (stockInfoArray) -> () in
+                DispatchQueue.main.async {
+                    self.showDropdownList(listHeight: stockInfoArray.count, tickers: stockInfoArray)
+                }
+            }
+        }
     }
     
     // MARK : DMDropdownListDelegate
     
     func tickerDidSelected(stock : StockSearchResult) {
-        
+        self.hideDropdownList()
+        self.tickerField.text = stock.symbol
+        self.selectedTicker = stock
+        self.tickerField.resignFirstResponder()
     }
     
-
-
 }

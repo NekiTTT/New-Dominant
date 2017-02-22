@@ -41,7 +41,7 @@ class DMCompanyCollectionCell: UICollectionViewCell {
                 DispatchQueue.main.async {
                     model.companyPictureURL = image
                     self.companyImage.image = image
-                    DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
+                    _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
                     self.activity.stopAnimating()
                 }
             }

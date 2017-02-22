@@ -12,6 +12,18 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
 
     static let sharedInstance = DMPersonalPortfolioService()
     
+    var portfolios = [DMPersonalPortfolioModel]()
+    
+    var tableView : UITableView?
+    
+    override init() {
+        super.init()
+        self.getPersonalPortfolio { (portfolios) in
+            self.portfolios = portfolios
+            self.tableView?.reloadData()
+        }
+    }
+    
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         DMQuickBloxService.sharedInstance.getPersonalPortfolio(completion: completion)
     }
@@ -44,11 +56,13 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return portfolios.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
+        cell.setupWithPersonal(stock: portfolios[indexPath.row])
+        return cell
     }
 
 }

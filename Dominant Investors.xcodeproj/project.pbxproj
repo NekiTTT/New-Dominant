@@ -83,6 +83,9 @@
 		45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */; };
 		45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */; };
 		45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */; };
+		45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0703F1E5CE5BA00B6CAC5 /* DMStockCell.swift */; };
+		45D070421E5CE98000B6CAC5 /* DMStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D070411E5CE98000B6CAC5 /* DMStockCell.xib */; };
+		45D070441E5D723700B6CAC5 /* DMRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D070431E5D723700B6CAC5 /* DMRatingTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -177,6 +180,9 @@
 		45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownViewController.swift; sourceTree = "<group>"; };
 		45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionViewController.swift; sourceTree = "<group>"; };
 		45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyDetailViewController.swift; sourceTree = "<group>"; };
+		45D0703F1E5CE5BA00B6CAC5 /* DMStockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockCell.swift; sourceTree = "<group>"; };
+		45D070411E5CE98000B6CAC5 /* DMStockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStockCell.xib; sourceTree = "<group>"; };
+		45D070431E5D723700B6CAC5 /* DMRatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMRatingTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,22 +249,18 @@
 			isa = PBXGroup;
 			children = (
 				45A107AB1E59D35400591170 /* DMRatingTableViewCell.swift */,
+				45D070431E5D723700B6CAC5 /* DMRatingTableViewCell.xib */,
 			);
 			name = DMRatingTableViewCell;
 			sourceTree = "<group>";
 		};
-		45A107AF1E59D50C00591170 /* DMPersonalStockCell */ = {
+		45A107B01E59D52200591170 /* DMPortfolioStockCell */ = {
 			isa = PBXGroup;
 			children = (
+				45D0703F1E5CE5BA00B6CAC5 /* DMStockCell.swift */,
+				45D070411E5CE98000B6CAC5 /* DMStockCell.xib */,
 			);
-			name = DMPersonalStockCell;
-			sourceTree = "<group>";
-		};
-		45A107B01E59D52200591170 /* DMDominantStockCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = DMDominantStockCell;
+			name = DMPortfolioStockCell;
 			sourceTree = "<group>";
 		};
 		45A107B11E59D52C00591170 /* DMCompanyCollectionCell */ = {
@@ -389,8 +391,7 @@
 				452A43F71E5A4DBB0058D11C /* DMChartView */,
 				45A107B21E59DC0800591170 /* DMSignalCell */,
 				45A107B11E59D52C00591170 /* DMCompanyCollectionCell */,
-				45A107B01E59D52200591170 /* DMDominantStockCell */,
-				45A107AF1E59D50C00591170 /* DMPersonalStockCell */,
+				45A107B01E59D52200591170 /* DMPortfolioStockCell */,
 				45A107AA1E59D33D00591170 /* DMRatingTableViewCell */,
 				4592F7731E59BFCB004C85F4 /* FXBlurView */,
 			);
@@ -568,6 +569,8 @@
 				45A107A51E59CFED00591170 /* MuseoCyrl100.otf in Resources */,
 				45A107A61E59CFED00591170 /* MuseoCyrl300.otf in Resources */,
 				45A107A71E59CFED00591170 /* MuseoCyrl500.otf in Resources */,
+				45D070441E5D723700B6CAC5 /* DMRatingTableViewCell.xib in Resources */,
+				45D070421E5CE98000B6CAC5 /* DMStockCell.xib in Resources */,
 				45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */,
 				45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */,
 				45A107A81E59CFED00591170 /* MuseoCyrl700.otf in Resources */,
@@ -613,6 +616,7 @@
 				45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */,
 				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
 				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
+				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
@@ -760,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 45F26FVHGB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
