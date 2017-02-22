@@ -35,10 +35,10 @@ class DMLaunchViewController: DMViewController {
     private func launchApp() {
         if (!DMAuthorizationManager.sharedInstance.isAuthorized()) {
             let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
-            self.present(auth!, animated: false, completion: nil)
+            self.navigationController?.pushViewController(auth!, animated: true)
         } else {
             let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
-            self.present(tabBar!, animated: false, completion: nil)
+            self.navigationController?.pushViewController(tabBar!, animated: true)
         }
         progressHUD.hide(animated: true)
     }

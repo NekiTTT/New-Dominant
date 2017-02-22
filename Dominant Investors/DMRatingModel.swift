@@ -18,7 +18,7 @@ class DMRatingModel: NSObject {
     var totalValue       = 0.0
     var position : Int   = 1
     
-    init(response : QBCOCustomObject) {
+    init(response : DMResponseObject) {
         super.init()
         self.id = response.id
         self.userName   = response.fields["userName"] as! String

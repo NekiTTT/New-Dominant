@@ -26,13 +26,29 @@ class DMStockCell: UITableViewCell {
         self.ticker.text = stock.ticker
         self.exchangeOrBuyPoint.text = stock.exchange
         
-        self.profitability.text = ""
-        self.currentPrice.text  = ""
-        self.investmentPeriod.text = "(12 MONTH)"
+        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
+            DispatchQueue.main.async {
+                let yearAgoPrice = Double(chartPoints.first!.close!)
+                let currentPrice = Double(chartPoints.last!.close!)
+                self.currentPrice.text  = String(format: "%.2f", currentPrice)
+                self.profitability.text = String(format: "%.2f", yearAgoPrice)
+            }
+        }
+        
+        self.investmentPeriod.text = NSLocalizedString("(12 MONTH)", comment: "")
     }
     
     public func setupWithPersonal(stock: DMPersonalPortfolioModel) {
+        self.ticker.text = stock.ticker
+        self.exchangeOrBuyPoint.text = stock.entry_price
+        self.investmentPeriod.text = DMDateService.sharedInstance.differenceBetweenDates(dateOne: stock.entry_date!, dayeTwo: Date())
         
+        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
+            DispatchQueue.main.async {
+                let currentPrice = Double(chartPoints.last!.close!)
+                self.currentPrice.text  = String(format: "%.2f", currentPrice)
+            }
+        }
     }
         
 }

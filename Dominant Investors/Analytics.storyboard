@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VwB-wc-rbZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vN0-e5-H65">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
         <scene sceneID="2Cd-oj-V5I">
             <objects>
                 <collectionViewController storyboardIdentifier="DMAnalyticsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vN0-e5-H65" customClass="DMAnalyticsViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tQ5-zO-9Mm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="tQ5-zO-9Mm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -63,22 +63,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XoG-YX-vs4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1038" y="593"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="E45-uy-IpO">
-            <objects>
-                <navigationController id="VwB-wc-rbZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kkd-oS-eYJ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="vN0-e5-H65" kind="relationship" relationship="rootViewController" id="Bwc-ca-Ae5"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oq7-fL-8To" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1868" y="592"/>
         </scene>
         <!--Company Detail View Controller-->
         <scene sceneID="xH7-LD-r9C">
@@ -417,11 +401,11 @@ IPO Date 08-14-1010</string>
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-zh-tsO">
-                                <rect key="frame" x="0.0" y="8" width="30" height="33"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-zh-tsO">
+                                <rect key="frame" x="0.0" y="8" width="64" height="64"/>
                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="&lt;"/>
+                                <state key="normal" backgroundImage="backArrow"/>
                                 <connections>
                                     <action selector="backButtonActionWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="ZIN-Tp-yPi"/>
                                 </connections>
@@ -491,6 +475,7 @@ IPO Date 08-14-1010</string>
         </scene>
     </scenes>
     <resources>
+        <image name="backArrow" width="64" height="64"/>
         <image name="companyInfoBackground" width="479" height="280"/>
     </resources>
 </document>

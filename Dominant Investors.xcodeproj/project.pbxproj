@@ -86,6 +86,10 @@
 		45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0703F1E5CE5BA00B6CAC5 /* DMStockCell.swift */; };
 		45D070421E5CE98000B6CAC5 /* DMStockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D070411E5CE98000B6CAC5 /* DMStockCell.xib */; };
 		45D070441E5D723700B6CAC5 /* DMRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D070431E5D723700B6CAC5 /* DMRatingTableViewCell.xib */; };
+		45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D070481E5E1F2E00B6CAC5 /* DMResponseObject.swift */; };
+		45D0704B1E5E276300B6CAC5 /* DMDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704A1E5E276300B6CAC5 /* DMDateService.swift */; };
+		45D0704F1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D0704D1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib */; };
+		45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -183,6 +187,10 @@
 		45D0703F1E5CE5BA00B6CAC5 /* DMStockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockCell.swift; sourceTree = "<group>"; };
 		45D070411E5CE98000B6CAC5 /* DMStockCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStockCell.xib; sourceTree = "<group>"; };
 		45D070431E5D723700B6CAC5 /* DMRatingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMRatingTableViewCell.xib; sourceTree = "<group>"; };
+		45D070481E5E1F2E00B6CAC5 /* DMResponseObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMResponseObject.swift; sourceTree = "<group>"; };
+		45D0704A1E5E276300B6CAC5 /* DMDateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDateService.swift; sourceTree = "<group>"; };
+		45D0704D1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMPortfolioTotalCell.xib; sourceTree = "<group>"; };
+		45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioTotalCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +241,6 @@
 				45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */,
 			);
 			name = Protocols;
-			path = "Dominant Investors";
 			sourceTree = "<group>";
 		};
 		4592F7731E59BFCB004C85F4 /* FXBlurView */ = {
@@ -286,7 +293,6 @@
 			children = (
 				4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */,
 				45B4E72E1E58ED5C00D56BDE /* Dominant Investors */,
-				452A43FC1E5A56F60058D11C /* Protocols */,
 				45B4E7431E58ED7D00D56BDE /* Resources */,
 				45B4E7471E58EE2B00D56BDE /* Framewroks */,
 				45B4E72D1E58ED5C00D56BDE /* Products */,
@@ -311,6 +317,7 @@
 				45B4E7441E58ED8900D56BDE /* Models */,
 				45B4E7421E58ED7100D56BDE /* Controllers */,
 				45B4E7411E58ED6900D56BDE /* Managers */,
+				452A43FC1E5A56F60058D11C /* Protocols */,
 			);
 			path = "Dominant Investors";
 			sourceTree = "<group>";
@@ -324,6 +331,7 @@
 				45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */,
 				45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */,
 				45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */,
+				45D0704A1E5E276300B6CAC5 /* DMDateService.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -365,6 +373,7 @@
 				45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */,
 				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
 				454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */,
+				45D070481E5E1F2E00B6CAC5 /* DMResponseObject.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -387,6 +396,7 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				45D0704C1E5E458800B6CAC5 /* DMPortfolioTotalCell */,
 				45121B7F1E5CB04C00D83C4E /* DMDropDownTableViewCell */,
 				452A43F71E5A4DBB0058D11C /* DMChartView */,
 				45A107B21E59DC0800591170 /* DMSignalCell */,
@@ -503,6 +513,15 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
+		45D0704C1E5E458800B6CAC5 /* DMPortfolioTotalCell */ = {
+			isa = PBXGroup;
+			children = (
+				45D0704D1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib */,
+				45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */,
+			);
+			name = DMPortfolioTotalCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -574,6 +593,7 @@
 				45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */,
 				45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */,
 				45A107A81E59CFED00591170 /* MuseoCyrl700.otf in Resources */,
+				45D0704F1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib in Resources */,
 				45A107A91E59CFED00591170 /* MuseoCyrl900.otf in Resources */,
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
 				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
@@ -620,6 +640,7 @@
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
+				45D0704B1E5E276300B6CAC5 /* DMDateService.swift in Sources */,
 				4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */,
 				45A107B91E59DF9B00591170 /* DMCompanyCollectionCell.swift in Sources */,
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
@@ -639,8 +660,10 @@
 				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
 				45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */,
 				45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */,
+				45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */,
 				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
+				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,

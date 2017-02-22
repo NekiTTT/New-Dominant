@@ -63,7 +63,7 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     
     private func showTabBar() {
         let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
-        self.present(tabBar!, animated: false, completion: nil)
+        self.navigationController?.pushViewController(tabBar!, animated: true)
     }
     
     // MARK : Actions

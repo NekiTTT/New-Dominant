@@ -21,8 +21,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     var total = 0.0
 
     var formatter = DateFormatter()
-    var selectedTicker : StockSearchResult?
-    var portfolioType = DMPortfolioType.DMPersonalPortfolio
+    
+    var portfolioType  = DMPortfolioType.DMPersonalPortfolio
     
     // MARK: Outlets
     @IBOutlet  weak var tickerField              : UITextField!
@@ -68,11 +68,16 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     private func setupUI() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tableView.register(UINib(nibName: "DMStockCell", bundle: Bundle.main), forCellReuseIdentifier: "DMStockCell")
+        self.tableView.register(UINib(nibName: "DMPortfolioTotalCell", bundle: Bundle.main), forCellReuseIdentifier: "DMPortfolioTotalCell")
+    
         self.personalButton.layer.borderWidth = 1
         self.dominantButton.layer.borderWidth = 1
         
         self.firstContainer.layer.borderWidth = 0.5
         self.firstContainer.layer.borderColor = UIColor.lightGray.cgColor
+        
+        self.dominantImageContainer.layer.borderWidth = 0.5
+        self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
         
         DMPersonalPortfolioService.sharedInstance.tableView = self.tableView
         DMDominantPortfolioService.sharedInstance.tableView = self.tableView
@@ -142,8 +147,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     }
     
     @IBAction func addTickerAction(sender : UIButton) {
-        if (self.selectedTicker == nil) { return }
-        
+        if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) { return }
+        DMPersonalPortfolioService.sharedInstance.addNew()
+        self.tickerField.text = ""
     }
     
     @IBAction func createNewPortfolio(sender : UIButton) {
@@ -173,6 +179,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     
     @IBAction func tickerInputHandler(sender : UITextField) {
         if (sender.text?.characters.count == 0) {
+            DMPersonalPortfolioService.sharedInstance.selectedTicker = nil
             hideDropdownList()
         } else {
             SwiftStockKit.fetchStocksFromSearchTerm(term: sender.text!) { (stockInfoArray) -> () in
@@ -188,7 +195,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     func tickerDidSelected(stock : StockSearchResult) {
         self.hideDropdownList()
         self.tickerField.text = stock.symbol
-        self.selectedTicker = stock
+        DMPersonalPortfolioService.sharedInstance.selectedTicker = stock
         self.tickerField.resignFirstResponder()
     }
     

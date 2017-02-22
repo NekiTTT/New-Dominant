@@ -15,7 +15,7 @@ class DMDominantPortfolioModel: NSObject {
     var ticker : String!
     var exchange : String!
     
-    init(response : QBCOCustomObject) {
+    init(response : DMResponseObject) {
         super.init()
     
         self.id       = response.id

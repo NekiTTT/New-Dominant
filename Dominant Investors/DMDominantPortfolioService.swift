@@ -28,6 +28,13 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         DMQuickBloxService.sharedInstance.getDominantPortfolio(completion: completion)
     }
     
+    // MARK : UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
     // MARK : UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,10 +42,16 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return portfolios.count
+        return portfolios.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if (indexPath.row == portfolios.count) {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DMPortfolioTotalCell") as! DMPortfolioTotalCell
+            return cell
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
         cell.setupWithDominant(stock: portfolios[indexPath.row])
         return cell

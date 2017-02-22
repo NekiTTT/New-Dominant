@@ -19,7 +19,10 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "personal2", successBlock: { (response, objects) in
             var personal = [DMPersonalPortfolioModel]()
             for object in objects! {
-                personal.append(DMPersonalPortfolioModel.init(response: object))
+                let model = DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject))
+                if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
+                    personal.append(model)
+                }
             }
             completion(personal)
         }) { (error) in
@@ -31,7 +34,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "dominantPortfolio", successBlock: { (response, objects) in
             var dominant = [DMDominantPortfolioModel]()
             for object in objects! {
-                dominant.append(DMDominantPortfolioModel.init(response: object as! QBCOCustomObject))
+                dominant.append(DMDominantPortfolioModel.init(response:  DMResponseObject.init(customObject: object as! QBCOCustomObject)))
             }
             completion(dominant)
         }) { (error) in
@@ -43,7 +46,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "userPortfolioTotal", successBlock: { (response, objects) in
             var ratings = [DMRatingModel]()
             for object in objects! {
-                ratings.append(DMRatingModel.init(response: object as! QBCOCustomObject))
+                ratings.append(DMRatingModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
             }
             completion(ratings)
         }) { (error) in
@@ -55,7 +58,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "Company", successBlock: { (response, objects) in
             var companies = [DMCompanyModel]()
             for object in objects! {
-                companies.append(DMCompanyModel.init(response: object as! QBCOCustomObject))
+                companies.append(DMCompanyModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
             }
             completion(companies)
         }) { (error) in
@@ -67,7 +70,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "InvestmentIdea", successBlock: { (response, objects) in
             var signals = [DMInvestmentSignalModel]()
             for object in objects! {
-                signals.append(DMInvestmentSignalModel.init(response: object))
+                signals.append(DMInvestmentSignalModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
             }
             completion(signals)
         }) { (error) in
@@ -77,16 +80,24 @@ class DMQuickBloxService: NSObject {
     
     // MARK : Set Data
     
-    open func addNew(personalStock : DMPersonalPortfolioModel, completion : ([DMPersonalPortfolioModel]) -> Void) {
-    
-        let personalStock = QBCOCustomObject()
-        personalStock.className = "personal2"
-        //quickblox.fields!.setObject(symbol, forKey: "ticker")
+    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         
-        QBRequest.createObject(personalStock, successBlock: { (response, object) in
+        SwiftStockKit.fetchChartPoints(symbol: personalStock.ticker!, range: .OneDay) { (chartPoints) in
             
-        }) { (error) in
+            let valuePrice = Double(chartPoints.last!.close!)
+            let quickbloxStock = QBCOCustomObject()
+            quickbloxStock.className = "personal2"
+            quickbloxStock.fields!.setObject(personalStock.ticker!, forKey: "ticker" as NSCopying)
+            quickbloxStock.fields!.setObject(DMDateService.sharedInstance.dominantStringFrom(date: Date()), forKey: "crt_at" as NSCopying)
+            quickbloxStock.fields!.setObject(String(format: "%.2f", valuePrice), forKey: "entry_price" as NSCopying)
             
+            QBRequest.createObject(quickbloxStock, successBlock: { (response, object) in
+                if (object != nil) {
+                    completion([DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object!))])
+                }
+            }) { (error) in
+                print(error.error.debugDescription)
+            }
         }
     }
     
@@ -100,7 +111,7 @@ class DMQuickBloxService: NSObject {
     
     open func loginWith(login : String, password : String, competion : @escaping (Bool, String?) -> Void) {
         QBRequest.logIn(withUserLogin: login, password: password, successBlock: { (response, user) in
-            let userModel = DMUserProfileModel.init(QBUser: user!)
+            let userModel = DMUserProfileModel.init(response: DMResponseObject.init(user: user!))
             DMAuthorizationManager.sharedInstance.userProfile = userModel
             let data  = NSKeyedArchiver.archivedData(withRootObject: userModel)
             UserDefaults.standard.set(data, forKey : "Authorized")

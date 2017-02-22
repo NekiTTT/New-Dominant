@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c2J-Yd-yOd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="x2w-LU-Ql3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,6 +8,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Xbf-4i-ieq">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="x2w-LU-Ql3" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c9d-5X-Bu6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="c2J-Yd-yOd" kind="relationship" relationship="rootViewController" id="wZ3-Om-K8n"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAA-Lg-QHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511" y="130"/>
+        </scene>
         <!--Launch View Controller-->
         <scene sceneID="odo-BQ-W3b">
             <objects>
@@ -37,6 +53,7 @@
                             <constraint firstItem="b8b-HU-WEc" firstAttribute="top" secondItem="hbG-6h-kzs" secondAttribute="bottom" id="ktZ-Xq-USJ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Q2t-17-jRE"/>
                     <connections>
                         <outlet property="activityIndicator" destination="YUZ-V6-DWa" id="svw-44-PIV"/>
                         <outlet property="backgroundImage" destination="hbG-6h-kzs" id="sdl-pd-FZ6"/>
@@ -44,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5f-dQ-AdR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="210" y="130"/>
+            <point key="canvasLocation" x="298" y="130"/>
         </scene>
     </scenes>
 </document>

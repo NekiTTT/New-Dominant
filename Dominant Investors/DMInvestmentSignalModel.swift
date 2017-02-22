@@ -16,7 +16,7 @@ class DMInvestmentSignalModel: NSObject {
     var potential   : String!
     var stop_loss   : String!
     
-    init(response : Any) {
+    init(response : DMResponseObject) {
         super.init()
         
     }

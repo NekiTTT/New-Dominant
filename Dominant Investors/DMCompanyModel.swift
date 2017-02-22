@@ -26,10 +26,10 @@ class DMCompanyModel: NSObject {
     var forecast                    : String!
     var potentialProfitability      : String!
     
-    init(response : QBCOCustomObject) {
+    init(response : DMResponseObject) {
         super.init()
         self.id = response.id
-        let fields = response.fields!
+        let fields = response.fields
         
         self.ticker                 = fields["companySymbol"] as! String
         self.name                   = fields["companyName"] as! String

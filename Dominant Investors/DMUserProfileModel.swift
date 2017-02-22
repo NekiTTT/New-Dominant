@@ -17,11 +17,11 @@ class DMUserProfileModel: NSObject, NSCoding {
     
     var userRating        : UInt!
         
-    init(QBUser : QBUUser) {
+    init(response : DMResponseObject) {
         super.init()
-        self.userID           = String(QBUser.id)
-        self.userName         = QBUser.login
-        self.userProfileImage = QBUser.customData
+        self.userID           = response.id
+        self.userName         = response.login
+        self.userProfileImage = response.customData
         self.userRating       = 0
     }
     
