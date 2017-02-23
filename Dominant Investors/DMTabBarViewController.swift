@@ -19,18 +19,17 @@ class DMTabBarViewController: DMViewController {
     let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active")]
     
     // MARK: Outlets
+    @IBOutlet weak var loadImage : UIImageView!
     @IBOutlet weak var tabContainer : UIView!
     @IBOutlet weak var stackView  : UIStackView!
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loadImage.image = self.DMAuthScreensBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,6 +39,9 @@ class DMTabBarViewController: DMViewController {
             setupTabButtons()
             showDefaultPage()
             loaded = true
+            UIView.animate(withDuration: 1) {
+                self.loadImage.alpha = 0
+            }
         }
     }
     

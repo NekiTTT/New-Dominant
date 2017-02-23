@@ -45,20 +45,28 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MNC-rc-JAd">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="600.5"/>
                             </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hW2-FV-Ni7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="600"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="MNC-rc-JAd" firstAttribute="top" secondItem="zBe-gh-a0m" secondAttribute="top" id="36r-Ej-5FO"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="BBU-Ih-XFU"/>
+                            <constraint firstItem="hW2-FV-Ni7" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="DuQ-l7-Vnu"/>
+                            <constraint firstItem="hW2-FV-Ni7" firstAttribute="top" secondItem="zBe-gh-a0m" secondAttribute="top" id="IxC-pf-aMn"/>
                             <constraint firstAttribute="trailing" secondItem="MNC-rc-JAd" secondAttribute="trailing" id="KwG-ie-unp"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="height" secondItem="zBe-gh-a0m" secondAttribute="height" multiplier="0.1" id="Sud-x4-mgV"/>
                             <constraint firstItem="MNC-rc-JAd" firstAttribute="leading" secondItem="zBe-gh-a0m" secondAttribute="leading" id="X09-ZS-JEv"/>
                             <constraint firstItem="ntn-nL-frd" firstAttribute="top" secondItem="MNC-rc-JAd" secondAttribute="bottom" id="bxA-a2-LFF"/>
                             <constraint firstAttribute="trailing" secondItem="ntn-nL-frd" secondAttribute="trailing" id="fIx-qe-Nna"/>
                             <constraint firstItem="sqx-j5-Y2v" firstAttribute="top" secondItem="ntn-nL-frd" secondAttribute="bottom" id="fLy-cB-Gyp"/>
+                            <constraint firstItem="ntn-nL-frd" firstAttribute="top" secondItem="hW2-FV-Ni7" secondAttribute="bottom" id="jHe-b1-kkf"/>
+                            <constraint firstAttribute="trailing" secondItem="hW2-FV-Ni7" secondAttribute="trailing" id="jej-H7-m9a"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadImage" destination="hW2-FV-Ni7" id="dAF-XS-S0A"/>
                         <outlet property="stackView" destination="hQM-DJ-To9" id="LVZ-RO-1V8"/>
                         <outlet property="tabContainer" destination="MNC-rc-JAd" id="g5J-Vv-jed"/>
                     </connections>
