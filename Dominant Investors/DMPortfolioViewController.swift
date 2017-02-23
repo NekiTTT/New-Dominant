@@ -53,6 +53,10 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         showPersonal()
     }
 
@@ -147,13 +151,20 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     }
     
     @IBAction func addTickerAction(sender : UIButton) {
-        if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) { return }
+        if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) {
+            self.showAlertWith(title:   NSLocalizedString("Empty ticker", comment: ""),
+                               message: NSLocalizedString("Please type and select new ticker!", comment: ""),
+                               cancelButton: false)
+                               return
+        }
         DMPersonalPortfolioService.sharedInstance.addNew()
         self.tickerField.text = ""
     }
     
     @IBAction func createNewPortfolio(sender : UIButton) {
-        
+        self.showAlertWith(title:   NSLocalizedString("Clear current portfolio", comment: ""),
+                           message: NSLocalizedString("Do you want to clear your portfolio?", comment: ""),
+                           cancelButton: true)
     }
     
     private func showDropdownList(listHeight : Int, tickers : [StockSearchResult]) {
@@ -199,4 +210,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
         self.tickerField.resignFirstResponder()
     }
     
+    // MARK : UIAlertViewController action
+    
+    override func okAction() {
+        
+    }
 }

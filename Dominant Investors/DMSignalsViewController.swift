@@ -13,17 +13,11 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var tableView             : UITableView!
     @IBOutlet weak var subscriptionContainer : UIView!
     
-    var signals : [DMInvestmentSignalModel]!
+    var signals = [DMInvestmentSignalModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        DMAPIService.sharedInstance.getInvestmentSignals { (signals) in
-            DispatchQueue.main.async {
-                self.signals = signals
-                self.tableView.reloadData()
-            }
-        }
     }
     
     // MARK : Private
@@ -53,6 +47,12 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
     
     internal func hideContainer() {    
         self.subscriptionContainer.isHidden = true
+        DMAPIService.sharedInstance.getInvestmentSignals { (signals) in
+            DispatchQueue.main.async {
+                self.signals = signals
+                self.tableView.reloadData()
+            }
+        }
     }
     
 }

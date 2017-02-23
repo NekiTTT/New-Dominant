@@ -29,12 +29,31 @@ class DMViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // MARK : Own func
+    // MARK : UIAlertController
     
-    private func showAlertWith(text : String) {
+    open func showAlertWith(title : String, message : String, cancelButton : Bool) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction.init(title: NSLocalizedString("Ok", comment: ""), style: .default, handler: { (action) in
+            self.okAction()
+        }))
+        
+        if (cancelButton) {
+            alert.addAction(UIAlertAction.init(title: NSLocalizedString("Cancel", comment: ""), style: .destructive, handler: { (action) in
+                self.cancelAction()
+            }))
+        }
+        
+        self.present(alert, animated: true) {
+            
+        }
+    }
+    
+    open func okAction() {
         
     }
     
-    
-
+    open func cancelAction() {
+        
+    }
 }

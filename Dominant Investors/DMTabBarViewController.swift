@@ -25,15 +25,15 @@ class DMTabBarViewController: DMViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadImage.image = self.DMAuthScreensBackground
+        self.loadImage.alpha = 1
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         if (!loaded) {
             setupChildControllers()
             setupTabButtons()
