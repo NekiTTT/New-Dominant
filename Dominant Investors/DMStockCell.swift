@@ -33,6 +33,8 @@ class DMStockCell: UITableViewCell {
                 let currentPrice = Double(chartPoints.last!.close!)
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
                 let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: yearAgoPrice, currentPrice: currentPrice)
+                profitability >= 0 ? (self.profitability.textColor = Colors.DMProfitGreenColor) : (self.profitability.textColor = UIColor.red)
+
                 self.profitability.text = String(format: "%.2f", profitability).appending("%")
             
                 self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
@@ -52,6 +54,7 @@ class DMStockCell: UITableViewCell {
                 let currentPrice = Double(chartPoints.last!.close!)
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
                 let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: Double(stock.entry_price!)!, currentPrice: currentPrice)
+                profitability >= 0 ? (self.profitability.textColor = Colors.DMProfitGreenColor) : (self.profitability.textColor = UIColor.red)
                 self.profitability.text = String(format: "%.2f", profitability).appending("%")
                 self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
             }

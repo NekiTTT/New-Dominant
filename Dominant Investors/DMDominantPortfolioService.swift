@@ -74,6 +74,6 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
-        self.totalCell?.totalLabel.text = String(format: "%.2f%", self.portfolioTotal).appending("%")
+        self.totalCell?.setTotal(value: self.portfolioTotal)
     }
 }

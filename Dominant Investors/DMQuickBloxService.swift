@@ -161,7 +161,51 @@ class DMQuickBloxService: NSObject {
     }
     
     
-    open func updateUser(rating : DMRatingModel) {
+    open func updateUserRating(value : Double) {
+        DMAPIService.sharedInstance.getUserRatings { (ratings) in
+            for rate in ratings {
+                if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
+                    self.updateExistRating(id: rate.id, value: value)
+                    return
+                }
+            }
+            self.recordUserRating(value: value)
+        }
+    }
+    
+    // MARK : Private
+    
+    private func updateExistRating(id: String, value : Double) {
+        let quickblox = QBCOCustomObject()
         
+        quickblox.className = "userPortfolioTotal"
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userID, forKey: "userID" as NSCopying)
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey:"userName" as NSCopying)
+        quickblox.fields!.setObject("test@mail.com", forKey: "userMail" as NSCopying)
+        quickblox.fields!.setObject(value, forKey: "portfolioTotalValue" as NSCopying)
+        quickblox.id = id
+        
+        QBRequest.update(quickblox, successBlock: { (response, object) in
+            print(response.description)
+        }) { (error) in
+            print(error.description)
+        }
+    }
+    
+    private func recordUserRating(value : Double) {
+        
+        let quickblox = QBCOCustomObject()
+        quickblox.className = "userPortfolioTotal"
+        
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userID, forKey: "userID" as NSCopying)
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey:"userName" as NSCopying)
+        quickblox.fields!.setObject("test@mail.com", forKey: "userMail" as NSCopying)
+        quickblox.fields!.setObject(value, forKey: "portfolioTotalValue" as NSCopying)
+        
+        QBRequest.createObject(quickblox, successBlock: { (response, object) in
+            print(response.description)
+        }) { (response) in
+            print(response.error?.error?.localizedDescription ?? "")
+        }
     }
 }

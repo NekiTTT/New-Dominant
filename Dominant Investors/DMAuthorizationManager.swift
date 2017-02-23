@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Quickblox
 
 class DMAuthorizationManager: NSObject {
 
@@ -26,7 +27,7 @@ class DMAuthorizationManager: NSObject {
     open func isAuthorized() -> Bool {
         
         if (UserDefaults.standard.value(forKey: "Authorized") != nil) {
-            if (UserDefaults.standard.value(forKey: "Authorized") is NSData) {
+            if (UserDefaults.standard.value(forKey: "Authorized") is NSData && QBSession.current().isTokenValid) {
                 return true
             }
         }

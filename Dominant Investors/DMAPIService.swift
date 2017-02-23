@@ -34,4 +34,5 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.downloadCompanyLogoWith(ID : ID, completion : completion)
     }
     
+    
 }

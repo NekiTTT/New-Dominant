@@ -20,6 +20,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     var totalCell : DMPortfolioTotalCell?
     
     var tableView : UITableView?
+    var ratingUploaded = false
     
     override init() {
         super.init()
@@ -55,16 +56,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     open func updateUserRating() {
-        DMAPIService.sharedInstance.getUserRatings { (ratings) in
-            for rate in ratings {
-                if (rate.id == DMAuthorizationManager.sharedInstance.userProfile.userID) {
-                    
-                    break
-                } else {
-                    // TODO : Create user portfoioTotal.
-                }
-            }
-        }
+        
     }
     
     // MARK : Private
@@ -119,7 +111,13 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
-        self.totalCell?.totalLabel.text = String(format: "%.2f", self.portfolioTotal).appending("%")
+        if (totalData.values.count == self.portfolios.count) {
+            self.totalCell?.setTotal(value: self.portfolioTotal)
+            if (!self.ratingUploaded) {
+                self.ratingUploaded = true
+                DMQuickBloxService.sharedInstance.updateUserRating(value: self.portfolioTotal)
+            }
+        }
     }
 
 }

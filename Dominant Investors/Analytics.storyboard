@@ -20,7 +20,7 @@
         <scene sceneID="2Cd-oj-V5I">
             <objects>
                 <collectionViewController storyboardIdentifier="DMAnalyticsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vN0-e5-H65" customClass="DMAnalyticsViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="tQ5-zO-9Mm">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="tQ5-zO-9Mm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -402,7 +402,11 @@ IPO Date 08-14-1010</string>
                                 </variation>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-zh-tsO">
-                                <rect key="frame" x="0.0" y="8" width="64" height="64"/>
+                                <rect key="frame" x="0.0" y="8" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PWl-at-hJt"/>
+                                    <constraint firstAttribute="width" secondItem="ZFt-zh-tsO" secondAttribute="height" multiplier="1:1" id="twy-2M-2ex"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" backgroundImage="backArrow"/>

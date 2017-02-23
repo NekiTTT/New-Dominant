@@ -16,5 +16,10 @@ class DMPortfolioTotalCell: UITableViewCell {
         super.awakeFromNib()
         self.backgroundColor = self.contentView.backgroundColor;
     }
-
+    
+    open func setTotal(value : Double) {
+        value >= 0 ? (self.totalLabel.textColor = Colors.DMProfitGreenColor) : (self.totalLabel.textColor = UIColor.red)
+        self.totalLabel.text = String(format : "%.2f", value).appending("%")
+    }
+    
 }
