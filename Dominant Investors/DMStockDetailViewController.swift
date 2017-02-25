@@ -36,13 +36,13 @@ class DMStockDetailViewController: UIViewController, UICollectionViewDelegateFlo
         super.viewWillDisappear(animated)
     }
     
-    // MARK : Actions
+    // MARK: Actions
     
     @IBAction func backButtonClicked (sender : UIButton) {
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
       
@@ -57,15 +57,15 @@ class DMStockDetailViewController: UIViewController, UICollectionViewDelegateFlo
         self.view.layoutIfNeeded()
     }
     
-    // MARK : ChartView
+    // MARK: ChartView
     
     private func setupChart() {
         chartView = ChartView.create()
         chartView.delegate = self
-        chartView.frame = viewOfChart.frame
-        viewOfChart.addSubview(chartView)
+        chartView?.frame = CGRect(x: 24, y: 0, width: self.viewOfChart.frame.width-48, height: self.viewOfChart.frame.height)
+        viewOfChart?.addSubview(chartView!)
         
-        chart = SwiftStockChart(frame: CGRect(x : 10, y :  10, width : self.view.frame.size.width-20, height : viewOfChart.frame.size.height-70))
+        chart = SwiftStockChart(frame: CGRect(x : 16, y :  10, width : self.viewOfChart.bounds.size.width - 60, height : viewOfChart.frame.height - 80))
         
         loadChartWithRange(range: .OneDay)
         
@@ -100,13 +100,13 @@ class DMStockDetailViewController: UIViewController, UICollectionViewDelegateFlo
         }
     }
     
-    // MARK : ChartViewDelegate
+    // MARK: ChartViewDelegate
     
     func didChangeTimeRange(range: ChartTimeRange) {
         loadChartWithRange(range: range)
     }
     
-    // MARK : UICollectionViewDataSource
+    // MARK: UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return  stock != nil ? 18 : 0

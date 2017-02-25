@@ -32,9 +32,10 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.collectionView.reloadData()
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
         let screenSize = UIScreen.main.bounds
@@ -65,13 +66,13 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         self.collectionHeight.constant = ((CGFloat(self.companies.count) * CGFloat(cellHeight)) / 2) - 20
     }
     
-    // MARK : UICollectionViewDelegate
+    // MARK: UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showCompanyDetail(company: companies[indexPath.row])
     }
 
-    // MARK : UICollectonViewDataSource
+    // MARK: UICollectonViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

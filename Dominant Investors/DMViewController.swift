@@ -29,7 +29,14 @@ class DMViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    // MARK : UIAlertController
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        self.view.setNeedsLayout()
+        self.view.layoutIfNeeded()
+        self.view.setNeedsDisplay()
+    }
+    
+    // MARK: UIAlertController
     
     open func showAlertWith(title : String, message : String, cancelButton : Bool) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)

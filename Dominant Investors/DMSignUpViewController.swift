@@ -29,7 +29,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     }
 
 
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
         configureTextFields()
@@ -107,7 +107,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK : Actions
+    // MARK: Actions
     
     @IBAction func signUpButtonPressed(sender : UIButton) {
         handleSignUp()
@@ -117,7 +117,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
         self.dismiss(animated: true, completion: nil)
     }
     
-    // MARK : UITextFieldDelegate
+    // MARK: UITextFieldDelegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         

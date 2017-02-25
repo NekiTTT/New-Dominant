@@ -12,7 +12,7 @@ class DMAPIService: NSObject {
     
     static let sharedInstance = DMAPIService()
     
-    // MARK : Get Data
+    // MARK: Get Data
         
     open func getUserRatings(completion : @escaping ([DMRatingModel]) -> Void) {
         DMQuickBloxService.sharedInstance.getUserRatings(completion: completion)

@@ -25,7 +25,7 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
         }
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
        self.tableView.dataSource = self
@@ -33,7 +33,7 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
        self.tableView.register(UINib(nibName: "DMRatingTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "DMRatingTableViewCell")
     }
     
-    // MARK : UITableViewDelegate
+    // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -43,7 +43,7 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
         return 65
     }
 
-    // MARK : UITableViewDataSource
+    // MARK: UITableViewDataSource
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

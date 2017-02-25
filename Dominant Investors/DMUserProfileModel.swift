@@ -25,7 +25,7 @@ class DMUserProfileModel: NSObject, NSCoding {
         self.userRating       = 0
     }
     
-    // MARK : NSCoding
+    // MARK: NSCoding
     
     required init(coder aDecoder: NSCoder) {
         self.userID           = aDecoder.decodeObject(forKey: "userID") as! String

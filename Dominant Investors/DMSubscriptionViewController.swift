@@ -10,7 +10,7 @@ import UIKit
 import Quickblox
 import StoreKit
 
-class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate {
+class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
 
     var expiredDate : NSDate! = nil
     var selectedProductIndex: Int!
@@ -41,36 +41,35 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     //MARK: Methods
     
     @IBAction func buy() {
-        self.showActions()
+        //self.showActions()
     }
     
     @IBAction func restore() {
         
-        if transactionInProgress {
-            return
-        } else {
-            DispatchQueue.main.async {
-                SKPaymentQueue.default().add(self as! SKPaymentTransactionObserver)
-                SKPaymentQueue.default().restoreCompletedTransactions()
-                self.transactionInProgress = true
-            }
-        }
+//        if transactionInProgress {
+//            return
+//        } else {
+//            DispatchQueue.main.async {
+//                SKPaymentQueue.default().add(self as! SKPaymentTransactionObserver)
+//                SKPaymentQueue.default().restoreCompletedTransactions()
+//                self.transactionInProgress = true
+//            }
+//        }
+        
     }
     
     @IBAction func closeAction() {
-        self.dismiss(animated: true) { 
-            
-        }
+        self.delegate.dismiss()
     }
     
     func drawBlurView() {
-        self.overlayView.isBlurEnabled = true
-        self.overlayView.blurRadius  = 20
-        self.overlayView.isDynamic     = false
-        self.overlayView.tintColor   = UIColor.lightGray
+        self.overlayView.isBlurEnabled  = true
+        self.overlayView.blurRadius     = 20
+        self.overlayView.isDynamic      = false
+        self.overlayView.tintColor      = UIColor.lightGray
     }
     
-    //MARK : SKProductsRequestDelegate
+    //MARK: SKProductsRequestDelegate
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
         if response.products.count != 0 {
@@ -112,7 +111,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
                 if (self.productsArray.count > 0) {
                    
                     let payment = SKPayment(product: self.productsArray[0] as SKProduct)
-                    SKPaymentQueue.default().add(self as! SKPaymentTransactionObserver)
+                    SKPaymentQueue.default().add(self as SKPaymentTransactionObserver)
                     SKPaymentQueue.default().add(payment)
                     self.transactionInProgress = true
                 }
@@ -129,9 +128,9 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
         present(actionSheetController, animated: true, completion: nil)
     }
     
-    //MARK : SKPaymentTransactionObserver
+    //MARK: SKPaymentTransactionObserver
     
-    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         
         for transaction in transactions {
             switch transaction.transactionState {
@@ -163,7 +162,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
         }
     }
     
-    func paymentQueueRestoreCompletedTransactionsFinished(queue: SKPaymentQueue) {
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
         print(queue)
         print(queue.transactions)
         
@@ -194,7 +193,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     }
     
     
-    //MARK : - To quickblox
+    //MARK: - To quickblox
     
     func saveToQuickblox() {
         

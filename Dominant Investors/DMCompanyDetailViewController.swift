@@ -33,7 +33,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         loadChart()
     }
             
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
         self.infoLabel.text        = self.company!.companyDescription
@@ -98,10 +98,10 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
 
         chartView = ChartView.create()
         chartView?.delegate = self
-        chartView?.frame = chartContainer.bounds
+        chartView?.frame = CGRect(x: 24, y: 0, width: self.chartContainer.frame.width-48, height: self.chartContainer.frame.height)
         chartContainer?.addSubview(chartView!)
         
-        chart = SwiftStockChart(frame: CGRect(x : 10, y :  10, width : self.view.frame.size.width-20, height : chartContainer.frame.size.height-70))
+        chart = SwiftStockChart(frame: CGRect(x : 16, y :  10, width : self.chartContainer.bounds.size.width - 60, height : chartContainer.frame.height - 80))
         
         chartView?.backgroundColor = UIColor.clear
         
@@ -119,7 +119,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
 
     }
     
-    // MARK : ChartViewDelegate
+    // MARK: ChartViewDelegate
     
     func loadChartWithRange(range: ChartTimeRange) {
         
@@ -146,7 +146,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         loadChartWithRange(range: range)
     }
 
-    // MARK : Actions
+    // MARK: Actions
     
     @IBAction func showSignals(sender : UIButton) {
         self.performSegue(withIdentifier: "DMSignalsSegue", sender: self)

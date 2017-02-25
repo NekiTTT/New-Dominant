@@ -20,7 +20,15 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
         setupUI()
     }
     
-    // MARK : Private
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "contanerSegue" {
+            let description = segue.destination as! DMSubscriptionViewController
+            description.delegate = self
+        }
+    }
+    
+    // MARK: Private
     
     private func setupUI() {
         self.tableView.delegate = self
@@ -28,7 +36,7 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
         self.tableView.register(DMSignalCell.self, forCellReuseIdentifier: "DMSignalCell")
     }
     
-    // MARK : UITableViewDataSource
+    // MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -44,7 +52,7 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
         return cell
     }
     
-    // MARK : DMContainerDelegate
+    // MARK: DMContainerDelegate
     
     internal func hideContainer() {    
         self.subscriptionContainer.isHidden = true
@@ -54,6 +62,10 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    internal func dismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

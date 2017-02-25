@@ -17,8 +17,8 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var activity : UIActivityIndicatorView!
     
     override func awakeFromNib() {
-        activity.hidesWhenStopped = true
-        activity.startAnimating()
+        self.activity.hidesWhenStopped = true
+        self.activity.startAnimating()
         super.awakeFromNib()
     }
     
@@ -35,15 +35,15 @@ class DMCompanyCollectionCell: UICollectionViewCell {
             model.companyPictureURL = image
             self.companyImage.image = image
             self.activity.stopAnimating()
-        } else {
-            
-            DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image) in
-                DispatchQueue.main.async {
-                    model.companyPictureURL = image
-                    self.companyImage.image = image
-                    _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
-                    self.activity.stopAnimating()
-                }
+            return
+        }
+        
+        DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image) in
+            DispatchQueue.main.async {
+                model.companyPictureURL = image
+                self.companyImage.image = image
+                _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
+                self.activity.stopAnimating()
             }
         }
     }
@@ -51,6 +51,7 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        self.companyImage.image = nil
     }
 }
 

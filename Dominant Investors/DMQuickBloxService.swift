@@ -13,7 +13,7 @@ class DMQuickBloxService: NSObject {
 
     static let sharedInstance = DMQuickBloxService()
     
-    // MARK : Get Data
+    // MARK: Get Data
     
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         QBRequest.objects(withClassName: "personal2", successBlock: { (response, objects) in
@@ -78,7 +78,7 @@ class DMQuickBloxService: NSObject {
         }
     }
     
-    // MARK : Set Data
+    // MARK: Set Data
     
     open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         
@@ -137,13 +137,18 @@ class DMQuickBloxService: NSObject {
     
     open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage) -> Void) {
         QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
-            guard let data   = imageData else { return }
-            guard UIImage(data : data) != nil else { return }
-            completion(UIImage(data : data)!)
+            DispatchQueue.main.async {
+            guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)
+            return }
+            guard let image = UIImage(data : data) else { self.downloadCompanyImageWith(ID: ID, completion: completion)
+            return }
+            completion(image)
+            }
         }, statusBlock: { (request, status) in
             
         }) { (errorResponse) in
-            print(errorResponse.error.debugDescription)
+            DispatchQueue.main.async {
+                self.downloadCompanyImageWith(ID: ID, completion: completion) }
         }
     }
     
@@ -172,7 +177,7 @@ class DMQuickBloxService: NSObject {
         }
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func updateExistRating(id: String, value : Double) {
         let quickblox = QBCOCustomObject()

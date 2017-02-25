@@ -22,7 +22,7 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         setupUI()
     }
 
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
         drawBlurOverlay()
@@ -84,7 +84,7 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         }
     }
     
-    // MARK : Actions
+    // MARK: Actions
     
     @IBAction func loginButtonPressed(sender : UIButton) {
         self.proceedLogin()
@@ -97,7 +97,7 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         self.present(signUp, animated: false, completion: nil)
     }
     
-    // MARK : UITextFieldDelegate
+    // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         

@@ -19,9 +19,9 @@ class DMTabBarViewController: DMViewController {
     let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active")]
     
     // MARK: Outlets
-    @IBOutlet weak var loadImage : UIImageView!
+    @IBOutlet weak var loadImage    : UIImageView!
     @IBOutlet weak var tabContainer : UIView!
-    @IBOutlet weak var stackView  : UIStackView!
+    @IBOutlet weak var stackView    : UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class DMTabBarViewController: DMViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         if (!loaded) {
@@ -45,7 +45,7 @@ class DMTabBarViewController: DMViewController {
         }
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func setupTabButtons() {
         for index in 0...self.viewControllers.count - 1 {
@@ -95,6 +95,7 @@ class DMTabBarViewController: DMViewController {
     
     private func createContainer(index : Int) {
         let container = UIView(frame: self.tabContainer.frame)
+        
         self.view.addSubview(container)
         self.view.bringSubview(toFront: container)
         containers.append(container)
@@ -108,7 +109,7 @@ class DMTabBarViewController: DMViewController {
         self.showTab(index: Values.DMDefaultScreen)
     }
 
-    // MARK : Actions
+    // MARK: Actions
     
     @objc private func showTab(_ sender : UIButton) {
         showTab(index: sender.tag)

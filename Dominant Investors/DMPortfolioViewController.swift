@@ -75,7 +75,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
     }
 
-    // MARK : Private
+    // MARK: Private
     
     private func setupUI() {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -156,7 +156,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableViewHeight.constant = self.tableView.contentSize.height
     }
 
-    // MARK : Actions
+    // MARK: Actions
     
     @IBAction func portfolioTypeChanged(sender : UISegmentedControl) {
         self.portfolioType == .DMPersonalPortfolio ? showDominant() : showPersonal()
@@ -198,7 +198,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
     }
     
-    // MARK : UITextFieldDelegate (Actions)
+    // MARK: UITextFieldDelegate (Actions)
     
     @IBAction func tickerInputHandler(sender : UITextField) {
         if (sender.text?.characters.count == 0) {
@@ -213,7 +213,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
     }
     
-    // MARK : DMDropdownListDelegate
+    // MARK: DMDropdownListDelegate
     
     func tickerDidSelected(stock : StockSearchResult) {
         self.hideDropdownList()
@@ -222,7 +222,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tickerField.resignFirstResponder()
     }
     
-    // MARK : DMPortfolioUserInterface 
+    // MARK: DMPortfolioUserInterface 
     
     func reloadData() {
         DispatchQueue.main.async {
@@ -239,7 +239,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    // MARK : UIAlertViewController action
+    // MARK: UIAlertViewController action
     
     override func okAction() {
         print("Ok handled")

@@ -32,7 +32,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         DMQuickBloxService.sharedInstance.getDominantPortfolio(completion: completion)
     }
     
-    // MARK : UITableViewDelegate
+    // MARK: UITableViewDelegate
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -52,7 +52,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     
-    // MARK : UITableViewDataSource
+    // MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -76,14 +76,14 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    // MARK : DMStockCellDelegate
+    // MARK: DMStockCellDelegate
     
     func setToTotalValue(ticker : String, value : Double) {
         totalData[ticker] = value
         calculateTotal()
     }
     
-    // MARK : Private
+    // MARK: Private
     
     private func calculateTotal() {
         self.portfolioTotal = 0

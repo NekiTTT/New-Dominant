@@ -56,7 +56,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     
-    // MARK : Private
+    // MARK: Private
     
     private func clearPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         DMQuickBloxService.sharedInstance.clearPortfolio(IDs : [String](), completion: completion)
@@ -88,7 +88,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         }
     }
     
-    // MARK : UITableViewDelegate
+    // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -107,7 +107,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         }
     }
     
-    // MARK : UITableViewDataSource
+    // MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -131,7 +131,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         return cell
     }
     
-    // MARK : DMStockCellDelegate
+    // MARK: DMStockCellDelegate
     
     func setToTotalValue(ticker : String, value : Double) {
         totalData[ticker] = value
