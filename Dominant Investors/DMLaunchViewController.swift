@@ -48,8 +48,11 @@ class DMLaunchViewController: DMViewController {
     private func checkOldAppMigration() -> Bool {
         if let username = UserDefaults.standard.object(forKey: "kUsername") as! String! {
             if let password = UserDefaults.standard.object(forKey: "kPassword") as! String! {
-               DMAuthorizationManager.sharedInstance.loginWith(login: username, password: password, completion: { (success, error) in
-               })
+                DMAuthorizationManager.sharedInstance.loginWith(login: username, password: password, completion: { (success, error) in
+                    DispatchQueue.main.async {
+                        self.launchApp()
+                    }
+                })
             } else { return false }
         } else { return false }
         

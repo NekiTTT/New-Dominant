@@ -21,12 +21,16 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     @IBOutlet weak var companyNameLabel : UILabel!
     @IBOutlet weak var getSignalsButton : UIButton!
     @IBOutlet weak var companyLogo      : UIImageView!
-    @IBOutlet weak var chartContainer   : UIView?
+    @IBOutlet weak var chartContainer   : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadChart()
         setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadChart()
     }
             
     // MARK : Private
@@ -94,23 +98,21 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
 
         chartView = ChartView.create()
         chartView?.delegate = self
-        chartView?.frame = CGRect(x: 10, y: 0, width : self.view.frame.size.width-20, height : (self.chartContainer?.frame.size.height)!)
+        chartView?.frame = chartContainer.frame
         chartContainer?.addSubview(chartView!)
         
-        chart = SwiftStockChart(frame: CGRect(x :5,
-                                              y:  (self.chartContainer?.frame.size.height)! * 0.1,
-                                              width: self.view.frame.size.width - 10,
-                                              height :(self.chartContainer?.frame.size.height)! * 0.8 - ((chartView?.btnIndicatorView.frame.size.height)! + 5)))
+        chart = SwiftStockChart(frame: CGRect(x : 10, y :  10, width : self.view.frame.size.width-20, height : chartContainer.frame.size.height-70))
         
         chartView?.backgroundColor = UIColor.clear
         
         chart.axisColor = UIColor.red
-        chart.verticalGridStep = 5
-        chart.horizontalGridStep = 5
+        chart.verticalGridStep = 3
+        
+        loadChartWithRange(range: .OneDay)
         
         chartView?.addSubview(chart)
         chartView?.backgroundColor = UIColor.black
-        loadChartWithRange(range: .OneDay)
+        
     
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
