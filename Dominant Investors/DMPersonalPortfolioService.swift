@@ -101,7 +101,13 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
                 self.moreAboutStock(stock: self.portfolios[indexPath.row])
             }
             more.backgroundColor = UIColor.blue
-            return [more]
+            
+            let delete = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
+                let stock = self.portfolios[indexPath.row]
+            }
+            
+            delete.backgroundColor = UIColor.red
+            return [more, delete]
         } else {
             return nil
         }
@@ -143,6 +149,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
+        self.portfolioTotal = (self.portfolioTotal / Double(self.totalData.values.count))
         updateUserRating()
     }
 

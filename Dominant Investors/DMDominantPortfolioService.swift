@@ -90,6 +90,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
+        self.portfolioTotal = (self.portfolioTotal / Double(self.totalData.values.count))
         self.totalCell?.setTotal(value: self.portfolioTotal)
     }
     
