@@ -9,8 +9,11 @@
 import UIKit
 import MBProgressHUD
 
-class DMAnalyticsViewController: UICollectionViewController {
+class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var collectionHeight : NSLayoutConstraint!
+    
     var companies = [DMCompanyModel]()
     
     override func viewDidLoad() {
@@ -24,6 +27,12 @@ class DMAnalyticsViewController: UICollectionViewController {
                 MBProgressHUD.hide(for: self.view, animated: true)
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.resizeCollection()
+
     }
     
     // MARK : Private
@@ -51,23 +60,27 @@ class DMAnalyticsViewController: UICollectionViewController {
         self.navigationController?.pushViewController(companyDetail, animated: true)
     }
     
+    private func resizeCollection() {
+        self.collectionHeight.constant = self.collectionView.contentSize.height
+    }
+    
     // MARK : UICollectionViewDelegate
     
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         showCompanyDetail(company: companies[indexPath.row])
     }
 
     // MARK : UICollectonViewDataSource
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return companies.count
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DMCompanyCollectionCell", for: indexPath) as! DMCompanyCollectionCell
         let company = self.companies[indexPath.row]

@@ -28,12 +28,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YdZ-6E-hSP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdZ-6E-hSP">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-zL-hGT">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-zL-hGT">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="647" id="abu-KM-SCq"/>
+                                        </constraints>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gt0-rD-9sO">
                                             <size key="itemSize" width="199" height="170"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -68,80 +71,32 @@
                                         </connections>
                                     </collectionView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="FFf-zL-hGT" secondAttribute="bottom" id="1Nj-lF-BNk"/>
                                     <constraint firstItem="FFf-zL-hGT" firstAttribute="top" secondItem="YdZ-6E-hSP" secondAttribute="top" id="Dz9-6Z-5Uo"/>
                                     <constraint firstAttribute="trailing" secondItem="FFf-zL-hGT" secondAttribute="trailing" id="K9h-VP-wNd"/>
-                                    <constraint firstItem="FFf-zL-hGT" firstAttribute="centerY" secondItem="YdZ-6E-hSP" secondAttribute="centerY" id="S7P-gN-dvx"/>
                                     <constraint firstItem="FFf-zL-hGT" firstAttribute="leading" secondItem="YdZ-6E-hSP" secondAttribute="leading" id="pkO-xi-qIC"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YdZ-6E-hSP" firstAttribute="top" secondItem="kKl-Td-hu2" secondAttribute="top" id="2Yd-Dr-2jC"/>
                             <constraint firstAttribute="trailing" secondItem="YdZ-6E-hSP" secondAttribute="trailing" id="Hhe-C8-i3e"/>
-                            <constraint firstItem="YdZ-6E-hSP" firstAttribute="centerX" secondItem="kKl-Td-hu2" secondAttribute="centerX" id="I49-pN-L21"/>
                             <constraint firstItem="FFf-zL-hGT" firstAttribute="width" secondItem="kKl-Td-hu2" secondAttribute="width" id="KgB-q7-1qT"/>
                             <constraint firstItem="YdZ-6E-hSP" firstAttribute="leading" secondItem="kKl-Td-hu2" secondAttribute="leading" id="bsg-1U-ftp"/>
-                            <constraint firstItem="YdZ-6E-hSP" firstAttribute="top" secondItem="i25-9J-9a1" secondAttribute="bottom" id="dFN-bo-fxq"/>
                             <constraint firstItem="bb6-eL-2se" firstAttribute="top" secondItem="YdZ-6E-hSP" secondAttribute="bottom" id="zfb-bf-TKg"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionHeight" destination="abu-KM-SCq" id="Fqo-FL-7J1"/>
                         <outlet property="collectionView" destination="FFf-zL-hGT" id="QzD-ZR-K3P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5X-ja-73R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1865" y="592"/>
-        </scene>
-        <!--Analytics View Controller-->
-        <scene sceneID="2Cd-oj-V5I">
-            <objects>
-                <collectionViewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="vN0-e5-H65" customClass="DMAnalyticsViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="tQ5-zO-9Mm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6hp-3y-VeD">
-                            <size key="itemSize" width="199" height="170"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PFz-KY-UVf" customClass="CompanyCell" customModule="Dominant_Investors" customModuleProvider="target">
-                                <rect key="frame" x="88" y="0.0" width="199" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="199" height="170"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="AiI-jM-Jqo">
-                                            <rect key="frame" x="89" y="75" width="20" height="20"/>
-                                        </activityIndicatorView>
-                                    </subviews>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="AiI-jM-Jqo" firstAttribute="centerX" secondItem="PFz-KY-UVf" secondAttribute="centerX" id="ayV-bE-h2g"/>
-                                    <constraint firstItem="AiI-jM-Jqo" firstAttribute="centerY" secondItem="PFz-KY-UVf" secondAttribute="centerY" id="oTY-kE-DiN"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="activity" destination="AiI-jM-Jqo" id="K4G-x2-O65"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="vN0-e5-H65" id="Lof-dd-rwp"/>
-                            <outlet property="delegate" destination="vN0-e5-H65" id="A9g-fh-E2b"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="S4z-18-Xpo"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XoG-YX-vs4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1038" y="593"/>
+            <point key="canvasLocation" x="-1127.2" y="344.07796101949026"/>
         </scene>
         <!--Company Detail View Controller-->
         <scene sceneID="xH7-LD-r9C">
@@ -152,11 +107,11 @@
                         <viewControllerLayoutGuide type="bottom" id="9Xo-L2-Iqs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fv9-cX-ixT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="750"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companyInfoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="az3-Y8-Sxc">
-                                <rect key="frame" x="0.0" y="20" width="320" height="730"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="1280"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x54-v7-C6y">
@@ -340,7 +295,7 @@ IPO Date 08-14-1010</string>
                                                 <rect key="frame" x="8" y="16" width="0.0" height="70"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-O4-oCj">
+                                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vne-O4-oCj">
                                                 <rect key="frame" x="24" y="8" width="272" height="0.0"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -532,7 +487,7 @@ IPO Date 08-14-1010</string>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="750"/>
+                    <size key="freeformSize" width="320" height="1300"/>
                     <connections>
                         <outlet property="chartContainer" destination="x54-v7-C6y" id="yLI-9J-3K0"/>
                         <outlet property="companyLogo" destination="UBr-Y0-7ym" id="01n-hN-8Pl"/>
@@ -554,7 +509,7 @@ IPO Date 08-14-1010</string>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seF-Sv-ZJH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="278" y="606"/>
+            <point key="canvasLocation" x="35" y="628"/>
         </scene>
     </scenes>
     <resources>
