@@ -22,7 +22,8 @@ struct Colors {
 }
 
 struct Strings {
-    static let DMStandartLoginError = NSLocalizedString("Wrong username or password.", comment: "")
+    static let DMStandartLoginError  = NSLocalizedString("Wrong username or password.", comment: "")
+    static let DMStandartSignUpError = NSLocalizedString("Account with provided username or e-mail already exist", comment: "")
 }
 
 

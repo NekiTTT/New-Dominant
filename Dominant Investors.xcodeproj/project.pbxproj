@@ -598,7 +598,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 45F26FVHGB;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -835,6 +835,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 45F26FVHGB;
 				ENABLE_BITCODE = NO;
@@ -849,6 +850,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "91372ffd-02cc-4d05-b478-33b178c26b22";
+				PROVISIONING_PROFILE_SPECIFIER = DOMINANT_DEV;
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -860,6 +863,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 45F26FVHGB;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -872,6 +876,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "cffb8840-80e7-4841-a8cb-e6103ba900cb";
+				PROVISIONING_PROFILE_SPECIFIER = SWIFT3.ADHOC;
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};

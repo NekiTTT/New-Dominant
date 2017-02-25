@@ -47,27 +47,29 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
 
     
     private func configureTextFields() {
-
+        self.loginTextField.attributedPlaceholder =
+            NSAttributedString(string:"USERNAME",
+                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+        
+        self.emailTextField.attributedPlaceholder =
+            NSAttributedString(string:"E-MAIL",
+                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+        
+        self.passwordTextField.attributedPlaceholder =
+            NSAttributedString(string:"PASSWORD",
+                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+        
+        self.confirmPasswordTextField.attributedPlaceholder =
+            NSAttributedString(string:"CONFIRM PASSWORD",
+                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+        
+        self.loginTextField.delegate = self
+        self.emailTextField.delegate = self
+        self.passwordTextField.delegate = self
+        self.confirmPasswordTextField.delegate = self
     }
     
     private func handleSignUp () {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
-                                                         email    : self.emailTextField.text!,
-                                                         password : self.passwordTextField.text!,
-                                                         confirm  : self.confirmPasswordTextField.text!) { (success, error) in
-                                                            DispatchQueue.main.async {
-                                                                MBProgressHUD.hide(for: self.view, animated: true)
-                                                                if (success) {
-                                                                    self.dismiss(animated: true, completion: nil)
-                                                                }
-                                                            }
-        }
-    }
-    
-    // MARK : Actions
-    
-    @IBAction func signUpButtonPressed(sender : UIButton) {
         
         if (self.passwordTextField.text!.characters.count < 8) {
             self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
@@ -87,6 +89,27 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
             return
         }
         
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
+                                                         email    : self.emailTextField.text!,
+                                                         password : self.passwordTextField.text!,
+                                                         confirm  : self.confirmPasswordTextField.text!) { (success, error) in
+                                                            DispatchQueue.main.async {
+                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                if (success) {
+                                                                    self.dismiss(animated: true, completion: nil)
+                                                                } else {
+                                                                    self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
+                                                                                       message: error!.description,
+                                                                                       cancelButton: false)
+                                                                }
+                                                            }
+        }
+    }
+    
+    // MARK : Actions
+    
+    @IBAction func signUpButtonPressed(sender : UIButton) {
         handleSignUp()
     }
     
@@ -97,7 +120,21 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     // MARK : UITextFieldDelegate
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
+        
+        if (textField.tag == 4) {
+            self.handleSignUp()
+        }
+        
+        let nextField = textField.tag + 1
+        let nextResponder = self.view.viewWithTag(nextField) as UIResponder!
+        
+        if (nextResponder != nil){
+            nextResponder?.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        
+        return false
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

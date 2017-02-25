@@ -499,7 +499,7 @@ IPO Date 08-14-1010</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICZ-5X-7uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342.39999999999998" y="628.78560719640188"/>
+            <point key="canvasLocation" x="-726" y="660"/>
         </scene>
         <!--Signals-->
         <scene sceneID="bNZ-ds-eAG">

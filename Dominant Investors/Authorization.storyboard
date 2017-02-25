@@ -88,7 +88,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EOt-8e-Sg3">
                                         <rect key="frame" x="41" y="230" width="190" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CONFIRM PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="W3X-qu-iJa">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="CONFIRM PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="W3X-qu-iJa">
                                                 <rect key="frame" x="8" y="5" width="174" height="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
@@ -106,7 +106,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8J5-XX-UZ0">
                                         <rect key="frame" x="41" y="182" width="190" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="bVS-X2-qoe">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="bVS-X2-qoe">
                                                 <rect key="frame" x="8" y="5" width="174" height="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
@@ -124,7 +124,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ne-N2-MyN">
                                         <rect key="frame" x="41" y="86" width="190" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USERNAME" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="LjO-qn-pOj">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="USERNAME" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="LjO-qn-pOj">
                                                 <rect key="frame" x="8" y="5" width="174" height="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
@@ -147,7 +147,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j6i-sP-htn">
                                         <rect key="frame" x="41" y="134" width="190" height="40"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-ib-Z6f" userLabel="email">
+                                            <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-MAIL" textAlignment="natural" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="ugo-ib-Z6f" userLabel="email">
                                                 <rect key="frame" x="8" y="5" width="174" height="30"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>

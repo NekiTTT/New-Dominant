@@ -131,8 +131,7 @@ class DMQuickBloxService: NSObject {
         QBRequest.signUp(newUser, successBlock: { (response, user) in
             completion(true, nil)
         }, errorBlock: { (responseError) in
-            let reasons = responseError.error?.error?.localizedDescription
-            completion(false, reasons)
+            completion(false, Strings.DMStandartSignUpError)
         })
     }
     
