@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="jPr-Kk-bnH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbj-3T-zl5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -74,6 +74,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rp9-15-rpw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1152.8" y="-45.42728635682159"/>
+        </scene>
+        <!--Rotating View Controller-->
+        <scene sceneID="xPE-69-7mj">
+            <objects>
+                <viewController storyboardIdentifier="DMRotatingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sbj-3T-zl5" customClass="DMRotatingViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I5L-I0-1Pz"/>
+                        <viewControllerLayoutGuide type="bottom" id="nYN-9a-uCM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="INn-bc-tIT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pze-un-ylM">
+                                <rect key="frame" x="0.0" y="600.5" width="375" height="66.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="WLL-Sz-oZD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="WLL-Sz-oZD" secondAttribute="trailing" id="0r2-VV-Yxe"/>
+                                    <constraint firstAttribute="bottom" secondItem="WLL-Sz-oZD" secondAttribute="bottom" id="QPb-1a-A7X"/>
+                                    <constraint firstItem="WLL-Sz-oZD" firstAttribute="top" secondItem="pze-un-ylM" secondAttribute="top" id="YKD-k9-yE9"/>
+                                    <constraint firstItem="WLL-Sz-oZD" firstAttribute="leading" secondItem="pze-un-ylM" secondAttribute="leading" id="qss-qW-W3t"/>
+                                </constraints>
+                            </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xye-Pg-H6G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
+                                <connections>
+                                    <segue destination="790-GO-WPR" kind="embed" id="spx-ka-rRp"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4c8-WD-NlR">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="601"/>
+                                <connections>
+                                    <segue destination="u23-I6-keB" kind="embed" id="wWW-QC-Utu"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-Zw-5fK">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="600.5"/>
+                                <connections>
+                                    <segue destination="XTM-3H-17J" kind="embed" id="WJi-4C-tD5"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dsg-Zw-5fK" firstAttribute="leading" secondItem="INn-bc-tIT" secondAttribute="leading" id="1Ds-ZV-xc0"/>
+                            <constraint firstItem="4c8-WD-NlR" firstAttribute="leading" secondItem="xye-Pg-H6G" secondAttribute="leading" id="3PW-bz-iLX"/>
+                            <constraint firstItem="xye-Pg-H6G" firstAttribute="bottom" secondItem="dsg-Zw-5fK" secondAttribute="bottom" id="4Fr-rN-HAz"/>
+                            <constraint firstAttribute="trailing" secondItem="pze-un-ylM" secondAttribute="trailing" id="4zM-OY-rgG"/>
+                            <constraint firstItem="pze-un-ylM" firstAttribute="top" secondItem="dsg-Zw-5fK" secondAttribute="bottom" id="AFv-Ep-2n9"/>
+                            <constraint firstItem="pze-un-ylM" firstAttribute="height" secondItem="INn-bc-tIT" secondAttribute="height" multiplier="0.1" id="AwY-Ej-b0b">
+                                <variation key="heightClass=regular-widthClass=regular" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="xye-Pg-H6G" firstAttribute="trailing" secondItem="dsg-Zw-5fK" secondAttribute="trailing" id="Lj4-4Z-Lwf"/>
+                            <constraint firstAttribute="trailing" secondItem="dsg-Zw-5fK" secondAttribute="trailing" id="Qwa-a8-hRg"/>
+                            <constraint firstItem="nYN-9a-uCM" firstAttribute="top" secondItem="pze-un-ylM" secondAttribute="bottom" id="Uf8-m6-u05"/>
+                            <constraint firstItem="4c8-WD-NlR" firstAttribute="top" secondItem="xye-Pg-H6G" secondAttribute="top" id="VL8-yM-HTi"/>
+                            <constraint firstItem="4c8-WD-NlR" firstAttribute="bottom" secondItem="xye-Pg-H6G" secondAttribute="bottom" id="b6x-1z-3Ec"/>
+                            <constraint firstItem="4c8-WD-NlR" firstAttribute="trailing" secondItem="xye-Pg-H6G" secondAttribute="trailing" id="o5h-hZ-pB5"/>
+                            <constraint firstItem="pze-un-ylM" firstAttribute="leading" secondItem="INn-bc-tIT" secondAttribute="leading" id="yV4-KZ-Y1k"/>
+                            <constraint firstItem="dsg-Zw-5fK" firstAttribute="top" secondItem="INn-bc-tIT" secondAttribute="top" id="yVw-fn-9Qe"/>
+                            <constraint firstItem="xye-Pg-H6G" firstAttribute="leading" secondItem="dsg-Zw-5fK" secondAttribute="leading" id="yzo-19-kSR"/>
+                            <constraint firstItem="xye-Pg-H6G" firstAttribute="top" secondItem="dsg-Zw-5fK" secondAttribute="top" id="z9t-5l-uUW"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="analyticsContainer" destination="dsg-Zw-5fK" id="T4f-W8-JUm"/>
+                        <outlet property="portfolioContainer" destination="xye-Pg-H6G" id="aB8-S3-hx0"/>
+                        <outlet property="ratingsContainer" destination="4c8-WD-NlR" id="wuV-0e-eo8"/>
+                        <outlet property="stackView" destination="WLL-Sz-oZD" id="3pJ-KH-hdS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKm-xV-24L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2036" y="-45"/>
+        </scene>
+        <!--Analytics-->
+        <scene sceneID="4pG-go-M7n">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Analytics" id="XTM-3H-17J" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nf-Hb-lkE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2626" y="-210"/>
+        </scene>
+        <!--Portfolio-->
+        <scene sceneID="nXP-dk-HEh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Portfolio" id="790-GO-WPR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jo6-o3-WrJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2627" y="-125"/>
+        </scene>
+        <!--Ratings-->
+        <scene sceneID="wSY-sR-24q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Ratings" id="u23-I6-keB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MP0-p0-6iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2626" y="-46"/>
         </scene>
     </scenes>
 </document>

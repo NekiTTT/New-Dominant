@@ -98,6 +98,14 @@ class DMTabBarViewController: DMViewController {
         
         self.view.addSubview(container)
         self.view.bringSubview(toFront: container)
+        
+        NSLayoutConstraint.activate([
+            container.leadingAnchor.constraint(equalTo: self.tabContainer.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: self.tabContainer.trailingAnchor),
+            container.topAnchor.constraint(equalTo: self.tabContainer.topAnchor),
+            container.bottomAnchor.constraint(equalTo: self.tabContainer.bottomAnchor)
+        ])
+        
         containers.append(container)
     }
     

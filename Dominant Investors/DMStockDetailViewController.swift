@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DMStockDetailViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, ChartViewDelegate {
+class DMStockDetailViewController: DMViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, ChartViewDelegate {
     
     // MARK: Outlets
     
@@ -32,8 +32,16 @@ class DMStockDetailViewController: UIViewController, UICollectionViewDelegateFlo
         setupChart()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        for view in self.viewOfChart.subviews {
+            view.removeFromSuperview()
+        }
+        coordinator.animate(alongsideTransition: { context in
+            context.viewController(forKey: UITransitionContextViewControllerKey.from)
+        }, completion: { context in
+            self.setupChart()
+        })
     }
     
     // MARK: Actions

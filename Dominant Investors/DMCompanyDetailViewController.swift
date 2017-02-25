@@ -32,7 +32,19 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         super.viewDidAppear(animated)
         loadChart()
     }
-            
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        for view in self.chartContainer.subviews {
+            view.removeFromSuperview()
+        }
+        coordinator.animate(alongsideTransition: { context in
+            context.viewController(forKey: UITransitionContextViewControllerKey.from)
+        }, completion: { context in
+            self.loadChart()
+        })
+    }
+    
     // MARK: Private
     
     private func setupUI() {
@@ -95,7 +107,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     
     
     private func loadChart() {
-
+        
         chartView = ChartView.create()
         chartView?.delegate = self
         chartView?.frame = CGRect(x: 24, y: 0, width: self.chartContainer.frame.width-48, height: self.chartContainer.frame.height)

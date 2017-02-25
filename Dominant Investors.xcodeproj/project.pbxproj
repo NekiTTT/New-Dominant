@@ -27,6 +27,7 @@
 		4581D6BE1E61CE6F005F2173 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E7811E5901A800D56BDE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6BF1E61CE6F005F2173 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6C01E61CE93005F2173 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6C11E61FB92005F2173 /* DMRotatingViewController.swift */; };
 		4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76E1E59B35E004C85F4 /* Constants.swift */; };
 		45A1078F1E59C24100591170 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A1078E1E59C24100591170 /* FXBlurView.m */; };
 		45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0321E591629000CB062 /* Crashlytics.framework */; };
@@ -126,6 +127,7 @@
 		4581D6B61E60FE0C005F2173 /* DMStockInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStockInfoCell.xib; sourceTree = "<group>"; };
 		4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioUserInterface.swift; sourceTree = "<group>"; };
 		4581D6BB1E610AFC005F2173 /* Dominant+UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+UIImage.swift"; sourceTree = "<group>"; };
+		4581D6C11E61FB92005F2173 /* DMRotatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRotatingViewController.swift; sourceTree = "<group>"; };
 		4592F76E1E59B35E004C85F4 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4592F7741E59BFEB004C85F4 /* Dominant Investors-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Dominant Investors-Bridging-Header.h"; path = "Dominant Investors/Dominant Investors-Bridging-Header.h"; sourceTree = "<group>"; };
 		45A1078D1E59C24100591170 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				45B7A02C1E59146F000CB062 /* DMTabBarViewController.swift */,
+				4581D6C11E61FB92005F2173 /* DMRotatingViewController.swift */,
 			);
 			name = "Tab Bar";
 			sourceTree = "<group>";
@@ -678,6 +681,7 @@
 				45B4E74A1E58EE9E00D56BDE /* DMAPIService.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,
 				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,
+				4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */,
 				45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */,
 				452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */,
 				45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */,

@@ -4,7 +4,7 @@
 //
 //  Created by Nekit on 18.02.17.
 //  Copyright © 2017 Dominant. All rights reserved.
-//
+//  SUPERCLASS FOR ALL CONTROLLERS IN APP.
 
 import UIKit
 
@@ -25,16 +25,21 @@ class DMViewController: UIViewController {
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
+        
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-        self.view.setNeedsDisplay()
+        coordinator.animate(alongsideTransition: { context in
+            context.viewController(forKey: UITransitionContextViewControllerKey.from)
+        }, completion: { context in
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        })
     }
+    
     
     // MARK: UIAlertController
     
