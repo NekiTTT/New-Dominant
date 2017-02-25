@@ -20,10 +20,6 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         super.viewDidLoad()
         setupUI()
         MBProgressHUD.showAdded(to: self.view, animated: true)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
             DispatchQueue.main.async {
                 self.companies = companies
@@ -32,6 +28,10 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
                 self.resizeCollection()
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     // MARK : Private
@@ -85,9 +85,7 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DMCompanyCollectionCell", for: indexPath) as! DMCompanyCollectionCell
         let company = self.companies[indexPath.row]
-        
         cell.setupWith(model: company)
-        
         return cell
     }
 

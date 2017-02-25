@@ -117,7 +117,7 @@ class DMQuickBloxService: NSObject {
             UserDefaults.standard.set(data, forKey : "Authorized")
             competion(true, nil)
         }) { (error) in
-            competion(false, error.error.debugDescription)
+            competion(false, Strings.DMStandartLoginError)
         }
     }
     

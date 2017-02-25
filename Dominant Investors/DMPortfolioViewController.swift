@@ -16,7 +16,7 @@ enum DMPortfolioType : Int {
 
 class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPortfolioUserInterface {
 
-    var refreshControl: UIRefreshControl!
+    var refreshControl         : UIRefreshControl!
     var dropdownViewController : DMDropdownViewController!
     var searchResults = [StockSearchResult]()
     var total = 0.0
@@ -51,6 +51,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     @IBOutlet  weak var personalButton      : UIView!
     
     @IBOutlet  weak var tableView           : UITableView!
+    @IBOutlet  weak var tableViewHeight     : NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,7 +100,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.delegate   = DMPersonalPortfolioService.sharedInstance
         self.tableView.dataSource = DMPersonalPortfolioService.sharedInstance
         
-        self.tableView.reloadData()
+        self.reloadData()
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 50
@@ -124,7 +125,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.delegate   = DMDominantPortfolioService.sharedInstance
         self.tableView.dataSource = DMDominantPortfolioService.sharedInstance
         
-        self.tableView.reloadData()
+        self.reloadData()
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 0
@@ -149,6 +150,10 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.secondColumnTitle.text = titles[1]
         self.thirdColumnTitle.text  = titles[2]
         self.fourthColumnTitle.text = titles[3]
+    }
+    
+    private func resizeTableView() {
+        self.tableViewHeight.constant = self.tableView.contentSize.height
     }
 
     // MARK : Actions
@@ -223,6 +228,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
             self.tableView.reloadData()
+            self.resizeTableView()
         }
     }
     

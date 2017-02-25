@@ -98,7 +98,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
 
         chartView = ChartView.create()
         chartView?.delegate = self
-        chartView?.frame = chartContainer.frame
+        chartView?.frame = chartContainer.bounds
         chartContainer?.addSubview(chartView!)
         
         chart = SwiftStockChart(frame: CGRect(x : 10, y :  10, width : self.view.frame.size.width-20, height : chartContainer.frame.size.height-70))

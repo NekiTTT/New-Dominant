@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class DMLoginViewController: DMViewController, UITextFieldDelegate {
 
@@ -66,20 +67,30 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         self.navigationController?.pushViewController(tabBar!, animated: true)
     }
     
-    // MARK : Actions
-    
-    @IBAction func loginButtonPressed(sender : UIButton) {
+    private func proceedLogin() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         DMAuthorizationManager.sharedInstance.loginWith(login: self.usernameTextField.text!,
                                                         password: self.passwordTextField.text!) { (success, error) in
-                                                            
-                                                            if (success) {
-                                                                DispatchQueue.main.async {
+                                                            DispatchQueue.main.async {
+                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                if (success) {
                                                                     self.showTabBar()
+                                                                } else {
+                                                                    self.showAlertWith(title: NSLocalizedString("Authorization error", comment: ""),
+                                                                                       message: error!.description,
+                                                                                       cancelButton: false)
                                                                 }
                                                             }
         }
     }
     
+    // MARK : Actions
+    
+    @IBAction func loginButtonPressed(sender : UIButton) {
+        self.proceedLogin()
+    }
+
+
     @IBAction func signUpButtonPressed(sender : UIButton) {
         let signUp = UIStoryboard(name: "Authorization", bundle: nil).instantiateViewController(withIdentifier: "DMSignUpViewController")
         
@@ -91,11 +102,11 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if (textField.tag == 3) {
-            self.signUpButtonPressed(sender: UIButton())
+            self.proceedLogin()
         }
         
-        let nextTage = textField.tag + 1
-        let nextResponder=textField.superview?.viewWithTag(nextTage) as UIResponder!
+        let nextField = textField.tag + 1
+        let nextResponder = self.view.viewWithTag(nextField) as UIResponder!
         
         if (nextResponder != nil){
             nextResponder?.becomeFirstResponder()

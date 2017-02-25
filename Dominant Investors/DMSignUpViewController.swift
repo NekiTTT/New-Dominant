@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class DMSignUpViewController: DMViewController, UITextFieldDelegate {
 
@@ -49,21 +50,44 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
 
     }
     
+    private func handleSignUp () {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
+                                                         email    : self.emailTextField.text!,
+                                                         password : self.passwordTextField.text!,
+                                                         confirm  : self.confirmPasswordTextField.text!) { (success, error) in
+                                                            DispatchQueue.main.async {
+                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                if (success) {
+                                                                    self.dismiss(animated: true, completion: nil)
+                                                                }
+                                                            }
+        }
+    }
+    
     // MARK : Actions
     
     @IBAction func signUpButtonPressed(sender : UIButton) {
-        DMAuthorizationManager.sharedInstance.signUpWith(login    : self.loginTextField.text!,
-                                               email    : self.emailTextField.text!,
-                                               password : self.passwordTextField.text!,
-                                               confirm  : self.confirmPasswordTextField.text!) {
-                                                (success, error) in
-                                                
-                                                if (success) {
-                                                    DispatchQueue.main.async {
-                                                        self.dismiss(animated: true, completion: nil)
-                                                    }
-                                                }
+        
+        if (self.passwordTextField.text!.characters.count < 8) {
+            self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
+                               message: NSLocalizedString("Password must be at least 8 characters", comment: ""),
+                               cancelButton: false)
+            
+            return
+        } else if (self.passwordTextField.text != self.confirmPasswordTextField.text) {
+            self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
+                               message: NSLocalizedString("Password not match", comment: ""),
+                               cancelButton: false)
+            return
+        } else if (self.loginTextField.text!.characters.count < 4) {
+            self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
+                               message: NSLocalizedString("Username must be at least 4 characters", comment: ""),
+                               cancelButton: false)
+            return
         }
+        
+        handleSignUp()
     }
     
     @IBAction func backToLoginButtonPressed(sender : UIButton) {

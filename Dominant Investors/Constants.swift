@@ -21,4 +21,8 @@ struct Colors {
     static let DMProfitGreenColor = UIColor.init(red: 84/255, green: 162/255, blue: 88/255, alpha: 1)
 }
 
+struct Strings {
+    static let DMStandartLoginError = NSLocalizedString("Wrong username or password.", comment: "")
+}
+
 
