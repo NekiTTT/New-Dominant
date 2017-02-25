@@ -31,9 +31,6 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawBlurView()
-        
-        productIDs.append("dominantOne")
-        self.requestProductInfo()
         self.backgroundImageView.image = self.backgroundImage()
         self.checkDate { (active) in
             if (active) {
@@ -44,6 +41,8 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
                 UserDefaults.standard.set(false, forKey: "kSignals")
             }
         }
+        productIDs.append("dominantOne")
+        self.requestProductInfo()
     }
 
     

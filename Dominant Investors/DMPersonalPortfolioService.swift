@@ -14,19 +14,19 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     
     var portfolios     = [DMPersonalPortfolioModel]()
     var selectedTicker : StockSearchResult?
+    var userInterface  : DMPortfolioViewController!
     
     var totalData = [String : Double]()
     var portfolioTotal : Double = 0
     var totalCell : DMPortfolioTotalCell?
-    
-    var tableView : UITableView?
+  
     var ratingUploaded = false
     
     override init() {
         super.init()
         self.getPersonalPortfolio { (portfolios) in
             self.portfolios = portfolios.reduce([],{ [$1] + $0 })
-            self.tableView?.reloadData()
+            self.userInterface?.reloadData()
         }
     }
     
@@ -41,7 +41,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
                 self.selectedTicker = nil
                 self.portfolios.append(contentsOf: portfolios)
                 self.portfolios = self.portfolios.reduce([],{ [$1] + $0 })
-                self.tableView?.reloadData()
+                self.userInterface?.reloadData()
             }
         }
     }
@@ -50,14 +50,11 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         self.clearPortfolio { (portfolios) in
             DispatchQueue.main.async {
                 self.portfolios = portfolios.reduce([],{ [$1] + $0 })
-                self.tableView?.reloadData()
+                self.userInterface?.reloadData()
             }
         }
     }
     
-    open func updateUserRating() {
-        
-    }
     
     // MARK : Private
     
@@ -69,10 +66,45 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         DMQuickBloxService.sharedInstance.addNew(personalStock: personalStock, completion: completion)
     }
     
+    private func updateUserRating() {
+        if (totalData.values.count == self.portfolios.count) {
+            self.totalCell?.setTotal(value: self.portfolioTotal)
+            if (!self.ratingUploaded) {
+                self.ratingUploaded = true
+                DMQuickBloxService.sharedInstance.updateUserRating(value: self.portfolioTotal)
+            }
+        }
+    }
+    
+    private func moreAboutStock(stock : DMPersonalPortfolioModel) {
+        let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMStockDetailViewController") as! DMStockDetailViewController
+        
+        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
+            DispatchQueue.main.async {
+                controller.stockSymbol = stock.symbol!
+                controller.stock = stock
+                self.userInterface.showStockDetail(controller: controller)
+            }
+        }
+    }
+    
     // MARK : UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if (tableView.cellForRow(at: indexPath) as? DMStockCell) != nil {
+            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More", comment: "")) { (action, indexPath) in
+                tableView.setEditing(false, animated: true)
+                self.moreAboutStock(stock: self.portfolios[indexPath.row])
+            }
+            more.backgroundColor = UIColor.blue
+            return [more]
+        } else {
+            return nil
+        }
     }
     
     // MARK : UITableViewDataSource
@@ -111,13 +143,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
-        if (totalData.values.count == self.portfolios.count) {
-            self.totalCell?.setTotal(value: self.portfolioTotal)
-            if (!self.ratingUploaded) {
-                self.ratingUploaded = true
-                DMQuickBloxService.sharedInstance.updateUserRating(value: self.portfolioTotal)
-            }
-        }
+        updateUserRating()
     }
 
 }

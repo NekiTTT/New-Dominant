@@ -13,7 +13,7 @@ enum DMPortfolioType : Int {
     case DMDominantPortfolio = 1
 }
 
-class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
+class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPortfolioUserInterface {
 
     var refreshControl: UIRefreshControl!
     var dropdownViewController : DMDropdownViewController!
@@ -21,6 +21,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     var total = 0.0
 
     var formatter = DateFormatter()
+    var loaded = false
     
     var portfolioType  = DMPortfolioType.DMPersonalPortfolio
     
@@ -57,10 +58,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        if (!loaded) {
         showPersonal()
+        loaded = true
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         if (segue.identifier == "containerSegue") {
             self.dropdownViewController = segue.destination as! DMDropdownViewController
             self.dropdownViewController.portfolioController = self
@@ -83,8 +88,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
         self.dominantImageContainer.layer.borderWidth = 0.5
         self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
         
-        DMPersonalPortfolioService.sharedInstance.tableView = self.tableView
-        DMDominantPortfolioService.sharedInstance.tableView = self.tableView
+        DMPersonalPortfolioService.sharedInstance.userInterface = self
+        DMDominantPortfolioService.sharedInstance.userInterface = self
     }
     
     private func showPersonal() {
@@ -210,9 +215,24 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate {
         self.tickerField.resignFirstResponder()
     }
     
+    // MARK : DMPortfolioUserInterface 
+    
+    func reloadData() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    func showStockDetail(controller : DMStockDetailViewController) {
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+
     // MARK : UIAlertViewController action
     
     override func okAction() {
-        
+        print("Ok handled")
     }
 }

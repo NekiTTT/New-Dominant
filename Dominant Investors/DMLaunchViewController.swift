@@ -24,7 +24,9 @@ class DMLaunchViewController: DMViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
-        launchApp()
+        if (!checkOldAppMigration()) {
+            launchApp()
+        }
     }
 
     private func setupUI() {
@@ -41,6 +43,17 @@ class DMLaunchViewController: DMViewController {
             self.navigationController?.pushViewController(tabBar!, animated: true)
         }
         progressHUD.hide(animated: true)
+    }
+    
+    private func checkOldAppMigration() -> Bool {
+        if let username = UserDefaults.standard.object(forKey: "kUsername") as! String! {
+            if let password = UserDefaults.standard.object(forKey: "kPassword") as! String! {
+               DMAuthorizationManager.sharedInstance.loginWith(login: username, password: password, completion: { (success, error) in
+               })
+            } else { return false }
+        } else { return false }
+        
+        return true
     }
     
 }

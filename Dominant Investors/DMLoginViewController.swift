@@ -70,13 +70,13 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonPressed(sender : UIButton) {
         DMAuthorizationManager.sharedInstance.loginWith(login: self.usernameTextField.text!,
-                                              password: self.passwordTextField.text!) { (success, error) in
-                                                
-                                                if (success) {
-                                                    DispatchQueue.main.async {
-                                                        self.showTabBar()
-                                                    }
-                                                }
+                                                        password: self.passwordTextField.text!) { (success, error) in
+                                                            
+                                                            if (success) {
+                                                                DispatchQueue.main.async {
+                                                                    self.showTabBar()
+                                                                }
+                                                            }
         }
     }
     

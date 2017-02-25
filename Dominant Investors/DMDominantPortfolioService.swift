@@ -16,14 +16,15 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     var totalData = [String : Double]()
     var portfolioTotal : Double = 0
     var totalCell : DMPortfolioTotalCell?
+    var portfolioController : DMPortfolioViewController!
     
-    var tableView : UITableView?
+    var userInterface : DMPortfolioUserInterface!
     
     override init() {
         super.init()
         self.getDominantPortfolio { (portfolios) in
             self.portfolios = portfolios
-            self.tableView?.reloadData()
+            self.userInterface?.reloadData()
         }
     }
 
@@ -32,9 +33,22 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     // MARK : UITableViewDelegate
-    
+        
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        if (tableView.cellForRow(at: indexPath) as? DMStockCell) != nil {
+            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More", comment: "")) { (action, indexPath) in
+                tableView.setEditing(false, animated: true)
+                self.moreAboutStock(stock: self.portfolios[indexPath.row])
+            }
+            more.backgroundColor = UIColor.blue
+            return [more]
+        } else {
+            return nil
+        }
     }
     
     
@@ -69,11 +83,25 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         calculateTotal()
     }
     
+    // MARK : Private
+    
     private func calculateTotal() {
         self.portfolioTotal = 0
         for value in totalData.values {
             self.portfolioTotal += value
         }
         self.totalCell?.setTotal(value: self.portfolioTotal)
+    }
+    
+    private func moreAboutStock(stock : DMDominantPortfolioModel) {
+        let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMStockDetailViewController") as! DMStockDetailViewController
+        
+        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
+            DispatchQueue.main.async {
+                controller.stockSymbol = stock.symbol!
+                controller.stock = stock
+                self.userInterface.showStockDetail(controller: controller)
+            }
+        }
     }
 }
