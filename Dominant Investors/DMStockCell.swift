@@ -41,7 +41,7 @@ class DMStockCell: UITableViewCell {
             }
         }
         
-        self.investmentPeriod.text = NSLocalizedString("(12 MONTH)", comment: "")
+        self.investmentPeriod.text = NSLocalizedString("(12 Month)", comment: "")
     }
     
     public func setupWithPersonal(stock: DMPersonalPortfolioModel) {

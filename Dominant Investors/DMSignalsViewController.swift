@@ -24,6 +24,7 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
     
     private func setupUI() {
         self.tableView.delegate = self
+        self.tableView.dataSource = self
         self.tableView.register(DMSignalCell.self, forCellReuseIdentifier: "DMSignalCell")
     }
     

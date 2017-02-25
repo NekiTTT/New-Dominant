@@ -26,22 +26,14 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     
     var productsArray = [SKProduct]()
     
-    //MARK: ViewController
+    // MARK: ViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.drawBlurView()
-        self.backgroundImageView.image = self.backgroundImage()
-        self.checkDate { (active) in
-            if (active) {
-                DispatchQueue.main.async {
-                    self.showSignals()
-                }
-            } else {
-                UserDefaults.standard.set(false, forKey: "kSignals")
-            }
-        }
+        self.backgroundImageView.image = self.DMAuthScreensBackground
         productIDs.append("dominantOne")
+        
         self.requestProductInfo()
     }
 
@@ -66,7 +58,9 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     }
     
     @IBAction func closeAction() {
-        self.dismiss(animated: false, completion: nil)
+        self.dismiss(animated: true) { 
+            
+        }
     }
     
     func drawBlurView() {
@@ -223,53 +217,9 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate 
     
     var active : Bool!
     
-    func checkDate(completion : @escaping (Bool) -> Void) {
-        
-        QBRequest.objects(withClassName: "SignalsBuyingDate", successBlock: { (responce, objects) in
-            
-            DispatchQueue.main.async {
-        
-                self.active = false
-                
-                for obj in objects! {
-                    if let userDate = obj as? QBCOCustomObject {
-                        let currentDateTime = NSDate()
-                        if userDate.userID == QBSession.current().currentUser?.id {
-                            
-                            let cal = NSCalendar.current
-                            let date = cal.date(byAdding: .month, value: 1, to: userDate.updatedAt!)
-                            let expiredDate = date
-                            if (expiredDate!.compare(currentDateTime as Date) != .orderedAscending) {
-                                self.active = true
-                                break
-                            }
-                        }
-                    }
-                }
-                completion(self.active)
-            }
-            
-        }) { (error) in
-            
-        }
-    }
-    
     func showSignals() {
         UserDefaults.standard.set(true, forKey: "kSignals")
         self.delegate.hideContainer()
     }
     
-    func backgroundImage() -> UIImage {
-        switch UIDevice.current.userInterfaceIdiom {
-        case .phone:
-            return UIImage(named: "ratingIPHONE")!
-        case .pad:
-            return UIImage(named: "ratingIPAD")!
-        case .unspecified:
-            return UIImage(named: "ratingIPHONE")!
-        default:
-            return UIImage(named: "ratingIPAD")!
-        }
-    }
-
 }

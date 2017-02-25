@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 enum DMPortfolioType : Int {
     case DMPersonalPortfolio = 0
@@ -59,6 +60,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (!loaded) {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         showPersonal()
         loaded = true
         }
@@ -219,6 +221,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     func reloadData() {
         DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.tableView.reloadData()
         }
     }
