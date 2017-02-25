@@ -72,19 +72,8 @@
                                 <action selector="timeRangeBtnTappedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="RGy-iI-lOR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb0-fb-pj3">
-                            <rect key="frame" x="317.5" y="0.0" width="30" height="29"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                            <state key="normal" title="5Y">
-                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="timeRangeBtnTappedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="O7b-du-xwy"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fxn-zC-J7z">
-                            <rect key="frame" x="381" y="0.0" width="30" height="29"/>
+                            <rect key="frame" x="317.5" y="0.0" width="30" height="29"/>
                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <state key="normal" title="1Y">
                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -92,6 +81,17 @@
                             </state>
                             <connections>
                                 <action selector="timeRangeBtnTappedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="BGc-JP-oDu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nb0-fb-pj3">
+                            <rect key="frame" x="381" y="0.0" width="30" height="29"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                            <state key="normal" title="5Y">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="timeRangeBtnTappedWithSender:" destination="iN0-l3-epB" eventType="touchUpInside" id="O7b-du-xwy"/>
                             </connections>
                         </button>
                     </subviews>
