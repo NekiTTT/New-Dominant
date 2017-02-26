@@ -14,6 +14,9 @@
         <array key="MuseoCyrl100.otf">
             <string>MuseoCyrl-100</string>
         </array>
+        <array key="MuseoCyrl300.otf">
+            <string>MuseoCyrl-300</string>
+        </array>
         <array key="MuseoCyrl900.otf">
             <string>MuseoCyrl-900</string>
         </array>
@@ -35,8 +38,8 @@
                                 <rect key="frame" x="-4" y="0.0" width="383" height="667"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VKl-hX-tDJ">
-                                <rect key="frame" x="-4" y="55" width="383" height="612"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="-4" y="80" width="383" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="665" id="hq5-wf-kCy"/>
                                 </constraints>
@@ -48,53 +51,66 @@
                                 </variation>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6W6-Ty-w3J">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fvi-Td-PAI">
+                                        <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="odM-5y-uca"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="STOP LOSS $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="LPI-ru-0JU">
-                                        <rect key="frame" x="289" y="32" width="78" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.64705882349999999" green="0.70196078429999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="289" y="32" width="78" height="40"/>
+                                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="12"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY POINT $" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rr7-O8-iom">
-                                        <rect key="frame" x="116.5" y="32" width="78" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.64705882349999999" green="0.70196078429999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="116.5" y="32" width="78" height="40"/>
+                                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="12"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TICKER" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6ex-i4-onD">
-                                        <rect key="frame" x="30" y="32" width="78.5" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.64705882349999999" green="0.70196078429999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="30" y="32" width="78.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="12"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FORECAST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lbc-uH-ogM">
-                                        <rect key="frame" x="202.5" y="32" width="78.5" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" red="0.64705882349999999" green="0.70196078429999997" blue="0.73725490199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POTENTIAL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Lbc-uH-ogM">
+                                        <rect key="frame" x="202.5" y="32" width="78.5" height="40"/>
+                                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="12"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9W-ea-D9e">
-                                        <rect key="frame" x="8" y="28" width="22" height="22"/>
+                                        <rect key="frame" x="8" y="40.5" width="22" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="22" id="2YB-8E-tmo"/>
                                             <constraint firstAttribute="height" constant="22" id="Jfl-SV-xMB"/>
                                         </constraints>
                                         <state key="normal" image="backArrow"/>
+                                        <connections>
+                                            <action selector="backActionWithSender:" destination="W8b-Xn-kuw" eventType="touchUpInside" id="GHj-0X-1XF"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="LPI-ru-0JU" firstAttribute="top" secondItem="Lbc-uH-ogM" secondAttribute="top" id="0He-KE-4xG"/>
                                     <constraint firstAttribute="bottom" secondItem="LPI-ru-0JU" secondAttribute="bottom" constant="8" id="11W-Gf-0Yi"/>
                                     <constraint firstItem="Rr7-O8-iom" firstAttribute="width" secondItem="6ex-i4-onD" secondAttribute="width" id="130-3b-gey"/>
                                     <constraint firstItem="LPI-ru-0JU" firstAttribute="width" secondItem="6ex-i4-onD" secondAttribute="width" id="4qe-Pc-5N9"/>
+                                    <constraint firstAttribute="height" constant="80" id="5qx-6a-yGc"/>
                                     <constraint firstAttribute="trailing" secondItem="LPI-ru-0JU" secondAttribute="trailing" constant="8" id="6C3-oG-sjU"/>
                                     <constraint firstItem="Lbc-uH-ogM" firstAttribute="top" secondItem="Rr7-O8-iom" secondAttribute="top" id="9Fl-3P-jGn"/>
                                     <constraint firstItem="LPI-ru-0JU" firstAttribute="top" secondItem="6W6-Ty-w3J" secondAttribute="top" constant="32" id="9nS-AS-y86"/>
                                     <constraint firstItem="G9W-ea-D9e" firstAttribute="leading" secondItem="6W6-Ty-w3J" secondAttribute="leading" constant="8" id="AEs-kq-MAc"/>
                                     <constraint firstItem="LPI-ru-0JU" firstAttribute="leading" secondItem="Lbc-uH-ogM" secondAttribute="trailing" constant="8" id="IEp-vS-X6j"/>
                                     <constraint firstItem="Rr7-O8-iom" firstAttribute="top" secondItem="6ex-i4-onD" secondAttribute="top" id="LBJ-iR-w4d"/>
+                                    <constraint firstItem="Fvi-Td-PAI" firstAttribute="leading" secondItem="6W6-Ty-w3J" secondAttribute="leading" id="Lt7-MU-Czf"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fvi-Td-PAI" secondAttribute="bottom" id="Mtt-tb-Sdf"/>
                                     <constraint firstItem="Rr7-O8-iom" firstAttribute="bottom" secondItem="6ex-i4-onD" secondAttribute="bottom" id="NkI-31-01E"/>
                                     <constraint firstItem="Lbc-uH-ogM" firstAttribute="leading" secondItem="Rr7-O8-iom" secondAttribute="trailing" constant="8" id="Olu-98-JrL"/>
                                     <constraint firstItem="Lbc-uH-ogM" firstAttribute="bottom" secondItem="Rr7-O8-iom" secondAttribute="bottom" id="Oq0-Rt-U53"/>
@@ -104,6 +120,7 @@
                                     <constraint firstItem="Rr7-O8-iom" firstAttribute="top" secondItem="6W6-Ty-w3J" secondAttribute="top" constant="32" id="blo-Vc-FmB"/>
                                     <constraint firstAttribute="bottom" secondItem="Lbc-uH-ogM" secondAttribute="bottom" constant="8" id="ek5-vl-Gi8"/>
                                     <constraint firstAttribute="bottom" secondItem="Rr7-O8-iom" secondAttribute="bottom" constant="8" id="iEI-6O-5kB"/>
+                                    <constraint firstAttribute="trailing" secondItem="Fvi-Td-PAI" secondAttribute="trailing" id="kUZ-7g-5Wn"/>
                                     <constraint firstItem="6ex-i4-onD" firstAttribute="top" secondItem="6W6-Ty-w3J" secondAttribute="top" constant="32" id="q4I-7A-mrE"/>
                                     <constraint firstItem="G9W-ea-D9e" firstAttribute="centerY" secondItem="6ex-i4-onD" secondAttribute="centerY" id="uFb-AF-TZ3"/>
                                     <constraint firstItem="Rr7-O8-iom" firstAttribute="leading" secondItem="6ex-i4-onD" secondAttribute="trailing" constant="8" id="uWm-7f-KhY"/>
@@ -117,12 +134,24 @@
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.shadowOpacity">
                                         <real key="value" value="0.10000000000000001"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-5V-zZx">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hXl-5V-zZx">
+                                <rect key="frame" x="0.0" y="253" width="375" height="414"/>
                                 <connections>
-                                    <segue destination="8Hc-u4-XZx" kind="embed" identifier="contanerSegue" id="aDd-zL-dg0"/>
+                                    <segue destination="8Hc-u4-XZx" kind="embed" identifier="contanerSegue" id="JW1-kT-Psk"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -186,17 +215,17 @@
                         <viewControllerLayoutGuide type="bottom" id="xL2-KT-luN"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="zKS-PV-c4a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-cU-8XY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreeniPhone" translatesAutoresizingMaskIntoConstraints="NO" id="sLl-Bm-ZH0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
                                     </imageView>
                                     <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-vi-Ia9" customClass="FXBlurView">
-                                        <rect key="frame" x="38" y="134" width="300" height="400"/>
+                                        <rect key="frame" x="38" y="7.5" width="300" height="400"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-AM-rgT">
                                                 <rect key="frame" x="50" y="310" width="90" height="35"/>
@@ -212,7 +241,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-V1-2yJ">
-                                                <rect key="frame" x="23" y="156" width="255" height="90"/>
+                                                <rect key="frame" x="23" y="155" width="255" height="90"/>
                                                 <string key="text">Subscribe to accurate trading signals from the professional portfolio managers to get a maximum profitability on investment shares</string>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -269,7 +298,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dci-9U-bcS">
-                                        <rect key="frame" x="326" y="522" width="24" height="24"/>
+                                        <rect key="frame" x="326" y="395.5" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="4zI-hd-nE9"/>
                                             <constraint firstAttribute="width" constant="24" id="iuF-Bv-uBD"/>
@@ -325,7 +354,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="backArrow" width="800" height="800"/>
+        <image name="backArrow" width="64" height="64"/>
         <image name="cancel_buy" width="56" height="56"/>
         <image name="gradient" width="187" height="333"/>
         <image name="launchScreeniPhone" width="250" height="444"/>

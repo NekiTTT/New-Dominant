@@ -9,46 +9,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="exljbris - Museo Cyrl 300.otf">
+        <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DMIdeaCell" id="FP2-OH-tKv" customClass="DMSignalCell" customModule="Dominant_Investors" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="DMSignalCell" id="FP2-OH-tKv" customClass="DMSignalCell" customModule="Dominant_Investors" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FP2-OH-tKv" id="cws-LB-A2H">
-                <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TWTR" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39k-u1-KEh">
-                        <rect key="frame" x="16" y="16" width="89.5" height="11"/>
+                        <rect key="frame" x="32" y="16" width="85.5" height="11"/>
                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="97.5" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CdD-gh-Csr">
-                        <rect key="frame" x="308.5" y="16" width="89.5" height="11"/>
+                        <rect key="frame" x="312.5" y="16" width="85.5" height="11"/>
                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <color key="textColor" red="0.89019607840000003" green="0.1764705882" blue="0.1764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98.6" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1et-rj-PQg">
-                        <rect key="frame" x="211" y="16" width="89.5" height="11"/>
+                        <rect key="frame" x="219" y="16" width="85.5" height="11"/>
                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <color key="textColor" red="0.4039215686" green="0.68235294120000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="65%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAk-6P-J7E">
-                        <rect key="frame" x="113.5" y="16" width="89.5" height="11"/>
+                        <rect key="frame" x="125.5" y="16" width="85.5" height="11"/>
                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                 <constraints>
                     <constraint firstItem="GAk-6P-J7E" firstAttribute="width" secondItem="39k-u1-KEh" secondAttribute="width" id="4ez-qb-Ug5"/>
                     <constraint firstItem="1et-rj-PQg" firstAttribute="bottom" secondItem="GAk-6P-J7E" secondAttribute="bottom" id="5lp-eP-5Gb"/>
@@ -63,7 +62,7 @@
                     <constraint firstAttribute="trailingMargin" secondItem="CdD-gh-Csr" secondAttribute="trailing" constant="8" id="X12-dv-JqF"/>
                     <constraint firstItem="1et-rj-PQg" firstAttribute="width" secondItem="39k-u1-KEh" secondAttribute="width" id="XUW-Lr-bK0"/>
                     <constraint firstItem="39k-u1-KEh" firstAttribute="bottom" secondItem="GAk-6P-J7E" secondAttribute="bottom" id="ZmF-2C-CcW"/>
-                    <constraint firstItem="39k-u1-KEh" firstAttribute="leading" secondItem="cws-LB-A2H" secondAttribute="leadingMargin" constant="8" id="bEC-Ue-tfb"/>
+                    <constraint firstItem="39k-u1-KEh" firstAttribute="leading" secondItem="cws-LB-A2H" secondAttribute="leadingMargin" constant="24" id="bEC-Ue-tfb"/>
                     <constraint firstItem="1et-rj-PQg" firstAttribute="top" secondItem="GAk-6P-J7E" secondAttribute="top" id="d42-bv-JPk"/>
                     <constraint firstItem="GAk-6P-J7E" firstAttribute="bottom" secondItem="1et-rj-PQg" secondAttribute="bottom" id="hXc-Ny-Fb7"/>
                     <constraint firstItem="1et-rj-PQg" firstAttribute="leading" secondItem="GAk-6P-J7E" secondAttribute="trailing" constant="8" id="n8d-je-4bC"/>
@@ -78,12 +77,12 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="entryPrice" destination="1et-rj-PQg" id="kXA-xz-nEs"/>
-                <outlet property="potential" destination="GAk-6P-J7E" id="F54-DE-Vxd"/>
-                <outlet property="stopLoss" destination="CdD-gh-Csr" id="6iD-Tn-OuK"/>
-                <outlet property="ticker" destination="39k-u1-KEh" id="9dD-2Y-Vpe"/>
+                <outlet property="entryPrice" destination="GAk-6P-J7E" id="KJY-T8-EuC"/>
+                <outlet property="potential" destination="1et-rj-PQg" id="11Q-a5-FLs"/>
+                <outlet property="stopLoss" destination="CdD-gh-Csr" id="Ofa-NV-ubs"/>
+                <outlet property="ticker" destination="39k-u1-KEh" id="cdG-U6-Ndd"/>
             </connections>
         </tableViewCell>
     </objects>

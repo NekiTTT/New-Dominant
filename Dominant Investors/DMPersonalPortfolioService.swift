@@ -76,7 +76,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
             self.totalCell?.setTotal(value: self.portfolioMiddle)
             if (!self.ratingUploaded) {
                 self.ratingUploaded = true
-                DMQuickBloxService.sharedInstance.updateUserRating(value: self.portfolioTotal)
+                DMQuickBloxService.sharedInstance.updateUserRating(value: self.portfolioMiddle)
             }
         }
     }

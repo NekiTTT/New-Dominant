@@ -71,7 +71,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     
     private func handleSignUp () {
         
-        if (self.passwordTextField.text!.characters.count < 8) {
+        if (self.passwordTextField.text!.length < 8) {
             self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
                                message: NSLocalizedString("Password must be at least 8 characters", comment: ""),
                                cancelButton: false)
@@ -82,7 +82,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
                                message: NSLocalizedString("Password not match", comment: ""),
                                cancelButton: false)
             return
-        } else if (self.loginTextField.text!.characters.count < 4) {
+        } else if (self.loginTextField.text!.length < 4) {
             self.showAlertWith(title: NSLocalizedString("Sign up error", comment: ""),
                                message: NSLocalizedString("Username must be at least 4 characters", comment: ""),
                                cancelButton: false)

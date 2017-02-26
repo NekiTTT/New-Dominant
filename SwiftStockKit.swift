@@ -116,7 +116,7 @@ class SwiftStockKit {
             newSymbol = newSymbol.replacingOccurrences(of: "\"", with: "%22")
             newSymbol = newSymbol.replacingOccurrences(of: " ", with: "")
             
-            if (newSymbol.characters.count > 0) {
+            if (newSymbol.length > 0) {
                 newSymbol = newSymbol.substring(to: newSymbol.endIndex)
                 newSymbol = newSymbol.substring(from: newSymbol.startIndex)
             }

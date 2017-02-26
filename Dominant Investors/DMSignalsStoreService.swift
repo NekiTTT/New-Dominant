@@ -11,4 +11,19 @@ import UIKit
 class DMSignalsStoreService: NSObject {
 
     static let sharedInstance = DMSignalsStoreService()
+    
+    open func checkSubscription(completion : @escaping (DMSubscriptionModel?) -> Void) {
+        DMQuickBloxService.sharedInstance.checkSubscription(completion: completion)
+    }
+    
+    open func successPurchaseWith(expired_date : Date, completion : @escaping (Bool) -> Void) {
+        DMQuickBloxService.sharedInstance.successPurchaseWith(expired_date : expired_date, completion : completion)
+    }
+    
+    open func isSubscriptionValid(subscription : DMSubscriptionModel) -> Bool {
+        if (subscription.expired_date.compare(Date()) != ComparisonResult.orderedAscending) {
+            return true
+        }
+        return false
+    }
 }

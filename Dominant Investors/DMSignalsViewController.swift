@@ -28,12 +28,22 @@ class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableV
         }
     }
     
+    @IBAction func backAction(sender : UIButton) {
+        self.dismiss()
+    }
+    
     // MARK: Private
     
     private func setupUI() {
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.register(DMSignalCell.self, forCellReuseIdentifier: "DMSignalCell")
+        self.tableView.register(UINib(nibName: "DMSignalCell", bundle: Bundle.main), forCellReuseIdentifier: "DMSignalCell")
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
     }
     
     // MARK: UITableViewDataSource

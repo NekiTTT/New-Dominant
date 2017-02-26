@@ -213,7 +213,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     // MARK: UITextFieldDelegate (Actions)
     
     @IBAction func tickerInputHandler(sender : UITextField) {
-        if (sender.text?.characters.count == 0) {
+        if (sender.text?.length == 0) {
             DMPersonalPortfolioService.sharedInstance.selectedTicker = nil
             hideDropdownList()
         } else {

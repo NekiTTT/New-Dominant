@@ -22,7 +22,7 @@ class DMRatingTableViewCell: UITableViewCell {
     open func setupWith(model : DMRatingModel) {
         self.positionLabel.text = String(format : "%d", model.position)
         self.investorLabel.text = model.userName
-        self.overallLabel.text  = String(format : "%.2f", model.totalValue)
+        self.overallLabel.text  = String(format : "%.2f", model.totalValue).appending("%")
         
         if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
             self.backgroundColor = UIColor(colorLiteralRed: 0, green: 255, blue: 0, alpha: 0.25)

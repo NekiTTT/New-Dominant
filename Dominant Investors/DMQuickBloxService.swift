@@ -144,7 +144,7 @@ class DMQuickBloxService: NSObject {
     }
     
     open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage, String) -> Void) {
-        QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
+        QBRequest.downloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
                     guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)
                         return }
                     guard let image = UIImage(data : data) else { self.downloadCompanyImageWith(ID: ID, completion: completion)
@@ -158,7 +158,8 @@ class DMQuickBloxService: NSObject {
     }
     
     open func downloadCompanyLogoWith(ID : String, completion : @escaping (UIImage) -> Void) {
-        QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyLogoImage", successBlock: { (response, imageData) in
+    
+        QBRequest.downloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyLogoImage", successBlock: { (response, imageData) in
             guard let data   = imageData else { return }
             guard UIImage(data : data) != nil else { return }
             completion(UIImage(data : data)!)
@@ -183,7 +184,64 @@ class DMQuickBloxService: NSObject {
         }
     }
     
+    open func checkSubscription(completion : @escaping (DMSubscriptionModel?) -> Void) {
+        QBRequest.objects(withClassName: "SignalsBuyingDate", successBlock: { (response, objects) in
+            for obj in objects! {
+                if let userDate = obj as? QBCOCustomObject {
+                    if userDate.userID == QBSession.current().currentUser?.id {
+                        let currentSubscription = DMSubscriptionModel.init(response: DMResponseObject(customObject: userDate))
+                        completion(currentSubscription)
+                        return
+                    }
+                }
+            }
+            completion(nil)
+        }) { (error) in
+            completion(nil)
+        }
+    }
+    
+    open func successPurchaseWith(expired_date : Date, completion : @escaping (Bool) -> Void) {
+        self.checkSubscription { (subscription) in
+            if (subscription != nil) {
+                subscription?.expired_date = expired_date
+                self.updateSubscription(subscription: subscription!, completion : completion)
+            } else {
+                self.recordNewSubscription(date : expired_date, completion : completion)
+            }
+        }
+    }
+    
+
+    
     // MARK: Private
+    
+    private func updateSubscription(subscription : DMSubscriptionModel, completion : @escaping (Bool) -> Void) {
+        
+        let quickblox = QBCOCustomObject()
+        quickblox.className = "SignalsBuyingDate"
+        quickblox.fields!.setObject(subscription.expired_date, forKey: "expiredDate" as NSCopying)
+        quickblox.id = subscription.id
+        
+        QBRequest.update(quickblox, successBlock: { (response, object) in
+            completion(true)
+        }) { (error) in
+            completion(false)
+        }
+    }
+    
+    private func recordNewSubscription(date : Date, completion : @escaping (Bool) -> Void) {
+        
+        let quickblox = QBCOCustomObject()
+        quickblox.className = "SignalsBuyingDate"
+        quickblox.fields!.setObject(date, forKey: "expiredDate" as NSCopying)
+        
+        QBRequest.createObject(quickblox, successBlock: { (response, object) in
+            completion(true)
+        }) { (response) in
+            completion(false)
+        }
+    }
     
     private func updateExistRating(id: String, value : Double) {
         let quickblox = QBCOCustomObject()

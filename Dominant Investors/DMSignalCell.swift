@@ -21,7 +21,10 @@ class DMSignalCell: UITableViewCell {
     }
 
     open func setupWith(model : DMInvestmentSignalModel) {
-        
+        self.ticker.text = model.ticker
+        self.entryPrice.text = model.entry_price
+        self.potential.text = model.potential
+        self.stopLoss.text = model.stop_loss
     }
     
 }

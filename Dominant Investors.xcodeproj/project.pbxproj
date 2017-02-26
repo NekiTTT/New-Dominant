@@ -95,6 +95,8 @@
 		45D0704B1E5E276300B6CAC5 /* DMDateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704A1E5E276300B6CAC5 /* DMDateService.swift */; };
 		45D0704F1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D0704D1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib */; };
 		45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */; };
+		45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */; };
+		45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F751E636D1B001BB511 /* Dominant+String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -201,6 +203,8 @@
 		45D0704A1E5E276300B6CAC5 /* DMDateService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDateService.swift; sourceTree = "<group>"; };
 		45D0704D1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMPortfolioTotalCell.xib; sourceTree = "<group>"; };
 		45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioTotalCell.swift; sourceTree = "<group>"; };
+		45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionModel.swift; sourceTree = "<group>"; };
+		45D73F751E636D1B001BB511 /* Dominant+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+String.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -355,6 +359,7 @@
 				45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */,
 				45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */,
 				45D0704A1E5E276300B6CAC5 /* DMDateService.swift */,
+				454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -395,8 +400,8 @@
 				45A107AD1E59D3E600591170 /* DMRatingModel.swift */,
 				45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */,
 				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
-				454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */,
 				45D070481E5E1F2E00B6CAC5 /* DMResponseObject.swift */,
+				45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -546,6 +551,7 @@
 				4581D6BB1E610AFC005F2173 /* Dominant+UIImage.swift */,
 				4581D6C31E624192005F2173 /* Dominant+UIView.swift */,
 				4581D6C51E631A31005F2173 /* Dominant+Array.swift */,
+				45D73F751E636D1B001BB511 /* Dominant+String.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -675,6 +681,7 @@
 				4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */,
 				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
 				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
+				45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */,
 				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
@@ -709,6 +716,7 @@
 				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
 				4581D6C41E624192005F2173 /* Dominant+UIView.swift in Sources */,
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
+				45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */,
 				454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */,
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,

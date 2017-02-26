@@ -7,24 +7,21 @@
 //
 
 import UIKit
-import Quickblox
 import StoreKit
+import MBProgressHUD
 
 class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
 
-    var expiredDate : NSDate! = nil
-    var selectedProductIndex: Int!
+    var expiredDate : Date?
     var transactionInProgress = false
-    var products = [SKProduct]()
-    var statusString = ""
     var delegate : DMContainerDelegate!
+    
+    var productIDs = [String]()
+    var productsArray = [SKProduct]()
+    
     
     @IBOutlet var backgroundImageView : UIImageView!
     @IBOutlet var overlayView : FXBlurView!
-    
-    var productIDs = [String]()
-    
-    var productsArray = [SKProduct]()
     
     // MARK: ViewController
     
@@ -33,28 +30,39 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         self.drawBlurView()
         self.backgroundImageView.image = self.DMAuthScreensBackground
         productIDs.append("dominantOne")
-        
         self.requestProductInfo()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        DMSignalsStoreService.sharedInstance.checkSubscription { (subscription) in
+            DispatchQueue.main.async {
+                MBProgressHUD.hide(for: self.view, animated: true)
+                if (subscription != nil) {
+                    if (DMSignalsStoreService.sharedInstance.isSubscriptionValid(subscription: subscription!)) {
+                        self.showSignals()
+                    }
+                }
+            }
+        }
     }
 
     
-    //MARK: Methods
+    // MARK: Actions
     
     @IBAction func buy() {
-        //self.showActions()
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.showActions()
     }
     
     @IBAction func restore() {
         
-//        if transactionInProgress {
-//            return
-//        } else {
-//            DispatchQueue.main.async {
-//                SKPaymentQueue.default().add(self as! SKPaymentTransactionObserver)
-//                SKPaymentQueue.default().restoreCompletedTransactions()
-//                self.transactionInProgress = true
-//            }
-//        }
+        if transactionInProgress {
+            return
+        } else {
+            DispatchQueue.main.async {
+                SKPaymentQueue.default().add(self)
+                SKPaymentQueue.default().restoreCompletedTransactions()
+                self.transactionInProgress = true
+            }
+        }
         
     }
     
@@ -62,13 +70,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         self.delegate.dismiss()
     }
     
-    func drawBlurView() {
-        self.overlayView.isBlurEnabled  = true
-        self.overlayView.blurRadius     = 20
-        self.overlayView.isDynamic      = false
-        self.overlayView.tintColor      = UIColor.lightGray
-    }
-    
+
     //MARK: SKProductsRequestDelegate
     
     func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
@@ -95,7 +97,9 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         }
     }
     
-    func showActions() {
+    // MARK: Private
+    
+    private func showActions() {
         
         if transactionInProgress {
             return
@@ -119,13 +123,33 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
         
         actionSheetController.addAction(buyAction)
         actionSheetController.addAction(cancelAction)
         
         present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    
+    func purchaseSuccesfull(date : Date) {
+        DMSignalsStoreService.sharedInstance.successPurchaseWith(expired_date: date) { (success) in
+            if (success) {
+                self.showSignals()
+            }
+        }
+    }
+    
+    func showSignals() {
+        self.delegate.hideContainer()
+    }
+    
+    private func drawBlurView() {
+        self.overlayView.isBlurEnabled  = true
+        self.overlayView.blurRadius     = 20
+        self.overlayView.isDynamic      = false
+        self.overlayView.tintColor      = UIColor.lightGray
     }
     
     //MARK: SKPaymentTransactionObserver
@@ -138,20 +162,19 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
                 
                 print("Transaction completed successfully.")
                 SKPaymentQueue.default().finishTransaction(transaction)
-           
+                
                 DispatchQueue.main.async {
-                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     if (transaction.transactionDate != nil) {
                         let cal = NSCalendar.current
                         let date = cal.date(byAdding: .month, value: 1, to: transaction.transactionDate!)
-                        self.expiredDate = date as NSDate!
-                        self.saveToQuickblox()
-                        
+                        self.purchaseSuccesfull(date : date!)
                     }
                     self.transactionInProgress = false
                 }
                 
             case .failed:
+                MBProgressHUD.hide(for: self.view, animated: true)
                 print("Transaction Failed");
                 SKPaymentQueue.default().finishTransaction(transaction)
                 self.transactionInProgress = false
@@ -160,16 +183,17 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
                 print(transaction.transactionState.rawValue)
             }
         }
+
     }
+
     
-    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
-        print(queue)
-        print(queue.transactions)
-        
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+ 
         if (queue.transactions.count == 0) {
+            MBProgressHUD.hide(for: self.view, animated: true)
             let alert = UIAlertController(title: "Error", message: "Nothing to restore", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil));
-            
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.present(alert, animated: true, completion: nil)
             self.transactionInProgress = false
             return
@@ -177,48 +201,11 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         
         for transaction in queue.transactions {
             if (transaction.transactionIdentifier == "dominantOne") {
-                let currentDateTime = NSDate()
-                let cal = NSCalendar.current
-                let date = cal.date(byAdding: .month, value: 1, to: transaction.transactionDate!)
-                
-                let expiredDate = date
-                if (expiredDate!.compare(currentDateTime as Date) != .orderedAscending) {
-                    self.expiredDate = date as NSDate!
-                    self.saveToQuickblox()
-                }
-                self.transactionInProgress = false
+                                self.transactionInProgress = false
             }
             
         }
-    }
-    
-    
-    //MARK: - To quickblox
-    
-    func saveToQuickblox() {
-        
-        let quickblox = QBCOCustomObject()
-        quickblox.className = "SignalsBuyingDate"
-        
-        let name = UserDefaults().object(forKey: "kUsername") as! String
-        quickblox.fields!.setObject(name, forKey:"name" as NSCopying)
-        quickblox.fields!.setObject(self.expiredDate, forKey: "expiredDate" as NSCopying)
-        quickblox.createdAt = self.expiredDate as Date?
-        
-        QBRequest.createObject(quickblox, successBlock: { (responce, object) in
-            DispatchQueue.main.async {
-                self.showSignals()
-            }
-        }) { (error) in
-            
-        }
-    }
-    
-    var active : Bool!
-    
-    func showSignals() {
-        UserDefaults.standard.set(true, forKey: "kSignals")
-        self.delegate.hideContainer()
+
     }
     
 }

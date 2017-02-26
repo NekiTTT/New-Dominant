@@ -253,7 +253,7 @@ IPO Date 08-14-1010</string>
                                                 </variation>
                                                 <connections>
                                                     <action selector="showSignalsWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="4qt-5Y-aYL"/>
-                                                    <segue destination="wBn-J4-URv" kind="presentation" identifier="DMSignalsSegue" modalPresentationStyle="fullScreen" id="YbI-LU-pu2"/>
+                                                    <segue destination="wBn-J4-URv" kind="presentation" identifier="DMSignalsSegue" id="YbI-LU-pu2"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-dq-ljj">
