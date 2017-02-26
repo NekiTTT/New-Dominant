@@ -109,6 +109,14 @@ class DMQuickBloxService: NSObject {
         }
     }
     
+    open func deletePersonalStock(ID : String, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+        QBRequest.deleteObject(withID: ID, className: "personal2", successBlock: { (response) in
+            print(response)
+        }) { (error) in
+            print(error)
+        }
+    }
+    
     open func loginWith(login : String, password : String, competion : @escaping (Bool, String?) -> Void) {
         QBRequest.logIn(withUserLogin: login, password: password, successBlock: { (response, user) in
             let userModel = DMUserProfileModel.init(response: DMResponseObject.init(user: user!))
@@ -135,20 +143,17 @@ class DMQuickBloxService: NSObject {
         })
     }
     
-    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage) -> Void) {
+    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage, String) -> Void) {
         QBRequest.backgroundDownloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
-            DispatchQueue.main.async {
-            guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)
-            return }
-            guard let image = UIImage(data : data) else { self.downloadCompanyImageWith(ID: ID, completion: completion)
-            return }
-            completion(image)
-            }
+                    guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)
+                        return }
+                    guard let image = UIImage(data : data) else { self.downloadCompanyImageWith(ID: ID, completion: completion)
+                        return }
+                    completion(image, ID)
         }, statusBlock: { (request, status) in
             
         }) { (errorResponse) in
-            DispatchQueue.main.async {
-                self.downloadCompanyImageWith(ID: ID, completion: completion) }
+                    self.downloadCompanyImageWith(ID: ID, completion: completion)
         }
     }
     
@@ -168,7 +173,8 @@ class DMQuickBloxService: NSObject {
     open func updateUserRating(value : Double) {
         DMAPIService.sharedInstance.getUserRatings { (ratings) in
             for rate in ratings {
-                if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
+                if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID
+                || String(describing: QBSession.current().currentUser?.id) == rate.userID) {
                     self.updateExistRating(id: rate.id, value: value)
                     return
                 }

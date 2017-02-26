@@ -12,11 +12,9 @@ import MBProgressHUD
 class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView   : UICollectionView!
-    @IBOutlet weak var collectionHeight : NSLayoutConstraint!
     
     var companies        = [DMCompanyModel]()
-    var inlineCellsCount : CGFloat = 3
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -26,9 +24,6 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
                 self.companies = companies
                 self.collectionView?.reloadData()
                 MBProgressHUD.hide(for: self.view, animated: true)
-                if let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-                    self.resizeCollection(cellHeight: layout.itemSize.height, inlineCount: self.inlineCellsCount)
-                }
             }
         }
     }
@@ -46,18 +41,13 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     private func updateCollectionViewLayout(with size: CGSize) {
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
            
-            if (size.width < size.height) {
-                layout.itemSize = CGSize(width: size.width/2, height: size.width/2)
-                self.inlineCellsCount = 2
-            } else {
-                layout.itemSize = CGSize(width: size.width/3, height: size.width/3)
-                self.inlineCellsCount = 3
-            }
-            
+            layout.itemSize = (size.width < size.height) ?
+                CGSize(width: size.width/2, height: size.width/2) :
+                CGSize(width: size.width/3, height: size.width/3)
+  
             layout.sectionInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
             layout.minimumInteritemSpacing = 0
             layout.minimumLineSpacing = 0
-            self.resizeCollection(cellHeight: layout.itemSize.height, inlineCount: self.inlineCellsCount)
             layout.invalidateLayout()
             self.collectionView?.setCollectionViewLayout(layout, animated: true)
         }
@@ -72,12 +62,12 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
-        
+        var inlineCellsCount : CGFloat = 3
         if (UIDevice.current.orientation == UIDeviceOrientation.portrait) {
-            self.inlineCellsCount = 2
+            inlineCellsCount = 2
         }
     
-        layout.itemSize = CGSize(width: screenWidth/inlineCellsCount, height: screenWidth/self.inlineCellsCount)
+        layout.itemSize = CGSize(width: screenWidth/inlineCellsCount, height: screenWidth/inlineCellsCount)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
@@ -91,10 +81,6 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         let companyDetail = UIStoryboard(name: "Analytics", bundle: nil).instantiateViewController(withIdentifier: "DMCompanyDetailViewController") as! DMCompanyDetailViewController
         companyDetail.company = company
         self.navigationController?.pushViewController(companyDetail, animated: true)
-    }
-    
-    private func resizeCollection(cellHeight : CGFloat, inlineCount : CGFloat) {
-        self.collectionHeight.constant = ((CGFloat(self.companies.count) * CGFloat(cellHeight)) / inlineCount) - 20
     }
     
     // MARK: UICollectionViewDelegate
@@ -120,5 +106,5 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         cell.setupWith(model: company)
         return cell
     }
-
+ 
 }

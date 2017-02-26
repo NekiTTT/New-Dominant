@@ -24,8 +24,10 @@ class DMStockCell: UITableViewCell {
     }
     
     public func setupWithDominant(stock : DMDominantPortfolioModel) {
+        
         self.ticker.text = stock.ticker
         self.exchangeOrBuyPoint.text = stock.exchange
+        self.investmentPeriod.text = NSLocalizedString("(12 Month)", comment: "")
         
         SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
             DispatchQueue.main.async {
@@ -34,14 +36,11 @@ class DMStockCell: UITableViewCell {
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
                 let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: yearAgoPrice, currentPrice: currentPrice)
                 profitability >= 0 ? (self.profitability.textColor = Colors.DMProfitGreenColor) : (self.profitability.textColor = UIColor.red)
-
                 self.profitability.text = String(format: "%.2f", profitability).appending("%")
-            
                 self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
             }
         }
         
-        self.investmentPeriod.text = NSLocalizedString("(12 Month)", comment: "")
     }
     
     public func setupWithPersonal(stock: DMPersonalPortfolioModel) {
@@ -49,7 +48,7 @@ class DMStockCell: UITableViewCell {
         self.exchangeOrBuyPoint.text = stock.entry_price
         self.investmentPeriod.text = DMDateService.sharedInstance.differenceBetweenDates(dateOne: stock.entry_date!, dateTwo: Date())
         
-        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
+        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneDay) { (chartPoints) in
             DispatchQueue.main.async {
                 let currentPrice = Double(chartPoints.last!.close!)
                 self.currentPrice.text  = String(format: "%.2f", currentPrice)
@@ -58,6 +57,7 @@ class DMStockCell: UITableViewCell {
                 self.profitability.text = String(format: "%.2f", profitability).appending("%")
                 self.delegate.setToTotalValue(ticker: stock.id!, value: profitability)
             }
+            
         }
     }
         

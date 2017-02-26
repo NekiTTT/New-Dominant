@@ -23,7 +23,7 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     }
     
     open func setupWith(model : DMCompanyModel) {
-        
+    
         if (model.companyPictureURL != nil) {
             self.companyImage.image = model.companyPictureURL
             self.activity.stopAnimating()
@@ -38,20 +38,27 @@ class DMCompanyCollectionCell: UICollectionViewCell {
             return
         }
         
-        DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image) in
-            DispatchQueue.main.async {
-                model.companyPictureURL = image
-                self.companyImage.image = image
-                _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
-                self.activity.stopAnimating()
-            }
+        DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image, id) in
+                    DispatchQueue.main.async {
+                        if (id == model.id) {
+                            model.companyPictureURL = image
+                            self.companyImage.image = image
+                            _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
+                            self.activity.stopAnimating()
+                        }
+                    }
         }
+    }
+    
+    open func cancelOperations() {
+        self.companyImage.image = nil
+        self.activity.startAnimating()
     }
 
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        self.companyImage.image = nil
+        cancelOperations()
     }
 }
 

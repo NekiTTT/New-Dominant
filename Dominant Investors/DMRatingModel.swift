@@ -23,7 +23,7 @@ class DMRatingModel: NSObject {
         self.id = response.id
         self.userName   = response.fields["userName"] as! String
         self.totalValue = response.fields["portfolioTotalValue"] as! Double
-        self.userID     = response.fields["userID"] as! String
+        self.userID     = response.userID
         
     }
     

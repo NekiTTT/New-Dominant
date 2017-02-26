@@ -9,12 +9,8 @@
 import UIKit
 import MBProgressHUD
 
-enum DMPortfolioType : Int {
-    case DMPersonalPortfolio = 0
-    case DMDominantPortfolio = 1
-}
 
-class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPortfolioUserInterface {
+class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPortfolioUserInterface, UITextFieldDelegate {
 
     var refreshControl         : UIRefreshControl!
     var dropdownViewController : DMDropdownViewController!
@@ -25,6 +21,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     var loaded = false
     
     var portfolioType  = DMPortfolioType.DMPersonalPortfolio
+    var actionType     = DMActionType.DMAddNewStockAction
     
     // MARK: Outlets
     @IBOutlet  weak var tickerField              : UITextField!
@@ -61,7 +58,6 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if (!loaded) {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         showPersonal()
         loaded = true
         }
@@ -85,14 +81,19 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.personalButton.layer.borderWidth = 1
         self.dominantButton.layer.borderWidth = 1
         
-        self.firstContainer.layer.borderWidth = 0.5
+        self.firstContainer.layer.borderWidth = 1
         self.firstContainer.layer.borderColor = UIColor.lightGray.cgColor
         
-        self.dominantImageContainer.layer.borderWidth = 0.5
+        self.searchDropdown.layer.borderWidth = 1
+        self.searchDropdown.layer.borderColor = UIColor.lightGray.cgColor
+        
+        self.searchBarContainer.layer.borderWidth = 1
+        self.searchBarContainer.layer.borderColor = UIColor.init(white: 0.3, alpha: 1).cgColor
+        
+        self.dominantImageContainer.layer.borderWidth = 1
         self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
         
-        DMPersonalPortfolioService.sharedInstance.userInterface = self
-        DMDominantPortfolioService.sharedInstance.userInterface = self
+        self.tickerField.delegate = self
     }
     
     private func showPersonal() {
@@ -100,10 +101,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.delegate   = DMPersonalPortfolioService.sharedInstance
         self.tableView.dataSource = DMPersonalPortfolioService.sharedInstance
         
+        DMPersonalPortfolioService.sharedInstance.userInterface = self
+    
+        if (loaded) {
         self.reloadData()
+        }
         
         UIView.animate(withDuration: 1) {
-            self.firstHeaderHeight.constant  = 50
+            self.firstHeaderHeight.constant  = 80
             self.secondHeaderHeight.constant = 0
             self.firstContainer.alpha = 1
             self.dominantImageContainer.alpha = 0
@@ -125,6 +130,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.delegate   = DMDominantPortfolioService.sharedInstance
         self.tableView.dataSource = DMDominantPortfolioService.sharedInstance
         
+        DMDominantPortfolioService.sharedInstance.userInterface = self
+        
         self.reloadData()
         
         UIView.animate(withDuration: 1) {
@@ -136,6 +143,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
+        
+        hideDropdownList()
         
         self.dominantButton.layer.borderColor = UIColor.red.cgColor
         self.personalButton.layer.borderColor = UIColor.clear.cgColor
@@ -163,6 +172,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
     
     @IBAction func addTickerAction(sender : UIButton) {
+        self.actionType = DMActionType.DMAddNewStockAction
         if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) {
             self.showAlertWith(title:   NSLocalizedString("Empty ticker", comment: ""),
                                message: NSLocalizedString("Please type and select new ticker!", comment: ""),
@@ -174,6 +184,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
     
     @IBAction func createNewPortfolio(sender : UIButton) {
+        self.actionType = DMActionType.DMClearPortfolioAction
         self.showAlertWith(title:   NSLocalizedString("Clear current portfolio", comment: ""),
                            message: NSLocalizedString("Do you want to clear your portfolio?", comment: ""),
                            cancelButton: true)
@@ -193,6 +204,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     private func hideDropdownList() {
         UIView.animate(withDuration: 0.4) {
             self.dropdownListHeight.constant = 0
+            self.tickerField.resignFirstResponder()
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
         }
@@ -213,6 +225,17 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) {
+            self.hideDropdownList()
+            textField.text = ""
+            textField.resignFirstResponder()
+        } else {
+            self.addTickerAction(sender: UIButton())
+        }
+        return false
+    }
+    
     // MARK: DMDropdownListDelegate
     
     func tickerDidSelected(stock : StockSearchResult) {
@@ -226,9 +249,15 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     func reloadData() {
         DispatchQueue.main.async {
-            MBProgressHUD.hide(for: self.view, animated: true)
             self.tableView.reloadData()
+            MBProgressHUD.showAdded(to: self.view, animated: true)
             self.resizeTableView()
+        }
+    }
+    
+    func didReloaded() {
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
     
@@ -242,6 +271,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     // MARK: UIAlertViewController action
     
     override func okAction() {
-        print("Ok handled")
+        if (self.actionType == .DMClearPortfolioAction) {
+            DMPersonalPortfolioService.sharedInstance.clearPortfolio()
+        }
     }
 }

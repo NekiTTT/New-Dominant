@@ -8,11 +8,11 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="MuseoCyrl100.otf">
-            <string>MuseoCyrl-100</string>
-        </array>
         <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
+        </array>
+        <array key="MuseoCyrl500.otf">
+            <string>MuseoCyrl-500</string>
         </array>
     </customFonts>
     <objects>
@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="772" height="76"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ltc-iu-z8W" id="EJK-wd-Sgy">
-                <rect key="frame" x="0.0" y="0.0" width="772" height="75"/>
+                <rect key="frame" x="0.0" y="0.0" width="772" height="75.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISK-If-pdt">
@@ -39,7 +39,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tnH-FN-Ui2">
                         <rect key="frame" x="581" y="16" width="183" height="43"/>
-                        <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="MuseoCyrl-500" family="Museo Cyrl" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>

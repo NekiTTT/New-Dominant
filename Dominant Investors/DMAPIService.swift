@@ -26,12 +26,20 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.getInvestmentSignals(completion: completion)
     }
     
-    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage) -> Void) {
-    DMQuickBloxService.sharedInstance.downloadCompanyImageWith(ID : ID, completion : completion)
+    open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage, String) -> Void) {
+        DMQuickBloxService.sharedInstance.downloadCompanyImageWith(ID : ID, completion : completion)
     }
     
     open func downloadCompanyLogoWith(ID : String, completion : @escaping (UIImage) -> Void) {
         DMQuickBloxService.sharedInstance.downloadCompanyLogoWith(ID : ID, completion : completion)
+    }
+    
+    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+        DMQuickBloxService.sharedInstance.addNew(personalStock: personalStock, completion: completion)
+    }
+    
+    open func deletePersonalStock(ID: String, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+        DMQuickBloxService.sharedInstance.deletePersonalStock(ID: ID, completion: completion)
     }
     
     

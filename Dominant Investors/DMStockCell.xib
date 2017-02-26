@@ -12,9 +12,6 @@
         <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
         </array>
-        <array key="MuseoSansLight.ttf">
-            <string>MuseoSansCyrl-100</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -23,7 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wOf-1j-yn5" id="eai-lM-6kG">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AAPL" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSD-BO-C7X">
@@ -49,7 +46,7 @@
                         <constraints>
                             <constraint firstAttribute="height" constant="46" id="Cfj-KO-C2s"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="MuseoSansCyrl-100" family="Museo Sans Cyrl" pointSize="14"/>
+                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">

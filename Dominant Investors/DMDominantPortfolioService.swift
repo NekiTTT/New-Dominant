@@ -15,10 +15,10 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     var portfolios = [DMDominantPortfolioModel]()
     var totalData = [String : Double]()
     var portfolioTotal : Double = 0
+    var portfolioMiddle : Double = 0
     var totalCell : DMPortfolioTotalCell?
-    var portfolioController : DMPortfolioViewController!
     
-    var userInterface : DMPortfolioUserInterface!
+    var userInterface : DMPortfolioUserInterface?
     
     override init() {
         super.init()
@@ -36,6 +36,13 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if (indexPath.row == self.portfolios.count) {
+            return false
+        }
+        return true
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
@@ -59,7 +66,12 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return portfolios.count + 1
+        if (portfolios.count != 0) {
+            return portfolios.count + 1
+        } else {
+            self.userInterface?.didReloaded()
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,6 +79,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         if (indexPath.row == portfolios.count) {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DMPortfolioTotalCell") as! DMPortfolioTotalCell
             self.totalCell = cell
+            self.userInterface?.didReloaded()
             return cell
         }
         
@@ -90,8 +103,8 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         for value in totalData.values {
             self.portfolioTotal += value
         }
-        self.portfolioTotal = (self.portfolioTotal / Double(self.totalData.values.count))
-        self.totalCell?.setTotal(value: self.portfolioTotal)
+        self.portfolioMiddle = (self.portfolioTotal / Double(self.totalData.values.count))
+        self.totalCell?.setTotal(value: self.portfolioMiddle)
     }
     
     private func moreAboutStock(stock : DMDominantPortfolioModel) {
@@ -101,7 +114,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
             DispatchQueue.main.async {
                 controller.stockSymbol = stock.symbol!
                 controller.stock = stock
-                self.userInterface.showStockDetail(controller: controller)
+                self.userInterface?.showStockDetail(controller: controller)
             }
         }
     }

@@ -52,7 +52,7 @@ class DMRotatingViewController: DMViewController {
     private func setupTabButtons() {
         for index in 0...self.viewControllers.count - 1 {
             let newButton = UIButton()
-            newButton.setImage(tabIcons[index], for: .normal)
+            newButton.setImage(tabIcons [index], for: .normal)
             newButton.imageView?.contentMode = .scaleAspectFill
             newButton.tag = index
             newButton.addTarget(self, action: #selector(showTab(_:)), for: .touchUpInside)

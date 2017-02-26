@@ -94,7 +94,6 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="97"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="WLL-Sz-oZD" secondAttribute="trailing" id="0r2-VV-Yxe"/>
                                     <constraint firstAttribute="bottom" secondItem="WLL-Sz-oZD" secondAttribute="bottom" id="QPb-1a-A7X"/>

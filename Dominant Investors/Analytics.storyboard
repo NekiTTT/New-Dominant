@@ -28,75 +28,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdZ-6E-hSP">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-xc-S0X">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FFf-zL-hGT">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="647" id="abu-KM-SCq"/>
-                                        </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Gt0-rD-9sO">
-                                            <size key="itemSize" width="199" height="170"/>
-                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                        </collectionViewFlowLayout>
-                                        <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="29c-75-6GN" customClass="CompanyCell" customModule="Dominant_Investors" customModuleProvider="target">
-                                                <rect key="frame" x="88" y="0.0" width="199" height="170"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="0.0" y="0.0" width="199" height="170"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <subviews>
-                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QAV-Bg-ZH5">
-                                                            <rect key="frame" x="89" y="75" width="20" height="20"/>
-                                                        </activityIndicatorView>
-                                                    </subviews>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstItem="QAV-Bg-ZH5" firstAttribute="centerY" secondItem="29c-75-6GN" secondAttribute="centerY" id="0ib-lX-t5c"/>
-                                                    <constraint firstItem="QAV-Bg-ZH5" firstAttribute="centerX" secondItem="29c-75-6GN" secondAttribute="centerX" id="8N3-hC-UpJ"/>
-                                                </constraints>
-                                                <connections>
-                                                    <outlet property="activity" destination="QAV-Bg-ZH5" id="Xjd-xK-w96"/>
-                                                </connections>
-                                            </collectionViewCell>
-                                        </cells>
-                                        <connections>
-                                            <outlet property="dataSource" destination="KW0-Jp-fxF" id="grj-De-mR5"/>
-                                            <outlet property="delegate" destination="KW0-Jp-fxF" id="SxB-P4-OKY"/>
-                                        </connections>
-                                    </collectionView>
-                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="FFf-zL-hGT" secondAttribute="bottom" id="1Nj-lF-BNk"/>
-                                    <constraint firstItem="FFf-zL-hGT" firstAttribute="top" secondItem="YdZ-6E-hSP" secondAttribute="top" id="Dz9-6Z-5Uo"/>
-                                    <constraint firstAttribute="trailing" secondItem="FFf-zL-hGT" secondAttribute="trailing" id="K9h-VP-wNd"/>
-                                    <constraint firstItem="FFf-zL-hGT" firstAttribute="leading" secondItem="YdZ-6E-hSP" secondAttribute="leading" id="pkO-xi-qIC"/>
-                                </constraints>
-                            </scrollView>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wod-dv-lrW">
+                                    <size key="itemSize" width="199" height="170"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="BOV-Ip-CB7" customClass="CompanyCell" customModule="Dominant_Investors" customModuleProvider="target">
+                                        <rect key="frame" x="88" y="0.0" width="199" height="170"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="199" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aLx-je-RP9">
+                                                    <rect key="frame" x="89" y="75" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="aLx-je-RP9" firstAttribute="centerY" secondItem="BOV-Ip-CB7" secondAttribute="centerY" id="NTt-4Z-Sff"/>
+                                            <constraint firstItem="aLx-je-RP9" firstAttribute="centerX" secondItem="BOV-Ip-CB7" secondAttribute="centerX" id="hpS-ko-tQP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="activity" destination="aLx-je-RP9" id="2Tc-xQ-LT5"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="KW0-Jp-fxF" id="O0N-Y0-M0L"/>
+                                    <outlet property="delegate" destination="KW0-Jp-fxF" id="r7f-yl-0TZ"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YdZ-6E-hSP" firstAttribute="top" secondItem="kKl-Td-hu2" secondAttribute="top" id="2Yd-Dr-2jC"/>
-                            <constraint firstAttribute="trailing" secondItem="YdZ-6E-hSP" secondAttribute="trailing" id="Hhe-C8-i3e"/>
-                            <constraint firstItem="FFf-zL-hGT" firstAttribute="width" secondItem="kKl-Td-hu2" secondAttribute="width" id="KgB-q7-1qT"/>
-                            <constraint firstItem="YdZ-6E-hSP" firstAttribute="leading" secondItem="kKl-Td-hu2" secondAttribute="leading" id="bsg-1U-ftp"/>
-                            <constraint firstItem="bb6-eL-2se" firstAttribute="top" secondItem="YdZ-6E-hSP" secondAttribute="bottom" id="zfb-bf-TKg"/>
+                            <constraint firstItem="T3M-xc-S0X" firstAttribute="leading" secondItem="kKl-Td-hu2" secondAttribute="leading" id="Kv3-zh-P9C"/>
+                            <constraint firstAttribute="trailing" secondItem="T3M-xc-S0X" secondAttribute="trailing" id="g9f-J9-sl5"/>
+                            <constraint firstItem="T3M-xc-S0X" firstAttribute="top" secondItem="kKl-Td-hu2" secondAttribute="top" id="osA-wV-BnX"/>
+                            <constraint firstItem="bb6-eL-2se" firstAttribute="top" secondItem="T3M-xc-S0X" secondAttribute="bottom" id="wKr-Yn-zeV"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionHeight" destination="abu-KM-SCq" id="Fqo-FL-7J1"/>
-                        <outlet property="collectionView" destination="FFf-zL-hGT" id="QzD-ZR-K3P"/>
+                        <outlet property="collectionView" destination="T3M-xc-S0X" id="dzf-KK-8kc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O5X-ja-73R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1127.2" y="344.07796101949026"/>
+            <point key="canvasLocation" x="-1246" y="344"/>
         </scene>
         <!--Company Detail View Controller-->
         <scene sceneID="xH7-LD-r9C">
@@ -126,6 +109,20 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="q6H-uz-cIG"/>
                                     <constraint firstAttribute="height" constant="230" id="w9u-YS-G3q"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="0.29999999999999999"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="point" keyPath="shadowOffset">
+                                        <point key="value" x="0.0" y="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="3gr-ae-pZP"/>

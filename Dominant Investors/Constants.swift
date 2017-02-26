@@ -8,9 +8,20 @@
 
 import UIKit
 
+enum DMPortfolioType : Int {
+    case DMPersonalPortfolio = 0
+    case DMDominantPortfolio = 1
+}
+
+enum DMActionType : Int {
+    case DMAddNewStockAction = 0
+    case DMClearPortfolioAction = 1
+}
+
 struct Values {
     static let DMTabsCount     : Int = 3
     static let DMDefaultScreen : Int = 0
+    
 }
 
 struct Fonts {
