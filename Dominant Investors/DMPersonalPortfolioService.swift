@@ -35,11 +35,20 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         DMQuickBloxService.sharedInstance.getPersonalPortfolio(completion: completion)
     }
     
+    open func renewPersonalData() {
+        self.ratingUploaded = false
+        self.getPersonalPortfolio { (portfolios) in
+            self.portfolios = portfolios
+            self.userInterface?.reloadData()
+        }
+    }
+    
     open func addNew() {
         let newStock = DMPersonalPortfolioModel.init(stockSearch: self.selectedTicker!)
         self.addNew(personalStock: newStock) { (portfolios) in
             DispatchQueue.main.async {
                 self.selectedTicker = nil
+                self.ratingUploaded = false
                 self.portfolios.append(contentsOf: portfolios)
                 self.userInterface?.reloadData()
             }
@@ -97,9 +106,11 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         self.portfolios.remove(object: stock)
         self.totalData = [String : Double]()
         DMAPIService.sharedInstance.deletePersonalStock(ID: stock.id!) { (portfolios) in
-            
+            DispatchQueue.main.async {
+                self.ratingUploaded = false
+                self.userInterface?.reloadData()
+            }
         }
-        self.userInterface?.reloadData()
     }
     
     // MARK: UITableViewDelegate

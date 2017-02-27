@@ -14,6 +14,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
 
     var refreshControl         : UIRefreshControl!
     var dropdownViewController : DMDropdownViewController!
+    
     var searchResults = [StockSearchResult]()
     var total = 0.0
 
@@ -48,6 +49,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     @IBOutlet  weak var personalButton      : UIView!
     
     @IBOutlet  weak var tableView           : UITableView!
+    @IBOutlet  weak var scrollView          : UIScrollView!
     @IBOutlet  weak var tableViewHeight     : NSLayoutConstraint!
 
     override func viewDidLoad() {
@@ -77,6 +79,11 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.tableView.register(UINib(nibName: "DMStockCell", bundle: Bundle.main), forCellReuseIdentifier: "DMStockCell")
         self.tableView.register(UINib(nibName: "DMPortfolioTotalCell", bundle: Bundle.main), forCellReuseIdentifier: "DMPortfolioTotalCell")
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+        self.refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
+        
     
         self.personalButton.layer.borderWidth = 1
         self.dominantButton.layer.borderWidth = 1
@@ -93,7 +100,17 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.dominantImageContainer.layer.borderWidth = 1
         self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
         
+        self.tableView.tableFooterView = UIView()
+        
         self.tickerField.delegate = self
+    }
+    
+    @objc private func refresh(sender : UIRefreshControl) {
+        if (self.portfolioType == .DMPersonalPortfolio) {
+            DMPersonalPortfolioService.sharedInstance.renewPersonalData()
+        } else {
+            self.refreshControl.endRefreshing()
+        }
     }
     
     private func showPersonal() {
@@ -121,7 +138,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
        
         self.setColumnTitles(titles: ["TICKER","BUY\nPOINT $","CURRENT PRICE $","PROFITABILITY"])
-    
+        self.scrollView.addSubview(self.refreshControl)
         self.portfolioType = .DMPersonalPortfolio
     }
     
@@ -150,7 +167,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.personalButton.layer.borderColor = UIColor.clear.cgColor
   
         self.setColumnTitles(titles: ["TICKER","EXCHANGE","CURRENT PRICE $","PROFITABILITY"])
-        
+        self.refreshControl.removeFromSuperview()
         self.portfolioType = .DMDominantPortfolio
     }
     
@@ -162,7 +179,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
     
     private func resizeTableView() {
-        self.tableViewHeight.constant = self.tableView.contentSize.height
+        self.tableViewHeight.constant = self.tableView.contentSize.height >= scrollView.frame.height ? self.tableView.contentSize.height : scrollView.frame.height+20
     }
 
     // MARK: Actions
@@ -258,6 +275,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     func didReloaded() {
         DispatchQueue.main.async {
             MBProgressHUD.hide(for: self.view, animated: true)
+            self.refreshControl.endRefreshing()
         }
     }
     

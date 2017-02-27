@@ -30,6 +30,7 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         self.collectionView.reloadData()
     }
     
@@ -56,14 +57,14 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     // MARK: Private
     
     private func setupUI() {
-        let screenSize = UIScreen.main.bounds
-        let screenWidth = screenSize.width
+        let screenWidth = self.view.frame.size.width
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: -20, left: 0, bottom: 0, right: 0)
         var inlineCellsCount : CGFloat = 3
-        if (UIDevice.current.orientation == UIDeviceOrientation.portrait) {
+        
+        if (UIDevice.current.orientation.isPortrait || UIApplication.shared.statusBarOrientation == .portrait) {
             inlineCellsCount = 2
         }
     
@@ -71,7 +72,7 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         
-        self.collectionView?.setCollectionViewLayout(layout, animated: true)
+        self.collectionView?.setCollectionViewLayout(layout, animated: false)
         
         let cellNib = UINib.init(nibName: "DMCompanyCollectionCell", bundle: Bundle.main)
         self.collectionView?.register(cellNib, forCellWithReuseIdentifier:"DMCompanyCollectionCell")

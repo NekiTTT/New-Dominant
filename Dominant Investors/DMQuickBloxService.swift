@@ -111,9 +111,9 @@ class DMQuickBloxService: NSObject {
     
     open func deletePersonalStock(ID : String, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         QBRequest.deleteObject(withID: ID, className: "personal2", successBlock: { (response) in
-            print(response)
+            completion([DMPersonalPortfolioModel]())
         }) { (error) in
-            print(error)
+            completion([DMPersonalPortfolioModel]())
         }
     }
     
@@ -174,8 +174,9 @@ class DMQuickBloxService: NSObject {
     open func updateUserRating(value : Double) {
         DMAPIService.sharedInstance.getUserRatings { (ratings) in
             for rate in ratings {
+                let name = rate.userName
                 if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID
-                || String(describing: QBSession.current().currentUser?.id) == rate.userID) {
+                ||  name == DMAuthorizationManager.sharedInstance.userProfile.userName) {
                     self.updateExistRating(id: rate.id, value: value)
                     return
                 }
@@ -188,11 +189,12 @@ class DMQuickBloxService: NSObject {
         QBRequest.objects(withClassName: "SignalsBuyingDate", successBlock: { (response, objects) in
             for obj in objects! {
                 if let userDate = obj as? QBCOCustomObject {
-                    if userDate.userID == QBSession.current().currentUser?.id {
+                        let name = userDate.fields["name"] as! String
+                        if (name == DMAuthorizationManager.sharedInstance.userProfile.userName && String(userDate.userID) == DMAuthorizationManager.sharedInstance.userProfile.userID) {
                         let currentSubscription = DMSubscriptionModel.init(response: DMResponseObject(customObject: userDate))
-                        completion(currentSubscription)
+                            completion(currentSubscription)
                         return
-                    }
+                        }
                 }
             }
             completion(nil)
@@ -221,6 +223,7 @@ class DMQuickBloxService: NSObject {
         let quickblox = QBCOCustomObject()
         quickblox.className = "SignalsBuyingDate"
         quickblox.fields!.setObject(subscription.expired_date, forKey: "expiredDate" as NSCopying)
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
         quickblox.id = subscription.id
         
         QBRequest.update(quickblox, successBlock: { (response, object) in
@@ -235,6 +238,7 @@ class DMQuickBloxService: NSObject {
         let quickblox = QBCOCustomObject()
         quickblox.className = "SignalsBuyingDate"
         quickblox.fields!.setObject(date, forKey: "expiredDate" as NSCopying)
+        quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
         
         QBRequest.createObject(quickblox, successBlock: { (response, object) in
             completion(true)

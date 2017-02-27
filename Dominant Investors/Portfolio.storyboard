@@ -610,6 +610,7 @@
                         <outlet property="fourthColumnTitle" destination="RPV-JA-Vkk" id="6dn-ig-ENJ"/>
                         <outlet property="personalButton" destination="oVg-A3-eVz" id="Vrt-jv-0Au"/>
                         <outlet property="portfolioTypeSwitcher" destination="Rx3-hy-cn3" id="Twz-jm-iBu"/>
+                        <outlet property="scrollView" destination="gp7-bf-9I3" id="r4N-Do-TPW"/>
                         <outlet property="searchBarContainer" destination="LF9-RU-gUG" id="PkQ-jX-4r0"/>
                         <outlet property="searchDropdown" destination="kg7-TA-HhA" id="hAD-nH-cfW"/>
                         <outlet property="secondColumnTitle" destination="rVo-j4-1Cy" id="05W-QO-CAr"/>

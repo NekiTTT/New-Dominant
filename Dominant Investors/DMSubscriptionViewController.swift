@@ -155,7 +155,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     //MARK: SKPaymentTransactionObserver
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        
+        MBProgressHUD.hide(for: self.view, animated: true)
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
@@ -164,7 +164,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
                 SKPaymentQueue.default().finishTransaction(transaction)
                 
                 DispatchQueue.main.async {
-                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
                     if (transaction.transactionDate != nil) {
                         let cal = NSCalendar.current
                         let date = cal.date(byAdding: .month, value: 1, to: transaction.transactionDate!)
@@ -174,7 +174,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
                 }
                 
             case .failed:
-                MBProgressHUD.hide(for: self.view, animated: true)
+               
                 print("Transaction Failed");
                 SKPaymentQueue.default().finishTransaction(transaction)
                 self.transactionInProgress = false
@@ -203,9 +203,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
             if (transaction.transactionIdentifier == "dominantOne") {
                                 self.transactionInProgress = false
             }
-            
         }
-
     }
     
 }

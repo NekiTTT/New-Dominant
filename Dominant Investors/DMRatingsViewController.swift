@@ -13,17 +13,17 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView : UITableView!
     
     var ratings = [DMRatingModel]()
+    var refreshControl : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        DMAPIService.sharedInstance.getUserRatings { (ratings) in
-            DispatchQueue.main.async {
-                self.ratings = ratings.sorted(by: {$0.totalValue > $1.totalValue})
-                self.tableView.reloadData()
-            }
-        }
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        renewRating()
+    }
+    
     
     // MARK: Private
     
@@ -31,6 +31,24 @@ class DMRatingsViewController: DMViewController, UITableViewDelegate, UITableVie
        self.tableView.dataSource = self
        self.tableView.delegate = self
        self.tableView.register(UINib(nibName: "DMRatingTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: "DMRatingTableViewCell")
+       self.refreshControl = UIRefreshControl()
+       self.refreshControl.attributedTitle = NSAttributedString(string: "Refreshing")
+       self.refreshControl.addTarget(self, action: #selector(self.refresh(sender:)), for: .valueChanged)
+       self.tableView.addSubview(self.refreshControl)
+    }
+    
+    @objc private func refresh(sender : UIRefreshControl) {
+        renewRating()
+    }
+    
+    open func renewRating() {
+        DMAPIService.sharedInstance.getUserRatings { (ratings) in
+            DispatchQueue.main.async {
+                self.ratings = ratings.sorted(by: {$0.totalValue > $1.totalValue})
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     // MARK: UITableViewDelegate

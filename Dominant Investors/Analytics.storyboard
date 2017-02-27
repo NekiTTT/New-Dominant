@@ -452,7 +452,7 @@ IPO Date 08-14-1010</string>
                             <constraint firstItem="RJx-Ku-X34" firstAttribute="top" secondItem="Fv9-cX-ixT" secondAttribute="topMargin" id="7Jl-6p-T2p"/>
                             <constraint firstItem="az3-Y8-Sxc" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" id="BKd-d0-Ex6"/>
                             <constraint firstItem="ZFt-zh-tsO" firstAttribute="top" secondItem="Fv9-cX-ixT" secondAttribute="top" constant="8" id="Bh8-Gr-XyG"/>
-                            <constraint firstItem="x54-v7-C6y" firstAttribute="height" secondItem="Fv9-cX-ixT" secondAttribute="height" multiplier="0.4" id="JVO-dB-UGj"/>
+                            <constraint firstItem="x54-v7-C6y" firstAttribute="height" secondItem="Fv9-cX-ixT" secondAttribute="height" multiplier="0.3" id="JVO-dB-UGj"/>
                             <constraint firstItem="x54-v7-C6y" firstAttribute="height" secondItem="Fv9-cX-ixT" secondAttribute="height" multiplier="0.3" constant="200" id="PUP-dP-iMe"/>
                             <constraint firstItem="x54-v7-C6y" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leadingMargin" constant="-20" id="QDn-aK-KPW"/>
                             <constraint firstItem="az3-Y8-Sxc" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" id="TQI-Xm-5mi"/>
