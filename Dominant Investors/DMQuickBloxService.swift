@@ -12,14 +12,17 @@ import Quickblox
 class DMQuickBloxService: NSObject {
 
     static let sharedInstance = DMQuickBloxService()
+    static let limit = NSMutableDictionary(dictionary: ["limit" : "1000"])
+    static let ratingLimit = NSMutableDictionary(dictionary: ["limit" : "100", "sort_desc" : "portfolioTotalValue"])
     
     // MARK: Get Data
     
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
-        QBRequest.objects(withClassName: "personal2", successBlock: { (response, objects) in
+        
+        QBRequest.objects(withClassName: "personal2", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var personal = [DMPersonalPortfolioModel]()
             for object in objects! {
-                let model = DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject))
+                let model = DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object))
                 if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
                     personal.append(model)
                 }
@@ -28,13 +31,15 @@ class DMQuickBloxService: NSObject {
         }) { (error) in
             completion([DMPersonalPortfolioModel]())
         }
+        
     }
     
     open func getDominantPortfolio(completion : @escaping ([DMDominantPortfolioModel]) -> Void) {
-        QBRequest.objects(withClassName: "dominantPortfolio", successBlock: { (response, objects) in
+        
+        QBRequest.objects(withClassName: "dominantPortfolio", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var dominant = [DMDominantPortfolioModel]()
             for object in objects! {
-                dominant.append(DMDominantPortfolioModel.init(response:  DMResponseObject.init(customObject: object as! QBCOCustomObject)))
+                dominant.append(DMDominantPortfolioModel.init(response:  DMResponseObject.init(customObject: object)))
             }
             completion(dominant)
         }) { (error) in
@@ -43,10 +48,10 @@ class DMQuickBloxService: NSObject {
     }
     
     open func getUserRatings(completion : @escaping ([DMRatingModel]) -> Void) {
-        QBRequest.objects(withClassName: "userPortfolioTotal", successBlock: { (response, objects) in
+        QBRequest.objects(withClassName: "userPortfolioTotal", extendedRequest: DMQuickBloxService.ratingLimit, successBlock: { (response, objects, page) in
             var ratings = [DMRatingModel]()
             for object in objects! {
-                ratings.append(DMRatingModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
+                ratings.append(DMRatingModel.init(response: DMResponseObject.init(customObject: object)))
             }
             completion(ratings)
         }) { (error) in
@@ -55,10 +60,10 @@ class DMQuickBloxService: NSObject {
     }
     
     open func getAnalyticsCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
-        QBRequest.objects(withClassName: "Company", successBlock: { (response, objects) in
+        QBRequest.objects(withClassName: "Company", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var companies = [DMCompanyModel]()
             for object in objects! {
-                companies.append(DMCompanyModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
+                companies.append(DMCompanyModel.init(response: DMResponseObject.init(customObject: object)))
             }
             completion(companies)
         }) { (error) in
@@ -67,10 +72,10 @@ class DMQuickBloxService: NSObject {
     }
     
     open func getInvestmentSignals(completion : @escaping ([DMInvestmentSignalModel]) -> Void) {
-        QBRequest.objects(withClassName: "InvestmentIdea", successBlock: { (response, objects) in
+        QBRequest.objects(withClassName: "InvestmentIdea", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var signals = [DMInvestmentSignalModel]()
             for object in objects! {
-                signals.append(DMInvestmentSignalModel.init(response: DMResponseObject.init(customObject: object as! QBCOCustomObject)))
+                signals.append(DMInvestmentSignalModel.init(response: DMResponseObject.init(customObject: object)))
             }
             completion(signals)
         }) { (error) in
@@ -174,9 +179,9 @@ class DMQuickBloxService: NSObject {
     open func updateUserRating(value : Double) {
         DMAPIService.sharedInstance.getUserRatings { (ratings) in
             for rate in ratings {
-                let name = rate.userName
+                let name = rate.userName.lowercased()
                 if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID
-                ||  name == DMAuthorizationManager.sharedInstance.userProfile.userName) {
+                ||  name == DMAuthorizationManager.sharedInstance.userProfile.userName.lowercased()) {
                     self.updateExistRating(id: rate.id, value: value)
                     return
                 }
@@ -186,15 +191,13 @@ class DMQuickBloxService: NSObject {
     }
     
     open func checkSubscription(completion : @escaping (DMSubscriptionModel?) -> Void) {
-        QBRequest.objects(withClassName: "SignalsBuyingDate", successBlock: { (response, objects) in
-            for obj in objects! {
-                if let userDate = obj as? QBCOCustomObject {
+        QBRequest.objects(withClassName: "SignalsBuyingDate", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+            for userDate in objects! {
                         let name = userDate.fields["name"] as! String
                         if (name == DMAuthorizationManager.sharedInstance.userProfile.userName && String(userDate.userID) == DMAuthorizationManager.sharedInstance.userProfile.userID) {
                         let currentSubscription = DMSubscriptionModel.init(response: DMResponseObject(customObject: userDate))
                             completion(currentSubscription)
                         return
-                        }
                 }
             }
             completion(nil)
