@@ -186,10 +186,12 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     
     private func calculateTotal() {
         self.portfolioTotal = 0
+        self.portfolioMiddle = 0
         for value in totalData.values {
             self.portfolioTotal += value
         }
-        self.portfolioMiddle = (self.portfolioTotal / Double(self.totalData.values.count))
+        if (self.totalData.values.count != 0) {
+        self.portfolioMiddle = (self.portfolioTotal / Double(self.totalData.values.count)) }
         updateUserRating()
     }
 

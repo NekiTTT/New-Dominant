@@ -13,19 +13,20 @@ class DMQuickBloxService: NSObject {
 
     static let sharedInstance = DMQuickBloxService()
     static let limit = NSMutableDictionary(dictionary: ["limit" : "1000"])
-    static let ratingLimit = NSMutableDictionary(dictionary: ["limit" : "100", "sort_desc" : "portfolioTotalValue"])
+    static let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id"   : NSNumber(value:Int(DMAuthorizationManager.sharedInstance.userProfile.userID)!)])
+    static let ratingLimit   = NSMutableDictionary(dictionary: ["limit" : "100" , "sort_desc" : "portfolioTotalValue"])
     
     // MARK: Get Data
     
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         
-        QBRequest.objects(withClassName: "personal2", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+        QBRequest.objects(withClassName: "personal2", extendedRequest: DMQuickBloxService.personalLimit, successBlock: { (response, objects, page) in
             var personal = [DMPersonalPortfolioModel]()
             for object in objects! {
                 let model = DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object))
-                if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
+                //if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
                     personal.append(model)
-                }
+                //}
             }
             completion(personal)
         }) { (error) in
@@ -149,17 +150,19 @@ class DMQuickBloxService: NSObject {
     }
     
     open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage, String) -> Void) {
-        QBRequest.downloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
+       QBRequest.downloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
                     guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)
                         return }
                     guard let image = UIImage(data : data) else { self.downloadCompanyImageWith(ID: ID, completion: completion)
                         return }
-                    completion(image, ID)
+        
+            completion(image, ID)
         }, statusBlock: { (request, status) in
             
         }) { (errorResponse) in
                     self.downloadCompanyImageWith(ID: ID, completion: completion)
         }
+        
     }
     
     open func downloadCompanyLogoWith(ID : String, completion : @escaping (UIImage) -> Void) {

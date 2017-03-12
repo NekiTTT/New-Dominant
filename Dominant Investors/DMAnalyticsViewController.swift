@@ -30,7 +30,6 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         self.collectionView.reloadData()
     }
     

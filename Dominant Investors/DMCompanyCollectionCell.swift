@@ -16,6 +16,8 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     @IBOutlet weak var companyNameLabel : UILabel!
     @IBOutlet weak var activity : UIActivityIndicatorView!
     
+    var model : DMCompanyModel!
+    
     override func awakeFromNib() {
         self.activity.hidesWhenStopped = true
         self.activity.startAnimating()
@@ -24,26 +26,28 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     
     open func setupWith(model : DMCompanyModel) {
     
-        if (model.companyPictureURL != nil) {
-            self.companyImage.image = model.companyPictureURL
+        self.model = model
+        
+        if (self.model.companyPictureURL != nil) {
+            self.companyImage.image = self.model.companyPictureURL
             self.activity.stopAnimating()
             return
         }
         
-        let image = DMFileManager.sharedInstance.getImageFromDocuments(filename: model.id)
+        let image = DMFileManager.sharedInstance.getImageFromDocuments(filename: self.model.id)
         if (image != nil) {
-            model.companyPictureURL = image
+            self.model.companyPictureURL = image
             self.companyImage.image = image
             self.activity.stopAnimating()
             return
         }
         
-        DMAPIService.sharedInstance.downloadCompanyImageWith(ID: model.id) { (image, id) in
+        DMAPIService.sharedInstance.downloadCompanyImageWith(ID: self.model.id) { (image, id) in
                     DispatchQueue.main.async {
-                        if (id == model.id) {
-                            model.companyPictureURL = image
+                        if (id == self.model.id) {
+                            self.model.companyPictureURL = image
                             self.companyImage.image = image
-                            _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: model.id)
+                            _ = DMFileManager.sharedInstance.saveToDocuments(obj: image, fileName: self.model.id)
                             self.activity.stopAnimating()
                         }
                     }
@@ -51,6 +55,7 @@ class DMCompanyCollectionCell: UICollectionViewCell {
     }
     
     open func cancelOperations() {
+        self.model = nil
         self.companyImage.image = nil
         self.activity.startAnimating()
     }

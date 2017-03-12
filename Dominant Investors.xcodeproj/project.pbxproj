@@ -899,9 +899,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "4d4588e1-3974-4bdc-bc0f-afa271323549";
-				PROVISIONING_PROFILE_SPECIFIER = appStoreDominant;
+				PROVISIONING_PROFILE = "ead2e2a7-dbd8-4f51-b31d-c97ddab2aa01";
+				PROVISIONING_PROFILE_SPECIFIER = ACTUAL_FOR_DOMINANT_LAST;
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
