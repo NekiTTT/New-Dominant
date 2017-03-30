@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MuseoCyrl300.otf">
+            <string>MuseoCyrl-300</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DMCompaniesSignalsFooter" customModule="Dominant_Investors" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="634" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C32-ve-zel">
+                    <rect key="frame" x="0.0" y="0.0" width="634" height="150"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show yhe company with high growth potential" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xdz-kl-ZQ5">
+                            <rect key="frame" x="16" y="16" width="602" height="118"/>
+                            <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="33"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="Xdz-kl-ZQ5" firstAttribute="top" secondItem="C32-ve-zel" secondAttribute="top" constant="16" id="1IS-cV-CYN"/>
+                        <constraint firstAttribute="bottom" secondItem="Xdz-kl-ZQ5" secondAttribute="bottom" constant="16" id="WfI-X3-Wg6"/>
+                        <constraint firstAttribute="trailing" secondItem="Xdz-kl-ZQ5" secondAttribute="trailing" constant="16" id="bn3-P1-y6C"/>
+                        <constraint firstItem="Xdz-kl-ZQ5" firstAttribute="leading" secondItem="C32-ve-zel" secondAttribute="leading" constant="16" id="sJy-4O-Bq0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kpp-Ps-Bc0">
+                    <rect key="frame" x="0.0" y="150" width="634" height="150"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwV-DI-1OK">
+                            <rect key="frame" x="95" y="22.5" width="444" height="105"/>
+                            <color key="backgroundColor" red="0.76470588235294112" green="0.20392156862745098" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="GET NOW">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="10"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="jwV-DI-1OK" firstAttribute="centerY" secondItem="Kpp-Ps-Bc0" secondAttribute="centerY" id="0Xr-Pc-lgf"/>
+                        <constraint firstItem="jwV-DI-1OK" firstAttribute="centerX" secondItem="Kpp-Ps-Bc0" secondAttribute="centerX" id="TJB-co-gqi"/>
+                        <constraint firstItem="jwV-DI-1OK" firstAttribute="width" secondItem="Kpp-Ps-Bc0" secondAttribute="width" multiplier="0.7" id="q7C-3K-L2N"/>
+                        <constraint firstItem="jwV-DI-1OK" firstAttribute="height" secondItem="Kpp-Ps-Bc0" secondAttribute="height" multiplier="0.7" id="xss-B2-Rgy"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.11372549019607843" green="0.098039215686274508" blue="0.078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="C32-ve-zel" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0KE-vc-E2K"/>
+                <constraint firstItem="Kpp-Ps-Bc0" firstAttribute="top" secondItem="C32-ve-zel" secondAttribute="bottom" id="4FZ-gt-e3g"/>
+                <constraint firstItem="Kpp-Ps-Bc0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="CeA-fw-Jza"/>
+                <constraint firstItem="Kpp-Ps-Bc0" firstAttribute="height" secondItem="C32-ve-zel" secondAttribute="height" id="FSO-XO-EAV"/>
+                <constraint firstAttribute="bottom" secondItem="Kpp-Ps-Bc0" secondAttribute="bottom" id="H8i-aV-jkW"/>
+                <constraint firstAttribute="trailing" secondItem="C32-ve-zel" secondAttribute="trailing" id="KfL-kV-Vux"/>
+                <constraint firstItem="C32-ve-zel" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="UZB-8z-r65"/>
+                <constraint firstAttribute="trailing" secondItem="Kpp-Ps-Bc0" secondAttribute="trailing" id="dq5-BH-4Nq"/>
+                <constraint firstItem="Kpp-Ps-Bc0" firstAttribute="top" secondItem="C32-ve-zel" secondAttribute="bottom" id="eTd-KW-gX1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="-51"/>
+        </view>
+    </objects>
+</document>

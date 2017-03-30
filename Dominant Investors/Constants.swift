@@ -26,6 +26,7 @@ struct Values {
 
 struct Fonts {
     static let DMMyseoFont : UIFont = UIFont(name: "MuseoCyrl-100", size: 11)!
+    static let DMMyseoUpperFont : UIFont = UIFont(name: "MuseoCyrl-100", size: 14)!
 }
 
 struct Colors {

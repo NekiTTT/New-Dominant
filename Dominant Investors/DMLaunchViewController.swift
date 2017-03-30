@@ -7,14 +7,13 @@
 //
 
 import UIKit
-import MBProgressHUD
+
 
 class DMLaunchViewController: DMViewController {
 
     @IBOutlet weak var backgroundImage   : UIImageView!
     @IBOutlet weak var activityIndicator : UIActivityIndicatorView!
     
-    var progressHUD : MBProgressHUD!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +22,7 @@ class DMLaunchViewController: DMViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        progressHUD = MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         if (!checkOldAppMigration()) {
             launchApp()
         }
@@ -42,7 +41,7 @@ class DMLaunchViewController: DMViewController {
             let tabBar = UIStoryboard(name: "TabBar", bundle: nil).instantiateInitialViewController()
             self.navigationController?.pushViewController(tabBar!, animated: true)
         }
-        progressHUD.hide(animated: true)
+        self.dismissActivityIndicator()
     }
     
     private func checkOldAppMigration() -> Bool {

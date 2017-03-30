@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class DMSignUpViewController: DMViewController, UITextFieldDelegate {
 
@@ -89,13 +88,13 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
             return
         }
         
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
                                                          email    : self.emailTextField.text!,
                                                          password : self.passwordTextField.text!,
                                                          confirm  : self.confirmPasswordTextField.text!) { (success, error) in
                                                             DispatchQueue.main.async {
-                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                self.dismissActivityIndicator()
                                                                 if (success) {
                                                                     self.dismiss(animated: true, completion: nil)
                                                                 } else {

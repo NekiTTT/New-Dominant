@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import MBProgressHUD
+
 
 class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -18,12 +18,12 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
             DispatchQueue.main.async {
                 self.companies = companies
                 self.collectionView?.reloadData()
-                MBProgressHUD.hide(for: self.view, animated: true)
+                self.dismissActivityIndicator()
             }
         }
     }

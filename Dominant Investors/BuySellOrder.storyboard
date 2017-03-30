@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gnt-9A-uVe">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="MuseoCyrl100.otf">
+            <string>MuseoCyrl-100</string>
+        </array>
+        <array key="MuseoCyrl300.otf">
+            <string>MuseoCyrl-300</string>
+        </array>
+        <array key="MuseoCyrl500.otf">
+            <string>MuseoCyrl-500</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Market Buy View Controller-->
+        <scene sceneID="yn7-Sl-dQo">
+            <objects>
+                <viewController id="gnt-9A-uVe" customClass="DMMarketBuyViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ByQ-gA-6K8"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wpk-AS-1lE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KkI-9T-73d">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MARKET BUY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQf-oi-Fhu">
+                                <rect key="frame" x="119.5" y="28" width="137" height="28"/>
+                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lM-mu-JNW">
+                                <rect key="frame" x="56" y="606" width="262.5" height="45"/>
+                                <color key="backgroundColor" red="0.80000000000000004" green="0.15294117647058825" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="dwC-du-kRM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="17"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dv-Sm-6IF">
+                                <rect key="frame" x="37.5" y="133.5" width="300" height="400"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JfZ-Au-KDL">
+                                        <rect key="frame" x="8" y="8" width="284" height="86.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots_separator" translatesAutoresizingMaskIntoConstraints="NO" id="UuM-oM-I8z">
+                                                <rect key="frame" x="0.0" y="85.5" width="284" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="VeG-O7-ihh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shares of FB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8n-ie-EnC">
+                                                <rect key="frame" x="8" y="33.5" width="82" height="18"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="B8n-ie-EnC" firstAttribute="leading" secondItem="JfZ-Au-KDL" secondAttribute="leading" constant="8" id="62c-1F-rDa"/>
+                                            <constraint firstItem="UuM-oM-I8z" firstAttribute="leading" secondItem="JfZ-Au-KDL" secondAttribute="leading" id="Mjm-GX-MJS"/>
+                                            <constraint firstItem="B8n-ie-EnC" firstAttribute="centerY" secondItem="JfZ-Au-KDL" secondAttribute="centerY" id="OVr-ia-34N"/>
+                                            <constraint firstAttribute="bottom" secondItem="UuM-oM-I8z" secondAttribute="bottom" id="WEr-XB-hk7"/>
+                                            <constraint firstAttribute="trailing" secondItem="UuM-oM-I8z" secondAttribute="trailing" id="kPF-ZK-XJG"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMa-Lj-b5q">
+                                        <rect key="frame" x="8" y="102.5" width="284" height="86.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots_separator" translatesAutoresizingMaskIntoConstraints="NO" id="2Ap-UP-8NU">
+                                                <rect key="frame" x="0.0" y="85.5" width="284" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Ud8-Wj-ard"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MTK PRICE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZN-Lf-9U9">
+                                                <rect key="frame" x="8" y="34.5" width="75.5" height="18"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="2Ap-UP-8NU" secondAttribute="bottom" id="Cyh-37-zYb"/>
+                                            <constraint firstAttribute="trailing" secondItem="2Ap-UP-8NU" secondAttribute="trailing" id="XXs-uT-tfx"/>
+                                            <constraint firstItem="2Ap-UP-8NU" firstAttribute="leading" secondItem="bMa-Lj-b5q" secondAttribute="leading" id="Zdf-T1-vkd"/>
+                                            <constraint firstItem="nZN-Lf-9U9" firstAttribute="centerY" secondItem="bMa-Lj-b5q" secondAttribute="centerY" id="aBe-ag-dJA"/>
+                                            <constraint firstItem="nZN-Lf-9U9" firstAttribute="leading" secondItem="bMa-Lj-b5q" secondAttribute="leading" constant="8" id="nin-1E-LOH"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soE-cD-QZA">
+                                        <rect key="frame" x="8" y="197" width="284" height="86.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots_separator" translatesAutoresizingMaskIntoConstraints="NO" id="ik8-aO-ZoF">
+                                                <rect key="frame" x="0.0" y="85.5" width="284" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="cxo-Ee-GxZ"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EST Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-QA-4tL">
+                                                <rect key="frame" x="8" y="34" width="60" height="18"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ik8-aO-ZoF" secondAttribute="bottom" id="3aY-fx-ROR"/>
+                                            <constraint firstItem="VFd-QA-4tL" firstAttribute="centerY" secondItem="soE-cD-QZA" secondAttribute="centerY" id="4tI-QH-emi"/>
+                                            <constraint firstAttribute="trailing" secondItem="ik8-aO-ZoF" secondAttribute="trailing" id="Q0I-uU-jFm"/>
+                                            <constraint firstItem="VFd-QA-4tL" firstAttribute="leading" secondItem="soE-cD-QZA" secondAttribute="leading" constant="8" id="Q7k-TZ-Yo0"/>
+                                            <constraint firstItem="ik8-aO-ZoF" firstAttribute="leading" secondItem="soE-cD-QZA" secondAttribute="leading" id="Xna-EP-dbq"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YNP-Cg-Efe">
+                                        <rect key="frame" x="8" y="291.5" width="284" height="100.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dots_separator" translatesAutoresizingMaskIntoConstraints="NO" id="UTU-J8-aA7">
+                                                <rect key="frame" x="0.0" y="99.5" width="284" height="1"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="v8b-ll-UF9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQM-Pv-avS">
+                                                <rect key="frame" x="8" y="41" width="268" height="50.5"/>
+                                                <string key="text">Tou are simulating a trade with Dominant
+investors. No money will be transacted
+at this time</string>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mob-nN-xpN">
+                                                <rect key="frame" x="79" y="8" width="125" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="FOp-oG-G2f"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-500" family="Museo Cyrl" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="NQM-Pv-avS" firstAttribute="top" secondItem="mob-nN-xpN" secondAttribute="bottom" constant="12" id="53x-fh-ChT"/>
+                                            <constraint firstItem="NQM-Pv-avS" firstAttribute="leading" secondItem="YNP-Cg-Efe" secondAttribute="leading" constant="8" id="8dK-ip-gZ9"/>
+                                            <constraint firstItem="UTU-J8-aA7" firstAttribute="leading" secondItem="YNP-Cg-Efe" secondAttribute="leading" id="MaB-ev-q2l"/>
+                                            <constraint firstItem="mob-nN-xpN" firstAttribute="centerX" secondItem="YNP-Cg-Efe" secondAttribute="centerX" id="QEY-n4-LmN"/>
+                                            <constraint firstAttribute="trailing" secondItem="UTU-J8-aA7" secondAttribute="trailing" id="TFi-kd-ncq"/>
+                                            <constraint firstAttribute="bottom" secondItem="UTU-J8-aA7" secondAttribute="bottom" id="ihU-la-8mu"/>
+                                            <constraint firstAttribute="trailing" secondItem="NQM-Pv-avS" secondAttribute="trailing" constant="8" id="lgv-rz-PZH"/>
+                                            <constraint firstItem="mob-nN-xpN" firstAttribute="top" secondItem="YNP-Cg-Efe" secondAttribute="top" constant="8" id="sjz-9P-Iu3"/>
+                                            <constraint firstItem="UTU-J8-aA7" firstAttribute="top" secondItem="NQM-Pv-avS" secondAttribute="bottom" constant="8" id="wZC-oj-3KF"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="soE-cD-QZA" firstAttribute="top" secondItem="bMa-Lj-b5q" secondAttribute="bottom" constant="8" id="2KF-yU-MVi"/>
+                                    <constraint firstItem="soE-cD-QZA" firstAttribute="leading" secondItem="8Dv-Sm-6IF" secondAttribute="leading" constant="8" id="4dd-1i-J2W"/>
+                                    <constraint firstItem="bMa-Lj-b5q" firstAttribute="leading" secondItem="8Dv-Sm-6IF" secondAttribute="leading" constant="8" id="74s-3o-c3v"/>
+                                    <constraint firstAttribute="trailing" secondItem="YNP-Cg-Efe" secondAttribute="trailing" constant="8" id="8Lm-Re-Gqa"/>
+                                    <constraint firstAttribute="trailing" secondItem="JfZ-Au-KDL" secondAttribute="trailing" constant="8" id="H8f-ja-Fb5"/>
+                                    <constraint firstAttribute="height" priority="750" constant="400" id="Lbc-jx-R49"/>
+                                    <constraint firstItem="JfZ-Au-KDL" firstAttribute="top" secondItem="8Dv-Sm-6IF" secondAttribute="top" constant="8" id="Lt3-S7-tRu"/>
+                                    <constraint firstAttribute="width" constant="300" id="M2q-n7-6Wt"/>
+                                    <constraint firstItem="bMa-Lj-b5q" firstAttribute="height" secondItem="JfZ-Au-KDL" secondAttribute="height" id="f7t-TC-hn2"/>
+                                    <constraint firstItem="YNP-Cg-Efe" firstAttribute="top" secondItem="soE-cD-QZA" secondAttribute="bottom" constant="8" id="lW5-sA-NkK"/>
+                                    <constraint firstAttribute="trailing" secondItem="bMa-Lj-b5q" secondAttribute="trailing" constant="8" id="m0u-Ld-7aZ"/>
+                                    <constraint firstItem="soE-cD-QZA" firstAttribute="height" secondItem="JfZ-Au-KDL" secondAttribute="height" id="p6X-tm-D5y"/>
+                                    <constraint firstAttribute="trailing" secondItem="soE-cD-QZA" secondAttribute="trailing" constant="8" id="q24-c8-LL9"/>
+                                    <constraint firstItem="JfZ-Au-KDL" firstAttribute="leading" secondItem="8Dv-Sm-6IF" secondAttribute="leading" constant="8" id="qYc-qb-bUh"/>
+                                    <constraint firstAttribute="bottom" secondItem="YNP-Cg-Efe" secondAttribute="bottom" constant="8" id="qjr-8p-eII"/>
+                                    <constraint firstItem="YNP-Cg-Efe" firstAttribute="leading" secondItem="8Dv-Sm-6IF" secondAttribute="leading" constant="8" id="tIw-1b-ta3"/>
+                                    <constraint firstItem="bMa-Lj-b5q" firstAttribute="top" secondItem="JfZ-Au-KDL" secondAttribute="bottom" constant="8" id="zn0-Gq-3zC"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmc-rW-eOV">
+                                <rect key="frame" x="8" y="20" width="29" height="26"/>
+                                <state key="normal" image="new_images_arrow"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8Dv-Sm-6IF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="PQf-oi-Fhu" secondAttribute="bottom" constant="4" id="Amm-di-Q2e"/>
+                            <constraint firstItem="pmc-rW-eOV" firstAttribute="top" secondItem="ByQ-gA-6K8" secondAttribute="bottom" id="S82-zM-Jjx"/>
+                            <constraint firstItem="6lM-mu-JNW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8Dv-Sm-6IF" secondAttribute="bottom" constant="4" id="dgh-cn-Sgz"/>
+                            <constraint firstItem="6lM-mu-JNW" firstAttribute="centerX" secondItem="KkI-9T-73d" secondAttribute="centerX" id="g1V-kX-TsC"/>
+                            <constraint firstItem="Wpk-AS-1lE" firstAttribute="top" secondItem="6lM-mu-JNW" secondAttribute="bottom" constant="16" id="g51-Ux-FZV"/>
+                            <constraint firstItem="PQf-oi-Fhu" firstAttribute="centerX" secondItem="KkI-9T-73d" secondAttribute="centerX" id="uKJ-c9-nCm"/>
+                            <constraint firstItem="pmc-rW-eOV" firstAttribute="leading" secondItem="KkI-9T-73d" secondAttribute="leading" constant="8" id="wPa-vY-4Tg"/>
+                            <constraint firstItem="PQf-oi-Fhu" firstAttribute="top" secondItem="ByQ-gA-6K8" secondAttribute="bottom" constant="8" id="zGQ-9Z-fft"/>
+                            <constraint firstItem="6lM-mu-JNW" firstAttribute="width" secondItem="KkI-9T-73d" secondAttribute="width" multiplier="0.7" id="zJ4-D1-Qec"/>
+                            <constraint firstItem="8Dv-Sm-6IF" firstAttribute="centerX" secondItem="KkI-9T-73d" secondAttribute="centerX" id="zWN-vw-7Du"/>
+                            <constraint firstItem="8Dv-Sm-6IF" firstAttribute="centerY" secondItem="KkI-9T-73d" secondAttribute="centerY" id="ziA-LV-JWu"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Nw-om-Tpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="365.60000000000002" y="62.518740629685162"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dots_separator" width="220" height="2"/>
+        <image name="new_images_arrow" width="29" height="26"/>
+    </resources>
+</document>

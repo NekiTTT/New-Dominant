@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class DMLoginViewController: DMViewController, UITextFieldDelegate {
 
@@ -40,11 +39,11 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     }
     
     private func configureLabels() {
-        let underlineAttriString = NSMutableAttributedString(string:"CREATE ACCOUNT", attributes:
+        let underlineAttriString = NSMutableAttributedString(string:"Registration", attributes:
             [NSUnderlineStyleAttributeName: NSUnderlineStyle.styleSingle.rawValue])
         
-        underlineAttriString.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange.init(location: 0, length: underlineAttriString.length))
-        underlineAttriString.addAttribute(NSFontAttributeName, value: Fonts.DMMyseoFont, range: NSRange.init(location: 0, length: underlineAttriString.length))
+        underlineAttriString.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange.init(location: 0, length: underlineAttriString.length))
+        underlineAttriString.addAttribute(NSFontAttributeName, value: Fonts.DMMyseoUpperFont, range: NSRange.init(location: 0, length: underlineAttriString.length))
         
         createNewAccount.setAttributedTitle(underlineAttriString, for: .normal)
     }
@@ -68,11 +67,11 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     }
     
     private func proceedLogin() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         DMAuthorizationManager.sharedInstance.loginWith(login: self.usernameTextField.text!,
                                                         password: self.passwordTextField.text!) { (success, error) in
                                                             DispatchQueue.main.async {
-                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                self.dismissActivityIndicator()
                                                                 if (success) {
                                                                     self.showTabBar()
                                                                 } else {

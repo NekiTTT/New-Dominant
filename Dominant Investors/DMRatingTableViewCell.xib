@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
+        </array>
+        <array key="MuseoCyrl700.otf">
+            <string>MuseoCyrl-700</string>
         </array>
     </customFonts>
     <objects>
@@ -23,38 +27,46 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="74.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-xH-FJx">
-                        <rect key="frame" x="16" y="12" width="109" height="50.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="100" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="WfG-xH-FJx">
+                        <rect key="frame" x="16" y="28" width="30" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="6xH-BO-a7z"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vangos" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="2b9-31-88I">
-                        <rect key="frame" x="133" y="12" width="109" height="50.5"/>
-                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Vangos" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="2b9-31-88I">
+                        <rect key="frame" x="112" y="28" width="119.5" height="17"/>
+                        <fontDescription key="fontDescription" name="MuseoCyrl-700" family="Museo Cyrl" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="+300%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="JBo-Cv-GFb">
-                        <rect key="frame" x="250" y="12" width="109" height="50.5"/>
-                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="14"/>
-                        <color key="textColor" red="0.47058823529999999" green="0.73333333329999995" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
+                        <rect key="frame" x="239.5" y="27.5" width="119.5" height="19.5"/>
+                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="16"/>
+                        <color key="textColor" red="0.1647058824" green="0.47450980390000003" blue="0.23137254900000001" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lhQ-it-ykW">
+                        <rect key="frame" x="54" y="11.5" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="lhQ-it-ykW" secondAttribute="height" multiplier="1:1" id="IrL-gl-5c5"/>
+                            <constraint firstAttribute="width" constant="50" id="WGS-kK-dNB"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="2b9-31-88I" firstAttribute="top" secondItem="iWQ-bc-mz8" secondAttribute="topMargin" constant="4" id="3Ck-st-lLA"/>
-                    <constraint firstItem="2b9-31-88I" firstAttribute="width" secondItem="WfG-xH-FJx" secondAttribute="width" id="6Az-Wg-bB9"/>
-                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="top" secondItem="iWQ-bc-mz8" secondAttribute="topMargin" constant="4" id="AiD-y5-m9S"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="JBo-Cv-GFb" secondAttribute="trailing" constant="8" id="ELT-s8-Cfd"/>
-                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="leading" secondItem="2b9-31-88I" secondAttribute="trailing" constant="8" id="J5S-0d-FYf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="WfG-xH-FJx" secondAttribute="bottom" constant="4" id="Nrp-b3-q3T"/>
-                    <constraint firstItem="WfG-xH-FJx" firstAttribute="leading" secondItem="iWQ-bc-mz8" secondAttribute="leadingMargin" constant="8" id="eEy-4S-9wR"/>
-                    <constraint firstItem="2b9-31-88I" firstAttribute="leading" secondItem="WfG-xH-FJx" secondAttribute="trailing" constant="8" id="f2W-kK-Cn9"/>
-                    <constraint firstItem="WfG-xH-FJx" firstAttribute="top" secondItem="iWQ-bc-mz8" secondAttribute="topMargin" constant="4" id="gqZ-kr-63u"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="JBo-Cv-GFb" secondAttribute="bottom" constant="4" id="l9C-dJ-ZyK"/>
-                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="width" secondItem="WfG-xH-FJx" secondAttribute="width" id="rHV-3S-dUf"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="2b9-31-88I" secondAttribute="bottom" constant="4" id="sA7-SG-ktE"/>
+                    <constraint firstItem="WfG-xH-FJx" firstAttribute="leading" secondItem="iWQ-bc-mz8" secondAttribute="leadingMargin" constant="8" id="1GC-GS-Ond"/>
+                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="width" secondItem="2b9-31-88I" secondAttribute="width" id="1kM-Ys-oaO"/>
+                    <constraint firstItem="2b9-31-88I" firstAttribute="centerY" secondItem="JBo-Cv-GFb" secondAttribute="centerY" id="A4O-dt-whn"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="JBo-Cv-GFb" secondAttribute="trailing" constant="8" id="MIU-pH-xTp"/>
+                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="centerY" secondItem="iWQ-bc-mz8" secondAttribute="centerY" id="OU6-XZ-Sfz"/>
+                    <constraint firstItem="lhQ-it-ykW" firstAttribute="centerY" secondItem="2b9-31-88I" secondAttribute="centerY" id="WIT-QL-tvG"/>
+                    <constraint firstItem="lhQ-it-ykW" firstAttribute="leading" secondItem="WfG-xH-FJx" secondAttribute="trailing" constant="8" id="YIh-jt-YyX"/>
+                    <constraint firstItem="JBo-Cv-GFb" firstAttribute="leading" secondItem="2b9-31-88I" secondAttribute="trailing" constant="8" id="dJc-as-jqa"/>
+                    <constraint firstItem="WfG-xH-FJx" firstAttribute="centerY" secondItem="2b9-31-88I" secondAttribute="centerY" id="goh-Cu-IsG"/>
+                    <constraint firstItem="2b9-31-88I" firstAttribute="leading" secondItem="lhQ-it-ykW" secondAttribute="trailing" constant="8" id="mbv-pa-zQU"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -62,7 +74,9 @@
                 <outlet property="investorLabel" destination="2b9-31-88I" id="OsP-0d-ZLl"/>
                 <outlet property="overallLabel" destination="JBo-Cv-GFb" id="IX8-0Q-dcx"/>
                 <outlet property="positionLabel" destination="WfG-xH-FJx" id="cXs-4p-N31"/>
+                <outlet property="userAvatar" destination="lhQ-it-ykW" id="2Wt-AS-CAc"/>
             </connections>
+            <point key="canvasLocation" x="34.5" y="54.5"/>
         </tableViewCell>
     </objects>
 </document>

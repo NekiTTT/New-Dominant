@@ -15,8 +15,10 @@
 		452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */; };
 		452A44001E5A5C5E0058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		452A44011E5A5C720058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
-		453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
-		453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
+		4534A3E81E87D483005D202B /* BuySellOrder.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4534A3E71E87D483005D202B /* BuySellOrder.storyboard */; };
+		4534A3EB1E87EA70005D202B /* DMMarketBuyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4534A3EA1E87EA70005D202B /* DMMarketBuyViewController.swift */; };
+		453A76C31E8477A80029C2FC /* DMCompaniesSignalsHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453A76C21E8477A80029C2FC /* DMCompaniesSignalsHeader.swift */; };
+		453A76C51E8477B40029C2FC /* DMCompaniesSignalsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453A76C41E8477B40029C2FC /* DMCompaniesSignalsHeader.xib */; };
 		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */; };
 		4581D6B71E60FE0C005F2173 /* DMStockInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */; };
@@ -26,7 +28,6 @@
 		4581D6BD1E61CE6F005F2173 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6BE1E61CE6F005F2173 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E7811E5901A800D56BDE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6BF1E61CE6F005F2173 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4581D6C01E61CE93005F2173 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6C11E61FB92005F2173 /* DMRotatingViewController.swift */; };
 		4581D6C41E624192005F2173 /* Dominant+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6C31E624192005F2173 /* Dominant+UIView.swift */; };
 		4581D6C61E631A32005F2173 /* Dominant+Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6C51E631A31005F2173 /* Dominant+Array.swift */; };
@@ -48,6 +49,8 @@
 		45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A107B41E59DCF300591170 /* DMSignalCell.xib */; };
 		45A107B91E59DF9B00591170 /* DMCompanyCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A107B71E59DF9B00591170 /* DMCompanyCollectionCell.swift */; };
 		45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45A107B81E59DF9B00591170 /* DMCompanyCollectionCell.xib */; };
+		45AEACDE1E81934900B80CA2 /* DMCompaniesSignalsFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45AEACDD1E81934900B80CA2 /* DMCompaniesSignalsFooter.swift */; };
+		45AEACE01E81935A00B80CA2 /* DMCompaniesSignalsFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45AEACDF1E81935A00B80CA2 /* DMCompaniesSignalsFooter.xib */; };
 		45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */; };
 		45B4E7371E58ED5C00D56BDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7361E58ED5C00D56BDE /* Assets.xcassets */; };
 		45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7381E58ED5C00D56BDE /* LaunchScreen.storyboard */; };
@@ -85,6 +88,7 @@
 		45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */; };
 		45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */; };
 		45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */; };
+		45BDFCC21E8D814200D2D37C /* Dominant+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BDFCC11E8D814200D2D37C /* Dominant+UIImageView.swift */; };
 		45C7D6E21E5E4CF90089E8C7 /* DMStockCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C7D6E11E5E4CF90089E8C7 /* DMStockCellDelegate.swift */; };
 		45C7D6E41E5E50CA0089E8C7 /* DMCalculationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */; };
 		45C7D6E71E5E516A0089E8C7 /* Dominant+Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45C7D6E61E5E516A0089E8C7 /* Dominant+Double.swift */; };
@@ -106,7 +110,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				4581D6C01E61CE93005F2173 /* MBProgressHUD.framework in Embed Frameworks */,
 				4581D6BD1E61CE6F005F2173 /* AlamofireImage.framework in Embed Frameworks */,
 				4581D6BE1E61CE6F005F2173 /* Alamofire.framework in Embed Frameworks */,
 				4581D6BF1E61CE6F005F2173 /* Quickblox.framework in Embed Frameworks */,
@@ -124,7 +127,10 @@
 		452A43F91E5A4DCD0058D11C /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerDelegate.swift; sourceTree = "<group>"; };
 		452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
-		453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		4534A3E71E87D483005D202B /* BuySellOrder.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BuySellOrder.storyboard; sourceTree = "<group>"; };
+		4534A3EA1E87EA70005D202B /* DMMarketBuyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMMarketBuyViewController.swift; sourceTree = "<group>"; };
+		453A76C21E8477A80029C2FC /* DMCompaniesSignalsHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompaniesSignalsHeader.swift; sourceTree = "<group>"; };
+		453A76C41E8477B40029C2FC /* DMCompaniesSignalsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMCompaniesSignalsHeader.xib; sourceTree = "<group>"; };
 		454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMFileManager.swift; sourceTree = "<group>"; };
 		454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockDetailViewController.swift; sourceTree = "<group>"; };
 		4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockInfoCell.swift; sourceTree = "<group>"; };
@@ -144,6 +150,8 @@
 		45A107B41E59DCF300591170 /* DMSignalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMSignalCell.xib; sourceTree = "<group>"; };
 		45A107B71E59DF9B00591170 /* DMCompanyCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyCollectionCell.swift; sourceTree = "<group>"; };
 		45A107B81E59DF9B00591170 /* DMCompanyCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMCompanyCollectionCell.xib; sourceTree = "<group>"; };
+		45AEACDD1E81934900B80CA2 /* DMCompaniesSignalsFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompaniesSignalsFooter.swift; sourceTree = "<group>"; };
+		45AEACDF1E81935A00B80CA2 /* DMCompaniesSignalsFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMCompaniesSignalsFooter.xib; sourceTree = "<group>"; };
 		45B4E72C1E58ED5C00D56BDE /* Dominant Investors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dominant Investors.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45B4E72F1E58ED5C00D56BDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45B4E7361E58ED5C00D56BDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -193,6 +201,7 @@
 		45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownViewController.swift; sourceTree = "<group>"; };
 		45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionViewController.swift; sourceTree = "<group>"; };
 		45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyDetailViewController.swift; sourceTree = "<group>"; };
+		45BDFCC11E8D814200D2D37C /* Dominant+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+UIImageView.swift"; sourceTree = "<group>"; };
 		45C7D6E11E5E4CF90089E8C7 /* DMStockCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockCellDelegate.swift; sourceTree = "<group>"; };
 		45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCalculationService.swift; sourceTree = "<group>"; };
 		45C7D6E61E5E516A0089E8C7 /* Dominant+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+Double.swift"; sourceTree = "<group>"; };
@@ -217,10 +226,8 @@
 				45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */,
 				45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */,
 				45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */,
-				453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */,
 				45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */,
-				453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */,
 				45A1079C1E59C3AC00591170 /* Alamofire.framework in Frameworks */,
 				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
@@ -257,6 +264,23 @@
 				4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		4534A3E91E87EA53005D202B /* Market Buy */ = {
+			isa = PBXGroup;
+			children = (
+				4534A3EA1E87EA70005D202B /* DMMarketBuyViewController.swift */,
+			);
+			name = "Market Buy";
+			sourceTree = "<group>";
+		};
+		453A76C11E8477800029C2FC /* DMCompaniesSignalsHeader */ = {
+			isa = PBXGroup;
+			children = (
+				453A76C21E8477A80029C2FC /* DMCompaniesSignalsHeader.swift */,
+				453A76C41E8477B40029C2FC /* DMCompaniesSignalsHeader.xib */,
+			);
+			name = DMCompaniesSignalsHeader;
 			sourceTree = "<group>";
 		};
 		4581D6B41E60FDE6005F2173 /* DMStockInfoCell */ = {
@@ -311,6 +335,15 @@
 				45A107B41E59DCF300591170 /* DMSignalCell.xib */,
 			);
 			name = DMSignalCell;
+			sourceTree = "<group>";
+		};
+		45AEACDC1E81931D00B80CA2 /* DMCompaniesSignalsFooter */ = {
+			isa = PBXGroup;
+			children = (
+				45AEACDD1E81934900B80CA2 /* DMCompaniesSignalsFooter.swift */,
+				45AEACDF1E81935A00B80CA2 /* DMCompaniesSignalsFooter.xib */,
+			);
+			name = DMCompaniesSignalsFooter;
 			sourceTree = "<group>";
 		};
 		45B4E7231E58ED5C00D56BDE = {
@@ -414,6 +447,7 @@
 				45B4E7661E58FBB100D56BDE /* Authorization.storyboard */,
 				45B4E7681E58FBC900D56BDE /* TabBar.storyboard */,
 				45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */,
+				4534A3E71E87D483005D202B /* BuySellOrder.storyboard */,
 				45B4E7831E59106B00D56BDE /* Ratings.storyboard */,
 				45B4E76E1E58FC1100D56BDE /* Signals.storyboard */,
 				45B4E7701E58FCB000D56BDE /* Analytics.storyboard */,
@@ -424,6 +458,8 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				453A76C11E8477800029C2FC /* DMCompaniesSignalsHeader */,
+				45AEACDC1E81931D00B80CA2 /* DMCompaniesSignalsFooter */,
 				4581D6B41E60FDE6005F2173 /* DMStockInfoCell */,
 				45D0704C1E5E458800B6CAC5 /* DMPortfolioTotalCell */,
 				45121B7F1E5CB04C00D83C4E /* DMDropDownTableViewCell */,
@@ -440,7 +476,6 @@
 		45B4E7471E58EE2B00D56BDE /* Framewroks */ = {
 			isa = PBXGroup;
 			children = (
-				453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */,
 				452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */,
 				45B7A0321E591629000CB062 /* Crashlytics.framework */,
 				45B4E78D1E59126A00D56BDE /* Bolts.framework */,
@@ -487,6 +522,7 @@
 		45B4E7611E58F9E600D56BDE /* Portfolio */ = {
 			isa = PBXGroup;
 			children = (
+				4534A3E91E87EA53005D202B /* Market Buy */,
 				45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */,
 				45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */,
 				454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */,
@@ -552,6 +588,7 @@
 				4581D6C31E624192005F2173 /* Dominant+UIView.swift */,
 				4581D6C51E631A31005F2173 /* Dominant+Array.swift */,
 				45D73F751E636D1B001BB511 /* Dominant+String.swift */,
+				45BDFCC11E8D814200D2D37C /* Dominant+UIImageView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -630,6 +667,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A107A51E59CFED00591170 /* MuseoCyrl100.otf in Resources */,
+				4534A3E81E87D483005D202B /* BuySellOrder.storyboard in Resources */,
 				45A107A61E59CFED00591170 /* MuseoCyrl300.otf in Resources */,
 				4581D6B81E60FE0C005F2173 /* DMStockInfoCell.xib in Resources */,
 				45A107A71E59CFED00591170 /* MuseoCyrl500.otf in Resources */,
@@ -644,8 +682,10 @@
 				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
 				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
 				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
+				453A76C51E8477B40029C2FC /* DMCompaniesSignalsHeader.xib in Resources */,
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
 				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
+				45AEACE01E81935A00B80CA2 /* DMCompaniesSignalsFooter.xib in Resources */,
 				45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */,
 				452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */,
 				45B4E7841E59106B00D56BDE /* Ratings.storyboard in Resources */,
@@ -713,6 +753,7 @@
 				4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */,
 				45B7A03F1E591864000CB062 /* DMCompanyDetailViewController.swift in Sources */,
 				452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */,
+				45BDFCC21E8D814200D2D37C /* Dominant+UIImageView.swift in Sources */,
 				45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */,
 				45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */,
 				45C7D6E21E5E4CF90089E8C7 /* DMStockCellDelegate.swift in Sources */,
@@ -726,6 +767,7 @@
 				45B4E7521E58EF5700D56BDE /* DMPersonalPortfolioService.swift in Sources */,
 				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
 				45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */,
+				45AEACDE1E81934900B80CA2 /* DMCompaniesSignalsFooter.swift in Sources */,
 				45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */,
 				45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */,
 				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
@@ -733,12 +775,14 @@
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
 				45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */,
 				454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */,
+				4534A3EB1E87EA70005D202B /* DMMarketBuyViewController.swift in Sources */,
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,
 				45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */,
 				45B7A0371E5916A2000CB062 /* DMLoginViewController.swift in Sources */,
+				453A76C31E8477A80029C2FC /* DMCompaniesSignalsHeader.swift in Sources */,
 				45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */,
 				45A1078F1E59C24100591170 /* FXBlurView.m in Sources */,
 				45C7D6E71E5E516A0089E8C7 /* Dominant+Double.swift in Sources */,

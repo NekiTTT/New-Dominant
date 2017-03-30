@@ -17,9 +17,6 @@
         <array key="MuseoCyrl300.otf">
             <string>MuseoCyrl-300</string>
         </array>
-        <array key="MuseoCyrl900.otf">
-            <string>MuseoCyrl-900</string>
-        </array>
     </customFonts>
     <scenes>
         <!--Signals View Controller-->
@@ -215,81 +212,103 @@
                         <viewControllerLayoutGuide type="bottom" id="xL2-KT-luN"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="zKS-PV-c4a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hFd-cU-8XY">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreeniPhone" translatesAutoresizingMaskIntoConstraints="NO" id="sLl-Bm-ZH0">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                     </imageView>
                                     <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hE4-vi-Ia9" customClass="FXBlurView">
-                                        <rect key="frame" x="38" y="7.5" width="300" height="400"/>
+                                        <rect key="frame" x="38" y="300.5" width="300" height="400"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-AM-rgT">
-                                                <rect key="frame" x="50" y="310" width="90" height="35"/>
-                                                <color key="backgroundColor" red="0.84705882349999995" green="0.1450980392" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="q1J-bq-5cr"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
-                                                <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="BUY"/>
-                                                <connections>
-                                                    <action selector="buy" destination="8Hc-u4-XZx" eventType="touchUpInside" id="OcX-gJ-4jm"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-V1-2yJ">
-                                                <rect key="frame" x="23" y="155" width="255" height="90"/>
-                                                <string key="text">Subscribe to accurate trading signals from the professional portfolio managers to get a maximum profitability on investment shares</string>
-                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49.99$ monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M49-PS-Loz">
-                                                <rect key="frame" x="93" y="366" width="115" height="18"/>
-                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMINANT STOCK SIGNALS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUg-a1-5tO">
-                                                <rect key="frame" x="80" y="36" width="140" height="38.5"/>
-                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="89.99$ montly" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUg-a1-5tO">
+                                                <rect key="frame" x="99" y="132.5" width="102.5" height="77"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dg0-aw-0vg">
-                                                <rect key="frame" x="160" y="310" width="90" height="35"/>
+                                                <rect key="frame" x="60" y="331" width="180" height="45"/>
                                                 <color key="backgroundColor" red="0.18039215689999999" green="0.41176470590000003" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="PUE-Sb-yg1"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                                 <state key="normal" title="RESTORE">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="restore" destination="8Hc-u4-XZx" eventType="touchUpInside" id="5AM-3C-Qc5"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIG-AM-rgT">
+                                                <rect key="frame" x="30" y="264" width="240" height="55"/>
+                                                <color key="backgroundColor" red="0.84705882349999995" green="0.1450980392" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="55" id="VNv-wj-5L3"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
+                                                <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="BUY"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buy" destination="8Hc-u4-XZx" eventType="touchUpInside" id="OcX-gJ-4jm"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-V1-2yJ">
+                                                <rect key="frame" x="37.5" y="24" width="225.5" height="54"/>
+                                                <string key="text">Update your account and get
+a list of companies with a
+growth potential of 40% and more</string>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fIQ-Mc-dT5">
+                                                <rect key="frame" x="0.0" y="78" width="300" height="54.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fb7-cG-WZj">
+                                                <rect key="frame" x="0.0" y="209.5" width="300" height="54.5"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="width" secondItem="CIG-AM-rgT" secondAttribute="width" id="09y-TA-VMT"/>
-                                            <constraint firstItem="wUg-a1-5tO" firstAttribute="top" secondItem="hE4-vi-Ia9" secondAttribute="top" constant="36" id="1SZ-qA-9QV"/>
-                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="width" secondItem="hE4-vi-Ia9" secondAttribute="width" multiplier="0.85" id="1pc-YC-P9r"/>
-                                            <constraint firstItem="M49-PS-Loz" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="4Ve-W9-btI"/>
+                                            <constraint firstItem="wUg-a1-5tO" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="0db-fC-2ne"/>
+                                            <constraint firstItem="fIQ-Mc-dT5" firstAttribute="leading" secondItem="hE4-vi-Ia9" secondAttribute="leading" id="4aM-BM-yXt"/>
                                             <constraint firstAttribute="height" priority="750" constant="400" id="6N5-Mm-4Kj"/>
-                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" constant="55" id="MZJ-Sd-Wen"/>
-                                            <constraint firstAttribute="bottom" secondItem="M49-PS-Loz" secondAttribute="bottom" constant="16" id="NYT-aw-bYc"/>
+                                            <constraint firstItem="CIG-AM-rgT" firstAttribute="top" secondItem="Fb7-cG-WZj" secondAttribute="bottom" id="DDS-Yu-mCL"/>
+                                            <constraint firstItem="fIQ-Mc-dT5" firstAttribute="top" secondItem="QpO-V1-2yJ" secondAttribute="bottom" id="DMK-QG-Cz8"/>
+                                            <constraint firstAttribute="trailing" secondItem="Fb7-cG-WZj" secondAttribute="trailing" id="F6m-5J-BZM"/>
+                                            <constraint firstItem="Fb7-cG-WZj" firstAttribute="leading" secondItem="hE4-vi-Ia9" secondAttribute="leading" id="H1d-4X-MWQ"/>
+                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="Hxg-g3-hJq"/>
+                                            <constraint firstItem="Fb7-cG-WZj" firstAttribute="height" secondItem="fIQ-Mc-dT5" secondAttribute="height" id="IsE-vR-xfp"/>
                                             <constraint firstAttribute="width" secondItem="hE4-vi-Ia9" secondAttribute="height" multiplier="250:333" id="PGY-wS-zt7"/>
-                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CIG-AM-rgT" secondAttribute="trailing" constant="8" id="PnB-EL-2Fb"/>
-                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="bottom" secondItem="CIG-AM-rgT" secondAttribute="bottom" id="WHC-o6-Crl"/>
-                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="height" secondItem="CIG-AM-rgT" secondAttribute="height" id="WwC-Yp-Q5T"/>
-                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="centerY" secondItem="hE4-vi-Ia9" secondAttribute="centerY" id="Yll-aO-1R1"/>
-                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="bP2-S7-4SA"/>
-                                            <constraint firstItem="CIG-AM-rgT" firstAttribute="width" secondItem="hE4-vi-Ia9" secondAttribute="width" multiplier="0.3" id="by3-Ts-TAP"/>
-                                            <constraint firstItem="wUg-a1-5tO" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="jVY-x0-yV5"/>
-                                            <constraint firstAttribute="bottom" secondItem="CIG-AM-rgT" secondAttribute="bottom" constant="55" id="w6T-LJ-9Fd"/>
-                                            <constraint firstItem="CIG-AM-rgT" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" constant="-55" id="ypk-Fg-6oF"/>
+                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="top" secondItem="CIG-AM-rgT" secondAttribute="bottom" constant="12" id="VWA-Re-5nq"/>
+                                            <constraint firstItem="Fb7-cG-WZj" firstAttribute="top" secondItem="wUg-a1-5tO" secondAttribute="bottom" id="W3b-vg-7xe"/>
+                                            <constraint firstItem="CIG-AM-rgT" firstAttribute="centerX" secondItem="hE4-vi-Ia9" secondAttribute="centerX" id="Wae-Jm-2Yd"/>
+                                            <constraint firstItem="CIG-AM-rgT" firstAttribute="width" secondItem="hE4-vi-Ia9" secondAttribute="width" multiplier="0.8" id="ad9-Ff-x5O"/>
+                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="width" secondItem="hE4-vi-Ia9" secondAttribute="width" multiplier="0.6" id="apk-fq-4Cx"/>
+                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hE4-vi-Ia9" secondAttribute="leading" constant="8" id="asR-ao-oco"/>
+                                            <constraint firstItem="QpO-V1-2yJ" firstAttribute="top" secondItem="hE4-vi-Ia9" secondAttribute="top" constant="24" id="b2U-n4-dpg"/>
+                                            <constraint firstAttribute="bottom" secondItem="dg0-aw-0vg" secondAttribute="bottom" constant="24" id="cEh-hd-wZA"/>
+                                            <constraint firstItem="wUg-a1-5tO" firstAttribute="top" secondItem="fIQ-Mc-dT5" secondAttribute="bottom" id="cFi-H0-a6l"/>
+                                            <constraint firstAttribute="trailing" secondItem="fIQ-Mc-dT5" secondAttribute="trailing" id="h3f-Yw-CqH"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="QpO-V1-2yJ" secondAttribute="trailing" constant="8" id="iFA-KO-FOq"/>
+                                            <constraint firstItem="dg0-aw-0vg" firstAttribute="centerX" secondItem="CIG-AM-rgT" secondAttribute="centerX" id="ubj-LW-Si5"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -298,12 +317,12 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dci-9U-bcS">
-                                        <rect key="frame" x="326" y="395.5" width="24" height="24"/>
+                                        <rect key="frame" x="326" y="688.5" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="4zI-hd-nE9"/>
                                             <constraint firstAttribute="width" constant="24" id="iuF-Bv-uBD"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="cancel_buy"/>
+                                        <state key="normal" image="cancel_buy"/>
                                         <connections>
                                             <action selector="closeAction" destination="8Hc-u4-XZx" eventType="touchUpInside" id="q3u-mh-oLd"/>
                                         </connections>
@@ -343,6 +362,8 @@
                             <constraint firstItem="hFd-cU-8XY" firstAttribute="leading" secondItem="zKS-PV-c4a" secondAttribute="leading" id="SUV-Nn-dHC"/>
                         </constraints>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="1000"/>
                     <connections>
                         <outlet property="backgroundImageView" destination="sLl-Bm-ZH0" id="WlO-9V-vc6"/>
                         <outlet property="overlayView" destination="hE4-vi-Ia9" id="Ro0-uN-RRw"/>
@@ -350,12 +371,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cG3-nr-fwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3406" y="-44"/>
+            <point key="canvasLocation" x="3405.5999999999999" y="-44.07796101949026"/>
         </scene>
     </scenes>
     <resources>
         <image name="backArrow" width="64" height="64"/>
-        <image name="cancel_buy" width="56" height="56"/>
+        <image name="cancel_buy" width="30" height="30"/>
         <image name="gradient" width="187" height="333"/>
         <image name="launchScreeniPhone" width="250" height="444"/>
     </resources>

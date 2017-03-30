@@ -8,7 +8,6 @@
 
 import UIKit
 import StoreKit
-import MBProgressHUD
 
 class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
 
@@ -31,10 +30,10 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         self.backgroundImageView.image = self.DMAuthScreensBackground
         productIDs.append("dominantOne")
         self.requestProductInfo()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         DMSignalsStoreService.sharedInstance.checkSubscription { (subscription) in
             DispatchQueue.main.async {
-                MBProgressHUD.hide(for: self.view, animated: true)
+                self.dismissActivityIndicator()
                 if (subscription != nil) {
                     if (DMSignalsStoreService.sharedInstance.isSubscriptionValid(subscription: subscription!)) {
                         self.showSignals()
@@ -48,7 +47,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     // MARK: Actions
     
     @IBAction func buy() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        showActivityIndicator()
         self.showActions()
     }
     
@@ -123,7 +122,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-            MBProgressHUD.hide(for: self.view, animated: true)
+            self.dismissActivityIndicator()
         }
         
         actionSheetController.addAction(buyAction)
@@ -155,7 +154,7 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     //MARK: SKPaymentTransactionObserver
     
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        MBProgressHUD.hide(for: self.view, animated: true)
+        self.dismissActivityIndicator()
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchased:
@@ -190,10 +189,10 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
  
         if (queue.transactions.count == 0) {
-            MBProgressHUD.hide(for: self.view, animated: true)
+            self.dismissActivityIndicator()
             let alert = UIAlertController(title: "Error", message: "Nothing to restore", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil));
-            MBProgressHUD.hide(for: self.view, animated: true)
+            self.dismissActivityIndicator()
             self.present(alert, animated: true, completion: nil)
             self.transactionInProgress = false
             return

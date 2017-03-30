@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 
 class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPortfolioUserInterface, UITextFieldDelegate {
@@ -267,14 +266,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+            self.showActivityIndicator()
             self.resizeTableView()
         }
     }
     
     func didReloaded() {
         DispatchQueue.main.async {
-            MBProgressHUD.hide(for: self.view, animated: true)
+            self.dismissActivityIndicator()
             self.refreshControl.endRefreshing()
         }
     }

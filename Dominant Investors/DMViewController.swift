@@ -9,6 +9,8 @@
 import UIKit
 
 class DMViewController: UIViewController {
+    
+    var activityView : UIImageView!
 
     var DMAuthScreensBackground : UIImage {
         get {
@@ -24,7 +26,6 @@ class DMViewController: UIViewController {
             }
         }
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,10 +63,39 @@ class DMViewController: UIViewController {
     }
     
     open func okAction() {
-        
+        // To child handler - > Need Refactor.
     }
     
     open func cancelAction() {
-        
+         // To child handler - > Need Refactor.
+    }
+    
+    // MARK : Activity indicator (Dominant version)
+    
+    open func showActivityIndicator() {
+        DispatchQueue.main.async {
+            
+            self.activityView = UIImageView.init(image: UIImage(named: "activity_01"))
+            self.activityView.center = CGPoint(x: self.view.frame.size.width  / 2,
+                                          y: self.view.frame.size.height / 2)
+            
+            let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+            rotateAnimation.fromValue = 0.0
+            rotateAnimation.toValue = CGFloat(M_PI * 2.0)
+            rotateAnimation.duration = 1.5
+            rotateAnimation.repeatCount = .infinity
+            
+            self.activityView.layer.add(rotateAnimation, forKey: nil)
+            
+            self.view.addSubview(self.activityView)
+        }
+    }
+    
+    open func dismissActivityIndicator() {
+        DispatchQueue.main.async {
+            if let activity = self.activityView {
+                activity.removeFromSuperview()
+            }
+        }
     }
 }

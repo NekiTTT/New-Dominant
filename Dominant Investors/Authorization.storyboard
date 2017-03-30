@@ -315,6 +315,11 @@
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="13"/>
                                         <color key="tintColor" red="0.98696880819999999" green="1" blue="0.99590365960000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="LOGIN"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="loginButtonPressedWithSender:" destination="WYA-Wt-9PR" eventType="touchUpInside" id="3Uf-AP-AcB"/>
                                         </connections>
@@ -363,13 +368,13 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgm-Gh-RXd">
-                                        <rect key="frame" x="77" y="276" width="96" height="66"/>
+                                        <rect key="frame" x="96.5" y="304" width="57" height="25"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Erc-KX-zIx">
-                                                <rect key="frame" x="0.0" y="0.0" width="96" height="66"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="57" height="25"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="11"/>
-                                                <state key="normal" title="CREATE ACCOUNT">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Registration">
+                                                    <color key="titleColor" red="0.99835759400000001" green="0.0" blue="0.0093463797390000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="signUpButtonPressedWithSender:" destination="WYA-Wt-9PR" eventType="touchUpInside" id="WvU-Q1-waR"/>
@@ -391,6 +396,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DominantLoginBg" translatesAutoresizingMaskIntoConstraints="NO" id="ydP-By-17s">
                                         <rect key="frame" x="53" y="192" width="143" height="20"/>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rg6-sE-JTQ">
+                                        <rect key="frame" x="118" y="276" width="15.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Seq-FT-Jps" firstAttribute="leading" secondItem="c6G-SZ-i1R" secondAttribute="leading" constant="8" id="01X-Jy-Iaf"/>
@@ -404,22 +415,24 @@
                                     <constraint firstItem="KpI-dy-BZ3" firstAttribute="width" secondItem="fhw-xt-ZhX" secondAttribute="width" id="AP2-3P-u88"/>
                                     <constraint firstAttribute="width" constant="250" id="Elp-Nv-Khk"/>
                                     <constraint firstItem="54h-Qt-L57" firstAttribute="width" secondItem="c6G-SZ-i1R" secondAttribute="width" multiplier="0.7" id="End-a9-NTp"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dgm-Gh-RXd" secondAttribute="bottom" constant="8" id="OFr-aE-5DL"/>
+                                    <constraint firstItem="Rg6-sE-JTQ" firstAttribute="centerX" secondItem="Erc-KX-zIx" secondAttribute="centerX" id="IER-69-XtE"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Dgm-Gh-RXd" secondAttribute="bottom" constant="8" id="OFr-aE-5DL"/>
                                     <constraint firstAttribute="height" constant="350" id="OzW-3b-w9O"/>
                                     <constraint firstItem="7bA-ek-Gx2" firstAttribute="top" secondItem="Seq-FT-Jps" secondAttribute="bottom" constant="8" id="PSx-K3-DgT"/>
                                     <constraint firstItem="Dgm-Gh-RXd" firstAttribute="centerX" secondItem="54h-Qt-L57" secondAttribute="centerX" id="QPk-7R-CIG"/>
                                     <constraint firstItem="fhw-xt-ZhX" firstAttribute="centerX" secondItem="c6G-SZ-i1R" secondAttribute="centerX" id="S3V-Ue-OB3"/>
                                     <constraint firstItem="7bA-ek-Gx2" firstAttribute="leading" secondItem="Emo-io-ONH" secondAttribute="leading" id="SKA-Ou-okA"/>
+                                    <constraint firstItem="Dgm-Gh-RXd" firstAttribute="top" secondItem="Rg6-sE-JTQ" secondAttribute="bottom" constant="8" id="UCA-Nq-Del"/>
                                     <constraint firstItem="54h-Qt-L57" firstAttribute="top" secondItem="ydP-By-17s" secondAttribute="bottom" constant="16" id="UvZ-8n-6Bj"/>
                                     <constraint firstItem="7bA-ek-Gx2" firstAttribute="centerX" secondItem="c6G-SZ-i1R" secondAttribute="centerX" id="d9V-en-oxT"/>
                                     <constraint firstItem="KpI-dy-BZ3" firstAttribute="top" secondItem="fhw-xt-ZhX" secondAttribute="bottom" constant="8" id="dcZ-u9-u6Y"/>
                                     <constraint firstItem="54h-Qt-L57" firstAttribute="leading" secondItem="fhw-xt-ZhX" secondAttribute="leading" id="i4g-6D-hf9"/>
-                                    <constraint firstItem="Dgm-Gh-RXd" firstAttribute="top" secondItem="54h-Qt-L57" secondAttribute="bottom" constant="8" id="ltS-6J-RR5"/>
                                     <constraint firstAttribute="trailing" secondItem="Seq-FT-Jps" secondAttribute="trailing" constant="8" id="m7K-Az-scR"/>
                                     <constraint firstItem="ydP-By-17s" firstAttribute="height" secondItem="7bA-ek-Gx2" secondAttribute="height" id="mmZ-1P-trn"/>
                                     <constraint firstItem="KpI-dy-BZ3" firstAttribute="centerX" secondItem="c6G-SZ-i1R" secondAttribute="centerX" id="oP4-J5-EAE"/>
                                     <constraint firstItem="KpI-dy-BZ3" firstAttribute="height" secondItem="fhw-xt-ZhX" secondAttribute="height" id="pjd-0c-oZa"/>
                                     <constraint firstItem="54h-Qt-L57" firstAttribute="trailing" secondItem="fhw-xt-ZhX" secondAttribute="trailing" id="vHt-cj-AaQ"/>
+                                    <constraint firstItem="Rg6-sE-JTQ" firstAttribute="top" secondItem="54h-Qt-L57" secondAttribute="bottom" constant="8" id="vRI-k9-hcX"/>
                                     <constraint firstItem="ydP-By-17s" firstAttribute="top" secondItem="KpI-dy-BZ3" secondAttribute="bottom" constant="16" id="xeK-wQ-uUS"/>
                                     <constraint firstItem="fhw-xt-ZhX" firstAttribute="top" secondItem="7bA-ek-Gx2" secondAttribute="bottom" constant="8" id="zq6-yI-BVz"/>
                                 </constraints>

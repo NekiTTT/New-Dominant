@@ -13,10 +13,12 @@ class DMRatingTableViewCell: UITableViewCell {
     @IBOutlet weak var  positionLabel : UILabel!
     @IBOutlet weak var  investorLabel : UILabel!
     @IBOutlet weak var  overallLabel  : UILabel!
+    @IBOutlet weak var  userAvatar    : UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
+        self.userAvatar.asCircle()
     }
     
     open func setupWith(model : DMRatingModel) {
