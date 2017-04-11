@@ -21,6 +21,7 @@
 		453A76C51E8477B40029C2FC /* DMCompaniesSignalsHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 453A76C41E8477B40029C2FC /* DMCompaniesSignalsHeader.xib */; };
 		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */; };
+		457921BA1E9A22CC002373A6 /* DMWatchListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 457921B91E9A22CC002373A6 /* DMWatchListService.swift */; };
 		4581D6B71E60FE0C005F2173 /* DMStockInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */; };
 		4581D6B81E60FE0C005F2173 /* DMStockInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4581D6B61E60FE0C005F2173 /* DMStockInfoCell.xib */; };
 		4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */; };
@@ -133,6 +134,7 @@
 		453A76C41E8477B40029C2FC /* DMCompaniesSignalsHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMCompaniesSignalsHeader.xib; sourceTree = "<group>"; };
 		454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMFileManager.swift; sourceTree = "<group>"; };
 		454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockDetailViewController.swift; sourceTree = "<group>"; };
+		457921B91E9A22CC002373A6 /* DMWatchListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMWatchListService.swift; sourceTree = "<group>"; };
 		4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockInfoCell.swift; sourceTree = "<group>"; };
 		4581D6B61E60FE0C005F2173 /* DMStockInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStockInfoCell.xib; sourceTree = "<group>"; };
 		4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioUserInterface.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */,
 				45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */,
 				45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */,
+				457921B91E9A22CC002373A6 /* DMWatchListService.swift */,
 				45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */,
 				45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */,
 				45D0704A1E5E276300B6CAC5 /* DMDateService.swift */,
@@ -755,6 +758,7 @@
 				452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */,
 				45BDFCC21E8D814200D2D37C /* Dominant+UIImageView.swift in Sources */,
 				45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */,
+				457921BA1E9A22CC002373A6 /* DMWatchListService.swift in Sources */,
 				45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */,
 				45C7D6E21E5E4CF90089E8C7 /* DMStockCellDelegate.swift in Sources */,
 				45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */,

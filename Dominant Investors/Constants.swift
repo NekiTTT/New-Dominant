@@ -11,6 +11,7 @@ import UIKit
 enum DMPortfolioType : Int {
     case DMPersonalPortfolio = 0
     case DMDominantPortfolio = 1
+    case DMWatchList         = 2
 }
 
 enum DMActionType : Int {
