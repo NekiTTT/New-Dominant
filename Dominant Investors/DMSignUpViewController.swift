@@ -34,6 +34,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     private func setupUI() {
         configureTextFields()
         drawBlurOverlay()
+        configureKeyboard()
     }
     
     private func drawBlurOverlay() {
@@ -43,6 +44,15 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
         self.overlayView.blurRadius         = 20
         self.overlayView.isDynamic          = false
         self.overlayView.tintColor          = UIColor.lightGray
+    }
+    
+    private func configureKeyboard() {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        self.view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
     }
 
     
@@ -114,7 +124,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     }
     
     @IBAction func backToLoginButtonPressed(sender : UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: false, completion: nil)
     }
     
     // MARK: UITextFieldDelegate

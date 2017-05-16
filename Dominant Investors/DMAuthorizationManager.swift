@@ -19,7 +19,9 @@ class DMAuthorizationManager: NSObject {
         super.init()
         if (self.isAuthorized()) {
             if let data = UserDefaults.standard.object(forKey: "Authorized") as? NSData {
-                self.userProfile = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as! DMUserProfileModel
+                if let profile = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? DMUserProfileModel {
+                    self.userProfile = profile
+                }
             }
         }
     }
@@ -41,6 +43,11 @@ class DMAuthorizationManager: NSObject {
     
     open func signUpWith(login : String, email : String, password : String, confirm : String , completion : @escaping (Bool, String?) -> Void) {
         DMQuickBloxService.sharedInstance.signUpWith(login: login, email: email, password: password, confirm: confirm, completion: completion)
+    }
+    
+    open func signOut() {
+        UserDefaults.standard.setValue(nil, forKey: "Authorized")
+        DMQuickBloxService.sharedInstance.signOut()
     }
     
 }

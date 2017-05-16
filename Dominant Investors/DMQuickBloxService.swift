@@ -149,6 +149,10 @@ class DMQuickBloxService: NSObject {
         })
     }
     
+    open func signOut() {
+        QBRequest.logOut(successBlock: nil, errorBlock: nil)
+    }
+    
     open func downloadCompanyImageWith(ID : String, completion : @escaping (UIImage, String) -> Void) {
        QBRequest.downloadFile(fromClassName: "Company", objectID: ID, fileFieldName: "companyPictureURLonQuickblox", successBlock: { (response, imageData) in
                     guard let data = imageData else { self.downloadCompanyImageWith(ID: ID, completion: completion)

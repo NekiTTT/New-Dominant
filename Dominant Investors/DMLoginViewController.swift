@@ -28,6 +28,16 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
         drawBlurOverlay()
         configureLabels()
         configureTextFields()
+        configureKeyboard()
+    }
+    
+    private func configureKeyboard() {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        self.view.addGestureRecognizer(recognizer)
+    }
+    
+    @objc private func hideKeyboard() {
+        self.view.endEditing(true)
     }
     
     private func drawBlurOverlay() {

@@ -45,6 +45,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     @IBOutlet  weak var thirdColumnTitle    : UILabel!
     @IBOutlet  weak var fourthColumnTitle   : UILabel!
     
+    @IBOutlet  weak var userNickNameLabel   : UILabel!
+    
+    
     @IBOutlet  weak var dominantButton      : UIView!
     @IBOutlet  weak var personalButton      : UIView!
     
@@ -97,10 +100,12 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.searchBarContainer.layer.borderWidth = 1
         self.searchBarContainer.layer.borderColor = UIColor.init(white: 0.3, alpha: 1).cgColor
         
-        self.dominantImageContainer.layer.borderWidth = 1
-        self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
+        //self.dominantImageContainer.layer.borderWidth = 1
+        //self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
         
         self.tableView.tableFooterView = UIView()
+        
+        self.userNickNameLabel.text = DMAuthorizationManager.sharedInstance.userProfile.userName
         
         self.tickerField.delegate = self
     }
@@ -155,7 +160,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
             self.firstHeaderHeight.constant  = 0
             self.dominantImageContainer.alpha = 1
             self.firstContainer.alpha = 0
-            self.secondHeaderHeight.constant = 170
+            self.secondHeaderHeight.constant = 100
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
@@ -183,6 +188,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
 
     // MARK: Actions
+    
+    @IBAction func logOutButtonPressed(sender : UIButton) {
+        DMAuthorizationManager.sharedInstance.signOut()
+        let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+        let navigation = UINavigationController.init(rootViewController: auth!)
+        navigation.setNavigationBarHidden(true, animated: false)
+        self.present(navigation, animated: true, completion: nil)
+    }
     
     @IBAction func portfolioTypeChanged(sender : UISegmentedControl) {
         self.portfolioType == .DMPersonalPortfolio ? showDominant() : showPersonal()
