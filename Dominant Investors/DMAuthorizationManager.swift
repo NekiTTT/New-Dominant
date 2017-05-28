@@ -41,12 +41,13 @@ class DMAuthorizationManager: NSObject {
         DMQuickBloxService.sharedInstance.loginWith(login: login, password: password, competion: completion)
     }
     
-    open func signUpWith(login : String, email : String, password : String, confirm : String , completion : @escaping (Bool, String?) -> Void) {
-        DMQuickBloxService.sharedInstance.signUpWith(login: login, email: email, password: password, confirm: confirm, completion: completion)
+    open func signUpWith(login : String, email : String, password : String, confirm : String , inviterID : String?, completion : @escaping (Bool, String?) -> Void) {
+        DMQuickBloxService.sharedInstance.signUpWith(login: login, email: email, password: password, confirm: confirm, inviterID : inviterID, completion: completion)
     }
     
     open func signOut() {
         UserDefaults.standard.setValue(nil, forKey: "Authorized")
+        self.userProfile = nil
         DMQuickBloxService.sharedInstance.signOut()
     }
     

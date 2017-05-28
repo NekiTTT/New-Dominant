@@ -129,10 +129,23 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.placeholder = nil;
+        
+        if (textField.tag == 3) {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame.origin.y = -150
+            })
+        }
+        
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.configureTextFields()
+    
+        if (textField.tag == 3) {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame.origin.y = 0
+            })
+        }
     }
 
 }

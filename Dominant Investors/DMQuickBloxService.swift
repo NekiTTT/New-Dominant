@@ -13,14 +13,13 @@ class DMQuickBloxService: NSObject {
 
     static let sharedInstance = DMQuickBloxService()
     static let limit = NSMutableDictionary(dictionary: ["limit" : "1000"])
-    static let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id"   : NSNumber(value:Int(DMAuthorizationManager.sharedInstance.userProfile.userID)!)])
     static let ratingLimit   = NSMutableDictionary(dictionary: ["limit" : "100" , "sort_desc" : "portfolioTotalValue"])
     
     // MARK: Get Data
     
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         
-        QBRequest.objects(withClassName: "personal2", extendedRequest: DMQuickBloxService.personalLimit, successBlock: { (response, objects, page) in
+        QBRequest.objects(withClassName: "personal2", extendedRequest: self.personalLimit(), successBlock: { (response, objects, page) in
             var personal = [DMPersonalPortfolioModel]()
             for object in objects! {
                 let model = DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object))
@@ -135,12 +134,16 @@ class DMQuickBloxService: NSObject {
         }
     }
     
-    open func signUpWith(login : String, email : String, password : String, confirm : String , completion : @escaping (Bool, String?) -> Void) {
+    open func signUpWith(login : String, email : String, password : String, confirm : String , inviterID : String?, completion : @escaping (Bool, String?) -> Void) {
        
         let newUser = QBUUser()
         newUser.login = login
         newUser.password = password
         newUser.email = email
+        
+        if let inviter = inviterID {
+            newUser.customData = String(format : "Inviter ID %d", inviter)
+        }
         
         QBRequest.signUp(newUser, successBlock: { (response, user) in
             completion(true, nil)
@@ -224,7 +227,22 @@ class DMQuickBloxService: NSObject {
         }
     }
     
-
+    open func addInviterRecord(inviterID : String, email : String, completion : @escaping (Bool) -> Void) {
+    
+        let quickbloxStock = QBCOCustomObject()
+        quickbloxStock.className = "inviteTable"
+        quickbloxStock.fields!.setObject(inviterID, forKey: "InviterID" as NSCopying)
+        quickbloxStock.fields!.setObject(email, forKey: "UserEmail" as NSCopying)
+    
+        QBRequest.createObject(quickbloxStock, successBlock: { (response, object) in
+            // TODO : Handler
+            print("")
+        }) { (error) in
+            // TODO : Handler
+            print("error")
+        }
+    }
+    
     
     // MARK: Private
     
@@ -289,5 +307,10 @@ class DMQuickBloxService: NSObject {
         }) { (response) in
             print(response.error?.error?.localizedDescription ?? "")
         }
+    }
+    
+    private func personalLimit() -> NSMutableDictionary {
+        let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id" : NSNumber.init(value: (QBSession.current().currentUser?.id)!)])
+        return personalLimit
     }
 }

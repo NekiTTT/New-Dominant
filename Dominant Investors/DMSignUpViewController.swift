@@ -18,6 +18,8 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField            : UITextField!
     @IBOutlet weak var passwordTextField         : UITextField!
     @IBOutlet weak var confirmPasswordTextField  : UITextField!
+    @IBOutlet weak var inviteIDTextField         : UITextField!
+    
     
     @IBOutlet var backgroundImageView            : UIImageView!
     @IBOutlet var overlayView                    : FXBlurView!
@@ -73,10 +75,15 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
             NSAttributedString(string:"CONFIRM PASSWORD",
                                attributes:[NSForegroundColorAttributeName: UIColor.white])
         
+        self.inviteIDTextField.attributedPlaceholder =
+            NSAttributedString(string:"INVITE ID",
+                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+        
         self.loginTextField.delegate = self
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.confirmPasswordTextField.delegate = self
+        self.inviteIDTextField.delegate = self
     }
     
     private func handleSignUp () {
@@ -99,11 +106,13 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
             return
         }
         
+        
         MBProgressHUD.showAdded(to: self.view, animated: true)
         DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
-                                                         email    : self.emailTextField.text!,
-                                                         password : self.passwordTextField.text!,
-                                                         confirm  : self.confirmPasswordTextField.text!) { (success, error) in
+                                                         email     : self.emailTextField.text!,
+                                                         password  : self.passwordTextField.text!,
+                                                         confirm   : self.confirmPasswordTextField.text!,
+                                                         inviterID : self.inviteIDTextField.text) { (success, error) in
                                                             DispatchQueue.main.async {
                                                                 MBProgressHUD.hide(for: self.view, animated: true)
                                                                 if (success) {
@@ -131,7 +140,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
-        if (textField.tag == 4) {
+        if (textField.tag == 5) {
             self.handleSignUp()
         }
         
@@ -149,10 +158,23 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         textField.placeholder = nil;
+        
+        if (textField.tag == 5) {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame.origin.y = -150
+            })
+        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.configureTextFields()
+        
+        if (textField.tag == 5) {
+            UIView.animate(withDuration: 0.2, animations: {
+                self.view.frame.origin.y = 0
+            })
+        }
+        
     }
     
 }

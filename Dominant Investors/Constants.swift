@@ -34,7 +34,12 @@ struct Colors {
 
 struct Strings {
     static let DMStandartLoginError  = NSLocalizedString("Wrong username or password.", comment: "")
-    static let DMStandartSignUpError = NSLocalizedString("Account with provided username or e-mail already exist", comment: "")
+    static let DMStandartSignUpError = NSLocalizedString("Account with provided username or e-mail already exist.", comment: "")
 }
+
+struct APIReqests {
+    static let DMUniqueAPIKey = "bd8faf666cb58d501e9078b4dd1bc78a"
+}
+
 
 

@@ -100,9 +100,6 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.searchBarContainer.layer.borderWidth = 1
         self.searchBarContainer.layer.borderColor = UIColor.init(white: 0.3, alpha: 1).cgColor
         
-        //self.dominantImageContainer.layer.borderWidth = 1
-        //self.dominantImageContainer.layer.borderColor = UIColor.lightGray.cgColor
-        
         self.tableView.tableFooterView = UIView()
         
         self.userNickNameLabel.text = DMAuthorizationManager.sharedInstance.userProfile.userName

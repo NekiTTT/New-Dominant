@@ -155,150 +155,150 @@ class SwiftStockKit {
     
     class func fetchStockForSymbol(symbol: String, completion:@escaping (_ stock: Stock) -> ()) {
         
-        DispatchQueue.global(qos: .default).async {
-            
-            let stockURL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22\(symbol)%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json&diagnostics=true"
-            
-            
-            Alamofire.request(stockURL, method: .get, parameters: nil, headers : nil).responseJSON { (response) in
-                
-                if (response.result.value != nil) {
-                    if let resultJSON = response.result.value as? [String : AnyObject]  {
-                        
-                        if let data1 = resultJSON["query"] as? [String : AnyObject] {
-                            
-                            if let data2 = data1["results"] as? [String : AnyObject]  {
-                                
-                                if let stockData = data2["quote"] as? [String : AnyObject] {
-                                    
-                                    
-                                    // lengthy creation, yeah
-                                    var dataFields = [[String : String]]()
-                                    
-                                    dataFields.append(["Ask" : stockData["Ask"] as? String ?? "N/A"])
-                                    dataFields.append(["Average Daily Volume" : stockData["AverageDailyVolume"] as? String ?? "N/A"])
-                                    dataFields.append(["Bid" : stockData["Bid"] as? String ?? "N/A"])
-                                    dataFields.append(["Book Value" : stockData["BookValue"] as? String ?? "N/A"])
-                                    dataFields.append(["Change" : stockData["Change"] as? String ?? "N/A"])
-                                    dataFields.append(["Percent Change" : stockData["ChangeinPercent"] as? String ?? "N/A"])
-                                    dataFields.append(["Day High" : stockData["DaysHigh"] as? String ?? "N/A"])
-                                    dataFields.append(["Day Low" : stockData["DaysLow"] as? String ?? "N/A"])
-                                    dataFields.append(["Div/Share" : stockData["DividendShare"] as? String ?? "N/A"])
-                                    dataFields.append(["Div Yield" : stockData["DividendYield"] as? String ?? "N/A"])
-                                    dataFields.append(["EBITDA" : stockData["EBITDA"] as? String ?? "N/A"])
-                                    dataFields.append(["Current Yr EPS Estimate" : stockData["EPSEstimateCurrentYear"] as? String ?? "N/A"])
-                                    dataFields.append(["Next Qtr EPS Estimate" : stockData["EPSEstimateNextQuarter"] as? String ?? "N/A"])
-                                    dataFields.append(["Next Yr EPS Estimate" : stockData["EPSEstimateNextYear"] as? String ?? "N/A"])
-                                    dataFields.append(["Earnings/Share" : stockData["EarningsShare"] as? String ?? "N/A"])
-                                    dataFields.append(["50D MA" : stockData["FiftydayMovingAverage"] as? String ?? "N/A"])
-                                    dataFields.append(["Last Trade Date" : stockData["LastTradeDate"] as? String ?? "N/A"])
-                                    dataFields.append(["Last" : stockData["LastTradePriceOnly"] as? String ?? "N/A"])
-                                    dataFields.append(["Last Trade Time" : stockData["LastTradeTime"] as? String ?? "N/A"])
-                                    dataFields.append(["Market Cap" : stockData["MarketCapitalization"] as? String ?? "N/A"])
-                                    dataFields.append(["Company" : stockData["Name"] as? String ?? "N/A"])
-                                    dataFields.append(["One Yr Target" : stockData["OneyrTargetPrice"] as? String ?? "N/A"])
-                                    dataFields.append(["Open" : stockData["Open"] as? String ?? "N/A"])
-                                    dataFields.append(["PEG Ratio" : stockData["PEGRatio"] as? String ?? "N/A"])
-                                    dataFields.append(["PE Ratio" : stockData["PERatio"] as? String ?? "N/A"])
-                                    dataFields.append(["Previous Close" : stockData["PreviousClose"] as? String ?? "N/A"])
-                                    dataFields.append(["Price-Book" : stockData["PriceBook"] as? String ?? "N/A"])
-                                    dataFields.append(["Price-Sales" : stockData["PriceSales"] as? String ?? "N/A"])
-                                    dataFields.append(["Short Ratio" : stockData["ShortRatio"] as? String ?? "N/A"])
-                                    dataFields.append(["Stock Exchange" : stockData["StockExchange"] as? String ?? "N/A"])
-                                    dataFields.append(["Symbol" : stockData["Symbol"] as? String ?? "N/A"])
-                                    dataFields.append(["200D MA" : stockData["TwoHundreddayMovingAverage"] as? String ?? "N/A"])
-                                    dataFields.append(["Volume" : stockData["Volume"] as? String ?? "N/A"])
-                                    dataFields.append(["52w High" : stockData["YearHigh"] as? String ?? "N/A"])
-                                    dataFields.append(["52w Low" : stockData["YearLow"] as? String ?? "N/A"])
-                                    
-                                    let stock = Stock(
-                                        ask: dataFields[0].values.first,
-                                        averageDailyVolume: dataFields[1].values.first,
-                                        bid: dataFields[2].values.first,
-                                        bookValue: dataFields[3].values.first,
-                                        changeNumeric: dataFields[4].values.first,
-                                        changePercent: dataFields[5].values.first,
-                                        dayHigh: dataFields[6].values.first,
-                                        dayLow: dataFields[7].values.first,
-                                        dividendShare: dataFields[8].values.first,
-                                        dividendYield: dataFields[9].values.first,
-                                        ebitda: dataFields[10].values.first,
-                                        epsEstimateCurrentYear: dataFields[11].values.first,
-                                        epsEstimateNextQtr: dataFields[12].values.first,
-                                        epsEstimateNextYr: dataFields[13].values.first,
-                                        eps: dataFields[14].values.first,
-                                        fiftydayMovingAverage: dataFields[15].values.first,
-                                        lastTradeDate: dataFields[16].values.first,
-                                        last: dataFields[17].values.first,
-                                        lastTradeTime: dataFields[18].values.first,
-                                        marketCap: dataFields[19].values.first,
-                                        companyName: dataFields[20].values.first,
-                                        oneYearTarget: dataFields[21].values.first,
-                                        open: dataFields[22].values.first,
-                                        pegRatio: dataFields[23].values.first,
-                                        peRatio: dataFields[24].values.first,
-                                        previousClose: dataFields[25].values.first,
-                                        priceBook: dataFields[26].values.first,
-                                        priceSales: dataFields[27].values.first,
-                                        shortRatio: dataFields[28].values.first,
-                                        stockExchange: dataFields[29].values.first,
-                                        symbol: dataFields[30].values.first,
-                                        twoHundreddayMovingAverage: dataFields[31].values.first,
-                                        volume: dataFields[32].values.first,
-                                        yearHigh: dataFields[33].values.first,
-                                        yearLow: dataFields[34].values.first,
-                                        dataFields: dataFields
-                                    )
-                                    DispatchQueue.main.async {
-                                        completion(stock)
-                                        return
-                                    }
-                                
-                                }
-                            }
-                        }
-                    }
-                    
-                }
-            }
-            
-        }
+//        DispatchQueue.global(qos: .default).async {
+//            
+//            let stockURL = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22\(symbol)%22)&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&format=json&diagnostics=true"
+//            
+//            
+//            Alamofire.request(stockURL, method: .get, parameters: nil, headers : nil).responseJSON { (response) in
+//                
+//                if (response.result.value != nil) {
+//                    if let resultJSON = response.result.value as? [String : AnyObject]  {
+//                        
+//                        if let data1 = resultJSON["query"] as? [String : AnyObject] {
+//                            
+//                            if let data2 = data1["results"] as? [String : AnyObject]  {
+//                                
+//                                if let stockData = data2["quote"] as? [String : AnyObject] {
+//                                    
+//                                    
+//                                    // lengthy creation, yeah
+//                                    var dataFields = [[String : String]]()
+//                                    
+//                                    dataFields.append(["Ask" : stockData["Ask"] as? String ?? "N/A"])
+//                                    dataFields.append(["Average Daily Volume" : stockData["AverageDailyVolume"] as? String ?? "N/A"])
+//                                    dataFields.append(["Bid" : stockData["Bid"] as? String ?? "N/A"])
+//                                    dataFields.append(["Book Value" : stockData["BookValue"] as? String ?? "N/A"])
+//                                    dataFields.append(["Change" : stockData["Change"] as? String ?? "N/A"])
+//                                    dataFields.append(["Percent Change" : stockData["ChangeinPercent"] as? String ?? "N/A"])
+//                                    dataFields.append(["Day High" : stockData["DaysHigh"] as? String ?? "N/A"])
+//                                    dataFields.append(["Day Low" : stockData["DaysLow"] as? String ?? "N/A"])
+//                                    dataFields.append(["Div/Share" : stockData["DividendShare"] as? String ?? "N/A"])
+//                                    dataFields.append(["Div Yield" : stockData["DividendYield"] as? String ?? "N/A"])
+//                                    dataFields.append(["EBITDA" : stockData["EBITDA"] as? String ?? "N/A"])
+//                                    dataFields.append(["Current Yr EPS Estimate" : stockData["EPSEstimateCurrentYear"] as? String ?? "N/A"])
+//                                    dataFields.append(["Next Qtr EPS Estimate" : stockData["EPSEstimateNextQuarter"] as? String ?? "N/A"])
+//                                    dataFields.append(["Next Yr EPS Estimate" : stockData["EPSEstimateNextYear"] as? String ?? "N/A"])
+//                                    dataFields.append(["Earnings/Share" : stockData["EarningsShare"] as? String ?? "N/A"])
+//                                    dataFields.append(["50D MA" : stockData["FiftydayMovingAverage"] as? String ?? "N/A"])
+//                                    dataFields.append(["Last Trade Date" : stockData["LastTradeDate"] as? String ?? "N/A"])
+//                                    dataFields.append(["Last" : stockData["LastTradePriceOnly"] as? String ?? "N/A"])
+//                                    dataFields.append(["Last Trade Time" : stockData["LastTradeTime"] as? String ?? "N/A"])
+//                                    dataFields.append(["Market Cap" : stockData["MarketCapitalization"] as? String ?? "N/A"])
+//                                    dataFields.append(["Company" : stockData["Name"] as? String ?? "N/A"])
+//                                    dataFields.append(["One Yr Target" : stockData["OneyrTargetPrice"] as? String ?? "N/A"])
+//                                    dataFields.append(["Open" : stockData["Open"] as? String ?? "N/A"])
+//                                    dataFields.append(["PEG Ratio" : stockData["PEGRatio"] as? String ?? "N/A"])
+//                                    dataFields.append(["PE Ratio" : stockData["PERatio"] as? String ?? "N/A"])
+//                                    dataFields.append(["Previous Close" : stockData["PreviousClose"] as? String ?? "N/A"])
+//                                    dataFields.append(["Price-Book" : stockData["PriceBook"] as? String ?? "N/A"])
+//                                    dataFields.append(["Price-Sales" : stockData["PriceSales"] as? String ?? "N/A"])
+//                                    dataFields.append(["Short Ratio" : stockData["ShortRatio"] as? String ?? "N/A"])
+//                                    dataFields.append(["Stock Exchange" : stockData["StockExchange"] as? String ?? "N/A"])
+//                                    dataFields.append(["Symbol" : stockData["Symbol"] as? String ?? "N/A"])
+//                                    dataFields.append(["200D MA" : stockData["TwoHundreddayMovingAverage"] as? String ?? "N/A"])
+//                                    dataFields.append(["Volume" : stockData["Volume"] as? String ?? "N/A"])
+//                                    dataFields.append(["52w High" : stockData["YearHigh"] as? String ?? "N/A"])
+//                                    dataFields.append(["52w Low" : stockData["YearLow"] as? String ?? "N/A"])
+//                                    
+//                                    let stock = Stock(
+//                                        ask: dataFields[0].values.first,
+//                                        averageDailyVolume: dataFields[1].values.first,
+//                                        bid: dataFields[2].values.first,
+//                                        bookValue: dataFields[3].values.first,
+//                                        changeNumeric: dataFields[4].values.first,
+//                                        changePercent: dataFields[5].values.first,
+//                                        dayHigh: dataFields[6].values.first,
+//                                        dayLow: dataFields[7].values.first,
+//                                        dividendShare: dataFields[8].values.first,
+//                                        dividendYield: dataFields[9].values.first,
+//                                        ebitda: dataFields[10].values.first,
+//                                        epsEstimateCurrentYear: dataFields[11].values.first,
+//                                        epsEstimateNextQtr: dataFields[12].values.first,
+//                                        epsEstimateNextYr: dataFields[13].values.first,
+//                                        eps: dataFields[14].values.first,
+//                                        fiftydayMovingAverage: dataFields[15].values.first,
+//                                        lastTradeDate: dataFields[16].values.first,
+//                                        last: dataFields[17].values.first,
+//                                        lastTradeTime: dataFields[18].values.first,
+//                                        marketCap: dataFields[19].values.first,
+//                                        companyName: dataFields[20].values.first,
+//                                        oneYearTarget: dataFields[21].values.first,
+//                                        open: dataFields[22].values.first,
+//                                        pegRatio: dataFields[23].values.first,
+//                                        peRatio: dataFields[24].values.first,
+//                                        previousClose: dataFields[25].values.first,
+//                                        priceBook: dataFields[26].values.first,
+//                                        priceSales: dataFields[27].values.first,
+//                                        shortRatio: dataFields[28].values.first,
+//                                        stockExchange: dataFields[29].values.first,
+//                                        symbol: dataFields[30].values.first,
+//                                        twoHundreddayMovingAverage: dataFields[31].values.first,
+//                                        volume: dataFields[32].values.first,
+//                                        yearHigh: dataFields[33].values.first,
+//                                        yearLow: dataFields[34].values.first,
+//                                        dataFields: dataFields
+//                                    )
+//                                    DispatchQueue.main.async {
+//                                        completion(stock)
+//                                        return
+//                                    }
+//                                
+//                                }
+//                            }
+//                        }
+//                    }
+//                    
+//                }
+//            }
+//            
+//        }
     }
    
     class func fetchChartPoints(symbol: String, range: ChartTimeRange, completion:@escaping (_ chartPoints: [ChartPoint]) -> ()) {
 
         let chartURL = SwiftStockKit.chartUrlForRange(symbol: symbol, range: range)
-        
-        Alamofire.request(chartURL, method: .get, parameters: nil, headers : nil).responseData { (response) in
-            
-            if let data = response.result.value {
+
+        Alamofire.request(chartURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+            .responseJSON { response in
                 
-                var jsonString =  NSString(data: data, encoding: String.Encoding.utf8.rawValue)!
+                if let status = response.response?.statusCode {
+                    switch(status){
+                    case 201:
+                        print("example success")
+                    default:
+                        print("error with response status: \(response.error.debugDescription)")
+                    }
+                }
                 
-                jsonString = jsonString.substring(from: 30) as NSString
-                jsonString = jsonString.substring(to: jsonString.length-1) as NSString
-                
-                if let data = jsonString.data(using: String.Encoding.utf8.rawValue) {
-                    if let resultJSON = (try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)))  as? [String : AnyObject] {
-                        
-                        if let series = resultJSON["series"] as? [[String : AnyObject]] {
+
+                if let result = response.result.value {
+                    if let JSON = result as? [String : Any] {
+                        if let series = JSON["results"] as? [[String : AnyObject]] {
+                            
                             var chartPoints = [ChartPoint]()
                             for dataPoint in series {
-                                //GMT off by 5 hrs
-                            let formatter = DateFormatter()
+                                let formatter = DateFormatter()
                                 formatter.dateFormat = "yyyy-mm-dd"
                                 
-                            var date = Date()
+                                var date = Date()
                                 
-                            if  dataPoint["Date"] != nil {
-                                let dateString : NSMutableString = NSMutableString.init(string: dataPoint["Date"]!.description)
-                                
-                                dateString.insert("-", at: 4)
-                                dateString.insert("-", at: 7)
-                                
-                                date =  formatter.date(from: dateString as String)!
+                                if  dataPoint["tradingDay"] != nil {
+                                    let dateString : NSMutableString = NSMutableString.init(string: dataPoint["tradingDay"]!.description)
+                        
+                                    date =  formatter.date(from: dateString as String)!
                                 } else {
-                                    date = Date(timeIntervalSince1970: (dataPoint["Timestamp"] as? Double ?? dataPoint["Date"] as! Double) - 18000.0) }
+                                    date = Date(timeIntervalSince1970: (dataPoint["timestamp"] as? Double ?? dataPoint["tradingDay"] as! Double) - 18000.0) }
                                 
                                 chartPoints.append(
                                     ChartPoint(
@@ -314,62 +314,113 @@ class SwiftStockKit {
                             completion(chartPoints)
                             return
                         }
-                        
-                       
                     }
                 }
-                
-                if range == ChartTimeRange.OneMonth {
-                    
-                    SwiftStockKit.fetchCurrentPriceForSymbol(symbol: symbol, completion: { (last) in
-                        var chartPoint = ChartPoint()
-                        chartPoint.close = last[symbol] as? CGFloat
-                        completion([chartPoint])
-                    })
-                    return
-                }
-                
-                var newRange = ChartTimeRange.FiveDays
-                if (range == .FiveDays) {
-                    newRange = ChartTimeRange.OneMonth
-                }
-                
-                
-                
-                SwiftStockKit.fetchChartPoints(symbol: symbol, range: newRange, completion: completion)
-                
-            }
-    
-        }
-    
     }
     
+    }
+
     class func chartUrlForRange(symbol: String, range: ChartTimeRange) -> String {
     
         var timeString = String()
         
         switch (range) {
         case .OneDay:
-            timeString = "1d"
+            timeString = "daily"
         case .FiveDays:
-            timeString = "5d"
+            timeString = "weekly"
         case .TenDays:
-            timeString = "10d"
+            timeString = "weekly"
         case .OneMonth:
-            timeString = "1m"
+            timeString = "monthly"
         case .ThreeMonths:
-            timeString = "3m"
+            timeString = "quarterly"
         case .OneYear:
-            timeString = "1y"
+            timeString = "yearly"
         case .FiveYears:
-            timeString = "5y"
+            timeString = "yearly"
         }
         
-        let usl = "https://chartapi.finance.yahoo.com/instrument/1.0/\(symbol)/chartdata;type=quote;range=\(timeString)/json"
+        let date = Date()
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let year =  components.year! - 1
+        let month = components.month
+        let day = components.day
+        
+        let dateString = String(format : "%d%d%d", year, month!, day!)
+     
+        let usl = "http://marketdata.websol.barchart.com/getHistory.json?key=\(APIReqests.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
+        
+        //let usl = "https://chartapi.finance.yahoo.com/instrument/1.0/\(symbol)/chartdata;type=quote;range=\(timeString)/json"
         
         return usl
     }
+    
 
+    // MARK : For array of stocks from NEW API.
+    
+    class func fetchDataForStocks(symbols: [String], completion:@escaping (_ chartPoints: [String : ChartPoint]) -> ()) {
+        
+        let chartURL = SwiftStockKit.chartUrlForStocks(symbols: symbols)
+        
+        Alamofire.request(chartURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                
+                if let status = response.response?.statusCode {
+                    switch(status){
+                    case 201:
+                        print("example success")
+                    default:
+                        print("error with response status: \(response.error.debugDescription)")
+                    }
+                }
+                
+                
+                if let result = response.result.value {
+                    if let JSON = result as? [String : Any] {
+                        if let series = JSON["results"] as? [[String : AnyObject]] {
+                            
+                            var chartPoints = [String : ChartPoint]()
+                            for dataPoint in series {
+                                let formatter = DateFormatter()
+                                formatter.dateFormat = "yyyy-mm-dd"
+                                
+                                let ticker =  dataPoint["symbol"] as! String
+                                let date = Date()
+                          
+                                chartPoints[ticker] =
+                                    ChartPoint(
+                                        date:  date,
+                                        volume: dataPoint["volume"] as? Int,
+                                        open: dataPoint["open"] as? CGFloat,
+                                        close: dataPoint["lastPrice"] as? CGFloat,
+                                        low: dataPoint["low"] as? CGFloat,
+                                        high: dataPoint["high"] as? CGFloat
+                                    )
+                                
+                            }
+                            completion(chartPoints)
+                            return
+                        }
+                        
+                        
+                }
+            }
+        }
+    }
+    
+    class func chartUrlForStocks(symbols: [String]) -> String {
+        
+        let symbolsString = symbols.joined(separator: ",")
+        
+        let url = "http://marketdata.websol.barchart.com/getQuote.json?key=\(APIReqests.DMUniqueAPIKey)&symbols=\(symbolsString)"
+        
+        return url
+    }
+
+    
 }
 
 

@@ -17,6 +17,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     var userInterface  : DMPortfolioUserInterface?
     
     var totalData = [String : Double]()
+    var stocksData = [String : ChartPoint]()
     var portfolioTotal  : Double = 0
     var portfolioMiddle : Double = 0
     var totalCell : DMPortfolioTotalCell?
@@ -27,7 +28,12 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         super.init()
         self.getPersonalPortfolio { (portfolios) in
             self.portfolios = portfolios
-            self.userInterface?.reloadData()
+            SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
+                DispatchQueue.main.async {
+                self.stocksData = points
+                self.userInterface?.reloadData()
+                }
+            })
         }
     }
     
@@ -38,20 +44,28 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     open func renewPersonalData() {
         self.ratingUploaded = false
         self.getPersonalPortfolio { (portfolios) in
-            self.portfolios = portfolios
-            self.userInterface?.reloadData()
+            SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
+                DispatchQueue.main.async {
+                self.stocksData = points
+                self.userInterface?.reloadData()
+                }
+            })
         }
     }
     
     open func addNew() {
         let newStock = DMPersonalPortfolioModel.init(stockSearch: self.selectedTicker!)
         self.addNew(personalStock: newStock) { (portfolios) in
-            DispatchQueue.main.async {
-                self.selectedTicker = nil
-                self.ratingUploaded = false
-                self.portfolios.append(contentsOf: portfolios)
-                self.userInterface?.reloadData()
-            }
+            self.selectedTicker = nil
+            self.ratingUploaded = false
+            self.portfolios.append(contentsOf: portfolios)
+            
+            SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
+                DispatchQueue.main.async {
+                    self.stocksData = points
+                    self.userInterface?.reloadData()
+                }
+            })
         }
     }
     
@@ -62,13 +76,15 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         }
         self.ratingUploaded = false
         self.clearPortfolio(IDs: IDs) { (portfolios) in
+            self.portfolios.removeAll()
+            self.stocksData.removeAll()
+            self.totalData.removeAll()
+            
             DispatchQueue.main.async {
-                self.portfolios = portfolios
                 self.userInterface?.reloadData()
             }
         }
     }
-    
     
     // MARK: Private
     
@@ -106,11 +122,23 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         self.portfolios.remove(object: stock)
         self.totalData = [String : Double]()
         DMAPIService.sharedInstance.deletePersonalStock(ID: stock.id!) { (portfolios) in
-            DispatchQueue.main.async {
-                self.ratingUploaded = false
-                self.userInterface?.reloadData()
-            }
+            self.ratingUploaded = false
+            SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
+                DispatchQueue.main.async {
+                    self.stocksData = points
+                    self.userInterface?.reloadData()
+                }
+            })
         }
+    }
+    
+    private func getStocksList() -> [String] {
+        var stocksArray = [String]()
+        for stock in self.portfolios {
+            stocksArray.append(stock.ticker!)
+        }
+        
+        return stocksArray
     }
     
     // MARK: UITableViewDelegate
@@ -172,8 +200,12 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "DMStockCell") as! DMStockCell
+        let personalStock = portfolios[indexPath.row]
+        
+        if let stockData = self.stocksData[personalStock.ticker!] {
+            cell.setupWithPersonal(stock: personalStock, data : stockData)
+        }
         cell.delegate = self
-        cell.setupWithPersonal(stock: portfolios[indexPath.row])
         return cell
     }
     
@@ -191,7 +223,8 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
             self.portfolioTotal += value
         }
         if (self.totalData.values.count != 0) {
-        self.portfolioMiddle = (self.portfolioTotal / Double(self.totalData.values.count)) }
+        self.portfolioMiddle = (self.portfolioTotal / Double(self.totalData.values.count))
+        }
         updateUserRating()
     }
 
