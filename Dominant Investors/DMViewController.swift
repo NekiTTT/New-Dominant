@@ -68,4 +68,8 @@ class DMViewController: UIViewController {
     open func cancelAction() {
         
     }
+    
+    open func refreshData() {
+        
+    }
 }

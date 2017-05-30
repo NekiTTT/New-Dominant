@@ -10,7 +10,7 @@ import UIKit
 
 class DMRotatingViewController: DMViewController {
 
-    var viewControllers : [UIViewController]!
+    var viewControllers = [DMViewController]()
     var buttons         = [UIButton]()
     var containers      : [UIView]!
     var loaded          = false
@@ -47,6 +47,25 @@ class DMRotatingViewController: DMViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        let someValue : String = segue.identifier != nil ? segue.identifier! : ""
+        switch someValue {
+        case "analytics":
+            self.viewControllers.append(segue.destination as! DMViewController)
+            break;
+        case "portfolio":
+            self.viewControllers.append(segue.destination as! DMViewController)
+            break;
+        case "ratings":
+            self.viewControllers.append(segue.destination as! DMViewController)
+            break;
+        default:
+            
+            break;
+        }
+    }
+    
 
     // MARK: Private
     private func setupTabButtons() {
@@ -66,11 +85,19 @@ class DMRotatingViewController: DMViewController {
     }
     
     private func setupControllers() {
-        let analytic_controller  = UIStoryboard.init(name: "Analytics", bundle: Bundle.main).instantiateInitialViewController()
-        let portfolio_controller = UIStoryboard.init(name: "Portfolio", bundle: Bundle.main).instantiateInitialViewController()
-        let ratings_controller   = UIStoryboard.init(name: "Ratings"  , bundle: Bundle.main).instantiateInitialViewController()
         
-        self.viewControllers = [analytic_controller!, portfolio_controller!, ratings_controller!]
+        var actualCont = [DMViewController(), DMViewController(), DMViewController()]
+        for cont in self.viewControllers {
+            if cont is DMAnalyticsViewController {
+                actualCont[0] = cont
+            } else if cont is DMPortfolioViewController {
+                actualCont[1] = cont
+            } else {
+                actualCont[2] = cont
+            }
+        }
+        
+        self.viewControllers = actualCont
     }
     
     private func showDefaultPage() {
@@ -85,6 +112,7 @@ class DMRotatingViewController: DMViewController {
     
     @objc private func showTab(_ sender : UIButton) {
         showTab(index: sender.tag)
+        self.viewControllers[sender.tag].refreshData()
         for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
         sender.setImage(activeIcons[sender.tag], for: .normal)
     }

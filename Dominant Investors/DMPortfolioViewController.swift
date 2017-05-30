@@ -62,10 +62,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if (!loaded) {
-        showPersonal()
-        loaded = true
-        }
+        self.refreshData()
+    }
+    
+    override func refreshData() {
+        
+            showPersonal()
+            loaded = true
+        
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

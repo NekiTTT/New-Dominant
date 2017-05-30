@@ -6,11 +6,13 @@
 //  Copyright © 2017 Dominant. All rights reserved.
 //
 
+// TIP : NOT WORKS (LOOK DMRotatingVewController) !!!
+
 import UIKit
 
 class DMTabBarViewController: DMViewController {
 
-    var viewControllers : [UIViewController]!
+    var viewControllers : [DMViewController]!
     var buttons         = [UIButton]()
     var containers      = [UIView]()
     var loaded          = false
@@ -65,7 +67,7 @@ class DMTabBarViewController: DMViewController {
         let portfolio = UIStoryboard(name: "Portfolio", bundle: nil).instantiateInitialViewController()!
         let ratings   = UIStoryboard(name: "Ratings"  , bundle: nil).instantiateInitialViewController()!
         
-        self.viewControllers = [analytics,portfolio,ratings]
+        self.viewControllers = [analytics as! DMViewController,portfolio as! DMViewController,ratings as! DMViewController]
         setupContainers()
     }
     

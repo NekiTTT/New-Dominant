@@ -14,6 +14,7 @@ class DMAuthorizationManager: NSObject {
     static let sharedInstance = DMAuthorizationManager()
     
     var userProfile : DMUserProfileModel!
+    var userID : UInt = 0
     
     override init() {
         super.init()
@@ -48,6 +49,7 @@ class DMAuthorizationManager: NSObject {
     open func signOut() {
         UserDefaults.standard.setValue(nil, forKey: "Authorized")
         self.userProfile = nil
+        self.userID = 0
         DMQuickBloxService.sharedInstance.signOut()
     }
     

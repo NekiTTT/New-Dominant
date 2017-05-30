@@ -44,6 +44,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     open func renewPersonalData() {
         self.ratingUploaded = false
         self.getPersonalPortfolio { (portfolios) in
+            self.portfolios = portfolios
             SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
                 DispatchQueue.main.async {
                 self.stocksData = points

@@ -346,10 +346,11 @@ class SwiftStockKit {
         let components = calendar.dateComponents([.year, .month, .day], from: date)
         
         let year =  components.year! - 1
-        let month = components.month
-        let day = components.day
         
-        let dateString = String(format : "%d%d%d", year, month!, day!)
+        let month = components.month! < 10 ? String(format: "0%d", components.month!) : String(format: "%d", components.month!)
+        let day = components.day! < 10 ? String(format: "0%d", components.day!) : String(format: "%d", components.day!)
+        
+        let dateString = String(format : "%d%@%@", year, month, day)
      
         let usl = "http://marketdata.websol.barchart.com/getHistory.json?key=\(APIReqests.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
         
