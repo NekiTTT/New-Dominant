@@ -63,13 +63,18 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.refreshData()
+        //if (!loaded) {
+            showPersonal()
+            loaded = true
+        //}
     }
     
     override func refreshData() {
-        
+        if (self.loaded) {
+            self.showActivityIndicator()
             showPersonal()
-            loaded = true
-        
+            DMPersonalPortfolioService.sharedInstance.reloadEmptyData()
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -125,10 +130,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.dataSource = DMPersonalPortfolioService.sharedInstance
         
         DMPersonalPortfolioService.sharedInstance.userInterface = self
-    
-        if (loaded) {
+        
         self.reloadData()
-        }
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 80
@@ -138,13 +141,14 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
-            
-            self.dominantButton.layer.borderColor = UIColor.clear.cgColor
-            self.personalButton.layer.borderColor = UIColor.red.cgColor
         }
        
+        self.dominantButton.layer.borderColor = UIColor.clear.cgColor
+        self.personalButton.layer.borderColor = UIColor.red.cgColor
+        
         self.setColumnTitles(titles: ["TICKER","BUY\nPOINT $","CURRENT PRICE $","PROFITABILITY"])
         self.scrollView.addSubview(self.refreshControl)
+        self.portfolioTypeSwitcher.selectedSegmentIndex = 1
         self.portfolioType = .DMPersonalPortfolio
     }
     
@@ -161,7 +165,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
             self.firstHeaderHeight.constant  = 0
             self.dominantImageContainer.alpha = 1
             self.firstContainer.alpha = 0
-            self.secondHeaderHeight.constant = 100
+            self.secondHeaderHeight.constant = 135
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
@@ -192,6 +196,8 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     @IBAction func logOutButtonPressed(sender : UIButton) {
         DMAuthorizationManager.sharedInstance.signOut()
+        DMPersonalPortfolioService.sharedInstance.changeUser()
+        
         let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
         let navigation = UINavigationController.init(rootViewController: auth!)
         navigation.setNavigationBarHidden(true, animated: false)
@@ -281,14 +287,13 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     func reloadData() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            MBProgressHUD.showAdded(to: self.view, animated: true)
             self.resizeTableView()
         }
     }
     
     func didReloaded() {
         DispatchQueue.main.async {
-            MBProgressHUD.hide(for: self.view, animated: true)
+            self.dismissActivityIndicator()
             self.refreshControl.endRefreshing()
         }
     }

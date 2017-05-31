@@ -18,12 +18,13 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        
+        self.showActivityIndicator()
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
             DispatchQueue.main.async {
                 self.companies = companies
                 self.collectionView?.reloadData()
-                MBProgressHUD.hide(for: self.view, animated: true)
+                self.dismissActivityIndicator()
             }
         }
     }

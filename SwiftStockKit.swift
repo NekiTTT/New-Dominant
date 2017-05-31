@@ -300,12 +300,16 @@ class SwiftStockKit {
                                 } else {
                                     date = Date(timeIntervalSince1970: (dataPoint["timestamp"] as? Double ?? dataPoint["tradingDay"] as! Double) - 18000.0) }
                                 
+                                
+                                let lastPrice = dataPoint["lastPrice"] as? CGFloat
+                                let close = dataPoint["close"] as? CGFloat
+                                
                                 chartPoints.append(
                                     ChartPoint(
                                         date:  date,
                                         volume: dataPoint["volume"] as? Int,
                                         open: dataPoint["open"] as? CGFloat,
-                                        close: dataPoint["close"] as? CGFloat,
+                                        close: close != 0 ? close : lastPrice,
                                         low: dataPoint["low"] as? CGFloat,
                                         high: dataPoint["high"] as? CGFloat
                                     )
@@ -364,6 +368,8 @@ class SwiftStockKit {
     
     class func fetchDataForStocks(symbols: [String], completion:@escaping (_ chartPoints: [String : ChartPoint]) -> ()) {
         
+        if (symbols.count > 0) {
+        
         let chartURL = SwiftStockKit.chartUrlForStocks(symbols: symbols)
         
         Alamofire.request(chartURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
@@ -391,12 +397,15 @@ class SwiftStockKit {
                                 let ticker =  dataPoint["symbol"] as! String
                                 let date = Date()
                           
+                                let lastPrice = dataPoint["lastPrice"] as? CGFloat
+                                let close = dataPoint["close"] as? CGFloat
+                                
                                 chartPoints[ticker] =
                                     ChartPoint(
                                         date:  date,
                                         volume: dataPoint["volume"] as? Int,
                                         open: dataPoint["open"] as? CGFloat,
-                                        close: dataPoint["lastPrice"] as? CGFloat,
+                                        close: close != 0 ? close : lastPrice,
                                         low: dataPoint["low"] as? CGFloat,
                                         high: dataPoint["high"] as? CGFloat
                                     )
@@ -409,6 +418,9 @@ class SwiftStockKit {
                         
                 }
             }
+        }
+        } else {
+            completion([String : ChartPoint]())
         }
     }
     

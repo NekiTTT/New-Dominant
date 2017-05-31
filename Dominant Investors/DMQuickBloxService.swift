@@ -87,9 +87,9 @@ class DMQuickBloxService: NSObject {
     
     open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
         
-        SwiftStockKit.fetchChartPoints(symbol: personalStock.ticker!, range: .OneDay) { (chartPoints) in
-            
-            let valuePrice = Double(chartPoints.last!.close!)
+        SwiftStockKit.fetchDataForStocks(symbols: [personalStock.ticker!]) { (chartPoints) in
+          
+            let valuePrice = Double((chartPoints[personalStock.ticker!]?.close!)!)
             let quickbloxStock = QBCOCustomObject()
             quickbloxStock.className = "personal2"
             quickbloxStock.fields!.setObject(personalStock.ticker!, forKey: "ticker" as NSCopying)
@@ -129,6 +129,7 @@ class DMQuickBloxService: NSObject {
             DMAuthorizationManager.sharedInstance.userProfile = userModel
             let data  = NSKeyedArchiver.archivedData(withRootObject: userModel)
             UserDefaults.standard.set(data, forKey : "Authorized")
+            UserDefaults.standard.set(DMAuthorizationManager.sharedInstance.userID, forKey : "user_id")
             competion(true, nil)
         }) { (error) in
             competion(false, Strings.DMStandartLoginError)

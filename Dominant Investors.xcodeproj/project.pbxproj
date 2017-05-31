@@ -19,6 +19,7 @@
 		453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
 		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */; };
+		456F07AC1EDDB6AA00DABE35 /* Dominant+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */; };
 		4581D6B71E60FE0C005F2173 /* DMStockInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */; };
 		4581D6B81E60FE0C005F2173 /* DMStockInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4581D6B61E60FE0C005F2173 /* DMStockInfoCell.xib */; };
 		4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */; };
@@ -127,6 +128,7 @@
 		453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMFileManager.swift; sourceTree = "<group>"; };
 		454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockDetailViewController.swift; sourceTree = "<group>"; };
+		456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+UIImageView.swift"; sourceTree = "<group>"; };
 		4581D6B51E60FE0C005F2173 /* DMStockInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockInfoCell.swift; sourceTree = "<group>"; };
 		4581D6B61E60FE0C005F2173 /* DMStockInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMStockInfoCell.xib; sourceTree = "<group>"; };
 		4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioUserInterface.swift; sourceTree = "<group>"; };
@@ -552,6 +554,7 @@
 				4581D6C31E624192005F2173 /* Dominant+UIView.swift */,
 				4581D6C51E631A31005F2173 /* Dominant+Array.swift */,
 				45D73F751E636D1B001BB511 /* Dominant+String.swift */,
+				456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -718,6 +721,7 @@
 				45C7D6E21E5E4CF90089E8C7 /* DMStockCellDelegate.swift in Sources */,
 				45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */,
 				45C7D6E41E5E50CA0089E8C7 /* DMCalculationService.swift in Sources */,
+				456F07AC1EDDB6AA00DABE35 /* Dominant+UIImageView.swift in Sources */,
 				4581D6B71E60FE0C005F2173 /* DMStockInfoCell.swift in Sources */,
 				45A107B51E59DCF300591170 /* DMSignalCell.swift in Sources */,
 				4581D6BC1E610AFC005F2173 /* Dominant+UIImage.swift in Sources */,

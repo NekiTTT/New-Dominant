@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -32,7 +32,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gp7-bf-9I3">
-                                <rect key="frame" x="0.0" y="320" width="375" height="347"/>
+                                <rect key="frame" x="0.0" y="355" width="375" height="312"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zhH-IL-KEi">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="337"/>
@@ -60,7 +60,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MiJ-xE-rEb">
-                                <rect key="frame" x="0.0" y="240" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="275" width="375" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="CURRENT  PRICE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000001192092896" translatesAutoresizingMaskIntoConstraints="NO" id="2aI-Ow-nbK">
                                         <rect key="frame" x="191.5" y="8" width="84" height="64"/>
@@ -433,7 +433,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-NH-WHF">
-                                <rect key="frame" x="0.0" y="140" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="135"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ellipse 4" translatesAutoresizingMaskIntoConstraints="NO" id="vz3-Gx-3I0">
                                         <rect key="frame" x="145" y="8" width="85" height="85"/>
@@ -474,7 +474,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzG-Ki-JBf">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="134" width="375" height="1"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="4Vw-6U-f2p"/>
@@ -501,18 +501,27 @@
                                             <action selector="logOutButtonPressedWithSender:" destination="L3o-vy-kWj" eventType="touchUpInside" id="MxE-6J-2Q2"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Invite ID : 22832228" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35m-fv-Vdh">
+                                        <rect key="frame" x="91.5" y="105" width="192" height="25"/>
+                                        <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="vz3-Gx-3I0" firstAttribute="centerX" secondItem="OeO-NH-WHF" secondAttribute="centerX" id="05M-Di-yj1"/>
                                     <constraint firstAttribute="trailing" secondItem="rDk-Zh-bwC" secondAttribute="trailing" id="6Jg-qX-5Pk"/>
+                                    <constraint firstItem="PzG-Ki-JBf" firstAttribute="top" secondItem="35m-fv-Vdh" secondAttribute="bottom" constant="4" id="7qK-wO-BwI"/>
+                                    <constraint firstItem="35m-fv-Vdh" firstAttribute="centerX" secondItem="vz3-Gx-3I0" secondAttribute="centerX" id="8hF-Hm-aaV"/>
                                     <constraint firstAttribute="bottom" secondItem="PzG-Ki-JBf" secondAttribute="bottom" id="9AL-Lu-kw6"/>
                                     <constraint firstItem="vz3-Gx-3I0" firstAttribute="leading" secondItem="1l4-QX-mDW" secondAttribute="trailing" constant="8" id="Dfj-V2-lsw"/>
                                     <constraint firstItem="vz3-Gx-3I0" firstAttribute="top" secondItem="OeO-NH-WHF" secondAttribute="top" constant="8" id="FhO-Uz-BJQ"/>
+                                    <constraint firstItem="35m-fv-Vdh" firstAttribute="top" secondItem="qgM-dv-xgD" secondAttribute="bottom" constant="4" id="I4W-19-WwF"/>
                                     <constraint firstAttribute="trailing" secondItem="qgM-dv-xgD" secondAttribute="trailing" id="LcU-Vd-fKH"/>
                                     <constraint firstItem="rDk-Zh-bwC" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" id="RSP-nE-29W"/>
                                     <constraint firstItem="qgM-dv-xgD" firstAttribute="top" secondItem="vz3-Gx-3I0" secondAttribute="bottom" constant="4" id="SF6-xg-X63"/>
-                                    <constraint firstAttribute="height" constant="100" id="bGl-B6-W7m"/>
+                                    <constraint firstAttribute="height" constant="135" id="bGl-B6-W7m"/>
                                     <constraint firstItem="D5O-wf-xgE" firstAttribute="leading" secondItem="vz3-Gx-3I0" secondAttribute="trailing" constant="16" id="bY7-NU-gp3"/>
                                     <constraint firstItem="1l4-QX-mDW" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" constant="8" id="bse-hT-Oqh"/>
                                     <constraint firstItem="PzG-Ki-JBf" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" id="buJ-eD-KDY"/>

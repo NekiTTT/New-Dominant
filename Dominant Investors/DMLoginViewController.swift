@@ -78,11 +78,11 @@ class DMLoginViewController: DMViewController, UITextFieldDelegate {
     }
     
     private func proceedLogin() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.showActivityIndicator()
         DMAuthorizationManager.sharedInstance.loginWith(login: self.usernameTextField.text!,
                                                         password: self.passwordTextField.text!) { (success, error) in
                                                             DispatchQueue.main.async {
-                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                self.dismissActivityIndicator()
                                                                 if (success) {
                                                                     self.showTabBar()
                                                                 } else {

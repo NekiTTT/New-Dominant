@@ -22,6 +22,11 @@ class DMAuthorizationManager: NSObject {
             if let data = UserDefaults.standard.object(forKey: "Authorized") as? NSData {
                 if let profile = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? DMUserProfileModel {
                     self.userProfile = profile
+                    if let user_id = UserDefaults.standard.value(forKey: "user_id") as? UInt {
+                    self.userID = UserDefaults.standard.value(forKey: "user_id") as! UInt
+                    } else {
+                        self.userID = UInt(profile.userID)!
+                    }
                 }
             }
         }

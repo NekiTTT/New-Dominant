@@ -26,15 +26,20 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     
     override init() {
         super.init()
+        self.reloadEmptyData()
+    }
+    
+    open func reloadEmptyData() {
         self.getPersonalPortfolio { (portfolios) in
             self.portfolios = portfolios
             SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
                 DispatchQueue.main.async {
-                self.stocksData = points
-                self.userInterface?.reloadData()
+                    self.stocksData = points
+                    self.userInterface?.reloadData()
                 }
             })
         }
+ 
     }
     
     open func getPersonalPortfolio(completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
@@ -85,6 +90,12 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
                 self.userInterface?.reloadData()
             }
         }
+    }
+    
+    open func changeUser() {
+        self.portfolios.removeAll()
+        self.stocksData.removeAll()
+        self.totalData.removeAll()
     }
     
     // MARK: Private
@@ -186,9 +197,9 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         if (portfolios.count != 0) {
             return portfolios.count + 1
         } else {
-            self.userInterface?.didReloaded()
             return 0
         }
+        self.userInterface?.didReloaded()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

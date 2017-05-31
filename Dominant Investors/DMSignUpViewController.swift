@@ -107,14 +107,14 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
         }
         
         
-        MBProgressHUD.showAdded(to: self.view, animated: true)
+        self.showActivityIndicator()
         DMAuthorizationManager.sharedInstance.signUpWith(login : self.loginTextField.text!,
                                                          email     : self.emailTextField.text!,
                                                          password  : self.passwordTextField.text!,
                                                          confirm   : self.confirmPasswordTextField.text!,
                                                          inviterID : self.inviteIDTextField.text) { (success, error) in
                                                             DispatchQueue.main.async {
-                                                                MBProgressHUD.hide(for: self.view, animated: true)
+                                                                self.dismissActivityIndicator()
                                                                 if (success) {
                                                                     self.dismiss(animated: true, completion: nil)
                                                                 } else {
