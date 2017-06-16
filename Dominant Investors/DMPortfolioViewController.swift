@@ -44,9 +44,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     @IBOutlet  weak var secondColumnTitle   : UILabel!
     @IBOutlet  weak var thirdColumnTitle    : UILabel!
     @IBOutlet  weak var fourthColumnTitle   : UILabel!
-    
     @IBOutlet  weak var userNickNameLabel   : UILabel!
     
+    @IBOutlet  weak var yourInviteID        : UITextView!
     
     @IBOutlet  weak var dominantButton      : UIView!
     @IBOutlet  weak var personalButton      : UIView!
@@ -114,6 +114,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.userNickNameLabel.text = DMAuthorizationManager.sharedInstance.userProfile.userName
         
         self.tickerField.delegate = self
+        self.yourInviteID.text = String(format: "%d", DMAuthorizationManager.sharedInstance.userID)
     }
     
     @objc private func refresh(sender : UIRefreshControl) {
@@ -135,9 +136,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 80
-            self.secondHeaderHeight.constant = 0
+            self.secondHeaderHeight.constant = 175
             self.firstContainer.alpha = 1
-            self.dominantImageContainer.alpha = 0
+            self.dominantImageContainer.alpha = 1
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()
@@ -163,9 +164,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 0
-            self.dominantImageContainer.alpha = 1
+            self.dominantImageContainer.alpha = 0
             self.firstContainer.alpha = 0
-            self.secondHeaderHeight.constant = 135
+            self.secondHeaderHeight.constant = 0
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()

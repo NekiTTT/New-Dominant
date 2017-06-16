@@ -10,13 +10,14 @@
 		45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */; };
 		45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */; };
 		45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */; };
+		4518F86A1EF33D4B000D044F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; };
+		4518F86B1EF33DBF000D044F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; };
+		4518F86C1EF33DBF000D044F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43F81E5A4DCD0058D11C /* ChartView.swift */; };
 		452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452A43F91E5A4DCD0058D11C /* ChartView.xib */; };
 		452A43FE1E5A570F0058D11C /* DMContainerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */; };
 		452A44001E5A5C5E0058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
-		452A44011E5A5C720058D11C /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; };
 		453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
-		453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; };
 		454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454BFEF91E5C1F7A0088EF31 /* DMFileManager.swift */; };
 		454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */; };
 		456F07AC1EDDB6AA00DABE35 /* Dominant+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */; };
@@ -25,7 +26,6 @@
 		4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6B91E610320005F2173 /* DMPortfolioUserInterface.swift */; };
 		4581D6BC1E610AFC005F2173 /* Dominant+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6BB1E610AFC005F2173 /* Dominant+UIImage.swift */; };
 		4581D6BD1E61CE6F005F2173 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4581D6BE1E61CE6F005F2173 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E7811E5901A800D56BDE /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6BF1E61CE6F005F2173 /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6C01E61CE93005F2173 /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4581D6C11E61FB92005F2173 /* DMRotatingViewController.swift */; };
@@ -35,7 +35,6 @@
 		45A1078F1E59C24100591170 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A1078E1E59C24100591170 /* FXBlurView.m */; };
 		45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0321E591629000CB062 /* Crashlytics.framework */; };
 		45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */; };
-		45A1079C1E59C3AC00591170 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E7811E5901A800D56BDE /* Alamofire.framework */; };
 		45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0301E591525000CB062 /* Fabric.framework */; };
 		45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; };
 		45A107A51E59CFED00591170 /* MuseoCyrl100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7561E58F12800D56BDE /* MuseoCyrl100.otf */; };
@@ -109,8 +108,8 @@
 			files = (
 				4581D6C01E61CE93005F2173 /* MBProgressHUD.framework in Embed Frameworks */,
 				4581D6BD1E61CE6F005F2173 /* AlamofireImage.framework in Embed Frameworks */,
-				4581D6BE1E61CE6F005F2173 /* Alamofire.framework in Embed Frameworks */,
 				4581D6BF1E61CE6F005F2173 /* Quickblox.framework in Embed Frameworks */,
+				4518F86C1EF33DBF000D044F /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +120,7 @@
 		45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropDownTableViewCell.swift; sourceTree = "<group>"; };
 		45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMDropDownTableViewCell.xib; sourceTree = "<group>"; };
 		45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownListDelegate.swift; sourceTree = "<group>"; };
+		4518F8691EF33D4B000D044F /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		452A43F81E5A4DCD0058D11C /* ChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		452A43F91E5A4DCD0058D11C /* ChartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChartView.xib; sourceTree = "<group>"; };
 		452A43FD1E5A570F0058D11C /* DMContainerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMContainerDelegate.swift; sourceTree = "<group>"; };
@@ -175,7 +175,6 @@
 		45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyModel.swift; sourceTree = "<group>"; };
 		45B4E77B1E58FE0500D56BDE /* SwiftStockKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftStockKit.swift; sourceTree = "<group>"; };
 		45B4E77D1E58FE7200D56BDE /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
-		45B4E7811E5901A800D56BDE /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		45B4E7831E59106B00D56BDE /* Ratings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ratings.storyboard; sourceTree = "<group>"; };
 		45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRatingsViewController.swift; sourceTree = "<group>"; };
 		45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLaunchViewController.swift; sourceTree = "<group>"; };
@@ -215,16 +214,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				452A44001E5A5C5E0058D11C /* AlamofireImage.framework in Frameworks */,
-				452A44011E5A5C720058D11C /* AlamofireImage.framework in Frameworks */,
 				45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */,
 				45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */,
+				4518F86A1EF33D4B000D044F /* Alamofire.framework in Frameworks */,
 				45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */,
 				453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */,
+				4518F86B1EF33DBF000D044F /* Alamofire.framework in Frameworks */,
 				45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */,
-				453CA0BA1E5C7B3F004A6A5C /* MBProgressHUD.framework in Frameworks */,
 				45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */,
-				45A1079C1E59C3AC00591170 /* Alamofire.framework in Frameworks */,
 				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,8 +446,8 @@
 				45B4E78D1E59126A00D56BDE /* Bolts.framework */,
 				45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */,
 				45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */,
+				4518F8691EF33D4B000D044F /* Alamofire.framework */,
 				45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */,
-				45B4E7811E5901A800D56BDE /* Alamofire.framework */,
 				45B7A0301E591525000CB062 /* Fabric.framework */,
 				45B4E77D1E58FE7200D56BDE /* Quickblox.framework */,
 				45B4E77A1E58FDE700D56BDE /* SwiftStockKit */,
@@ -598,14 +596,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Dominant;
 				TargetAttributes = {
 					45B4E72B1E58ED5C00D56BDE = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 45F26FVHGB;
 						LastSwiftMigration = 0820;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -864,7 +862,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 45F26FVHGB;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -877,8 +875,8 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "91372ffd-02cc-4d05-b478-33b178c26b22";
-				PROVISIONING_PROFILE_SPECIFIER = DOMINANT_DEV;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -890,8 +888,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 45F26FVHGB;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -903,8 +901,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.personal.DominantStocks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ead2e2a7-dbd8-4f51-b31d-c97ddab2aa01";
-				PROVISIONING_PROFILE_SPECIFIER = ACTUAL_FOR_DOMINANT_LAST;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
