@@ -10,7 +10,8 @@ import UIKit
 
 enum DMPortfolioType : Int {
     case DMPersonalPortfolio = 0
-    case DMDominantPortfolio = 1
+    //case DMDominantPortfolio = 1
+    case DMSignalsHistory = 1
 }
 
 enum DMActionType : Int {

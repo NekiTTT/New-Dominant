@@ -63,10 +63,10 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.refreshData()
-        //if (!loaded) {
+        if (!loaded) {
             showPersonal()
             loaded = true
-        //}
+        }
     }
     
     override func refreshData() {
@@ -179,7 +179,36 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
   
         self.setColumnTitles(titles: ["TICKER","EXCHANGE","CURRENT PRICE $","PROFITABILITY"])
         self.refreshControl.removeFromSuperview()
-        self.portfolioType = .DMDominantPortfolio
+        //self.portfolioType = .DMDominantPortfolio
+    }
+    
+    private func showSignalsHistory() {
+        
+        self.tableView.delegate   = DMSignalsHistoryService.sharedInstance
+        self.tableView.dataSource = DMSignalsHistoryService.sharedInstance
+        
+        DMDominantPortfolioService.sharedInstance.userInterface = self
+        
+        self.reloadData()
+        
+        UIView.animate(withDuration: 1) {
+            self.firstHeaderHeight.constant  = 0
+            self.dominantImageContainer.alpha = 0
+            self.firstContainer.alpha = 0
+            self.secondHeaderHeight.constant = 0
+            
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        }
+        
+        hideDropdownList()
+        
+        self.dominantButton.layer.borderColor = UIColor.red.cgColor
+        self.personalButton.layer.borderColor = UIColor.clear.cgColor
+        
+        self.setColumnTitles(titles: ["TICKER","BUY POINT $","SELL POINT $","PROFITABILITY"])
+        self.refreshControl.removeFromSuperview()
+        self.portfolioType = .DMSignalsHistory
     }
     
     private func setColumnTitles(titles : [String]) {
@@ -206,7 +235,11 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
     
     @IBAction func portfolioTypeChanged(sender : UISegmentedControl) {
-        self.portfolioType == .DMPersonalPortfolio ? showDominant() : showPersonal()
+        self.portfolioType == .DMPersonalPortfolio ? showSignalsHistory() : showPersonal()
+        
+        //TIP #1 : For Dominant portfolio feature.
+        
+        //self.portfolioType == .DMPersonalPortfolio ? showDominant() : showPersonal()
     }
     
     @IBAction func addTickerAction(sender : UIButton) {

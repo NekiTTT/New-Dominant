@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4509E8C91EF68825002CC7C4 /* DMSignalsHistoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509E8C81EF68824002CC7C4 /* DMSignalsHistoryService.swift */; };
+		4509E8CB1EF69977002CC7C4 /* DMSignalHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4509E8CA1EF69977002CC7C4 /* DMSignalHistoryModel.swift */; };
 		45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */; };
 		45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */; };
 		45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */; };
@@ -117,6 +119,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4509E8C81EF68824002CC7C4 /* DMSignalsHistoryService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalsHistoryService.swift; sourceTree = "<group>"; };
+		4509E8CA1EF69977002CC7C4 /* DMSignalHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalHistoryModel.swift; sourceTree = "<group>"; };
 		45121B801E5CB05E00D83C4E /* DMDropDownTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropDownTableViewCell.swift; sourceTree = "<group>"; };
 		45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DMDropDownTableViewCell.xib; sourceTree = "<group>"; };
 		45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownListDelegate.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
 				45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */,
 				45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */,
+				4509E8C81EF68824002CC7C4 /* DMSignalsHistoryService.swift */,
 				45B4E7511E58EF5700D56BDE /* DMPersonalPortfolioService.swift */,
 				45B4E7531E58EF9E00D56BDE /* DMSignalsStoreService.swift */,
 				45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */,
@@ -397,6 +402,7 @@
 				45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */,
 				45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */,
 				45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */,
+				4509E8CA1EF69977002CC7C4 /* DMSignalHistoryModel.swift */,
 				45A107AD1E59D3E600591170 /* DMRatingModel.swift */,
 				45B4E7781E58FD5A00D56BDE /* DMCompanyModel.swift */,
 				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
@@ -696,6 +702,7 @@
 				45B4E7301E58ED5C00D56BDE /* AppDelegate.swift in Sources */,
 				4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */,
 				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
+				4509E8CB1EF69977002CC7C4 /* DMSignalHistoryModel.swift in Sources */,
 				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
 				45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */,
 				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
@@ -743,6 +750,7 @@
 				45B7A0371E5916A2000CB062 /* DMLoginViewController.swift in Sources */,
 				45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */,
 				45A1078F1E59C24100591170 /* FXBlurView.m in Sources */,
+				4509E8C91EF68825002CC7C4 /* DMSignalsHistoryService.swift in Sources */,
 				45C7D6E71E5E516A0089E8C7 /* Dominant+Double.swift in Sources */,
 				45A107AC1E59D35400591170 /* DMRatingTableViewCell.swift in Sources */,
 			);

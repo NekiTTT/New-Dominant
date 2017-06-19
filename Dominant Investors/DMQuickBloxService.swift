@@ -47,6 +47,19 @@ class DMQuickBloxService: NSObject {
         }
     }
     
+    open func getSignalsHistory(completion : @escaping ([DMSignalHistoryModel]) -> Void) {
+        
+        QBRequest.objects(withClassName: "signalsHistory", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+            var dominant = [DMSignalHistoryModel]()
+            for object in objects! {
+                dominant.append(DMSignalHistoryModel.init(response:  DMResponseObject.init(customObject: object)))
+            }
+            completion(dominant)
+        }) { (error) in
+            completion([DMSignalHistoryModel]())
+        }
+    }
+    
     open func getUserRatings(completion : @escaping ([DMRatingModel]) -> Void) {
         QBRequest.objects(withClassName: "userPortfolioTotal", extendedRequest: DMQuickBloxService.ratingLimit, successBlock: { (response, objects, page) in
             var ratings = [DMRatingModel]()

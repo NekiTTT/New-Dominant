@@ -58,6 +58,18 @@ class DMStockCell: UITableViewCell {
         }
     }
     
+    public func setupWithHistorySignal(stock: DMSignalHistoryModel) {
+        
+        self.ticker.text = stock.ticker
+        self.exchangeOrBuyPoint.text = stock.buyPoint
+        self.currentPrice.text = stock.sellPoint
+        self.investmentPeriod.text = ""
+        self.profitability.text = stock.profitability
+        
+        self.profitability.textColor = stock.profitly == true ? Colors.DMProfitGreenColor : UIColor.red
+       
+    }
+    
 }
 
 
