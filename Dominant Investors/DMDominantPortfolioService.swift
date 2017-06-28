@@ -6,6 +6,8 @@
 //  Copyright © 2017 Dominant. All rights reserved.
 //
 
+                                        //WARNING: DEPRECATED !!!
+
 import UIKit
 
 class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDelegate, DMStockCellDelegate {

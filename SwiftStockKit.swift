@@ -372,6 +372,8 @@ class SwiftStockKit {
         
         let chartURL = SwiftStockKit.chartUrlForStocks(symbols: symbols)
         
+        print("\(chartURL)")
+            
         Alamofire.request(chartURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
                 

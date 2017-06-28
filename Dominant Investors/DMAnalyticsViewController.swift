@@ -22,7 +22,7 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         self.showActivityIndicator()
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
             DispatchQueue.main.async {
-                self.companies = companies
+                self.companies = companies.reversed()
                 self.collectionView?.reloadData()
                 self.dismissActivityIndicator()
             }

@@ -2,8 +2,8 @@
 //  StockCell.swift
 //  SwiftStockExample
 //
-//  Created by Mike Ackley on 5/3/15.
-//  Copyright (c) 2015 Michael Ackley. All rights reserved.
+//  Created by Nekit on 5/3/15.
+//  Copyright (c) 2015 Nekit. All rights reserved.
 //
 
 import UIKit
@@ -20,7 +20,6 @@ class DMStockCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     public func setupWithDominant(stock : DMDominantPortfolioModel) {

@@ -136,9 +136,9 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         
         UIView.animate(withDuration: 1) {
             self.firstHeaderHeight.constant  = 80
-            self.secondHeaderHeight.constant = 175
+            self.secondHeaderHeight.constant = 0 //175
             self.firstContainer.alpha = 1
-            self.dominantImageContainer.alpha = 1
+            self.dominantImageContainer.alpha = 0 //1
             
             self.view.setNeedsLayout()
             self.view.layoutIfNeeded()

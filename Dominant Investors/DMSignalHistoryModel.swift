@@ -53,7 +53,7 @@ class DMSignalHistoryModel: NSObject {
            self.profitability = String(format : "%.2f%@", profit, "%")
            self.profitly = true
         } else {
-           self.profitability = String(format : "-%.2f%@", profit, "%")
+           self.profitability = String(format : "%.2f%@", profit, "%")
            self.profitly = false
         }
         
