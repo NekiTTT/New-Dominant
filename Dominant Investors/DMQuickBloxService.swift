@@ -204,10 +204,10 @@ class DMQuickBloxService: NSObject {
     open func updateUserRating(value : Double) {
         DMAPIService.sharedInstance.getUserRatings { (ratings) in
             for rate in ratings {
-                let name = rate.userName.lowercased()
+                let name = rate.userName?.lowercased()
                 if (rate.userID == DMAuthorizationManager.sharedInstance.userProfile.userID
                 ||  name == DMAuthorizationManager.sharedInstance.userProfile.userName.lowercased()) {
-                    self.updateExistRating(id: rate.id, value: value)
+                    self.updateExistRating(id: rate.id!, value: value)
                     return
                 }
             }
@@ -265,7 +265,7 @@ class DMQuickBloxService: NSObject {
         
         let quickblox = QBCOCustomObject()
         quickblox.className = "SignalsBuyingDate"
-        quickblox.fields!.setObject(subscription.expired_date, forKey: "expiredDate" as NSCopying)
+        quickblox.fields!.setObject(subscription.expired_date ?? Date(), forKey: "expiredDate" as NSCopying)
         quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
         quickblox.id = subscription.id
         

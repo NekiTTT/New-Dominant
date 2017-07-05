@@ -10,10 +10,10 @@ import UIKit
 
 class DMSubscriptionModel: NSObject {
 
-    var id                : String!
-    var userID            : String!
+    var id                : String?
+    var userID            : String?
     var userName          : String?
-    var expired_date      : Date!
+    var expired_date      : Date?
     
     init(response : DMResponseObject) {
         super.init()

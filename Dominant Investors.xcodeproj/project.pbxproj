@@ -379,7 +379,7 @@
 				45B7A0341E591683000CB062 /* Sign Up */,
 				45B4E7861E59107900D56BDE /* Ratings */,
 				45B4E7631E58F9FE00D56BDE /* Signals */,
-				45B4E7621E58F9EE00D56BDE /* Analytics */,
+				45B4E7621E58F9EE00D56BDE /* Dominant stock */,
 				45B4E7611E58F9E600D56BDE /* Portfolio */,
 			);
 			name = Controllers;
@@ -500,13 +500,13 @@
 			name = Portfolio;
 			sourceTree = "<group>";
 		};
-		45B4E7621E58F9EE00D56BDE /* Analytics */ = {
+		45B4E7621E58F9EE00D56BDE /* Dominant stock */ = {
 			isa = PBXGroup;
 			children = (
 				45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */,
 				45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */,
 			);
-			name = Analytics;
+			name = "Dominant stock";
 			sourceTree = "<group>";
 		};
 		45B4E7631E58F9FE00D56BDE /* Signals */ = {

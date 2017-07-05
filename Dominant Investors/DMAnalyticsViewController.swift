@@ -9,9 +9,11 @@
 import UIKit
 import MBProgressHUD
 
-class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UICollectionViewDataSource, DMContainerDelegate {
 
     @IBOutlet weak var collectionView   : UICollectionView!
+    @IBOutlet weak var subscriptionContainer : UIView!
+    
     
     var companies        = [DMCompanyModel]()
 
@@ -28,6 +30,16 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
             }
         }
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if segue.identifier == "contanerSegue" {
+            let description = segue.destination as! DMSubscriptionViewController
+            description.delegate = self
+        }
+    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -110,6 +122,17 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         let company = self.companies[indexPath.row]
         cell.setupWith(model: company)
         return cell
+    }
+    
+    // MARK: DMContainerDelegate
+    
+    internal func hideContainer() {
+        self.subscriptionContainer.isHidden = true
+
+    }
+    
+    internal func dismiss() {
+        self.dismiss(animated: true, completion: nil)
     }
  
 }

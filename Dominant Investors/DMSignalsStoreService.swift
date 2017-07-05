@@ -21,7 +21,7 @@ class DMSignalsStoreService: NSObject {
     }
     
     open func isSubscriptionValid(subscription : DMSubscriptionModel) -> Bool {
-        if (subscription.expired_date.compare(Date()) != ComparisonResult.orderedAscending) {
+        if (subscription.expired_date?.compare(Date()) != ComparisonResult.orderedAscending) {
             return true
         }
         return false

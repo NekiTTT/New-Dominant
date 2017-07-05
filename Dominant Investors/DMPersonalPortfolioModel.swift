@@ -10,7 +10,7 @@ import Foundation
 
 class DMPersonalPortfolioModel: NSObject {
 
-    var id          : String?
+    var id          : String? 
     var ticker      : String?
     var entry_price : String?
     var userID      : String?
@@ -19,11 +19,27 @@ class DMPersonalPortfolioModel: NSObject {
     
     init(response : DMResponseObject) {
         super.init()
-        self.id = response.id
-        self.ticker = response.fields["ticker"] as? String
-        self.entry_price = response.fields["entry_price"] as? String
-        self.entry_date  = DMDateService.sharedInstance.dominantDateFrom(string: response.fields["crt_at"] as! String)
-        self.userID = response.userID
+        
+        if let respID = response.id {
+            self.id       = respID
+        }
+        
+        if let respValue = response.fields["ticker"] as? String {
+            self.ticker       = respValue
+        }
+        
+        if let respValue = response.fields["entry_price"] as? String {
+            self.entry_price       = respValue
+        }
+        
+        if let respValue = response.fields["crt_at"] as? String {
+            self.entry_date       = DMDateService.sharedInstance.dominantDateFrom(string: respValue)
+        }
+        
+        if let respValue = response.userID {
+            self.userID       = respValue
+        }
+
     }
     
     init(stockSearch : StockSearchResult) {

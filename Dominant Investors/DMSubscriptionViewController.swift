@@ -27,23 +27,26 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showSignals()
+        if (self.checkPremiumAccounts() == true) {
+            showSignals()
+            return
+        }
         
-//        self.drawBlurView()
-//        self.backgroundImageView.image = self.DMAuthScreensBackground
-//        productIDs.append("dominantOne")
-//        self.requestProductInfo()
-//        self.showActivityIndicator()
-//        DMSignalsStoreService.sharedInstance.checkSubscription { (subscription) in
-//            DispatchQueue.main.async {
-//                self.dismissActivityIndicator()
-//                if (subscription != nil) {
-//                    if (DMSignalsStoreService.sharedInstance.isSubscriptionValid(subscription: subscription!)) {
-//                        self.showSignals()
-//                    }
-//                }
-//            }
-//        }
+        self.drawBlurView()
+        self.backgroundImageView.image = self.DMAuthScreensBackground
+        productIDs.append("dominantOne")
+        self.requestProductInfo()
+        self.showActivityIndicator()
+        DMSignalsStoreService.sharedInstance.checkSubscription { (subscription) in
+            DispatchQueue.main.async {
+                self.dismissActivityIndicator()
+                if (subscription != nil) {
+                    if (DMSignalsStoreService.sharedInstance.isSubscriptionValid(subscription: subscription!)) {
+                        self.showSignals()
+                    }
+                }
+            }
+        }
     }
 
     
@@ -100,6 +103,15 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     }
     
     // MARK: Private
+    
+    private func checkPremiumAccounts() -> Bool {
+        if let name = DMAuthorizationManager.sharedInstance.userProfile.userName {
+            if (name == "" || name == "ChuckBo4" || name == "PichaiSF" || name == "doncooljuan" || name == "rch7" || name == "mosworldtour" || name == "eokennedy" || name == "savvygaby" || name == "ccrunner62" || name == "Pavel" || name == "eokennedy") {
+                return true;
+            }
+        }
+        return false;
+    }
     
     private func showActions() {
         

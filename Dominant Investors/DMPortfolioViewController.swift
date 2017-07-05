@@ -220,6 +220,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     private func resizeTableView() {
         self.tableViewHeight.constant = self.tableView.contentSize.height >= scrollView.frame.height ? self.tableView.contentSize.height : scrollView.frame.height+20
+        self.dismissActivityIndicator()
     }
 
     // MARK: Actions
@@ -251,6 +252,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
                                return
         }
         DMPersonalPortfolioService.sharedInstance.addNew()
+        self.showActivityIndicator()
         self.tickerField.text = ""
     }
     
@@ -322,6 +324,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.resizeTableView()
+            self.dismissActivityIndicator()
         }
     }
     

@@ -31,14 +31,53 @@ class DMCompanyModel: NSObject {
         self.id = response.id
         let fields = response.fields
         
-        self.ticker                 = fields["companySymbol"] as! String
-        self.name                   = fields["companyName"] as! String
-        self.IPODate                = fields["IPODate"] as! String
-        self.marketCapitalization   = fields["marketCapitalization"] as! String
-        self.companyDescription     = fields["description"]  as! String
-        self.annualSales            = fields["annualSales"]  as! String
-        self.averageSales           = fields["averageSales"] as! String
-
-        self.potentialProfitability = fields["potantialProfitability"] as! String
+        if let ticker = fields["companySymbol"] as? String {
+            self.ticker = ticker
+        } else {
+            self.ticker = ""
+        }
+        
+        if let value = fields["companyName"] as? String {
+            self.name = value
+        } else {
+            self.name = ""
+        }
+        
+        if let value = fields["IPODate"] as? String {
+            self.IPODate = value
+        } else {
+            self.IPODate = ""
+        }
+        
+        if let value = fields["marketCapitalization"] as? String {
+            self.marketCapitalization = value
+        } else {
+            self.marketCapitalization = ""
+        }
+        
+        if let value = fields["description"] as? String {
+            self.companyDescription = value
+        } else {
+            self.companyDescription = ""
+        }
+        
+        if let value = fields["annualSales"] as? String {
+            self.annualSales = value
+        } else {
+            self.annualSales = ""
+        }
+        
+        if let value = fields["averageSales"] as? String {
+            self.averageSales = value
+        } else {
+            self.averageSales = ""
+        }
+        
+        if let value = fields["potentialProfitability"] as? String {
+            self.potentialProfitability = value
+        } else {
+            self.potentialProfitability = ""
+        }
+        
     }
 }

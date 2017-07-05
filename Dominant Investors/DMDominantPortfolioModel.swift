@@ -11,17 +11,25 @@ import Quickblox
 
 class DMDominantPortfolioModel: NSObject {
 
-    var id : String!
-    var ticker : String!
-    var exchange : String!
+    var id : String?
+    var ticker : String?
+    var exchange : String? 
     
     init(response : DMResponseObject) {
         super.init()
     
-        self.id       = response.id
-        self.ticker   = response.fields["ticker"] as! String
-        self.exchange = response.fields["exchange"] as! String
+
+        if let respID = response.id {
+            self.id       = respID
+        }
+        
+        if let respTicker = response.fields["ticker"] as? String {
+            self.ticker       = respTicker
+        }
+        
+        if let respExchange = response.fields["exchange"] as? String {
+            self.exchange       = respExchange
+        }
+        
     }
-    
-    
 }
