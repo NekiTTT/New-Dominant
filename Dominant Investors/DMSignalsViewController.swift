@@ -9,6 +9,13 @@
 import UIKit
 
 class DMSignalsViewController: DMViewController, UITableViewDataSource, UITableViewDelegate, DMContainerDelegate {
+    
+    func showContainer() {
+        
+    }
+    
+    // TIP : OLD SIGNALS, DEPRECATED.
+
    
     @IBOutlet weak var tableView             : UITableView!
     @IBOutlet weak var subscriptionContainer : UIView!

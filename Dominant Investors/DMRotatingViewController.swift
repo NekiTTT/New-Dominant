@@ -41,6 +41,7 @@ class DMRotatingViewController: DMViewController {
         if (!loaded) {
             setupControllers()
             setupContainers()
+            setupNotificationCenterObserving()
             setupTabButtons()
             showDefaultPage()
             loaded = true
@@ -84,6 +85,10 @@ class DMRotatingViewController: DMViewController {
         self.containers = [self.analyticsContainer, self.portfolioContainer, self.ratingsContainer]
     }
     
+    private func setupNotificationCenterObserving() {
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showDefaultPage), name: NSNotification.Name(rawValue: "kShowSignals"), object: nil)
+    }
+    
     private func setupControllers() {
         
         var actualCont = [DMViewController(), DMViewController(), DMViewController()]
@@ -100,11 +105,13 @@ class DMRotatingViewController: DMViewController {
         self.viewControllers = actualCont
     }
     
-    private func showDefaultPage() {
+    @objc private func showDefaultPage() {
         self.showTab(index: Values.DMDefaultScreen)
+        for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
+        buttons[0].setImage(activeIcons[0], for: .normal)
     }
     
-    private func showTab(index : Int) {
+    @objc private func showTab(index : Int) {
         self.view.bringSubview(toFront: containers[index])
     }
     

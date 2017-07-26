@@ -64,7 +64,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         }
         
         var annualSales_String = "Target Price "
-        annualSales_String = annualSales_String.appending(company.annualSales)
+        annualSales_String = annualSales_String.appending(company.targetPrice)
         annualSales_String = annualSales_String.appending("\n")
         
         let annualSales_atributed = NSMutableAttributedString(string: annualSales_String)
@@ -72,14 +72,14 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         
         
         var IPO_String = "Buy Point "
-        IPO_String = IPO_String.appending(company.IPODate)
+        IPO_String = IPO_String.appending(company.buyPoint)
         IPO_String = IPO_String.appending("\n")
         
         let IPO_atributed = NSMutableAttributedString(string: IPO_String)
         IPO_atributed.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:10,length:IPO_atributed.length-10))
         
         var averageSales_String = "Investment horizon "
-        averageSales_String = averageSales_String.appending(company.averageSales)
+        averageSales_String = averageSales_String.appending(company.investmentHorizon)
         averageSales_String = averageSales_String.appending("\n")
         
         let averageSales_atributed = NSMutableAttributedString(string: averageSales_String)
@@ -87,7 +87,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         
         
         var marketCapitalization_string = "Stop-Loss "
-        marketCapitalization_string = marketCapitalization_string.appending(company.marketCapitalization)
+        marketCapitalization_string = marketCapitalization_string.appending(company.stopLoss)
         marketCapitalization_string = marketCapitalization_string.appending("\n")
         
         let marketCapitalization_atributed = NSMutableAttributedString(string: marketCapitalization_string)
@@ -97,12 +97,12 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         let potential_string_atributed = NSMutableAttributedString(string: potential_string)
         potential_string_atributed.addAttribute(NSFontAttributeName, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:24 ,length: potential_string_atributed.length - 24))
         
-        IPO_atributed.append(marketCapitalization_atributed)
-        IPO_atributed.append(annualSales_atributed)
-        IPO_atributed.append(averageSales_atributed)
-        IPO_atributed.append(potential_string_atributed)
+        annualSales_atributed.append(IPO_atributed)
+        annualSales_atributed.append(marketCapitalization_atributed)
+        annualSales_atributed.append(averageSales_atributed)
+        annualSales_atributed.append(potential_string_atributed)
         
-        infoTextLabel.attributedText = IPO_atributed
+        infoTextLabel.attributedText = annualSales_atributed
     }
     
     

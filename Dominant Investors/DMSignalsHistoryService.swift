@@ -23,7 +23,7 @@ class DMSignalsHistoryService: NSObject, UITableViewDataSource, UITableViewDeleg
     override init() {
         super.init()
         self.getSignalsHistory { (signals) in
-            self.signals = signals
+            self.signals = signals.reversed()
             self.userInterface?.reloadData()
         }
     }
@@ -39,24 +39,29 @@ class DMSignalsHistoryService: NSObject, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        if (indexPath.row == self.signals.count) {
-            return false
-        }
-        return true
+//        if (indexPath.row == self.signals.count) {
+//            return false
+//        }
+//        return true
+        
+        return false
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        if (tableView.cellForRow(at: indexPath) as? DMStockCell) != nil {
-            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More", comment: "")) { (action, indexPath) in
-                tableView.setEditing(false, animated: true)
-                self.moreAboutStock(stock: self.signals[indexPath.row])
-            }
-            more.backgroundColor = UIColor.blue
-            return [more]
-        } else {
-            return nil
-        }
+//        if (tableView.cellForRow(at: indexPath) as? DMStockCell) != nil {
+//            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More", comment: "")) { (action, indexPath) in
+//                tableView.setEditing(false, animated: true)
+//                self.moreAboutStock(stock: self.signals[indexPath.row])
+//            }
+//            more.backgroundColor = UIColor.blue
+//            return nil//[more]
+//        } else {
+//            return nil
+//        }
+        
+        return nil
     }
+    
     
     
     // MARK: UITableViewDataSource

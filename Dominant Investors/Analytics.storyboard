@@ -275,9 +275,21 @@ IPO Date 08-14-1010</string>
                                             </button>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dwy-dq-ljj">
                                                 <rect key="frame" x="24" y="328" width="272" height="0.0"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Signal information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujq-cS-ETx">
+                                                        <rect key="frame" x="0.0" y="-11" width="272" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="ujq-cS-ETx" secondAttribute="trailing" id="Qdg-f5-EwU"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="8" id="X54-2o-day"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ujq-cS-ETx" secondAttribute="bottom" id="d08-WZ-5sL"/>
+                                                    <constraint firstItem="ujq-cS-ETx" firstAttribute="top" secondItem="Dwy-dq-ljj" secondAttribute="top" id="f9Z-aA-nid"/>
+                                                    <constraint firstItem="ujq-cS-ETx" firstAttribute="leading" secondItem="Dwy-dq-ljj" secondAttribute="leading" id="mbz-6N-Taq"/>
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -378,10 +390,9 @@ IPO Date 08-14-1010</string>
                                             <constraint firstAttribute="bottom" secondItem="9WY-xF-unv" secondAttribute="bottom" constant="24" id="ocu-na-CQj"/>
                                             <constraint firstItem="UBr-Y0-7ym" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="drF-Pq-Qnw" secondAttribute="leading" constant="16" id="p2u-9g-zBJ"/>
                                             <constraint firstItem="UBr-Y0-7ym" firstAttribute="leading" secondItem="drF-Pq-Qnw" secondAttribute="leading" constant="15" id="pwN-eR-cCJ"/>
-                                            <constraint firstItem="Dwy-dq-ljj" firstAttribute="height" secondItem="Vne-O4-oCj" secondAttribute="height" id="pwW-sZ-HBd"/>
                                             <constraint firstItem="ZpM-Hv-tg1" firstAttribute="top" secondItem="drF-Pq-Qnw" secondAttribute="top" constant="19" id="q0S-q9-sY0"/>
                                             <constraint firstItem="UBr-Y0-7ym" firstAttribute="leading" secondItem="drF-Pq-Qnw" secondAttribute="leading" constant="8" id="qA5-t6-xB9"/>
-                                            <constraint firstItem="Dwy-dq-ljj" firstAttribute="top" secondItem="M4c-or-5w8" secondAttribute="bottom" constant="8" id="qdw-Fh-dxh"/>
+                                            <constraint firstItem="Dwy-dq-ljj" firstAttribute="top" secondItem="M4c-or-5w8" secondAttribute="bottom" constant="36" id="qdw-Fh-dxh"/>
                                             <constraint firstItem="tqO-4d-wea" firstAttribute="leading" secondItem="drF-Pq-Qnw" secondAttribute="leading" constant="16" id="rcJ-b2-A71"/>
                                             <constraint firstItem="ZpM-Hv-tg1" firstAttribute="top" secondItem="UBr-Y0-7ym" secondAttribute="top" id="rxz-BG-d01"/>
                                             <constraint firstAttribute="trailing" secondItem="tqO-4d-wea" secondAttribute="trailing" constant="16" id="snT-zb-9Ky"/>
@@ -572,7 +583,7 @@ IPO Date 08-14-1010</string>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b0-rh-dNf">
                                                 <rect key="frame" x="90" y="142" width="121.5" height="77"/>
-                                                <string key="text">89.99$
+                                                <string key="text">8.99$
 monthly</string>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="32"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

@@ -10,5 +10,6 @@ import Foundation
 
 protocol DMContainerDelegate {
     func hideContainer()
+    func showContainer()
     func dismiss()
 }

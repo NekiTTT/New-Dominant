@@ -27,7 +27,7 @@ class DMQuickBloxService: NSObject {
                     personal.append(model)
                 //}
             }
-            completion(personal)
+            completion(personal.reversed())
         }) { (error) in
             completion([DMPersonalPortfolioModel]())
         }
@@ -73,7 +73,7 @@ class DMQuickBloxService: NSObject {
     }
     
     open func getAnalyticsCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
-        QBRequest.objects(withClassName: "Company", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+        QBRequest.objects(withClassName: "CompaniesSignals", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var companies = [DMCompanyModel]()
             for object in objects! {
                 companies.append(DMCompanyModel.init(response: DMResponseObject.init(customObject: object)))

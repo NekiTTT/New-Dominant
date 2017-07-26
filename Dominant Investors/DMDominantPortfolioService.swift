@@ -54,7 +54,7 @@ class DMDominantPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
                 self.moreAboutStock(stock: self.portfolios[indexPath.row])
             }
             more.backgroundColor = UIColor.blue
-            return [more]
+            return nil//[more]
         } else {
             return nil
         }

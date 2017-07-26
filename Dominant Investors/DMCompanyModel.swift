@@ -17,13 +17,13 @@ class DMCompanyModel: NSObject {
     var name                        : String!
     var companylogo                 : UIImage!
     var companyPictureURL           : UIImage!
-    var IPODate                     : String!
     
-    var marketCapitalization        : String!
-    var averageSales                : String!
-    var annualSales                 : String!
+    var buyPoint                    : String!
+    var stopLoss                    : String!
+    var targetPrice                 : String!
+    var investmentHorizon           : String!
     var companyDescription          : String!
-    var forecast                    : String!
+
     var potentialProfitability      : String!
     
     init(response : DMResponseObject) {
@@ -43,34 +43,34 @@ class DMCompanyModel: NSObject {
             self.name = ""
         }
         
-        if let value = fields["IPODate"] as? String {
-            self.IPODate = value
+        if let value = fields["buyPoint"] as? String {
+            self.buyPoint = value
         } else {
-            self.IPODate = ""
+            self.buyPoint = ""
         }
         
-        if let value = fields["marketCapitalization"] as? String {
-            self.marketCapitalization = value
+        if let value = fields["stopLoss"] as? String {
+            self.stopLoss = value
         } else {
-            self.marketCapitalization = ""
+            self.stopLoss = ""
         }
         
-        if let value = fields["description"] as? String {
+        if let value = fields["companyDescription"] as? String {
             self.companyDescription = value
         } else {
             self.companyDescription = ""
         }
         
-        if let value = fields["annualSales"] as? String {
-            self.annualSales = value
+        if let value = fields["targetPrice"] as? String {
+            self.targetPrice = value
         } else {
-            self.annualSales = ""
+            self.targetPrice = ""
         }
         
-        if let value = fields["averageSales"] as? String {
-            self.averageSales = value
+        if let value = fields["investmentHorizon"] as? String {
+            self.investmentHorizon = value
         } else {
-            self.averageSales = ""
+            self.investmentHorizon = ""
         }
         
         if let value = fields["potentialProfitability"] as? String {

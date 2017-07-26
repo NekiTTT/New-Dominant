@@ -43,7 +43,11 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
                 if (subscription != nil) {
                     if (DMSignalsStoreService.sharedInstance.isSubscriptionValid(subscription: subscription!)) {
                         self.showSignals()
+                    } else {
+                        self.delegate.showContainer()
                     }
+                } else {
+                    self.delegate.showContainer()
                 }
             }
         }

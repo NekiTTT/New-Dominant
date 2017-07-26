@@ -185,7 +185,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
             }
             
             delete.backgroundColor = UIColor.red
-            return [delete, more]
+            return [delete]
         } else {
             return nil
         }

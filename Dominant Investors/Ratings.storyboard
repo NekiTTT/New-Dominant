@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O5p-iN-H0c">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="O5p-iN-H0c">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,9 +25,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-bE-5nj">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9o6-wa-Ggn">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                 <subviews>
@@ -84,19 +81,15 @@
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="YZC-bE-5nj" secondAttribute="trailing" id="3D5-4c-Xex"/>
                             <constraint firstItem="D8P-4d-eyq" firstAttribute="leading" secondItem="XOD-Ko-cfO" secondAttribute="leading" id="3nR-bJ-c6I"/>
                             <constraint firstAttribute="trailing" secondItem="9o6-wa-Ggn" secondAttribute="trailing" id="754-Cz-Beg"/>
                             <constraint firstItem="D8P-4d-eyq" firstAttribute="top" secondItem="9o6-wa-Ggn" secondAttribute="bottom" id="EKP-Nu-Eo1"/>
                             <constraint firstItem="9o6-wa-Ggn" firstAttribute="leading" secondItem="XOD-Ko-cfO" secondAttribute="leading" id="MaC-Y1-D4Z"/>
                             <constraint firstItem="9o6-wa-Ggn" firstAttribute="top" secondItem="XOD-Ko-cfO" secondAttribute="top" id="MwX-XN-AFN"/>
-                            <constraint firstAttribute="bottom" secondItem="YZC-bE-5nj" secondAttribute="bottom" id="Vjs-7O-enV"/>
                             <constraint firstAttribute="bottom" secondItem="D8P-4d-eyq" secondAttribute="bottom" id="byS-tV-svz"/>
-                            <constraint firstItem="YZC-bE-5nj" firstAttribute="leading" secondItem="XOD-Ko-cfO" secondAttribute="leading" id="c2m-nf-WJs"/>
                             <constraint firstAttribute="trailing" secondItem="D8P-4d-eyq" secondAttribute="trailing" id="d7I-f3-Z8w"/>
-                            <constraint firstItem="YZC-bE-5nj" firstAttribute="top" secondItem="XOD-Ko-cfO" secondAttribute="top" id="yjp-Je-Wb8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gLd-8U-oeE"/>
@@ -109,7 +102,4 @@
             <point key="canvasLocation" x="3335" y="1085"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="gradient" width="187" height="333"/>
-    </resources>
 </document>

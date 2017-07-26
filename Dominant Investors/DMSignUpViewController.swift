@@ -112,7 +112,7 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
                                                          email     : self.emailTextField.text!,
                                                          password  : self.passwordTextField.text!,
                                                          confirm   : self.confirmPasswordTextField.text!,
-                                                         inviterID : self.inviteIDTextField.text) { (success, error) in
+                                                         inviterID : "DEPRECATED FIELD") { (success, error) in
                                                             DispatchQueue.main.async {
                                                                 self.dismissActivityIndicator()
                                                                 if (success) {

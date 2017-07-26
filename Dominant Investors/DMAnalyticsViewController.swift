@@ -15,11 +15,12 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     @IBOutlet weak var subscriptionContainer : UIView!
     
     
-    var companies        = [DMCompanyModel]()
+    var companies = [DMCompanyModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        self.hideContainer()
         
         self.showActivityIndicator()
         DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
@@ -129,6 +130,11 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
     internal func hideContainer() {
         self.subscriptionContainer.isHidden = true
 
+    }
+    
+    internal func showContainer() {
+        self.subscriptionContainer.isHidden = false
+        
     }
     
     internal func dismiss() {

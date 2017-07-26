@@ -48,7 +48,12 @@ class DMStockCell: UITableViewCell {
         self.investmentPeriod.text = DMDateService.sharedInstance.differenceBetweenDates(dateOne: stock.entry_date!, dateTwo: Date())
         
         DispatchQueue.main.async {
-            let currentPrice = Double(data.close!)
+            var currentPrice : Double = 0
+            
+            if (data.close != nil) {
+                currentPrice = Double(data.close!)
+            }
+            
             self.currentPrice.text  = String(format: "%.2f", currentPrice)
             let profitability = DMCalculationService.sharedInstance.calculateProfitWith(oldPrice: Double(stock.entry_price!)!, currentPrice: currentPrice)
             profitability >= 0 ? (self.profitability.textColor = Colors.DMProfitGreenColor) : (self.profitability.textColor = UIColor.red)
