@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -285,19 +285,19 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pro" translatesAutoresizingMaskIntoConstraints="NO" id="uoH-I3-5kE">
-                                        <rect key="frame" x="266" y="29.5" width="51" height="42"/>
+                                        <rect key="frame" x="308" y="29.5" width="51" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="uoH-I3-5kE" secondAttribute="height" multiplier="17:14" id="Cd5-jT-bTV"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dominant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kow-jn-2P0">
-                                        <rect key="frame" x="29.5" y="40" width="79.5" height="21"/>
+                                        <rect key="frame" x="16" y="40" width="79.5" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stocks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-Pv-nRe">
-                                        <rect key="frame" x="69.5" y="61" width="39.5" height="16"/>
+                                        <rect key="frame" x="56" y="61" width="39.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -312,12 +312,12 @@
                                     <constraint firstAttribute="bottom" secondItem="PzG-Ki-JBf" secondAttribute="bottom" id="9AL-Lu-kw6"/>
                                     <constraint firstItem="vz3-Gx-3I0" firstAttribute="top" secondItem="OeO-NH-WHF" secondAttribute="top" constant="8" id="FhO-Uz-BJQ"/>
                                     <constraint firstItem="FOz-en-7nG" firstAttribute="width" secondItem="OeO-NH-WHF" secondAttribute="width" multiplier="0.5" id="IC4-Av-hWi"/>
-                                    <constraint firstItem="vz3-Gx-3I0" firstAttribute="leading" secondItem="Kow-jn-2P0" secondAttribute="trailing" constant="36" id="JrW-Y9-idw"/>
                                     <constraint firstAttribute="trailing" secondItem="qgM-dv-xgD" secondAttribute="trailing" id="LcU-Vd-fKH"/>
                                     <constraint firstItem="FOz-en-7nG" firstAttribute="centerX" secondItem="vz3-Gx-3I0" secondAttribute="centerX" id="NJ6-Kj-dUK"/>
                                     <constraint firstItem="rDk-Zh-bwC" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" id="RSP-nE-29W"/>
                                     <constraint firstItem="qgM-dv-xgD" firstAttribute="top" secondItem="vz3-Gx-3I0" secondAttribute="bottom" constant="4" id="SF6-xg-X63"/>
                                     <constraint firstItem="PYB-Pv-nRe" firstAttribute="top" secondItem="Kow-jn-2P0" secondAttribute="bottom" id="V8p-yo-LQE"/>
+                                    <constraint firstItem="Kow-jn-2P0" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" constant="16" id="YSy-z2-6T4"/>
                                     <constraint firstItem="uoH-I3-5kE" firstAttribute="centerY" secondItem="vz3-Gx-3I0" secondAttribute="centerY" id="YtH-Gx-XuH"/>
                                     <constraint firstAttribute="height" constant="155" id="bGl-B6-W7m"/>
                                     <constraint firstItem="PzG-Ki-JBf" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" id="buJ-eD-KDY"/>
@@ -326,8 +326,8 @@
                                     <constraint firstItem="uoH-I3-5kE" firstAttribute="width" secondItem="vz3-Gx-3I0" secondAttribute="width" multiplier="0.6" id="dob-Dt-RJL"/>
                                     <constraint firstItem="rDk-Zh-bwC" firstAttribute="top" secondItem="OeO-NH-WHF" secondAttribute="top" id="eK9-t3-5qX"/>
                                     <constraint firstItem="qgM-dv-xgD" firstAttribute="leading" secondItem="OeO-NH-WHF" secondAttribute="leading" id="gKJ-ic-bYw"/>
+                                    <constraint firstAttribute="trailing" secondItem="uoH-I3-5kE" secondAttribute="trailing" constant="16" id="hbM-d8-5sV"/>
                                     <constraint firstItem="PYB-Pv-nRe" firstAttribute="trailing" secondItem="Kow-jn-2P0" secondAttribute="trailing" id="lN2-LP-rvh"/>
-                                    <constraint firstItem="uoH-I3-5kE" firstAttribute="leading" secondItem="vz3-Gx-3I0" secondAttribute="trailing" constant="36" id="ori-Hv-LnT"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">

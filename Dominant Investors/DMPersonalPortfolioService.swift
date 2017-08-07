@@ -61,14 +61,14 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     
     open func addNew() {
         let newStock = DMPersonalPortfolioModel.init(stockSearch: self.selectedTicker!)
-    
+        self.userInterface?.didReloaded()
+        
         self.addNew(personalStock: newStock) { (newPortfolios) in
             self.selectedTicker = nil
             self.ratingUploaded = false
             var newVarPortfolios = newPortfolios
             newVarPortfolios.append(contentsOf: self.portfolios)
             self.portfolios = newVarPortfolios
-            self.userInterface?.didReloaded()
         
             SwiftStockKit.fetchDataForStocks(symbols: self.getStocksList(), completion: { (points) in
                 DispatchQueue.main.async {

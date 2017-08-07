@@ -380,7 +380,9 @@ class SwiftStockKit {
                 if let status = response.response?.statusCode {
                     switch(status){
                     case 201:
-                        print("example success")
+                        print("201 example success")
+                    case 200:
+                        print("200 example success")
                     default:
                         print("error with response status: \(response.error.debugDescription)")
                     }
@@ -418,9 +420,13 @@ class SwiftStockKit {
                         }
                         
                         
+                    } else {
+                        completion([String : ChartPoint]())
+                    }
+                } else {
+                    completion([String : ChartPoint]())
                 }
             }
-        }
         } else {
             completion([String : ChartPoint]())
         }

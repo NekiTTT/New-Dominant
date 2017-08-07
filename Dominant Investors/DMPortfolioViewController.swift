@@ -241,15 +241,19 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     }
     
     @IBAction func addTickerAction(sender : UIButton) {
+        self.view.isUserInteractionEnabled = false
         self.actionType = DMActionType.DMAddNewStockAction
         if (DMPersonalPortfolioService.sharedInstance.selectedTicker == nil) {
             self.showAlertWith(title:   NSLocalizedString("Empty ticker", comment: ""),
                                message: NSLocalizedString("Please type and select new ticker!", comment: ""),
                                cancelButton: false)
+            self.view.isUserInteractionEnabled = true
                                return
         }
-        DMPersonalPortfolioService.sharedInstance.addNew()
+        
         self.showActivityIndicator()
+        DMPersonalPortfolioService.sharedInstance.addNew()
+        
         self.tickerField.text = ""
     }
     
@@ -331,6 +335,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
     
     func didReloaded() {
         DispatchQueue.main.async {
+            self.view.isUserInteractionEnabled = true
             self.dismissActivityIndicator()
             self.refreshControl.endRefreshing()
         }

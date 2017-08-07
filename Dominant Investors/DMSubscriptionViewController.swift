@@ -27,10 +27,11 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if (self.checkPremiumAccounts() == true) {
+        
+        // if (self.checkPremiumAccounts() == true) {
             showSignals()
             return
-        }
+        // }
         
         self.drawBlurView()
         self.backgroundImageView.image = self.DMAuthScreensBackground
