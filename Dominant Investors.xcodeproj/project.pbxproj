@@ -36,7 +36,6 @@
 		4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4592F76E1E59B35E004C85F4 /* Constants.swift */; };
 		45A1078F1E59C24100591170 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A1078E1E59C24100591170 /* FXBlurView.m */; };
 		45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0321E591629000CB062 /* Crashlytics.framework */; };
-		45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */; };
 		45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B7A0301E591525000CB062 /* Fabric.framework */; };
 		45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E77D1E58FE7200D56BDE /* Quickblox.framework */; };
 		45A107A51E59CFED00591170 /* MuseoCyrl100.otf in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7561E58F12800D56BDE /* MuseoCyrl100.otf */; };
@@ -75,8 +74,6 @@
 		45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */; };
 		45B4E78A1E59120B00D56BDE /* DMLaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */; };
 		45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78D1E59126A00D56BDE /* Bolts.framework */; };
-		45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */; };
-		45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */; };
 		45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0261E591433000CB062 /* DMSignalsViewController.swift */; };
 		45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */; };
 		45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */; };
@@ -99,6 +96,9 @@
 		45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */; };
 		45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */; };
 		45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F751E636D1B001BB511 /* Dominant+String.swift */; };
+		BE9EE2691F5D4C9300E80FDA /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9EE2681F5D4C9300E80FDA /* FBSDKShareKit.framework */; };
+		BE9EE26C1F5D4C9A00E80FDA /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9EE26A1F5D4C9A00E80FDA /* FBSDKCoreKit.framework */; };
+		BE9EE26D1F5D4C9A00E80FDA /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE9EE26B1F5D4C9A00E80FDA /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -182,10 +182,7 @@
 		45B4E7831E59106B00D56BDE /* Ratings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Ratings.storyboard; sourceTree = "<group>"; };
 		45B4E7871E5911D900D56BDE /* DMRatingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMRatingsViewController.swift; sourceTree = "<group>"; };
 		45B4E7891E59120B00D56BDE /* DMLaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMLaunchViewController.swift; sourceTree = "<group>"; };
-		45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		45B4E78D1E59126A00D56BDE /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		45B7A0261E591433000CB062 /* DMSignalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignalsViewController.swift; sourceTree = "<group>"; };
 		45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMAnalyticsViewController.swift; sourceTree = "<group>"; };
 		45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +207,9 @@
 		45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioTotalCell.swift; sourceTree = "<group>"; };
 		45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionModel.swift; sourceTree = "<group>"; };
 		45D73F751E636D1B001BB511 /* Dominant+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+String.swift"; sourceTree = "<group>"; };
+		BE9EE2681F5D4C9300E80FDA /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		BE9EE26A1F5D4C9A00E80FDA /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		BE9EE26B1F5D4C9A00E80FDA /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,11 +221,11 @@
 				45A107A01E59C3AD00591170 /* Quickblox.framework in Frameworks */,
 				45A107921E59C3AC00591170 /* Crashlytics.framework in Frameworks */,
 				4518F86A1EF33D4B000D044F /* Alamofire.framework in Frameworks */,
-				45B4E7921E59126A00D56BDE /* FBSDKShareKit.framework in Frameworks */,
 				453CA0B91E5C7B34004A6A5C /* MBProgressHUD.framework in Frameworks */,
-				45B4E7911E59126A00D56BDE /* FBSDKLoginKit.framework in Frameworks */,
+				BE9EE26C1F5D4C9A00E80FDA /* FBSDKCoreKit.framework in Frameworks */,
+				BE9EE2691F5D4C9300E80FDA /* FBSDKShareKit.framework in Frameworks */,
 				4518F86B1EF33DBF000D044F /* Alamofire.framework in Frameworks */,
-				45A1079A1E59C3AC00591170 /* FBSDKCoreKit.framework in Frameworks */,
+				BE9EE26D1F5D4C9A00E80FDA /* FBSDKLoginKit.framework in Frameworks */,
 				45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */,
 				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
 			);
@@ -446,14 +446,14 @@
 		45B4E7471E58EE2B00D56BDE /* Framewroks */ = {
 			isa = PBXGroup;
 			children = (
+				BE9EE26A1F5D4C9A00E80FDA /* FBSDKCoreKit.framework */,
+				BE9EE26B1F5D4C9A00E80FDA /* FBSDKLoginKit.framework */,
+				BE9EE2681F5D4C9300E80FDA /* FBSDKShareKit.framework */,
 				453CA0B81E5C7B34004A6A5C /* MBProgressHUD.framework */,
 				452A43FF1E5A5C5E0058D11C /* AlamofireImage.framework */,
 				45B7A0321E591629000CB062 /* Crashlytics.framework */,
 				45B4E78D1E59126A00D56BDE /* Bolts.framework */,
-				45B4E78E1E59126A00D56BDE /* FBSDKLoginKit.framework */,
-				45B4E78F1E59126A00D56BDE /* FBSDKShareKit.framework */,
 				4518F8691EF33D4B000D044F /* Alamofire.framework */,
-				45B4E78B1E59123400D56BDE /* FBSDKCoreKit.framework */,
 				45B7A0301E591525000CB062 /* Fabric.framework */,
 				45B4E77D1E58FE7200D56BDE /* Quickblox.framework */,
 				45B4E77A1E58FDE700D56BDE /* SwiftStockKit */,
