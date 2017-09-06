@@ -23,9 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        FBSDKAppLinkUtility.fetchDeferredAppLink { (url, error) in
-            
-        }
+//        FBSDKAppLinkUtility.fetchDeferredAppLink { (url, error) in
+//            
+//        }
         
         QBSettings.setLogLevel(.nothing)
         QBSettings.setApplicationID(43580)
