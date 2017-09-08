@@ -2,4 +2,3 @@ github "Alamofire/Alamofire" ~> 4.4
 github "Alamofire/AlamofireImage"
 github "jdg/MBProgressHUD" ~> 1.0.0
 github "jerkoch/SwipeCellKit"
-github “facebook/facebook-ios-sdk”
