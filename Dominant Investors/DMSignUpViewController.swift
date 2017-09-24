@@ -61,23 +61,23 @@ class DMSignUpViewController: DMViewController, UITextFieldDelegate {
     private func configureTextFields() {
         self.loginTextField.attributedPlaceholder =
             NSAttributedString(string:"USERNAME",
-                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+                               attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         
         self.emailTextField.attributedPlaceholder =
             NSAttributedString(string:"E-MAIL",
-                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+                               attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         
         self.passwordTextField.attributedPlaceholder =
             NSAttributedString(string:"PASSWORD",
-                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+                               attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         
         self.confirmPasswordTextField.attributedPlaceholder =
             NSAttributedString(string:"CONFIRM PASSWORD",
-                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+                               attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         
         self.inviteIDTextField.attributedPlaceholder =
             NSAttributedString(string:"INVITE ID",
-                               attributes:[NSForegroundColorAttributeName: UIColor.white])
+                               attributes:[NSAttributedStringKey.foregroundColor: UIColor.white])
         
         self.loginTextField.delegate = self
         self.emailTextField.delegate = self

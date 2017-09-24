@@ -25,7 +25,7 @@ class DMRatingTableViewCell: UITableViewCell {
         self.overallLabel.text  = String(format : "%.2f", model.totalValue).appending("%")
         
         if (model.userID == DMAuthorizationManager.sharedInstance.userProfile.userID) {
-            self.backgroundColor = UIColor(colorLiteralRed: 0, green: 255, blue: 0, alpha: 0.25)
+            self.backgroundColor = UIColor(red: 0, green: 255, blue: 0, alpha: 0.25)
         } else {
             self.backgroundColor = UIColor.clear
         }

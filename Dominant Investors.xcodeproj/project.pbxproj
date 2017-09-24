@@ -13,7 +13,6 @@
 		45121B831E5CB05E00D83C4E /* DMDropDownTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45121B811E5CB05E00D83C4E /* DMDropDownTableViewCell.xib */; };
 		45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45121B841E5CB1B200D83C4E /* DMDropdownListDelegate.swift */; };
 		4518F86A1EF33D4B000D044F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; };
-		4518F86B1EF33DBF000D044F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; };
 		4518F86C1EF33DBF000D044F /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4518F8691EF33D4B000D044F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A43F81E5A4DCD0058D11C /* ChartView.swift */; };
 		452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452A43F91E5A4DCD0058D11C /* ChartView.xib */; };
@@ -230,7 +229,6 @@
 				BE53AF2D1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework in Frameworks */,
 				BE9EE26C1F5D4C9A00E80FDA /* FBSDKCoreKit.framework in Frameworks */,
 				BE9EE2691F5D4C9300E80FDA /* FBSDKShareKit.framework in Frameworks */,
-				4518F86B1EF33DBF000D044F /* Alamofire.framework in Frameworks */,
 				BE9EE26D1F5D4C9A00E80FDA /* FBSDKLoginKit.framework in Frameworks */,
 				45A1079E1E59C3AC00591170 /* Fabric.framework in Frameworks */,
 				45B4E7901E59126A00D56BDE /* Bolts.framework in Frameworks */,
@@ -610,13 +608,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Dominant;
 				TargetAttributes = {
 					45B4E72B1E58ED5C00D56BDE = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 45F26FVHGB;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -787,7 +785,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -795,7 +795,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -837,7 +841,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -845,7 +851,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -895,7 +905,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -921,7 +932,8 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Dominant Investors/Dominant Investors-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

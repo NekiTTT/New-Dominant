@@ -32,7 +32,7 @@
 @property (nonatomic, strong) UIColor *tintColor;
 @property (nonatomic, weak) IBOutlet UIView *underlyingView;
 
-- (void)updateAsynchronously:(BOOL)async completion:(void (^)())completion;
+- (void)updateAsynchronously:(BOOL)async completion:(void (^)(void))completion;
 
 - (void)clearImage;
 

@@ -23,12 +23,12 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb127831294528768</string>
+				<string>fb1888416157840360</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>2</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -53,7 +53,7 @@
 		</array>
 	</dict>
 	<key>FacebookAppID</key>
-	<string>127831294528768</string>
+	<string>1888416157840360</string>
 	<key>FacebookDisplayName</key>
 	<string>Dominant App</string>
 	<key>LSRequiresIPhoneOS</key>

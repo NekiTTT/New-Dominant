@@ -259,6 +259,23 @@ class DMQuickBloxService: NSObject {
     }
     
     
+    open func getUsersList() {
+        QBRequest.users(for: QBGeneralResponsePage.init(currentPage: 10, perPage: 100), successBlock: { (response, page, users) in
+            
+            var dict : [String] = [""]
+            for user in users! {
+                if let userMail = user.email {
+                   dict.append(userMail)
+                }
+            }
+            print("")
+            
+        }) { (error) in
+            
+        }
+    }
+    
+    
     // MARK: Private
     
     private func updateSubscription(subscription : DMSubscriptionModel, completion : @escaping (Bool) -> Void) {
@@ -328,4 +345,5 @@ class DMQuickBloxService: NSObject {
         let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id" : NSNumber.init(value: DMAuthorizationManager.sharedInstance.userID)])
         return personalLimit
     }
+    
 }

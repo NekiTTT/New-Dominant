@@ -59,7 +59,7 @@ class DMStockDetailViewController: DMViewController, UICollectionViewDelegateFlo
         collectionView.register(UINib(nibName: "DMStockInfoCell", bundle: Bundle.main), forCellWithReuseIdentifier: "DMStockInfoCell")
         collectionView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
 
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
  
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
