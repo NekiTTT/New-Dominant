@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="L3o-vy-kWj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -776,6 +777,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VtM-o1-5II" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1857" y="1420"/>
+        </scene>
+        <!--Trading View Chart View Controller-->
+        <scene sceneID="ZmC-LY-7mF">
+            <objects>
+                <viewController storyboardIdentifier="DMTradingViewChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8rb-u3-WK8" customClass="DMTradingViewChartViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ij9-8D-Job"/>
+                        <viewControllerLayoutGuide type="bottom" id="o8U-Aq-WFT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nE3-p0-DgF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRI-53-6Qj">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lRI-53-6Qj" firstAttribute="leading" secondItem="nE3-p0-DgF" secondAttribute="leading" id="6JU-3s-CdV"/>
+                            <constraint firstItem="o8U-Aq-WFT" firstAttribute="top" secondItem="lRI-53-6Qj" secondAttribute="bottom" id="UJ3-ZB-0SQ"/>
+                            <constraint firstAttribute="trailing" secondItem="lRI-53-6Qj" secondAttribute="trailing" id="XxV-aZ-hpf"/>
+                            <constraint firstItem="lRI-53-6Qj" firstAttribute="top" secondItem="ij9-8D-Job" secondAttribute="bottom" id="rud-Ce-6Lm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="lRI-53-6Qj" id="Ybk-xP-Llm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhR-OX-irp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2671" y="1086"/>
         </scene>
     </scenes>
     <resources>

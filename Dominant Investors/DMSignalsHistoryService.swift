@@ -113,15 +113,15 @@ class DMSignalsHistoryService: NSObject, UITableViewDataSource, UITableViewDeleg
     }
     
     private func moreAboutStock(stock : DMSignalHistoryModel) {
-        let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMStockDetailViewController") as! DMStockDetailViewController
-        
-        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
-            DispatchQueue.main.async {
-                controller.stockSymbol = stock.symbol!
-                controller.stock = stock
-                self.userInterface?.showStockDetail(controller: controller)
-            }
-        }
+//        let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMStockDetailViewController") as! DMStockDetailViewController
+//        
+//        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
+//            DispatchQueue.main.async {
+//                controller.stockSymbol = stock.symbol!
+//                controller.stock = stock
+//                self.userInterface?.showStockDetail(controller: controller)
+//            }
+//        }
     }
     
 }
