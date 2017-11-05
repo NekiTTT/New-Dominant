@@ -95,6 +95,8 @@
 		45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */; };
 		45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */; };
 		45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F751E636D1B001BB511 /* Dominant+String.swift */; };
+		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
+		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
 		BE53AF2C1F5E7D2A002B485F /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53AF291F5E7D2A002B485F /* FBAudienceNetwork.framework */; };
 		BE53AF2D1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53AF2A1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework */; };
@@ -209,6 +211,8 @@
 		45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioTotalCell.swift; sourceTree = "<group>"; };
 		45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionModel.swift; sourceTree = "<group>"; };
 		45D73F751E636D1B001BB511 /* Dominant+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+String.swift"; sourceTree = "<group>"; };
+		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
+		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
 		BE53AF291F5E7D2A002B485F /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		BE53AF2A1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
@@ -387,6 +391,7 @@
 				45B4E7631E58F9FE00D56BDE /* Signals */,
 				45B4E7621E58F9EE00D56BDE /* Dominant stock */,
 				45B4E7611E58F9E600D56BDE /* Portfolio */,
+				968D5D121FA713CF007970CE /* Screener */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -425,6 +430,7 @@
 				45B4E76C1E58FC0400D56BDE /* Launch.storyboard */,
 				45B4E7661E58FBB100D56BDE /* Authorization.storyboard */,
 				45B4E7681E58FBC900D56BDE /* TabBar.storyboard */,
+				968D5D101FA711A5007970CE /* Screener.storyboard */,
 				45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */,
 				45B4E7831E59106B00D56BDE /* Ratings.storyboard */,
 				45B4E76E1E58FC1100D56BDE /* Signals.storyboard */,
@@ -581,6 +587,14 @@
 			name = DMPortfolioTotalCell;
 			sourceTree = "<group>";
 		};
+		968D5D121FA713CF007970CE /* Screener */ = {
+			isa = PBXGroup;
+			children = (
+				968D5D131FA71400007970CE /* DMScreenerViewController.swift */,
+			);
+			name = Screener;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -659,6 +673,7 @@
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
 				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
 				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
+				968D5D111FA711A5007970CE /* Screener.storyboard in Resources */,
 				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
 				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
@@ -733,6 +748,7 @@
 				45121B821E5CB05E00D83C4E /* DMDropDownTableViewCell.swift in Sources */,
 				45B4E74E1E58EECE00D56BDE /* DMAuthorizationManager.swift in Sources */,
 				45C7D6E21E5E4CF90089E8C7 /* DMStockCellDelegate.swift in Sources */,
+				968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */,
 				45B7A0271E591433000CB062 /* DMSignalsViewController.swift in Sources */,
 				45C7D6E41E5E50CA0089E8C7 /* DMCalculationService.swift in Sources */,
 				456F07AC1EDDB6AA00DABE35 /* Dominant+UIImageView.swift in Sources */,

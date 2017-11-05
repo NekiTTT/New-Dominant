@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbj-3T-zl5">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="sbj-3T-zl5">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -119,6 +120,12 @@
                                     <segue destination="XTM-3H-17J" kind="embed" identifier="analytics" id="WJi-4C-tD5"/>
                                 </connections>
                             </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-h3-d54">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="671"/>
+                                <connections>
+                                    <segue destination="ztG-Uh-rjV" kind="embed" identifier="screener" id="tLG-fA-Jad"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -134,8 +141,12 @@
                             <constraint firstAttribute="trailing" secondItem="dsg-Zw-5fK" secondAttribute="trailing" id="Qwa-a8-hRg"/>
                             <constraint firstItem="nYN-9a-uCM" firstAttribute="top" secondItem="pze-un-ylM" secondAttribute="bottom" id="Uf8-m6-u05"/>
                             <constraint firstItem="4c8-WD-NlR" firstAttribute="top" secondItem="xye-Pg-H6G" secondAttribute="top" id="VL8-yM-HTi"/>
+                            <constraint firstItem="ZUR-h3-d54" firstAttribute="bottom" secondItem="dsg-Zw-5fK" secondAttribute="bottom" id="agh-bf-2WP"/>
                             <constraint firstItem="4c8-WD-NlR" firstAttribute="bottom" secondItem="xye-Pg-H6G" secondAttribute="bottom" id="b6x-1z-3Ec"/>
+                            <constraint firstItem="ZUR-h3-d54" firstAttribute="top" secondItem="dsg-Zw-5fK" secondAttribute="top" id="hzY-bK-Scj"/>
+                            <constraint firstItem="ZUR-h3-d54" firstAttribute="leading" secondItem="dsg-Zw-5fK" secondAttribute="leading" id="nv8-10-WsK"/>
                             <constraint firstItem="4c8-WD-NlR" firstAttribute="trailing" secondItem="xye-Pg-H6G" secondAttribute="trailing" id="o5h-hZ-pB5"/>
+                            <constraint firstItem="ZUR-h3-d54" firstAttribute="trailing" secondItem="dsg-Zw-5fK" secondAttribute="trailing" id="uxf-XW-Ssx"/>
                             <constraint firstItem="pze-un-ylM" firstAttribute="leading" secondItem="INn-bc-tIT" secondAttribute="leading" id="yV4-KZ-Y1k"/>
                             <constraint firstItem="dsg-Zw-5fK" firstAttribute="top" secondItem="INn-bc-tIT" secondAttribute="top" id="yVw-fn-9Qe"/>
                             <constraint firstItem="xye-Pg-H6G" firstAttribute="leading" secondItem="dsg-Zw-5fK" secondAttribute="leading" id="yzo-19-kSR"/>
@@ -146,6 +157,7 @@
                         <outlet property="analyticsContainer" destination="dsg-Zw-5fK" id="T4f-W8-JUm"/>
                         <outlet property="portfolioContainer" destination="xye-Pg-H6G" id="aB8-S3-hx0"/>
                         <outlet property="ratingsContainer" destination="4c8-WD-NlR" id="wuV-0e-eo8"/>
+                        <outlet property="screenerContainer" destination="ZUR-h3-d54" id="QrR-64-NCC"/>
                         <outlet property="stackView" destination="WLL-Sz-oZD" id="3pJ-KH-hdS"/>
                     </connections>
                 </viewController>
@@ -176,6 +188,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MP0-p0-6iV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2626" y="-46"/>
+        </scene>
+        <!--Screener-->
+        <scene sceneID="c3y-Yj-lwc">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Screener" id="ztG-Uh-rjV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8d-aX-QJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2625" y="30"/>
         </scene>
     </scenes>
 </document>

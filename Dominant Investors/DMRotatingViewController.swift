@@ -15,8 +15,8 @@ class DMRotatingViewController: DMViewController {
     var containers      : [UIView]!
     var loaded          = false
     
-    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas")]
-    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active")]
+    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas"), UIImage(named: "ideas")]
+    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active"), UIImage(named: "ideas_active")]
     
     override var shouldAutorotate: Bool {
         return true
@@ -27,6 +27,7 @@ class DMRotatingViewController: DMViewController {
     @IBOutlet weak var analyticsContainer : UIView!
     @IBOutlet weak var portfolioContainer : UIView!
     @IBOutlet weak var ratingsContainer   : UIView!
+    @IBOutlet weak var screenerContainer  : UIView!
     
     @IBOutlet weak var stackView          : UIStackView!
     
@@ -61,6 +62,9 @@ class DMRotatingViewController: DMViewController {
         case "ratings":
             self.viewControllers.append(segue.destination as! DMViewController)
             break;
+        case "screener":
+            self.viewControllers.append(segue.destination as! DMViewController)
+            break;
         default:
             
             break;
@@ -82,7 +86,7 @@ class DMRotatingViewController: DMViewController {
     }
     
     private func setupContainers() {
-        self.containers = [self.analyticsContainer, self.portfolioContainer, self.ratingsContainer]
+        self.containers = [self.analyticsContainer, self.portfolioContainer, self.ratingsContainer, self.screenerContainer]
     }
     
     private func setupNotificationCenterObserving() {
@@ -90,15 +94,17 @@ class DMRotatingViewController: DMViewController {
     }
     
     private func setupControllers() {
-        
-        var actualCont = [DMViewController(), DMViewController(), DMViewController()]
+        //#WARNING : кОСТЫЛИУС!!!
+        var actualCont = [DMViewController(),DMViewController(),DMViewController(),DMViewController()]
         for cont in self.viewControllers {
             if cont is DMAnalyticsViewController {
                 actualCont[0] = cont
             } else if cont is DMPortfolioViewController {
                 actualCont[1] = cont
-            } else {
+            } else if cont is DMRatingsViewController {
                 actualCont[2] = cont
+            } else {
+                actualCont[3] = cont
             }
         }
         
