@@ -123,15 +123,15 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     private func moreAboutStock(stock : DMPersonalPortfolioModel) {
-        let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as! DMTradingViewChartViewController
-        self.userInterface?.showStockDetail(controller: controller)
-//        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
-//            DispatchQueue.main.async {
-//                controller.stockSymbol = stock.symbol!
-//                controller.stock = stock
-//                self.userInterface?.showStockDetail(controller: controller)
-//            }
-//        }
+    let controller = UIStoryboard(name: "Portfolio", bundle: nil).instantiateViewController(withIdentifier: "DMStockDetailViewController") as! DMStockDetailViewController
+//        self.userInterface?.showStockDetail(controller: controller)
+        SwiftStockKit.fetchStockForSymbol(symbol: stock.ticker!) { (stock) -> () in
+            DispatchQueue.main.async {
+                controller.stockSymbol = stock.symbol!
+                controller.stock = stock
+                self.userInterface?.showStockDetail(controller: controller)
+            }
+        }
     }
     
     private func deletePersonalStock(stock : DMPersonalPortfolioModel) {

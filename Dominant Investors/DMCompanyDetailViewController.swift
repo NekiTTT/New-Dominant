@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
+class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebViewDelegate {
 
     var company   : DMCompanyModel!
     var chartView : ChartView? = nil
@@ -31,6 +31,10 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadChart()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -112,24 +116,31 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate {
         chartView?.delegate = self
         chartView?.frame = CGRect(x: 24, y: 0, width: self.chartContainer.frame.width-48, height: self.chartContainer.frame.height)
         chartContainer?.addSubview(chartView!)
-        
+
         chart = SwiftStockChart(frame: CGRect(x : 16, y :  10, width : self.chartContainer.bounds.size.width - 60, height : chartContainer.frame.height - 80))
-        
+
         chartView?.backgroundColor = UIColor.clear
-        
+
         chart.axisColor = UIColor.red
         chart.verticalGridStep = 3
-        
+
         loadChartWithRange(range: .OneDay)
-        
+
         chartView?.addSubview(chart)
         chartView?.backgroundColor = UIColor.black
-        
-    
+
+
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
-
+        
+//        self.chartWebView.delegate = self
+//        self.showActivityIndicator()
+//
+//        let HTMLString = String(format : "<!-- TradingView Widget BEGIN --> <script type=\"text/javascript\" src=\"https://s3.tradingview.com/tv.js\"></script> <script type=\"text/javascript\"> new TradingView.widget({ \"autosize\": true, \"symbol\": \"NASDAQ:AAPL\", \"interval\": \"D\", \"timezone\": \"Etc/UTC\", \"theme\": \"Dark\", \"style\": \"1\", \"locale\": \"ru\", \"toolbar_bg\": \"rgba(0, 0, 0, 1)\", \"enable_publishing\": false, \"hide_top_toolbar\": true, \"save_image\": false, \"hideideas\": true }); </script> <!-- TradingView Widget END -->")
+//
+//        self.chartWebView.loadHTMLString(HTMLString, baseURL: nil)
     }
+    
     
     // MARK: ChartViewDelegate
     

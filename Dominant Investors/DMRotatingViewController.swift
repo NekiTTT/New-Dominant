@@ -71,7 +71,10 @@ class DMRotatingViewController: DMViewController {
         }
     }
     
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: Private
     private func setupTabButtons() {
         for index in 0...self.viewControllers.count - 1 {

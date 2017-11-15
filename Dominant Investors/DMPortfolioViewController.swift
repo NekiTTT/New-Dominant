@@ -341,7 +341,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         }
     }
     
-    func showStockDetail(controller : DMTradingViewChartViewController) {
+    func showStockDetail(controller : DMStockDetailViewController) {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem

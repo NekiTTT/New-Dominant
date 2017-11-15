@@ -10,6 +10,6 @@ import UIKit
 
 protocol DMPortfolioUserInterface {
     func reloadData()
-    func showStockDetail(controller : DMTradingViewChartViewController)
+    func showStockDetail(controller : DMStockDetailViewController)
     func didReloaded()
 }

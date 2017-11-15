@@ -95,6 +95,8 @@
 		45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */; };
 		45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */; };
 		45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F751E636D1B001BB511 /* Dominant+String.swift */; };
+		961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */; };
+		961074421FBA46A80022A8BB /* DMEstimizeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
@@ -211,6 +213,8 @@
 		45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPortfolioTotalCell.swift; sourceTree = "<group>"; };
 		45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionModel.swift; sourceTree = "<group>"; };
 		45D73F751E636D1B001BB511 /* Dominant+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+String.swift"; sourceTree = "<group>"; };
+		9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewGraphViewController.swift; sourceTree = "<group>"; };
+		961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimizeChartViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
@@ -520,6 +524,8 @@
 			children = (
 				45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */,
 				45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */,
+				9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */,
+				961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */,
 			);
 			name = "Dominant stock";
 			sourceTree = "<group>";
@@ -731,6 +737,7 @@
 				45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */,
 				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
+				961074421FBA46A80022A8BB /* DMEstimizeChartViewController.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
 				45D0704B1E5E276300B6CAC5 /* DMDateService.swift in Sources */,
@@ -767,6 +774,7 @@
 				4581D6C41E624192005F2173 /* Dominant+UIView.swift in Sources */,
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
 				45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */,
+				961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */,
 				454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */,
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
