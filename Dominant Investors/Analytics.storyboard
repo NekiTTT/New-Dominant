@@ -225,11 +225,14 @@ IPO Date 08-14-1010</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="95q-nM-1pg"/>
                                                         <exclude reference="7bS-pN-sM9"/>
+                                                        <exclude reference="95q-nM-1pg"/>
                                                         <exclude reference="pdq-92-ief"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="estimazeButtonPressedWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="IR1-Ze-ZPm"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signal information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujq-cS-ETx">
                                                 <rect key="frame" x="16" y="416" width="288" height="25.5"/>
@@ -280,11 +283,14 @@ IPO Date 08-14-1010</string>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="u4b-UO-zlp"/>
-                                                        <exclude reference="gl8-b9-gTr"/>
                                                         <exclude reference="TBB-wL-ekp"/>
+                                                        <exclude reference="gl8-b9-gTr"/>
+                                                        <exclude reference="u4b-UO-zlp"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="tradingViewChartButtonPressedWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="5Gv-Zf-76t"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>

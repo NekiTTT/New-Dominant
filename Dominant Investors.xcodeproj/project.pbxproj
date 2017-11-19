@@ -96,7 +96,9 @@
 		45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */; };
 		45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D73F751E636D1B001BB511 /* Dominant+String.swift */; };
 		961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */; };
-		961074421FBA46A80022A8BB /* DMEstimizeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */; };
+		965DCF2E1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */; };
+		965DCF301FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */; };
+		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
@@ -200,7 +202,7 @@
 		45B7A0381E5916B0000CB062 /* DMSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSignUpViewController.swift; sourceTree = "<group>"; };
 		45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDropdownViewController.swift; sourceTree = "<group>"; };
 		45B7A03C1E59180F000CB062 /* DMSubscriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionViewController.swift; sourceTree = "<group>"; };
-		45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyDetailViewController.swift; sourceTree = "<group>"; };
+		45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCompanyDetailViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		45C7D6E11E5E4CF90089E8C7 /* DMStockCellDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMStockCellDelegate.swift; sourceTree = "<group>"; };
 		45C7D6E31E5E50CA0089E8C7 /* DMCalculationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMCalculationService.swift; sourceTree = "<group>"; };
 		45C7D6E61E5E516A0089E8C7 /* Dominant+Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+Double.swift"; sourceTree = "<group>"; };
@@ -214,7 +216,9 @@
 		45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMSubscriptionModel.swift; sourceTree = "<group>"; };
 		45D73F751E636D1B001BB511 /* Dominant+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dominant+String.swift"; sourceTree = "<group>"; };
 		9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewGraphViewController.swift; sourceTree = "<group>"; };
-		961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimizeChartViewController.swift; sourceTree = "<group>"; };
+		965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+UINavigationController.swift"; sourceTree = "<group>"; };
+		965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimazeChartViewController.swift; sourceTree = "<group>"; };
+		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
@@ -387,13 +391,14 @@
 			isa = PBXGroup;
 			children = (
 				45B4E75D1E58F9C200D56BDE /* DMViewController.swift */,
+				965DCF331FC1AEF7003E74C1 /* Charts */,
 				45B4E7601E58F9DD00D56BDE /* Launch Screen */,
 				45B4E75F1E58F9C800D56BDE /* Tab Bar */,
 				45B7A0351E59168A000CB062 /* Login */,
 				45B7A0341E591683000CB062 /* Sign Up */,
 				45B4E7861E59107900D56BDE /* Ratings */,
 				45B4E7631E58F9FE00D56BDE /* Signals */,
-				45B4E7621E58F9EE00D56BDE /* Dominant stock */,
+				45B4E7621E58F9EE00D56BDE /* Analytics */,
 				45B4E7611E58F9E600D56BDE /* Portfolio */,
 				968D5D121FA713CF007970CE /* Screener */,
 			);
@@ -439,6 +444,7 @@
 				45B4E7831E59106B00D56BDE /* Ratings.storyboard */,
 				45B4E76E1E58FC1100D56BDE /* Signals.storyboard */,
 				45B4E7701E58FCB000D56BDE /* Analytics.storyboard */,
+				965DCF311FC1AE71003E74C1 /* Сharts.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -514,20 +520,18 @@
 				45B7A02A1E591458000CB062 /* DMPortfolioViewController.swift */,
 				45B7A03A1E5917B9000CB062 /* DMDropdownViewController.swift */,
 				454E086D1E601BE0004767E9 /* DMStockDetailViewController.swift */,
-				96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */,
 			);
 			name = Portfolio;
 			sourceTree = "<group>";
 		};
-		45B4E7621E58F9EE00D56BDE /* Dominant stock */ = {
+		45B4E7621E58F9EE00D56BDE /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
 				45B7A0281E591445000CB062 /* DMAnalyticsViewController.swift */,
 				45B7A03E1E591864000CB062 /* DMCompanyDetailViewController.swift */,
 				9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */,
-				961074411FBA46A80022A8BB /* DMEstimizeChartViewController.swift */,
 			);
-			name = "Dominant stock";
+			name = Analytics;
 			sourceTree = "<group>";
 		};
 		45B4E7631E58F9FE00D56BDE /* Signals */ = {
@@ -580,6 +584,7 @@
 				4581D6C51E631A31005F2173 /* Dominant+Array.swift */,
 				45D73F751E636D1B001BB511 /* Dominant+String.swift */,
 				456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */,
+				965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -591,6 +596,15 @@
 				45D0704E1E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift */,
 			);
 			name = DMPortfolioTotalCell;
+			sourceTree = "<group>";
+		};
+		965DCF331FC1AEF7003E74C1 /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */,
+				96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */,
+			);
+			name = Charts;
 			sourceTree = "<group>";
 		};
 		968D5D121FA713CF007970CE /* Screener */ = {
@@ -684,6 +698,7 @@
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
 				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
 				45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */,
+				965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */,
 				452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */,
 				45B4E7841E59106B00D56BDE /* Ratings.storyboard in Resources */,
 				45B4E7671E58FBB100D56BDE /* Authorization.storyboard in Resources */,
@@ -737,8 +752,8 @@
 				45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */,
 				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
 				45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */,
-				961074421FBA46A80022A8BB /* DMEstimizeChartViewController.swift in Sources */,
 				45B7A02D1E59146F000CB062 /* DMTabBarViewController.swift in Sources */,
+				965DCF2E1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift in Sources */,
 				45B4E75E1E58F9C200D56BDE /* DMViewController.swift in Sources */,
 				45D0704B1E5E276300B6CAC5 /* DMDateService.swift in Sources */,
 				4592F76F1E59B35E004C85F4 /* Constants.swift in Sources */,
@@ -769,6 +784,7 @@
 				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
 				45121B851E5CB1B200D83C4E /* DMDropdownListDelegate.swift in Sources */,
 				45B4E77C1E58FE0500D56BDE /* SwiftStockKit.swift in Sources */,
+				965DCF301FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift in Sources */,
 				45D070501E5E45A500B6CAC5 /* DMPortfolioTotalCell.swift in Sources */,
 				45B7A03D1E59180F000CB062 /* DMSubscriptionViewController.swift in Sources */,
 				4581D6C41E624192005F2173 /* Dominant+UIView.swift in Sources */,

@@ -163,46 +163,46 @@ class SwiftStockKit {
                 
                 if let resultJSON = response.result.value as? [String : AnyObject]  {
                     
-                    if let stockData = ((resultJSON["query"] as! [String : AnyObject])["results"] as! [String : AnyObject])["quote"] as? [String : AnyObject] {
-                        
+                    if let stockDataArray = resultJSON["results"] as? [[String : AnyObject]] {
+                        let stockData = stockDataArray.first!
                         // lengthy creation, yeah
                         var dataFields = [[String : String]]()
                         
-                        dataFields.append(["Ask" : stockData["Ask"] as? String ?? "N/A"])
-                        dataFields.append(["Average Daily Volume" : stockData["AverageDailyVolume"] as? String ?? "N/A"])
-                        dataFields.append(["Bid" : stockData["Bid"] as? String ?? "N/A"])
-                        dataFields.append(["Book Value" : stockData["BookValue"] as? String ?? "N/A"])
-                        dataFields.append(["Change" : stockData["Change"] as? String ?? "N/A"])
-                        dataFields.append(["Percent Change" : stockData["ChangeinPercent"] as? String ?? "N/A"])
-                        dataFields.append(["Day High" : stockData["DaysHigh"] as? String ?? "N/A"])
-                        dataFields.append(["Day Low" : stockData["DaysLow"] as? String ?? "N/A"])
-                        dataFields.append(["Div/Share" : stockData["DividendShare"] as? String ?? "N/A"])
-                        dataFields.append(["Div Yield" : stockData["DividendYield"] as? String ?? "N/A"])
+                        dataFields.append(["Ask" : stockData["ask"] as? String ?? "N/A"])
+                        dataFields.append(["Average Daily Volume" : stockData["averageDailyVolume"] as? String ?? "N/A"])
+                        dataFields.append(["Bid" : stockData["bid"] as? String ?? "N/A"])
+                        dataFields.append(["Book Value" : stockData["bookValue"] as? String ?? "N/A"])
+                        dataFields.append(["Change" : stockData["vhange"] as? String ?? "N/A"])
+                        dataFields.append(["Percent Change" : stockData["vhangeinPercent"] as? String ?? "N/A"])
+                        dataFields.append(["Day High" : stockData["daysHigh"] as? String ?? "N/A"])
+                        dataFields.append(["Day Low" : stockData["daysLow"] as? String ?? "N/A"])
+                        dataFields.append(["Div/Share" : stockData["dividendShare"] as? String ?? "N/A"])
+                        dataFields.append(["Div Yield" : stockData["dividendYield"] as? String ?? "N/A"])
                         dataFields.append(["EBITDA" : stockData["EBITDA"] as? String ?? "N/A"])
                         dataFields.append(["Current Yr EPS Estimate" : stockData["EPSEstimateCurrentYear"] as? String ?? "N/A"])
                         dataFields.append(["Next Qtr EPS Estimate" : stockData["EPSEstimateNextQuarter"] as? String ?? "N/A"])
                         dataFields.append(["Next Yr EPS Estimate" : stockData["EPSEstimateNextYear"] as? String ?? "N/A"])
-                        dataFields.append(["Earnings/Share" : stockData["EarningsShare"] as? String ?? "N/A"])
-                        dataFields.append(["50D MA" : stockData["FiftydayMovingAverage"] as? String ?? "N/A"])
-                        dataFields.append(["Last Trade Date" : stockData["LastTradeDate"] as? String ?? "N/A"])
-                        dataFields.append(["Last" : stockData["LastTradePriceOnly"] as? String ?? "N/A"])
-                        dataFields.append(["Last Trade Time" : stockData["LastTradeTime"] as? String ?? "N/A"])
-                        dataFields.append(["Market Cap" : stockData["MarketCapitalization"] as? String ?? "N/A"])
-                        dataFields.append(["Company" : stockData["Name"] as? String ?? "N/A"])
-                        dataFields.append(["One Yr Target" : stockData["OneyrTargetPrice"] as? String ?? "N/A"])
-                        dataFields.append(["Open" : stockData["Open"] as? String ?? "N/A"])
+                        dataFields.append(["Earnings/Share" : stockData["earningsShare"] as? String ?? "N/A"])
+                        dataFields.append(["50D MA" : stockData["fiftydayMovingAverage"] as? String ?? "N/A"])
+                        dataFields.append(["Last Trade Date" : stockData["lastTradeDate"] as? String ?? "N/A"])
+                        dataFields.append(["Last" : stockData["lastTradePriceOnly"] as? String ?? "N/A"])
+                        dataFields.append(["Last Trade Time" : stockData["lastTradeTime"] as? String ?? "N/A"])
+                        dataFields.append(["Market Cap" : stockData["marketCapitalization"] as? String ?? "N/A"])
+                        dataFields.append(["Company" : stockData["name"] as? String ?? "N/A"])
+                        dataFields.append(["One Yr Target" : stockData["oneyrTargetPrice"] as? String ?? "N/A"])
+                        dataFields.append(["Open" : stockData["open"] as? String ?? "N/A"])
                         dataFields.append(["PEG Ratio" : stockData["PEGRatio"] as? String ?? "N/A"])
                         dataFields.append(["PE Ratio" : stockData["PERatio"] as? String ?? "N/A"])
-                        dataFields.append(["Previous Close" : stockData["PreviousClose"] as? String ?? "N/A"])
-                        dataFields.append(["Price-Book" : stockData["PriceBook"] as? String ?? "N/A"])
-                        dataFields.append(["Price-Sales" : stockData["PriceSales"] as? String ?? "N/A"])
-                        dataFields.append(["Short Ratio" : stockData["ShortRatio"] as? String ?? "N/A"])
-                        dataFields.append(["Stock Exchange" : stockData["StockExchange"] as? String ?? "N/A"])
-                        dataFields.append(["Symbol" : stockData["Symbol"] as? String ?? "N/A"])
-                        dataFields.append(["200D MA" : stockData["TwoHundreddayMovingAverage"] as? String ?? "N/A"])
-                        dataFields.append(["Volume" : stockData["Volume"] as? String ?? "N/A"])
-                        dataFields.append(["52w High" : stockData["YearHigh"] as? String ?? "N/A"])
-                        dataFields.append(["52w Low" : stockData["YearLow"] as? String ?? "N/A"])
+                        dataFields.append(["Previous Close" : stockData["previousClose"] as? String ?? "N/A"])
+                        dataFields.append(["Price-Book" : stockData["priceBook"] as? String ?? "N/A"])
+                        dataFields.append(["Price-Sales" : stockData["priceSales"] as? String ?? "N/A"])
+                        dataFields.append(["Short Ratio" : stockData["shortRatio"] as? String ?? "N/A"])
+                        dataFields.append(["Stock Exchange" : stockData["stockExchange"] as? String ?? "N/A"])
+                        dataFields.append(["Symbol" : stockData["symbol"] as? String ?? "N/A"])
+                        dataFields.append(["200D MA" : stockData["twoHundreddayMovingAverage"] as? String ?? "N/A"])
+                        dataFields.append(["Volume" : stockData["volume"] as? String ?? "N/A"])
+                        dataFields.append(["52w High" : stockData["yearHigh"] as? String ?? "N/A"])
+                        dataFields.append(["52w Low" : stockData["yearLow"] as? String ?? "N/A"])
                         
                         let stock = Stock(
                             ask: dataFields[0].values.first,
@@ -428,6 +428,8 @@ class SwiftStockKit {
         
         return url
     }
+    
+  
 
     
 }

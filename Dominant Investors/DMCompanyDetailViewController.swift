@@ -33,6 +33,11 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         loadChart()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -107,6 +112,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         annualSales_atributed.append(potential_string_atributed)
         
         infoTextLabel.attributedText = annualSales_atributed
+
     }
     
     
@@ -132,13 +138,6 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
 
         self.view.setNeedsLayout()
         self.view.layoutIfNeeded()
-        
-//        self.chartWebView.delegate = self
-//        self.showActivityIndicator()
-//
-//        let HTMLString = String(format : "<!-- TradingView Widget BEGIN --> <script type=\"text/javascript\" src=\"https://s3.tradingview.com/tv.js\"></script> <script type=\"text/javascript\"> new TradingView.widget({ \"autosize\": true, \"symbol\": \"NASDAQ:AAPL\", \"interval\": \"D\", \"timezone\": \"Etc/UTC\", \"theme\": \"Dark\", \"style\": \"1\", \"locale\": \"ru\", \"toolbar_bg\": \"rgba(0, 0, 0, 1)\", \"enable_publishing\": false, \"hide_top_toolbar\": true, \"save_image\": false, \"hideideas\": true }); </script> <!-- TradingView Widget END -->")
-//
-//        self.chartWebView.loadHTMLString(HTMLString, baseURL: nil)
     }
     
     
@@ -179,4 +178,39 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         _ = self.navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func estimazeButtonPressed(sender : UIButton) {
+        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
+            chartVC.ticker = self.company.ticker
+            self.showChart(chart: chartVC)
+        }
+    }
+    
+    @IBAction func tradingViewChartButtonPressed(sender : UIButton) {
+        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
+            chartVC.ticker = self.company.ticker
+            self.showChart(chart: chartVC)
+        }
+    }
+    
+    fileprivate func showChart(chart : UIViewController) {
+        
+        self.navigationController?.pushViewController(chart, animated: true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        let backItem = UIBarButtonItem()
+            backItem.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.white
+        ]
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 16/255, green: 18/255, blue: 26/255, alpha: 1)
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
+    }
+
 }
+
+
+
+
