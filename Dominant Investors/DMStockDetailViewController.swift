@@ -117,26 +117,22 @@ class DMStockDetailViewController: DMViewController, UICollectionViewDelegateFlo
     // MARK: UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return  stock != nil ? 18 : 0
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return section == 17 ? 1 : 2
+        return self.stock!.dataFields.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DMStockInfoCell", for: indexPath as IndexPath) as! DMStockInfoCell
-        cell.setData(data: stock!.dataFields[(indexPath.section * 2) + indexPath.row])
-        
+        cell.setData(data: stock!.dataFields[indexPath.row])
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.size.width/2), height: 44)
+            return CGSize(width: (UIScreen.main.bounds.size.width/2), height: 44)
     }
     
-
 }

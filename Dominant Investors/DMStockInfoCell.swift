@@ -14,9 +14,8 @@ class DMStockInfoCell: UICollectionViewCell {
     @IBOutlet weak var fieldValueLbl: UILabel!
     
     func setData(data: [String : String]) {
-        fieldNameLbl.text = data.keys.first
-        fieldValueLbl.text = data.values.first
-
+            fieldNameLbl.text = data.keys.first
+            fieldValueLbl.text = data.values.first
     }
 
     override func awakeFromNib() {

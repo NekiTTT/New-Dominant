@@ -18,9 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-lI-V6E">
+                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-lI-V6E">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -29,6 +30,7 @@
                             <constraint firstItem="MBC-nJ-gXn" firstAttribute="trailing" secondItem="8hQ-lI-V6E" secondAttribute="trailing" id="VL8-Kv-eX5"/>
                             <constraint firstItem="MBC-nJ-gXn" firstAttribute="bottom" secondItem="8hQ-lI-V6E" secondAttribute="bottom" id="VpN-YN-E3E"/>
                             <constraint firstItem="8hQ-lI-V6E" firstAttribute="leading" secondItem="MBC-nJ-gXn" secondAttribute="leading" id="cie-Me-c1e"/>
+                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="width" secondItem="ZOD-Tn-cax" secondAttribute="width" id="jzU-9K-iAn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MBC-nJ-gXn"/>
                     </view>

@@ -16,47 +16,52 @@ struct StockSearchResult {
     var assetType: String?
 }
 
-struct Stock {
-    
-    var ask: String?
-    var averageDailyVolume: String?
-    var bid: String?
-    var bookValue: String?
-    var changeNumeric: String?
-    var changePercent: String?
-    var dayHigh: String?
-    var dayLow: String?
-    var dividendShare: String?
-    var dividendYield: String?
-    var ebitda: String?
-    var epsEstimateCurrentYear: String?
-    var epsEstimateNextQtr: String?
-    var epsEstimateNextYr: String?
-    var eps: String?
-    var fiftydayMovingAverage: String?
-    var lastTradeDate: String?
-    var last: String?
-    var lastTradeTime: String?
-    var marketCap: String?
-    var companyName: String?
-    var oneYearTarget: String?
-    var open: String?
-    var pegRatio: String?
-    var peRatio: String?
-    var previousClose: String?
-    var priceBook: String?
-    var priceSales: String?
-    var shortRatio: String?
-    var stockExchange: String?
+class Stock: NSObject {
+    var dataFields: [[String : String]] = [[String : String]]()
     var symbol: String?
-    var twoHundreddayMovingAverage: String?
-    var volume: String?
-    var yearHigh: String?
-    var yearLow: String?
-    
-    var dataFields: [[String : String]]
-    
 }
+
+//class Stock2 : NSObject {
+//    
+//    var ask: String?
+//    var averageDailyVolume: String?
+//    var bid: String?
+//    var bookValue: String?
+//    var changeNumeric: String?
+//    var changePercent: String?
+//    var dayHigh: String?
+//    var dayLow: String?
+//    var dividendShare: String?
+//    var dividendYield: String?
+//    var ebitda: String?
+//    var epsEstimateCurrentYear: String?
+//    var epsEstimateNextQtr: String?
+//    var epsEstimateNextYr: String?
+//    var eps: String?
+//    var fiftydayMovingAverage: String?
+//    var lastTradeDate: String?
+//    var last: String?
+//    var lastTradeTime: String?
+//    var marketCap: String?
+//    var companyName: String?
+//    var oneYearTarget: String?
+//    var open: String?
+//    var pegRatio: String?
+//    var peRatio: String?
+//    var previousClose: String?
+//    var priceBook: String?
+//    var priceSales: String?
+//    var shortRatio: String?
+//    var stockExchange: String?
+//    var symbol: String?
+//    var twoHundreddayMovingAverage: String?
+//    var volume: String?
+//    var yearHigh: String?
+//    var yearLow: String?
+//    
+//    var dataFields: [[String : String]]
+//    
+//}
 
 struct ChartPoint {
     var date: Date?
@@ -166,82 +171,25 @@ class SwiftStockKit {
                     if let stockDataArray = resultJSON["results"] as? [[String : AnyObject]] {
                         let stockData = stockDataArray.first!
                         // lengthy creation, yeah
-                        var dataFields = [[String : String]]()
+                        var newDataFields = [[String : String]]()
                         
-                        dataFields.append(["Ask" : stockData["ask"] as? String ?? "N/A"])
-                        dataFields.append(["Average Daily Volume" : stockData["averageDailyVolume"] as? String ?? "N/A"])
-                        dataFields.append(["Bid" : stockData["bid"] as? String ?? "N/A"])
-                        dataFields.append(["Book Value" : stockData["bookValue"] as? String ?? "N/A"])
-                        dataFields.append(["Change" : stockData["vhange"] as? String ?? "N/A"])
-                        dataFields.append(["Percent Change" : stockData["vhangeinPercent"] as? String ?? "N/A"])
-                        dataFields.append(["Day High" : stockData["daysHigh"] as? String ?? "N/A"])
-                        dataFields.append(["Day Low" : stockData["daysLow"] as? String ?? "N/A"])
-                        dataFields.append(["Div/Share" : stockData["dividendShare"] as? String ?? "N/A"])
-                        dataFields.append(["Div Yield" : stockData["dividendYield"] as? String ?? "N/A"])
-                        dataFields.append(["EBITDA" : stockData["EBITDA"] as? String ?? "N/A"])
-                        dataFields.append(["Current Yr EPS Estimate" : stockData["EPSEstimateCurrentYear"] as? String ?? "N/A"])
-                        dataFields.append(["Next Qtr EPS Estimate" : stockData["EPSEstimateNextQuarter"] as? String ?? "N/A"])
-                        dataFields.append(["Next Yr EPS Estimate" : stockData["EPSEstimateNextYear"] as? String ?? "N/A"])
-                        dataFields.append(["Earnings/Share" : stockData["earningsShare"] as? String ?? "N/A"])
-                        dataFields.append(["50D MA" : stockData["fiftydayMovingAverage"] as? String ?? "N/A"])
-                        dataFields.append(["Last Trade Date" : stockData["lastTradeDate"] as? String ?? "N/A"])
-                        dataFields.append(["Last" : stockData["lastTradePriceOnly"] as? String ?? "N/A"])
-                        dataFields.append(["Last Trade Time" : stockData["lastTradeTime"] as? String ?? "N/A"])
-                        dataFields.append(["Market Cap" : stockData["marketCapitalization"] as? String ?? "N/A"])
-                        dataFields.append(["Company" : stockData["name"] as? String ?? "N/A"])
-                        dataFields.append(["One Yr Target" : stockData["oneyrTargetPrice"] as? String ?? "N/A"])
-                        dataFields.append(["Open" : stockData["open"] as? String ?? "N/A"])
-                        dataFields.append(["PEG Ratio" : stockData["PEGRatio"] as? String ?? "N/A"])
-                        dataFields.append(["PE Ratio" : stockData["PERatio"] as? String ?? "N/A"])
-                        dataFields.append(["Previous Close" : stockData["previousClose"] as? String ?? "N/A"])
-                        dataFields.append(["Price-Book" : stockData["priceBook"] as? String ?? "N/A"])
-                        dataFields.append(["Price-Sales" : stockData["priceSales"] as? String ?? "N/A"])
-                        dataFields.append(["Short Ratio" : stockData["shortRatio"] as? String ?? "N/A"])
-                        dataFields.append(["Stock Exchange" : stockData["stockExchange"] as? String ?? "N/A"])
-                        dataFields.append(["Symbol" : stockData["symbol"] as? String ?? "N/A"])
-                        dataFields.append(["200D MA" : stockData["twoHundreddayMovingAverage"] as? String ?? "N/A"])
-                        dataFields.append(["Volume" : stockData["volume"] as? String ?? "N/A"])
-                        dataFields.append(["52w High" : stockData["yearHigh"] as? String ?? "N/A"])
-                        dataFields.append(["52w Low" : stockData["yearLow"] as? String ?? "N/A"])
+                        newDataFields.append(["Symbol" : stockData["symbol"] as? String ?? "N/A"])
+                        newDataFields.append(["Percent Change" : String(describing: stockData["percentChange"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Stock Exchange" : stockData["exchange"] as? String ?? "N/A"])
+                        newDataFields.append(["Net Change" : String(describing: stockData["netChange"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Name" : stockData["name"] as? String ?? "N/A"])
+                        newDataFields.append(["Unit Code" : stockData["unitCode"] as? String ?? "N/A"])
+                        newDataFields.append(["Open price" : String(describing: stockData["open"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Last Price" : String(describing: stockData["lastPrice"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Volume" : String(describing: stockData["volume"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["24h Low" : String(describing: stockData["low"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["24h High" : String(describing: stockData["high"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Last close" : String(describing: stockData["close"] as! CGFloat) ?? "N/A"])
                         
-                        let stock = Stock(
-                            ask: dataFields[0].values.first,
-                            averageDailyVolume: dataFields[1].values.first,
-                            bid: dataFields[2].values.first,
-                            bookValue: dataFields[3].values.first,
-                            changeNumeric: dataFields[4].values.first,
-                            changePercent: dataFields[5].values.first,
-                            dayHigh: dataFields[6].values.first,
-                            dayLow: dataFields[7].values.first,
-                            dividendShare: dataFields[8].values.first,
-                            dividendYield: dataFields[9].values.first,
-                            ebitda: dataFields[10].values.first,
-                            epsEstimateCurrentYear: dataFields[11].values.first,
-                            epsEstimateNextQtr: dataFields[12].values.first,
-                            epsEstimateNextYr: dataFields[13].values.first,
-                            eps: dataFields[14].values.first,
-                            fiftydayMovingAverage: dataFields[15].values.first,
-                            lastTradeDate: dataFields[16].values.first,
-                            last: dataFields[17].values.first,
-                            lastTradeTime: dataFields[18].values.first,
-                            marketCap: dataFields[19].values.first,
-                            companyName: dataFields[20].values.first,
-                            oneYearTarget: dataFields[21].values.first,
-                            open: dataFields[22].values.first,
-                            pegRatio: dataFields[23].values.first,
-                            peRatio: dataFields[24].values.first,
-                            previousClose: dataFields[25].values.first,
-                            priceBook: dataFields[26].values.first,
-                            priceSales: dataFields[27].values.first,
-                            shortRatio: dataFields[28].values.first,
-                            stockExchange: dataFields[29].values.first,
-                            symbol: dataFields[30].values.first,
-                            twoHundreddayMovingAverage: dataFields[31].values.first,
-                            volume: dataFields[32].values.first,
-                            yearHigh: dataFields[33].values.first,
-                            yearLow: dataFields[34].values.first,
-                            dataFields: dataFields
-                        )
+                        let stock = Stock()
+                            stock.dataFields = newDataFields
+                            stock.symbol = symbol
+                        
                         // dispatch_async(dispatch_get_main_queue()) {
                         DispatchQueue.main.async { // migration edit
                             // completion(stock: stock)

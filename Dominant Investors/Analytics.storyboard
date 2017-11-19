@@ -117,7 +117,7 @@
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x54-v7-C6y">
                                 <rect key="frame" x="0.0" y="20" width="320" height="325"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -350,23 +350,25 @@ IPO Date 08-14-1010</string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-zh-tsO">
-                                <rect key="frame" x="0.0" y="20" width="44" height="44"/>
+                                <rect key="frame" x="0.0" y="24" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PWl-at-hJt"/>
                                     <constraint firstAttribute="width" secondItem="ZFt-zh-tsO" secondAttribute="height" multiplier="1:1" id="twy-2M-2ex"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" backgroundImage="backArrow"/>
+                                <state key="normal" backgroundImage="backArrow">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="backButtonActionWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="ZIN-Tp-yPi"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x54-v7-C6y" secondAttribute="trailing" id="6j5-ts-oqm"/>
-                            <constraint firstItem="ZFt-zh-tsO" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" id="8NY-MH-cAU"/>
+                            <constraint firstItem="ZFt-zh-tsO" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" constant="4" id="8NY-MH-cAU"/>
                             <constraint firstItem="az3-Y8-Sxc" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" id="BKd-d0-Ex6"/>
                             <constraint firstItem="RJx-Ku-X34" firstAttribute="top" secondItem="x54-v7-C6y" secondAttribute="bottom" id="Bwp-cz-RE2"/>
                             <constraint firstAttribute="trailing" secondItem="az3-Y8-Sxc" secondAttribute="trailing" id="Epz-np-RIG"/>

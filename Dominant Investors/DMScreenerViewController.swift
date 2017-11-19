@@ -40,6 +40,13 @@ class DMScreenerViewController: DMViewController, UIWebViewDelegate {
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         self.dismissActivityIndicator()
+        let bodyStyleVertical = "document.getElementsByTagName('body')[0].style.verticalAlign = 'middle';";
+        let bodyStyleHorizontal = "document.getElementsByTagName('body')[0].style.textAlign = 'center';";
+        let mapStyle = "document.getElementById('mapid').style.margin = 'auto';";
+        
+        self.webView.stringByEvaluatingJavaScript(from: bodyStyleVertical)
+        self.webView.stringByEvaluatingJavaScript(from: bodyStyleHorizontal)
+        self.webView.stringByEvaluatingJavaScript(from: mapStyle)
     }
 
 }

@@ -242,20 +242,20 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QpO-V1-2yJ">
-                                                <rect key="frame" x="23" y="156.5" width="255" height="87.5"/>
+                                                <rect key="frame" x="23" y="156" width="255" height="90"/>
                                                 <string key="text">Subscribe to accurate trading signals from the professional portfolio managers to get a maximum profitability on investment shares</string>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="49.99$ monthly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M49-PS-Loz">
-                                                <rect key="frame" x="98.5" y="366" width="104" height="18"/>
+                                                <rect key="frame" x="93" y="366" width="115" height="18"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DOMINANT STOCK SIGNALS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUg-a1-5tO">
-                                                <rect key="frame" x="78.5" y="36" width="143" height="37.5"/>
+                                                <rect key="frame" x="80" y="36" width="140" height="38.5"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
