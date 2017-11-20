@@ -201,9 +201,9 @@ IPO Date 08-14-1010</string>
                                                     <segue destination="wBn-J4-URv" kind="presentation" identifier="DMSignalsSegue" id="YbI-LU-pu2"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zq-7g-HhX" userLabel="Estimaze">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zq-7g-HhX" userLabel="Estimaze">
                                                 <rect key="frame" x="16" y="539" width="125" height="45"/>
-                                                <color key="backgroundColor" red="1" green="0.77681993126377002" blue="0.0013465428826006098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.55775282118055558" blue="0.0013465428826006098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="7bS-pN-sM9"/>
                                                     <constraint firstAttribute="height" constant="40" id="95q-nM-1pg"/>
@@ -220,7 +220,7 @@ IPO Date 08-14-1010</string>
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="2"/>
+                                                        <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">
@@ -259,9 +259,9 @@ IPO Date 08-14-1010</string>
                                                     <constraint firstAttribute="height" constant="45" id="V4d-GQ-3E6"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdu-Fa-9mf" userLabel="TradingView">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdu-Fa-9mf" userLabel="TradingView">
                                                 <rect key="frame" x="179" y="539" width="125" height="45"/>
-                                                <color key="backgroundColor" red="0.067547495798195634" green="0.41399726941754944" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0013453596953271567" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="J2R-E9-bmZ"/>
                                                     <constraint firstAttribute="height" constant="38" id="TBB-wL-ekp"/>
@@ -278,7 +278,7 @@ IPO Date 08-14-1010</string>
                                                         <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                        <integer key="value" value="2"/>
+                                                        <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <variation key="default">

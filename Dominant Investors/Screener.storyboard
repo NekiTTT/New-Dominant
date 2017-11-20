@@ -18,19 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-lI-V6E">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <webView contentMode="scaleAspectFit" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hQ-lI-V6E">
+                                <rect key="frame" x="0.0" y="-15" width="373" height="717"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="top" secondItem="MBC-nJ-gXn" secondAttribute="top" id="3lV-vG-WJS"/>
-                            <constraint firstItem="MBC-nJ-gXn" firstAttribute="trailing" secondItem="8hQ-lI-V6E" secondAttribute="trailing" id="VL8-Kv-eX5"/>
-                            <constraint firstItem="MBC-nJ-gXn" firstAttribute="bottom" secondItem="8hQ-lI-V6E" secondAttribute="bottom" id="VpN-YN-E3E"/>
-                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="leading" secondItem="MBC-nJ-gXn" secondAttribute="leading" id="cie-Me-c1e"/>
-                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="width" secondItem="ZOD-Tn-cax" secondAttribute="width" id="jzU-9K-iAn"/>
+                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="top" secondItem="MBC-nJ-gXn" secondAttribute="top" constant="-35" id="3lV-vG-WJS"/>
+                            <constraint firstItem="MBC-nJ-gXn" firstAttribute="trailing" secondItem="8hQ-lI-V6E" secondAttribute="trailing" constant="2" id="DZT-xA-CYw"/>
+                            <constraint firstItem="MBC-nJ-gXn" firstAttribute="bottom" secondItem="8hQ-lI-V6E" secondAttribute="bottom" constant="-35" id="VpN-YN-E3E"/>
+                            <constraint firstItem="8hQ-lI-V6E" firstAttribute="leading" secondItem="ZOD-Tn-cax" secondAttribute="leading" id="bcS-qq-cJu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MBC-nJ-gXn"/>
                     </view>

@@ -104,6 +104,12 @@
                                     <constraint firstItem="WLL-Sz-oZD" firstAttribute="leading" secondItem="pze-un-ylM" secondAttribute="leading" id="qss-qW-W3t"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-h3-d54">
+                                <rect key="frame" x="0.0" y="20" width="1024" height="651"/>
+                                <connections>
+                                    <segue destination="ztG-Uh-rjV" kind="embed" identifier="screener" id="tLG-fA-Jad"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xye-Pg-H6G">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="651"/>
                                 <connections>
@@ -120,12 +126,6 @@
                                 <rect key="frame" x="0.0" y="20" width="1024" height="651"/>
                                 <connections>
                                     <segue destination="XTM-3H-17J" kind="embed" identifier="analytics" id="WJi-4C-tD5"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZUR-h3-d54">
-                                <rect key="frame" x="0.0" y="20" width="1024" height="651"/>
-                                <connections>
-                                    <segue destination="ztG-Uh-rjV" kind="embed" identifier="screener" id="tLG-fA-Jad"/>
                                 </connections>
                             </containerView>
                         </subviews>

@@ -34,6 +34,7 @@ class DMScreenerViewController: DMViewController, UIWebViewDelegate {
         
         self.webView.loadHTMLString(HTMLString, baseURL: nil)
         self.webView.sizeToFit()
+        self.webView.scrollView.bounces = false
     }
     
     //MARK: UIWebViewDelegate
@@ -47,6 +48,7 @@ class DMScreenerViewController: DMViewController, UIWebViewDelegate {
         self.webView.stringByEvaluatingJavaScript(from: bodyStyleVertical)
         self.webView.stringByEvaluatingJavaScript(from: bodyStyleHorizontal)
         self.webView.stringByEvaluatingJavaScript(from: mapStyle)
+        
     }
-
+    
 }
