@@ -101,6 +101,7 @@
 		965DCF2E1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */; };
 		965DCF301FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */; };
 		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
+		968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
@@ -223,6 +224,7 @@
 		965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+UINavigationController.swift"; sourceTree = "<group>"; };
 		965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimazeChartViewController.swift; sourceTree = "<group>"; };
 		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
+		968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerTypeViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
@@ -611,12 +613,21 @@
 			name = Charts;
 			sourceTree = "<group>";
 		};
+		968303F21FC4493800BCBBBD /* Screeners */ = {
+			isa = PBXGroup;
+			children = (
+				968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */,
+				968D5D131FA71400007970CE /* DMScreenerViewController.swift */,
+				961CACFA1FC4136500BD8D10 /* DMCryptoScreenerViewController.swift */,
+			);
+			name = Screeners;
+			sourceTree = "<group>";
+		};
 		968D5D121FA713CF007970CE /* Screener */ = {
 			isa = PBXGroup;
 			children = (
 				961CACF81FC4130900BD8D10 /* DMScreenerContainerViewController.swift */,
-				968D5D131FA71400007970CE /* DMScreenerViewController.swift */,
-				961CACFA1FC4136500BD8D10 /* DMCryptoScreenerViewController.swift */,
+				968303F21FC4493800BCBBBD /* Screeners */,
 			);
 			name = Screener;
 			sourceTree = "<group>";
@@ -769,6 +780,7 @@
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
 				454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */,
 				45B4E74A1E58EE9E00D56BDE /* DMAPIService.swift in Sources */,
+				968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,
 				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,
 				4581D6C21E61FB92005F2173 /* DMRotatingViewController.swift in Sources */,

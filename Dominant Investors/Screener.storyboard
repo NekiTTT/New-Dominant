@@ -26,13 +26,7 @@
                             <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkf-Tl-u73">
                                 <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                 <connections>
-                                    <segue destination="5HB-PI-3Pl" kind="embed" id="La4-hk-MWA"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-FI-FdO">
-                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
-                                <connections>
-                                    <segue destination="qr4-Yr-odZ" kind="embed" id="1Bo-52-QVb"/>
+                                    <segue destination="5HB-PI-3Pl" kind="embed" identifier="stockChart" id="5dd-fq-TOy"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y49-gk-yNu">
@@ -119,6 +113,12 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <containerView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xz9-FI-FdO">
+                                <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                <connections>
+                                    <segue destination="qr4-Yr-odZ" kind="embed" identifier="cryptoChart" id="woY-vR-s3I"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -136,6 +136,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UWu-gi-AX6"/>
                     </view>
+                    <navigationItem key="navigationItem" id="CVF-2E-8T3"/>
                     <connections>
                         <outlet property="cryptoContainer" destination="Xz9-FI-FdO" id="Bnd-94-49C"/>
                         <outlet property="cryptoLabel" destination="Dzl-dW-Xle" id="bRV-ti-FS5"/>
@@ -173,13 +174,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MBC-nJ-gXn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="AwG-xT-ptz"/>
                     <connections>
                         <outlet property="webView" destination="8hQ-lI-V6E" id="l0t-GN-fbr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A99-gn-DAU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-831" y="600"/>
+            <point key="canvasLocation" x="-1274" y="571"/>
         </scene>
         <!--Crypto Screener View Controller-->
         <scene sceneID="fTp-Nx-wDi">
@@ -204,13 +206,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kSx-3j-iT1"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4YK-qe-bNz"/>
                     <connections>
                         <outlet property="webView" destination="Vlh-Z7-pDI" id="n60-zJ-VAk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9LM-Wb-9bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65" y="600"/>
+            <point key="canvasLocation" x="375" y="598"/>
         </scene>
     </scenes>
 </document>

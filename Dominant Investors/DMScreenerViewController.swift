@@ -8,12 +8,8 @@
 
 import UIKit
 
-class DMScreenerViewController: DMViewController, UIWebViewDelegate {
+class DMScreenerViewController: DMScreenerTypeViewController {
 
-    //MARK : Outlets
-    
-    @IBOutlet  weak var webView : UIWebView!
-    
     //MARK : ViewVController
     
     override func viewDidLoad() {
@@ -27,27 +23,16 @@ class DMScreenerViewController: DMViewController, UIWebViewDelegate {
     
     fileprivate func loadTradingViewScreener() {
       
-        self.showActivityIndicator()
-        self.webView.delegate = self
-        let HTMLString = String(format : "<!-- TradingView Widget BEGIN --> <span id=\"tradingview-copyright\"><a ref=\"nofollow noopener\" target=\"_blank\" href=\"http://www.tradingview.com\" style=\"color: rgb(173, 174, 176); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;\">Stock Screener by <span style=\"color: #3BB3E4\">TradingView</span></a></span> <script src=\"https://s3.tradingview.com/external-embedding/embed-widget-screener.js\">{ \"width\": \"\(Int(self.webView.frame.size.width))\", \"height\": \"\(Int(self.webView.frame.size.height))\", \"defaultColumn\": \"overview\", \"defaultScreen\": \"most_capitalized\", \"market\": \"america\", \"showToolbar\": true, \"locale\": \"en\" }</script> <!-- TradingView Widget END -->")
-        
-        self.webView.loadHTMLString(HTMLString, baseURL: nil)
-        self.webView.sizeToFit()
-        self.webView.scrollView.bounces = false
+        if (self.tickerLoaded == false) {
+            self.showActivityIndicator()
+            self.webView.delegate = self
+            let HTMLString = String(format : "<!-- TradingView Widget BEGIN --> <span id=\"tradingview-copyright\"><a ref=\"nofollow noopener\" target=\"_blank\" href=\"http://www.tradingview.com\" style=\"color: rgb(173, 174, 176); font-family: &quot;Trebuchet MS&quot;, Tahoma, Arial, sans-serif; font-size: 13px;\">Stock Screener by <span style=\"color: #3BB3E4\">TradingView</span></a></span> <script src=\"https://s3.tradingview.com/external-embedding/embed-widget-screener.js\">{ \"width\": \"\(Int(self.webView.frame.size.width))\", \"height\": \"\(Int(self.webView.frame.size.height))\", \"defaultColumn\": \"overview\", \"defaultScreen\": \"most_capitalized\", \"market\": \"america\", \"showToolbar\": true, \"locale\": \"en\" }</script> <!-- TradingView Widget END -->")
+            
+            self.webView.loadHTMLString(HTMLString, baseURL: nil)
+            self.webView.sizeToFit()
+            self.webView.scrollView.bounces = false
+            self.tickerLoaded = true
+        }
     }
-    
-    //MARK: UIWebViewDelegate
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
-        self.dismissActivityIndicator()
-        let bodyStyleVertical = "document.getElementsByTagName('body')[0].style.verticalAlign = 'middle';";
-        let bodyStyleHorizontal = "document.getElementsByTagName('body')[0].style.textAlign = 'center';";
-        let mapStyle = "document.getElementById('mapid').style.margin = 'auto';";
         
-        self.webView.stringByEvaluatingJavaScript(from: bodyStyleVertical)
-        self.webView.stringByEvaluatingJavaScript(from: bodyStyleHorizontal)
-        self.webView.stringByEvaluatingJavaScript(from: mapStyle)
-        
-    }
-    
 }
