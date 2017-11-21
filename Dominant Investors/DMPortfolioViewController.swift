@@ -58,6 +58,11 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         setupUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.refreshData()
@@ -346,6 +351,23 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func showStockChart(vc : DMTradingViewChartViewController) {
+       
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = ""
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSAttributedStringKey.foregroundColor : UIColor.white
+        ]
+        navigationItem.backBarButtonItem = backItem
+        self.navigationController?.navigationBar.topItem?.title = ""
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 16/255, green: 18/255, blue: 26/255, alpha: 1)
+        self.navigationController?.navigationBar.barStyle = .blackTranslucent
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
     // MARK: UIAlertViewController action

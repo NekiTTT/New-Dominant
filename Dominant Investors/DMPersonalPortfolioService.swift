@@ -157,6 +157,14 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         return stocksArray
     }
     
+    private func showChartFor(ticker : String) {
+        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
+            chartVC.ticker = ticker
+            self.userInterface?.showStockChart(vc: chartVC)
+        }
+    }
+    
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -172,20 +180,26 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
           if (indexPath.row != self.portfolios.count) {
-            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More", comment: "")) { (action, indexPath) in
+            
+            let more = UITableViewRowAction(style: .normal, title: NSLocalizedString("More".localized, comment: "")) { (action, indexPath) in
                 tableView.setEditing(false, animated: true)
                 self.moreAboutStock(stock: self.portfolios[indexPath.row])
             }
-            more.backgroundColor = UIColor.blue
+            more.backgroundColor = UIColor.init(red: 154/255, green: 153/255, blue: 165/255, alpha: 1)
             
-            let delete = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Delete", comment: "")) { (action, indexPath) in
+            let chart = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Chart".localized, comment: "")) { (action, indexPath) in
+                self.showChartFor(ticker: self.portfolios[indexPath.row].ticker!)
+            }
+            chart.backgroundColor = UIColor.init(red: 174/255, green: 174/255, blue: 186/255, alpha: 1)
+            
+            let delete = UITableViewRowAction(style: .destructive, title: NSLocalizedString("Delete".localized, comment: "")) { (action, indexPath) in
                 let stock = self.portfolios[indexPath.row]
                 self.deletePersonalStock(stock: stock)
                 self.ratingUploaded = false
             }
-            
-            delete.backgroundColor = UIColor.red
-            return [more, delete]
+            delete.backgroundColor = UIColor.init(red: 250/255, green: 30/255, blue: 29/255, alpha: 1)
+       
+            return [delete, more, chart]
         } else {
             return nil
         }

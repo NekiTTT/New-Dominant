@@ -14,6 +14,10 @@ extension String {
         return self.characters.count
     }
     
+    var localized: String {
+        return NSLocalizedString(self, tableName: nil, bundle: Bundle.main, value: "", comment: "")
+    }
+    
     subscript (i: Int) -> String {
         return self[Range(i ..< i + 1)]
     }
