@@ -668,7 +668,7 @@ class SwiftStockChart: UIView {
         maxValue = CGFloat(-MAXFLOAT)
         
         for i in 0 ..< dataPoints.count {
-            if let value = dataPoints[i].close {
+            let value = dataPoints[i].close!
          
             if value < minValue! {
                 minValue = value
@@ -727,8 +727,6 @@ class SwiftStockChart: UIView {
                 }
                 
             }
-            }
-            
         }
     }
     

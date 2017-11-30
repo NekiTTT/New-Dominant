@@ -18,8 +18,8 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     var containers      : [UIView]!
     var loaded          = false
     
-    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas"), UIImage(named: "ideas")]
-    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active"), UIImage(named: "ideas_active")]
+    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas"), UIImage(named: "screener")]
+    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active"), UIImage(named: "screener_active")]
     
     //MARK: SKProduct
     

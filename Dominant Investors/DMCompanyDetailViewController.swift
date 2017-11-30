@@ -126,7 +126,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         annualSales_atributed.append(averageSales_atributed)
         annualSales_atributed.append(potential_string_atributed)
         
-        infoTextLabel.attributedText = annualSales_atributed
+        //infoTextLabel.attributedText = annualSales_atributed
 
     }
     
