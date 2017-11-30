@@ -23,13 +23,14 @@ class DMCompanyModel: NSObject {
     var targetPrice                 : String!
     var investmentHorizon           : String!
     var companyDescription          : String!
+    var estimazeURL                 : URL?
 
     var potentialProfitability      : String!
     
     init(response : DMResponseObject) {
         super.init()
         self.id = response.id
-        let fields = response.fields
+        if let fields = response.fields as? [String : Any] {
         
         if let ticker = fields["companySymbol"] as? String {
             self.ticker = ticker
@@ -73,10 +74,16 @@ class DMCompanyModel: NSObject {
             self.investmentHorizon = ""
         }
         
+        if let estimazeURL = fields["estimazeURL"] as? String {
+            self.estimazeURL = URL.init(string: estimazeURL)
+        }
+        
         if let value = fields["potentialProfitability"] as? String {
             self.potentialProfitability = value
         } else {
             self.potentialProfitability = ""
+        }
+        
         }
         
     }

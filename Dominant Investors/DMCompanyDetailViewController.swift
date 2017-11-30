@@ -16,12 +16,14 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     var chart     : SwiftStockChart!
     
     // MARK: Outlets
-    @IBOutlet weak var infoLabel        : UILabel!
-    @IBOutlet weak var infoTextLabel    : UILabel!
-    @IBOutlet weak var companyNameLabel : UILabel!
-    @IBOutlet weak var getSignalsButton : UIButton!
-    @IBOutlet weak var companyLogo      : UIImageView!
-    @IBOutlet weak var chartContainer   : UIView!
+    @IBOutlet weak var infoLabel         : UILabel!
+    @IBOutlet weak var infoTextLabel     : UILabel!
+    @IBOutlet weak var companyNameLabel  : UILabel!
+    @IBOutlet weak var getSignalsButton  : UIButton!
+    @IBOutlet weak var estimizeButton    : UIButton!
+    @IBOutlet weak var tradingViewButton : UIButton!
+    @IBOutlet weak var companyLogo       : UIImageView!
+    @IBOutlet weak var chartContainer    : UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,8 +62,21 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         self.infoLabel.text        = self.company!.companyDescription
         self.companyLogo.image     = UIImage()
         self.companyNameLabel.text = self.company.name
+        
+        if self.company.estimazeURL == nil {
+            self.estimizeButton.isEnabled = false
+            self.estimizeButton.alpha = 0.5
+        }
 
         fillCompanyData()
+        
+        self.estimizeButton.layer.cornerRadius = 20.0
+        self.estimizeButton.layer.borderColor = UIColor.red.cgColor
+        self.estimizeButton.layer.borderWidth = 1.0
+        
+        self.tradingViewButton.layer.cornerRadius = 20.0
+        self.tradingViewButton.layer.borderColor = UIColor.red.cgColor
+        self.tradingViewButton.layer.borderWidth = 1.0
     }
     
     private func fillCompanyData() {
@@ -179,8 +194,12 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     }
     
     @IBAction func estimazeButtonPressed(sender : UIButton) {
+        guard let estimazeURL = self.company.estimazeURL else { return }
+        
+       
         let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
+            chartVC.estimazeImageURL = estimazeURL
             chartVC.ticker = self.company.ticker
             self.showChart(chart: chartVC)
         }

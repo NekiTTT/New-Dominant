@@ -346,4 +346,76 @@ class DMQuickBloxService: NSObject {
         return personalLimit
     }
     
+    
+    //MARK : Trial Period Calls
+    
+    open func getTrialObject(completion : @escaping (DMTrialModel?) -> Void) {
+        QBRequest.objects(withClassName: "Trial", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+            for object in objects! {
+                if let name = object.fields.object(forKey: "name") as? String {
+                    if name == DMAuthorizationManager.sharedInstance.userProfile.userName {
+                        completion(DMTrialModel.init(response: DMResponseObject.init(customObject: object)))
+                        return
+                    }
+                }
+            }
+            completion(nil)
+        }) { (error) in
+            completion(nil)
+        }
+    }
+    
+    open func startTrialPeriod(date : Date, completion : @escaping (DMTrialModel?) -> Void) {
+       
+        self.getTrialObject { (trialObject) in
+            if trialObject != nil {
+                completion(trialObject)
+                return
+            } else {
+                let quickblox = QBCOCustomObject()
+                quickblox.className = "Trial"
+                quickblox.fields!.setObject(date, forKey: "trialStarted" as NSCopying)
+                quickblox.fields!.setObject(false, forKey: "trialBuyed" as NSCopying)
+                quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
+                QBRequest.createObject(quickblox, successBlock: { (response, object) in
+                    print("SUCCESS")
+                    completion(DMTrialModel.init(response: DMResponseObject.init(customObject: object!)))
+                }) { (error) in
+                    print("ERROR")
+                    completion(nil)
+                }
+            }
+        }
+
+    }
+    
+    open func checkTrialPeriodStartedExpired(userName : String, completion : @escaping (DMTrialModel?) -> Void) {
+        self.getTrialObject { (trialObject) in
+            if trialObject != nil {
+                completion(trialObject)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    open func trialBuyed() {
+        self.getTrialObject { (trialObject) in
+            if trialObject != nil {
+                let quickblox = QBCOCustomObject()
+                quickblox.className = "Trial"
+                quickblox.fields!.setObject(trialObject?.trialStarted as Any, forKey: "trialStarted" as NSCopying)
+                quickblox.fields!.setObject(true, forKey: "trialBuyed" as NSCopying)
+                quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
+                quickblox.id = trialObject?.id
+                QBRequest.update(quickblox, successBlock: { (response, object) in
+                    print("SUCCESS")
+                    NotificationCenter.default.post(name: NSNotification.Name("kBuyedName"), object: nil)
+                }, errorBlock: { (error) in
+                    print("ERROR")
+                })
+            }
+        }
+    }
+    
 }

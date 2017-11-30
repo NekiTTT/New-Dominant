@@ -203,7 +203,6 @@ IPO Date 08-14-1010</string>
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9zq-7g-HhX" userLabel="Estimaze">
                                                 <rect key="frame" x="16" y="539" width="125" height="45"/>
-                                                <color key="backgroundColor" red="1" green="0.55775282118055558" blue="0.0013465428826006098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="7bS-pN-sM9"/>
                                                     <constraint firstAttribute="height" constant="40" id="95q-nM-1pg"/>
@@ -211,8 +210,8 @@ IPO Date 08-14-1010</string>
                                                     <constraint firstAttribute="height" constant="45" id="uKu-rw-MGk"/>
                                                     <constraint firstAttribute="width" constant="125" id="utl-GC-g8A"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <state key="normal" title="Estimaze">
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
+                                                <state key="normal" title="REVENUE FORECAST">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -261,7 +260,6 @@ IPO Date 08-14-1010</string>
                                             </view>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdu-Fa-9mf" userLabel="TradingView">
                                                 <rect key="frame" x="179" y="539" width="125" height="45"/>
-                                                <color key="backgroundColor" red="1" green="0.0013453596953271567" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="J2R-E9-bmZ"/>
                                                     <constraint firstAttribute="height" constant="38" id="TBB-wL-ekp"/>
@@ -269,8 +267,8 @@ IPO Date 08-14-1010</string>
                                                     <constraint firstAttribute="height" constant="40" id="u4b-UO-zlp"/>
                                                     <constraint firstAttribute="width" constant="125" id="wUk-RM-89V"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                <state key="normal" title="Trading View">
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
+                                                <state key="normal" title="EPS FORECAST">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -391,9 +389,11 @@ IPO Date 08-14-1010</string>
                         <outlet property="chartContainer" destination="x54-v7-C6y" id="yLI-9J-3K0"/>
                         <outlet property="companyLogo" destination="UBr-Y0-7ym" id="01n-hN-8Pl"/>
                         <outlet property="companyNameLabel" destination="ZpM-Hv-tg1" id="6Wp-8A-x3d"/>
+                        <outlet property="estimizeButton" destination="9zq-7g-HhX" id="KhB-tZ-oGS"/>
                         <outlet property="getSignalsButton" destination="9WY-xF-unv" id="IPK-uJ-Ow5"/>
                         <outlet property="infoLabel" destination="M4c-or-5w8" id="4r3-PX-nfn"/>
                         <outlet property="infoTextLabel" destination="tqO-4d-wea" id="OkX-o4-oC1"/>
+                        <outlet property="tradingViewButton" destination="qdu-Fa-9mf" id="n8t-jU-Reb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICZ-5X-7uS" userLabel="First Responder" sceneMemberID="firstResponder"/>

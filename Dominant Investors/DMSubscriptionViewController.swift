@@ -152,6 +152,8 @@ class DMSubscriptionViewController: DMViewController, SKProductsRequestDelegate,
     }
     
     
+    
+    
     func purchaseSuccesfull(date : Date) {
         DMSignalsStoreService.sharedInstance.successPurchaseWith(expired_date: date) { (success) in
             if (success) {

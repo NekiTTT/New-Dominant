@@ -98,9 +98,14 @@
 		961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */; };
 		961CACF91FC4130900BD8D10 /* DMScreenerContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CACF81FC4130900BD8D10 /* DMScreenerContainerViewController.swift */; };
 		961CACFB1FC4136500BD8D10 /* DMCryptoScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961CACFA1FC4136500BD8D10 /* DMCryptoScreenerViewController.swift */; };
+		964A40F61FCF0D2C006A5C8C /* DMTrialUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A40F51FCF0D2C006A5C8C /* DMTrialUsageView.swift */; };
+		964A40F81FCF0D3D006A5C8C /* DMTrialUsageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 964A40F71FCF0D3D006A5C8C /* DMTrialUsageView.xib */; };
+		964A40FA1FCF54AC006A5C8C /* DMTrialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A40F91FCF54AC006A5C8C /* DMTrialModel.swift */; };
 		965DCF2E1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */; };
 		965DCF301FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */; };
 		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
+		9667CC741FCCB314006E8071 /* DMTrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667CC731FCCB314006E8071 /* DMTrialView.swift */; };
+		9667CC771FCCB390006E8071 /* DMTrialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9667CC761FCCB390006E8071 /* DMTrialView.xib */; };
 		968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
@@ -221,9 +226,14 @@
 		9610743F1FBA469A0022A8BB /* DMTradingViewGraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewGraphViewController.swift; sourceTree = "<group>"; };
 		961CACF81FC4130900BD8D10 /* DMScreenerContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerContainerViewController.swift; sourceTree = "<group>"; };
 		961CACFA1FC4136500BD8D10 /* DMCryptoScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCryptoScreenerViewController.swift; sourceTree = "<group>"; };
+		964A40F51FCF0D2C006A5C8C /* DMTrialUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialUsageView.swift; sourceTree = "<group>"; };
+		964A40F71FCF0D3D006A5C8C /* DMTrialUsageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMTrialUsageView.xib; sourceTree = "<group>"; };
+		964A40F91FCF54AC006A5C8C /* DMTrialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialModel.swift; sourceTree = "<group>"; };
 		965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+UINavigationController.swift"; sourceTree = "<group>"; };
 		965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimazeChartViewController.swift; sourceTree = "<group>"; };
 		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
+		9667CC731FCCB314006E8071 /* DMTrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialView.swift; sourceTree = "<group>"; };
+		9667CC761FCCB390006E8071 /* DMTrialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMTrialView.xib; sourceTree = "<group>"; };
 		968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerTypeViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
@@ -434,6 +444,7 @@
 				45B7A02E1E59148A000CB062 /* DMUserProfileModel.swift */,
 				45D070481E5E1F2E00B6CAC5 /* DMResponseObject.swift */,
 				45D73F731E63598D001BB511 /* DMSubscriptionModel.swift */,
+				964A40F91FCF54AC006A5C8C /* DMTrialModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -458,6 +469,7 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				9667CC751FCCB380006E8071 /* DMTrialView */,
 				4581D6B41E60FDE6005F2173 /* DMStockInfoCell */,
 				45D0704C1E5E458800B6CAC5 /* DMPortfolioTotalCell */,
 				45121B7F1E5CB04C00D83C4E /* DMDropDownTableViewCell */,
@@ -604,6 +616,15 @@
 			name = DMPortfolioTotalCell;
 			sourceTree = "<group>";
 		};
+		964A40F41FCF0D0D006A5C8C /* DMTrialUsageView */ = {
+			isa = PBXGroup;
+			children = (
+				964A40F51FCF0D2C006A5C8C /* DMTrialUsageView.swift */,
+				964A40F71FCF0D3D006A5C8C /* DMTrialUsageView.xib */,
+			);
+			name = DMTrialUsageView;
+			sourceTree = "<group>";
+		};
 		965DCF331FC1AEF7003E74C1 /* Charts */ = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +632,16 @@
 				96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */,
 			);
 			name = Charts;
+			sourceTree = "<group>";
+		};
+		9667CC751FCCB380006E8071 /* DMTrialView */ = {
+			isa = PBXGroup;
+			children = (
+				964A40F41FCF0D0D006A5C8C /* DMTrialUsageView */,
+				9667CC731FCCB314006E8071 /* DMTrialView.swift */,
+				9667CC761FCCB390006E8071 /* DMTrialView.xib */,
+			);
+			name = DMTrialView;
 			sourceTree = "<group>";
 		};
 		968303F21FC4493800BCBBBD /* Screeners */ = {
@@ -700,6 +731,7 @@
 				45A107A61E59CFED00591170 /* MuseoCyrl300.otf in Resources */,
 				4581D6B81E60FE0C005F2173 /* DMStockInfoCell.xib in Resources */,
 				45A107A71E59CFED00591170 /* MuseoCyrl500.otf in Resources */,
+				9667CC771FCCB390006E8071 /* DMTrialView.xib in Resources */,
 				45D070441E5D723700B6CAC5 /* DMRatingTableViewCell.xib in Resources */,
 				45D070421E5CE98000B6CAC5 /* DMStockCell.xib in Resources */,
 				45A107B61E59DCF300591170 /* DMSignalCell.xib in Resources */,
@@ -707,6 +739,7 @@
 				45A107A81E59CFED00591170 /* MuseoCyrl700.otf in Resources */,
 				45D0704F1E5E45A500B6CAC5 /* DMPortfolioTotalCell.xib in Resources */,
 				45A107A91E59CFED00591170 /* MuseoCyrl900.otf in Resources */,
+				964A40F81FCF0D3D006A5C8C /* DMTrialUsageView.xib in Resources */,
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
 				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
 				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
@@ -765,6 +798,7 @@
 				4581D6BA1E610320005F2173 /* DMPortfolioUserInterface.swift in Sources */,
 				45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */,
 				4509E8CB1EF69977002CC7C4 /* DMSignalHistoryModel.swift in Sources */,
+				964A40F61FCF0D2C006A5C8C /* DMTrialUsageView.swift in Sources */,
 				45B4E7881E5911D900D56BDE /* DMRatingsViewController.swift in Sources */,
 				45D73F741E63598D001BB511 /* DMSubscriptionModel.swift in Sources */,
 				45D070401E5CE5BA00B6CAC5 /* DMStockCell.swift in Sources */,
@@ -780,6 +814,7 @@
 				45B4E7791E58FD5A00D56BDE /* DMCompanyModel.swift in Sources */,
 				454BFEFA1E5C1F7A0088EF31 /* DMFileManager.swift in Sources */,
 				45B4E74A1E58EE9E00D56BDE /* DMAPIService.swift in Sources */,
+				9667CC741FCCB314006E8071 /* DMTrialView.swift in Sources */,
 				968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */,
 				45B7A02F1E59148A000CB062 /* DMUserProfileModel.swift in Sources */,
 				45B7A03B1E5917B9000CB062 /* DMDropdownViewController.swift in Sources */,
@@ -813,6 +848,7 @@
 				961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */,
 				454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */,
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
+				964A40FA1FCF54AC006A5C8C /* DMTrialModel.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,

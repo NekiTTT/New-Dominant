@@ -15,6 +15,7 @@ class DMResponseObject: NSObject {
     var login  : String?
     var email  : String?
     var userID : String?
+    var createdAt : Date?
     var customData : String?
     
     var fields = [String : Any]()
@@ -26,6 +27,11 @@ class DMResponseObject: NSObject {
         self.login  = user.login
         self.email  = user.email
     
+        
+//        if let registrationDate = user.createdAt {
+//            self.createdAt = registrationDate
+//        }
+
         self.customData = user.customData
     }
     

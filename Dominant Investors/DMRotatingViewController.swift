@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import StoreKit
 
-class DMRotatingViewController: DMViewController {
+class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKPaymentTransactionObserver {
+    
+    
 
     var viewControllers = [DMViewController]()
     var buttons         = [UIButton]()
@@ -17,6 +20,15 @@ class DMRotatingViewController: DMViewController {
     
     let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas"), UIImage(named: "ideas")]
     let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active"), UIImage(named: "ideas_active")]
+    
+    //MARK: SKProduct
+    
+    var productIDs = [String]()
+    var productsArray = [SKProduct]()
+    
+    var transactionInProgress = false
+    
+    //MARK: Autorotate
     
     override var shouldAutorotate: Bool {
         return true
@@ -35,10 +47,14 @@ class DMRotatingViewController: DMViewController {
     // MARK: ViewController
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupForSubscription()
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        self.showTrial()
         if (!loaded) {
             setupControllers()
             setupContainers()
@@ -132,5 +148,195 @@ class DMRotatingViewController: DMViewController {
         for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
         sender.setImage(activeIcons[sender.tag], for: .normal)
     }
+    
+    //MARK: Trial
+    
+    fileprivate func showTrial() {
+        
+        let trialBuyed = UserDefaults.standard.bool(forKey: "kTrialBuyed")
+        if trialBuyed == true {
+            return;
+        }
+        
+        if let registrationDate = DMAuthorizationManager.sharedInstance.userProfile.createdAt {
+            let dateRangeStart = Date() //APP VERSION WITH TRIAL RELEASE DATE
+            let components = Calendar.current.dateComponents([.day, .hour], from: registrationDate, to: dateRangeStart)
+            
+            if let differense = components.day {
+                if (differense <= 0) {
+                    return
+                }
+            }
+        }
+        
+        DMAPIService.sharedInstance.checkTrialPeriodStartedExpired(userName: DMAuthorizationManager.sharedInstance.userProfile.userName) { (trialObject) in
+            DispatchQueue.main.async {
+                
+                if trialObject != nil {
+                    
+                    if trialObject?.trialBuyed == true {
+                        return
+                    }
+                    
+                    let dateRangeStart = Date()
+                    let dateRangeEnd = trialObject?.trialStarted
+                    let components = Calendar.current.dateComponents([.day, .hour], from:dateRangeEnd! , to: dateRangeStart)
+                    
+                    if let differense = components.day {
+                        if (differense > 0) {
+                            let trialView = Bundle.main.loadNibNamed("DMTrialView", owner: nil, options: nil)![0] as! DMTrialView
+                            trialView.delegate = self
+                            trialView.addTo(superview: self.view)
+                        }
+                    }
+                    
+                } else {
+                    let trialView = Bundle.main.loadNibNamed("DMTrialUsageView", owner: nil, options: nil)![0] as! DMTrialUsageView
+                    trialView.delegate = self
+                    trialView.addTo(superview: self.view)
+                }
+                
+            }
+        }
+    }
+    
+    //MARK: SKPaymentTransactionObserver
+    
+    func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        if response.products.count != 0 {
+            for product in response.products {
+                productsArray.append(product)
+            }
+        } else {
+            print("There are no products.")
+        }
+    }
+    
+    func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        self.dismissActivityIndicator()
+        for transaction in transactions {
+            switch transaction.transactionState {
+            case .purchased:
+                
+                print("Transaction completed successfully.")
+                SKPaymentQueue.default().finishTransaction(transaction)
+                
+                DispatchQueue.main.async {
+                    
+                    if (transaction.transactionDate != nil) {
+                        DMAPIService.sharedInstance.trialBuyed()
+                        
+                    }
+                    self.transactionInProgress = false
+                }
+                
+            case .failed:
+                
+                print("Transaction Failed");
+                SKPaymentQueue.default().finishTransaction(transaction)
+                self.transactionInProgress = false
+                
+            default:
+                print(transaction.transactionState.rawValue)
+            }
+        }
+        
+    }
+    
+    
+    func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        
+        if (queue.transactions.count == 0) {
+            self.dismissActivityIndicator()
+            let alert = UIAlertController(title: "Error", message: "Nothing to restore", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil));
+            self.dismissActivityIndicator()
+            self.present(alert, animated: true, completion: nil)
+            self.transactionInProgress = false
+            return
+        }
+        
+        for transaction in queue.transactions {
+            if (transaction.transactionIdentifier == "dominantOne") {
+                self.transactionInProgress = false
+            }
+        }
+    }
+    
+    //MARK : Buy Actions
+    
+    fileprivate func setupForSubscription() {
+        productIDs.append("dominantOne")
+        self.requestProductInfo()
+    }
+    
+    func requestProductInfo() {
+        if SKPaymentQueue.canMakePayments() {
+            let productIdentifiers = NSSet(array: productIDs)
+            let productRequest = SKProductsRequest(productIdentifiers: productIdentifiers as! Set<String>)
+            
+            productRequest.delegate = self
+            productRequest.start()
+        }
+        else {
+            print("Cannot perform In App Purchases.")
+        }
+    }
+    
+    open func restore() {
+        
+        if transactionInProgress {
+            return
+        } else {
+            DispatchQueue.main.async {
+                SKPaymentQueue.default().add(self)
+                SKPaymentQueue.default().restoreCompletedTransactions()
+                self.transactionInProgress = true
+            }
+        }
+        
+    }
+    
+    open func buyApp() {
+        self.showActivityIndicator()
+        self.showActions()
+    }
+    
+    private func showActions() {
+        
+        if transactionInProgress {
+            return
+        }
+        
+        let actionSheetController = UIAlertController(title: "Dominant stock signals".localized,
+                                                      message: "Buy a subsscription right now and get unlimited access to the app".localized,
+                                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        let buyAction = UIAlertAction(title: "Buy", style: UIAlertActionStyle.default) { (action) -> Void in
+            DispatchQueue.main.async {
+                
+                if (self.productsArray.count > 0) {
+                    
+                    let payment = SKPayment(product: self.productsArray[0] as SKProduct)
+                    SKPaymentQueue.default().add(self as SKPaymentTransactionObserver)
+                    SKPaymentQueue.default().add(payment)
+                    self.transactionInProgress = true
+                } else {
+                    self.dismissActivityIndicator()
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+            self.dismissActivityIndicator()
+        }
+        
+        actionSheetController.addAction(buyAction)
+        actionSheetController.addAction(cancelAction)
+        
+        present(actionSheetController, animated: true, completion: nil)
+    }
+    
+
 
 }

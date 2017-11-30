@@ -20,19 +20,21 @@ class DMPersonalPortfolioModel: NSObject {
     init(response : DMResponseObject) {
         super.init()
         
+        guard let fields = response.fields as? [String : Any] else { return }
+        
         if let respID = response.id {
             self.id       = respID
         }
         
-        if let respValue = response.fields["ticker"] as? String {
+        if let respValue = fields["ticker"] as? String {
             self.ticker       = respValue
         }
         
-        if let respValue = response.fields["entry_price"] as? String {
+        if let respValue = fields["entry_price"] as? String {
             self.entry_price       = respValue
         }
         
-        if let respValue = response.fields["crt_at"] as? String {
+        if let respValue = fields["crt_at"] as? String {
             self.entry_date       = DMDateService.sharedInstance.dominantDateFrom(string: respValue)
         }
         

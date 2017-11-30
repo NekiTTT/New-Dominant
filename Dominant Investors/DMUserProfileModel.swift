@@ -14,6 +14,7 @@ class DMUserProfileModel: NSObject, NSCoding {
     var userID            : String!
     var userName          : String!
     var userProfileImage  : String!
+    var createdAt         : Date?
     
     var userRating        : UInt!
         
@@ -23,6 +24,7 @@ class DMUserProfileModel: NSObject, NSCoding {
         self.userName         = response.login
         self.userProfileImage = response.customData
         self.userRating       = 0
+        self.createdAt        = response.createdAt
     }
     
     // MARK: NSCoding

@@ -42,5 +42,19 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.deletePersonalStock(ID: ID, completion: completion)
     }
     
+    //MARK : Trial Period Calls
+    
+    open func startTrialPeriod(date : Date, completion : @escaping (DMTrialModel?) -> Void) {
+        DMQuickBloxService.sharedInstance.startTrialPeriod(date: date, completion: completion)
+    }
+    
+    open func checkTrialPeriodStartedExpired(userName : String, completion : @escaping (DMTrialModel?) -> Void) {
+        DMQuickBloxService.sharedInstance.checkTrialPeriodStartedExpired(userName: userName, completion: completion)
+    }
+    
+    open func trialBuyed() {
+        DMQuickBloxService.sharedInstance.trialBuyed()
+    }
+    
     
 }
