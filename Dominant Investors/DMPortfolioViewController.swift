@@ -55,6 +55,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.switchToSignalsHistory), name: NSNotification.Name(rawValue: "kShowHSignalsHistory"), object: nil)
         setupUI()
     }
     
@@ -184,7 +185,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         //self.portfolioType = .DMDominantPortfolio
     }
     
-    private func showSignalsHistory() {
+    @objc private func showSignalsHistory() {
         
         self.tableView.delegate   = DMSignalsHistoryService.sharedInstance
         self.tableView.dataSource = DMSignalsHistoryService.sharedInstance
@@ -210,7 +211,15 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         
         self.setColumnTitles(titles: ["TICKER","BUY POINT $","SELL POINT $","PROFITABILITY"])
         self.refreshControl.removeFromSuperview()
+        self.portfolioTypeSwitcher.selectedSegmentIndex = 0
         self.portfolioType = .DMSignalsHistory
+    }
+    
+    @objc private func switchToSignalsHistory() {
+        self.showSignalsHistory()
+        DMSignalsHistoryService.sharedInstance.refresh {
+            self.showSignalsHistory()
+        }
     }
     
     private func setColumnTitles(titles : [String]) {

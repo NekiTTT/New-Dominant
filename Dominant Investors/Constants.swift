@@ -22,6 +22,7 @@ enum DMActionType : Int {
 struct Values {
     static let DMTabsCount     : Int = 3
     static let DMDefaultScreen : Int = 0
+    static let DMPortfolioScreen : Int = 1
     
 }
 

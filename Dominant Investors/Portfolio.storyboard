@@ -266,7 +266,7 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOz-en-7nG">
-                                        <rect key="frame" x="93.5" y="116" width="187.5" height="30"/>
+                                        <rect key="frame" x="94" y="116" width="187.5" height="30"/>
                                         <color key="backgroundColor" red="0.34509803919999998" green="0.70196078429999997" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="GET NEW SIGNALS">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

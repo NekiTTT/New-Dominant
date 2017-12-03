@@ -410,7 +410,7 @@ class DMQuickBloxService: NSObject {
                 quickblox.id = trialObject?.id
                 QBRequest.update(quickblox, successBlock: { (response, object) in
                     print("SUCCESS")
-                    NotificationCenter.default.post(name: NSNotification.Name("kBuyedName"), object: nil)
+                    
                 }, errorBlock: { (error) in
                     print("ERROR")
                 })

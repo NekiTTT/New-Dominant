@@ -201,10 +201,19 @@ class SwiftStockKit {
         }
     }
    
-    class func fetchChartPoints(symbol: String, range: ChartTimeRange, completion:@escaping (_ chartPoints: [ChartPoint]) -> ()) {
+    class func fetchChartPoints(symbol: String, range: ChartTimeRange, crypto : Bool?, completion:@escaping (_ chartPoints: [ChartPoint]) -> ()) {
 
-        let chartURL = SwiftStockKit.chartUrlForRange(symbol: symbol, range: range)
+        var chartURL = SwiftStockKit.chartUrlForRange(symbol: symbol, range: range)
 
+        if crypto == true {
+            chartURL = chartURL.replacingOccurrences(of: "getHistory", with: "getCryptoHistory")
+            chartURL = chartURL.replacingOccurrences(of: "marketdata", with: "ondemand")
+            chartURL = chartURL.replacingOccurrences(of: "key", with: "apikey")
+            
+            chartURL = "https://ondemand.websol.barchart.com/getCryptoHistory.json?apikey=\(APIReqests.DMUniqueAPIKey)&symbol=%5EBTCUSD&type=minutes&startDate=20171201&endDate=20171202&maxRecords=10&interval=60&order=asc"
+            
+        }
+        
         Alamofire.request(chartURL, method: .get, parameters: nil, encoding: JSONEncoding.default)
             .responseJSON { response in
                 
@@ -292,7 +301,7 @@ class SwiftStockKit {
         
         let dateString = String(format : "%d%@%@", year, month, day)
      
-        let usl = "http://marketdata.websol.barchart.com/getHistory.json?key=\(APIReqests.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
+        let usl = "https://marketdata.websol.barchart.com/getHistory.json?key=\(APIReqests.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
         
         //let usl = "https://chartapi.finance.yahoo.com/instrument/1.0/\(symbol)/chartdata;type=quote;range=\(timeString)/json"
         

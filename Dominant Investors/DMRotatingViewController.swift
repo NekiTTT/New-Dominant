@@ -55,6 +55,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.showTrial()
+        
         if (!loaded) {
             setupControllers()
             setupContainers()
@@ -62,6 +63,13 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
             setupTabButtons()
             showDefaultPage()
             loaded = true
+        }
+        
+        let introShowed = UserDefaults.standard.bool(forKey: "kIntroInfoShowed")
+        if (introShowed == false) {
+            let introView = Bundle.main.loadNibNamed("DMInfoIntroView", owner: nil, options: nil)![0] as! DMInfoIntroView
+            introView.addTo(superview: self.view)
+            UserDefaults.standard.set(true, forKey: "kIntroInfoShowed")
         }
     }
     
@@ -110,7 +118,10 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     
     private func setupNotificationCenterObserving() {
         NotificationCenter.default.addObserver(self, selector: #selector(self.showDefaultPage), name: NSNotification.Name(rawValue: "kShowSignals"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showSignalsHistory), name: NSNotification.Name(rawValue: "kShowHSignalsHistory"), object: nil)
     }
+    
+    
     
     private func setupControllers() {
         //#WARNING : кОСТЫЛИУС!!!
@@ -136,6 +147,12 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
         buttons[0].setImage(activeIcons[0], for: .normal)
     }
     
+    @objc private func showSignalsHistory() {
+        self.showTab(index: Values.DMPortfolioScreen)
+        for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
+        buttons[1].setImage(activeIcons[1], for: .normal)
+    }
+    
     @objc private func showTab(index : Int) {
         self.view.bringSubview(toFront: containers[index])
     }
@@ -155,6 +172,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
         
         let trialBuyed = UserDefaults.standard.bool(forKey: "kTrialBuyed")
         if trialBuyed == true {
+            DMAPIService.sharedInstance.trialBuyed()
             return;
         }
         
@@ -224,9 +242,11 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
                 DispatchQueue.main.async {
                     
                     if (transaction.transactionDate != nil) {
+                        NotificationCenter.default.post(name: NSNotification.Name("kBuyedName"), object: nil)
                         DMAPIService.sharedInstance.trialBuyed()
-                        
+                        UserDefaults.standard.set(true, forKey: "kTrialBuyed")
                     }
+                    
                     self.transactionInProgress = false
                 }
                 

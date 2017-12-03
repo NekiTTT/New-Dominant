@@ -106,6 +106,10 @@
 		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
 		9667CC741FCCB314006E8071 /* DMTrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667CC731FCCB314006E8071 /* DMTrialView.swift */; };
 		9667CC771FCCB390006E8071 /* DMTrialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9667CC761FCCB390006E8071 /* DMTrialView.xib */; };
+		967A2DAB1FD1CF7D00E1E941 /* DMStatsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DAA1FD1CF7D00E1E941 /* DMStatsContainer.swift */; };
+		967A2DAE1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DAD1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift */; };
+		967A2DB11FD430E600E1E941 /* DMInfoIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DB01FD430E600E1E941 /* DMInfoIntroView.swift */; };
+		967A2DB31FD4310100E1E941 /* DMInfoIntroView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 967A2DB21FD4310100E1E941 /* DMInfoIntroView.xib */; };
 		968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
@@ -234,6 +238,10 @@
 		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
 		9667CC731FCCB314006E8071 /* DMTrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialView.swift; sourceTree = "<group>"; };
 		9667CC761FCCB390006E8071 /* DMTrialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMTrialView.xib; sourceTree = "<group>"; };
+		967A2DAA1FD1CF7D00E1E941 /* DMStatsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMStatsContainer.swift; sourceTree = "<group>"; };
+		967A2DAD1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCryptoInfoContainer.swift; sourceTree = "<group>"; };
+		967A2DB01FD430E600E1E941 /* DMInfoIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMInfoIntroView.swift; sourceTree = "<group>"; };
+		967A2DB21FD4310100E1E941 /* DMInfoIntroView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMInfoIntroView.xib; sourceTree = "<group>"; };
 		968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerTypeViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +477,9 @@
 		45B4E7461E58EE1D00D56BDE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				967A2DAF1FD430BD00E1E941 /* DMInfoIntoView */,
+				967A2DAC1FD1D2A500E1E941 /* DMCryptoInfoContainer */,
+				967A2DA91FD1CF6000E1E941 /* DMStatsContainer */,
 				9667CC751FCCB380006E8071 /* DMTrialView */,
 				4581D6B41E60FDE6005F2173 /* DMStockInfoCell */,
 				45D0704C1E5E458800B6CAC5 /* DMPortfolioTotalCell */,
@@ -644,6 +655,31 @@
 			name = DMTrialView;
 			sourceTree = "<group>";
 		};
+		967A2DA91FD1CF6000E1E941 /* DMStatsContainer */ = {
+			isa = PBXGroup;
+			children = (
+				967A2DAA1FD1CF7D00E1E941 /* DMStatsContainer.swift */,
+			);
+			name = DMStatsContainer;
+			sourceTree = "<group>";
+		};
+		967A2DAC1FD1D2A500E1E941 /* DMCryptoInfoContainer */ = {
+			isa = PBXGroup;
+			children = (
+				967A2DAD1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift */,
+			);
+			name = DMCryptoInfoContainer;
+			sourceTree = "<group>";
+		};
+		967A2DAF1FD430BD00E1E941 /* DMInfoIntoView */ = {
+			isa = PBXGroup;
+			children = (
+				967A2DB01FD430E600E1E941 /* DMInfoIntroView.swift */,
+				967A2DB21FD4310100E1E941 /* DMInfoIntroView.xib */,
+			);
+			name = DMInfoIntoView;
+			sourceTree = "<group>";
+		};
 		968303F21FC4493800BCBBBD /* Screeners */ = {
 			isa = PBXGroup;
 			children = (
@@ -747,6 +783,7 @@
 				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
 				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
+				967A2DB31FD4310100E1E941 /* DMInfoIntroView.xib in Resources */,
 				45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */,
 				965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */,
 				452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */,
@@ -834,6 +871,7 @@
 				96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */,
 				4581D6BC1E610AFC005F2173 /* Dominant+UIImage.swift in Sources */,
 				45B4E7731E58FCF600D56BDE /* DMDominantPortfolioModel.swift in Sources */,
+				967A2DAB1FD1CF7D00E1E941 /* DMStatsContainer.swift in Sources */,
 				45B4E7501E58EF4200D56BDE /* DMDominantPortfolioService.swift in Sources */,
 				45B4E7521E58EF5700D56BDE /* DMPersonalPortfolioService.swift in Sources */,
 				45B4E7541E58EF9E00D56BDE /* DMSignalsStoreService.swift in Sources */,
@@ -852,6 +890,7 @@
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,
+				967A2DB11FD430E600E1E941 /* DMInfoIntroView.swift in Sources */,
 				45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */,
 				45B7A0371E5916A2000CB062 /* DMLoginViewController.swift in Sources */,
 				45B7A0291E591445000CB062 /* DMAnalyticsViewController.swift in Sources */,
@@ -859,6 +898,7 @@
 				4509E8C91EF68825002CC7C4 /* DMSignalsHistoryService.swift in Sources */,
 				45C7D6E71E5E516A0089E8C7 /* Dominant+Double.swift in Sources */,
 				45A107AC1E59D35400591170 /* DMRatingTableViewCell.swift in Sources */,
+				967A2DAE1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

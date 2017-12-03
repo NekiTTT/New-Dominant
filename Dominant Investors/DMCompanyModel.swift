@@ -10,7 +10,7 @@ import Foundation
 import Quickblox
 
 class DMCompanyModel: NSObject {
-
+    
     
     var id                          : String!
     var ticker                      : String!
@@ -24,67 +24,58 @@ class DMCompanyModel: NSObject {
     var investmentHorizon           : String!
     var companyDescription          : String!
     var estimazeURL                 : URL?
-
+    
+    var estimaze_EPS_URL            : URL?
+    var yahoochartTicker : String!
+    
+    var EPS_Rating          : String!
+    var Sales_FQ3           : String!
+    var MarketCap           : String!
+    var EPS_FQ3             : String!
+    var PE_Ratio : String!
+    var isCrypto = false
+    var Group_rat : String!
+    
+    var cirulatingSupply : String!
+    var maxSupply : String!
+    
     var potentialProfitability      : String!
     
     init(response : DMResponseObject) {
         super.init()
         self.id = response.id
+        
         if let fields = response.fields as? [String : Any] {
-        
-        if let ticker = fields["companySymbol"] as? String {
-            self.ticker = ticker
-        } else {
-            self.ticker = ""
+            
+            self.ticker = fields["companySymbol"] as? String ?? "N/A"
+            self.yahoochartTicker = fields["yahoochartTicker"] as? String ?? self.ticker!
+            self.EPS_Rating = fields["EPS_Rating"] as? String ?? "N/A"
+            self.Sales_FQ3 = fields["Sales_FQ3"] as? String ?? "N/A"
+            self.MarketCap = fields["MarketCap"] as? String ?? "N/A"
+            self.EPS_FQ3 = fields["EPS_FQ3"] as? String ?? "N/A"
+            self.PE_Ratio = fields["PE_Ratio"] as? String ?? "N/A"
+            self.isCrypto = fields["isCrypto"] as? Bool ?? false
+            self.Group_rat = fields["Group_rat"] as? String ?? "N/A"
+            self.name = fields["companyName"] as? String ?? "N/A"
+            self.buyPoint = fields["buyPoint"] as? String ?? "N/A"
+            self.stopLoss = fields["stopLoss"] as? String ?? "N/A"
+            self.companyDescription = fields["companyDescription"] as? String ?? ""
+            self.targetPrice = fields["targetPrice"] as? String ?? "N/A"
+            self.investmentHorizon = fields["investmentHorizon"] as? String ?? "N/A"
+            self.potentialProfitability = fields["potentialProfitability"] as? String ?? "N/A"
+            self.maxSupply = fields["maxSupply"] as? String ?? "N/A"
+            self.cirulatingSupply = fields["cirulatingSupply"] as? String ?? "N/A"
+            
+            if let estimazeURL = fields["estimazeURL"] as? String {
+                self.estimazeURL = URL.init(string: estimazeURL)
+            }
+            
+            if let urlString = fields["estimaze_EPS_URL"] as? String {
+                self.estimaze_EPS_URL = URL.init(string: urlString)
+            }
         }
-        
-        if let value = fields["companyName"] as? String {
-            self.name = value
-        } else {
-            self.name = ""
-        }
-        
-        if let value = fields["buyPoint"] as? String {
-            self.buyPoint = value
-        } else {
-            self.buyPoint = ""
-        }
-        
-        if let value = fields["stopLoss"] as? String {
-            self.stopLoss = value
-        } else {
-            self.stopLoss = ""
-        }
-        
-        if let value = fields["companyDescription"] as? String {
-            self.companyDescription = value
-        } else {
-            self.companyDescription = ""
-        }
-        
-        if let value = fields["targetPrice"] as? String {
-            self.targetPrice = value
-        } else {
-            self.targetPrice = ""
-        }
-        
-        if let value = fields["investmentHorizon"] as? String {
-            self.investmentHorizon = value
-        } else {
-            self.investmentHorizon = ""
-        }
-        
-        if let estimazeURL = fields["estimazeURL"] as? String {
-            self.estimazeURL = URL.init(string: estimazeURL)
-        }
-        
-        if let value = fields["potentialProfitability"] as? String {
-            self.potentialProfitability = value
-        } else {
-            self.potentialProfitability = ""
-        }
-        
-        }
-        
     }
+    
+    
+    
 }

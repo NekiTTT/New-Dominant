@@ -32,6 +32,14 @@ class DMSignalsHistoryService: NSObject, UITableViewDataSource, UITableViewDeleg
         DMQuickBloxService.sharedInstance.getSignalsHistory(completion: completion)
     }
     
+    open func refresh(completion : @escaping () -> Void) {
+        self.getSignalsHistory { (signals) in
+            self.signals = signals.reversed()
+            self.userInterface?.reloadData()
+            completion()
+        }
+    }
+    
     // MARK: UITableViewDelegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

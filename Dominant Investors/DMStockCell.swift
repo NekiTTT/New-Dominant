@@ -28,7 +28,7 @@ class DMStockCell: UITableViewCell {
         self.exchangeOrBuyPoint.text = stock.exchange
         self.investmentPeriod.text = NSLocalizedString("(12 Month)", comment: "")
         
-        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear) { (chartPoints) in
+        SwiftStockKit.fetchChartPoints(symbol: stock.ticker!, range: .OneYear, crypto: false) { (chartPoints) in
             DispatchQueue.main.async {
                 let yearAgoPrice = Double(chartPoints.first!.close!)
                 let currentPrice = Double(chartPoints.last!.close!)

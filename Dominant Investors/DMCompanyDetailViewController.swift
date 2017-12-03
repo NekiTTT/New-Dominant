@@ -16,14 +16,27 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     var chart     : SwiftStockChart!
     
     // MARK: Outlets
-    @IBOutlet weak var infoLabel         : UILabel!
-    @IBOutlet weak var infoTextLabel     : UILabel!
-    @IBOutlet weak var companyNameLabel  : UILabel!
-    @IBOutlet weak var getSignalsButton  : UIButton!
-    @IBOutlet weak var estimizeButton    : UIButton!
-    @IBOutlet weak var tradingViewButton : UIButton!
-    @IBOutlet weak var companyLogo       : UIImageView!
-    @IBOutlet weak var chartContainer    : UIView!
+    @IBOutlet weak var infoLabel                : UILabel!
+    
+    @IBOutlet weak var companyNameLabel         : UILabel!
+    
+    @IBOutlet weak var revenueEstimizeButton    : UIButton!
+    @IBOutlet weak var epsEstimizeButton        : UIButton!
+    @IBOutlet weak var tradingViewButton        : UIButton!
+    
+    @IBOutlet weak var companyLogo              : UIImageView!
+    @IBOutlet weak var chartContainer           : UIView!
+    
+    @IBOutlet weak var statsContainer           : DMStatsContainer!
+    @IBOutlet weak var cryptoContainer          : DMCryptoInfoContainer!
+    @IBOutlet weak var buttonsContainer         : UIView!
+    @IBOutlet weak var buttonsContainerHeight   : NSLayoutConstraint!
+    
+    @IBOutlet weak var buyPointLabel            : UILabel!
+    @IBOutlet weak var growthPotential          : UILabel!
+    @IBOutlet weak var stopLoss                 : UILabel!
+    @IBOutlet weak var investmentPeriod         : UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,23 +76,43 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         self.companyLogo.image     = UIImage()
         self.companyNameLabel.text = self.company.name
         
+        self.statsContainer.setupWithCompany(company: self.company)
+        self.cryptoContainer.setupWithCompany(company: self.company)
+        
         if self.company.estimazeURL == nil {
-            self.estimizeButton.isEnabled = false
-            self.estimizeButton.alpha = 0.5
+            self.revenueEstimizeButton.isEnabled = false
+            self.revenueEstimizeButton.alpha = 0.5
+        }
+        
+        if self.company.estimaze_EPS_URL == nil {
+            self.epsEstimizeButton.isEnabled = false
+            self.epsEstimizeButton.alpha = 0.5
         }
 
         fillCompanyData()
         
-        self.estimizeButton.layer.cornerRadius = 20.0
-        self.estimizeButton.layer.borderColor = UIColor.red.cgColor
-        self.estimizeButton.layer.borderWidth = 1.0
+        self.revenueEstimizeButton.layer.cornerRadius = 20.0
+        self.revenueEstimizeButton.layer.borderColor = UIColor.red.cgColor
+        self.revenueEstimizeButton.layer.borderWidth = 1.0
         
-        self.tradingViewButton.layer.cornerRadius = 20.0
-        self.tradingViewButton.layer.borderColor = UIColor.red.cgColor
-        self.tradingViewButton.layer.borderWidth = 1.0
+        self.epsEstimizeButton.layer.cornerRadius = 20.0
+        self.epsEstimizeButton.layer.borderColor = UIColor.red.cgColor
+        self.epsEstimizeButton.layer.borderWidth = 1.0
     }
     
     private func fillCompanyData() {
+        
+        if (self.company.isCrypto == true) {
+            self.cryptoContainer.isHidden = false
+            self.statsContainer.isHidden = true
+            self.buttonsContainer.isHidden = true
+            self.buttonsContainerHeight.constant = 0
+        } else {
+            self.cryptoContainer.isHidden = true
+            self.statsContainer.isHidden = false
+            self.buttonsContainer.isHidden = false
+            self.buttonsContainerHeight.constant = 48
+        }
         
         DMAPIService.sharedInstance.downloadCompanyLogoWith(ID: company.id) { (image) in
             DispatchQueue.main.async {
@@ -87,47 +120,10 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
             }
         }
         
-        var annualSales_String = "Target Price "
-        annualSales_String = annualSales_String.appending(company.targetPrice)
-        annualSales_String = annualSales_String.appending("\n")
-        
-        let annualSales_atributed = NSMutableAttributedString(string: annualSales_String)
-        annualSales_atributed.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:13,length:annualSales_atributed.length - 13))
-        
-        
-        var IPO_String = "Buy Point "
-        IPO_String = IPO_String.appending(company.buyPoint)
-        IPO_String = IPO_String.appending("\n")
-        
-        let IPO_atributed = NSMutableAttributedString(string: IPO_String)
-        IPO_atributed.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:10,length:IPO_atributed.length-10))
-        
-        var averageSales_String = "Investment horizon "
-        averageSales_String = averageSales_String.appending(company.investmentHorizon)
-        averageSales_String = averageSales_String.appending("\n")
-        
-        let averageSales_atributed = NSMutableAttributedString(string: averageSales_String)
-        averageSales_atributed.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:19,length:averageSales_atributed.length - 19))
-        
-        
-        var marketCapitalization_string = "Stop-Loss "
-        marketCapitalization_string = marketCapitalization_string.appending(company.stopLoss)
-        marketCapitalization_string = marketCapitalization_string.appending("\n")
-        
-        let marketCapitalization_atributed = NSMutableAttributedString(string: marketCapitalization_string)
-        marketCapitalization_atributed.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:10,length:marketCapitalization_atributed.length - 10))
-        
-        let potential_string = "Potential profitability " + company.potentialProfitability
-        let potential_string_atributed = NSMutableAttributedString(string: potential_string)
-        potential_string_atributed.addAttribute(NSAttributedStringKey.font, value: UIFont.boldSystemFont(ofSize: infoLabel.font.pointSize), range: NSRange(location:24 ,length: potential_string_atributed.length - 24))
-        
-        annualSales_atributed.append(IPO_atributed)
-        annualSales_atributed.append(marketCapitalization_atributed)
-        annualSales_atributed.append(averageSales_atributed)
-        annualSales_atributed.append(potential_string_atributed)
-        
-        //infoTextLabel.attributedText = annualSales_atributed
-
+        self.buyPointLabel.text = self.company.buyPoint.replacingOccurrences(of: ",", with: ".")
+        self.growthPotential.text = self.company.potentialProfitability.replacingOccurrences(of: ",", with: ".")
+        self.stopLoss.text = self.company.stopLoss.replacingOccurrences(of: ",", with: ".")
+        self.investmentPeriod.text = self.company.investmentHorizon.replacingOccurrences(of: ",", with: ".")
     }
     
     
@@ -173,7 +169,8 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
             return String(format: "%.02f", value)
         }
         
-        SwiftStockKit.fetchChartPoints(symbol: self.company.ticker, range: range) { (chartPoints) -> () in
+        
+        SwiftStockKit.fetchChartPoints(symbol: self.company.yahoochartTicker, range: range, crypto: self.company.isCrypto) { (chartPoints) -> () in
             self.chart.clearChartData()
             self.chart.setChartPoints(points: chartPoints)
         }
@@ -197,6 +194,18 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         guard let estimazeURL = self.company.estimazeURL else { return }
         
        
+        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
+            chartVC.estimazeImageURL = estimazeURL
+            chartVC.ticker = self.company.ticker
+            self.showChart(chart: chartVC)
+        }
+    }
+    
+    @IBAction func EPSestimazeButtonPressed(sender : UIButton) {
+        guard let estimazeURL = self.company.estimaze_EPS_URL else { return }
+        
+        
         let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
             chartVC.estimazeImageURL = estimazeURL

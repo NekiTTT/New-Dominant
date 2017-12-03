@@ -102,7 +102,7 @@ class DMStockDetailViewController: DMViewController, UICollectionViewDelegateFlo
             return String(format: "%.02f", value)
         }
         
-        SwiftStockKit.fetchChartPoints(symbol: stockSymbol, range: range) { (chartPoints) -> () in
+        SwiftStockKit.fetchChartPoints(symbol: stockSymbol, range: range, crypto : false) { (chartPoints) -> () in
             self.chart.clearChartData()
             self.chart.setChartPoints(points: chartPoints)
         }
