@@ -26,7 +26,7 @@ class DMCompanyModel: NSObject {
     var estimazeURL                 : URL?
     
     var estimaze_EPS_URL            : URL?
-    var yahoochartTicker : String!
+    var tradingViewTicker           : String!
     
     var EPS_Rating          : String!
     var Sales_FQ3           : String!
@@ -48,7 +48,7 @@ class DMCompanyModel: NSObject {
         if let fields = response.fields as? [String : Any] {
             
             self.ticker = fields["companySymbol"] as? String ?? "N/A"
-            self.yahoochartTicker = fields["yahoochartTicker"] as? String ?? self.ticker!
+            self.tradingViewTicker = fields["tradingViewTicker"] as? String ?? self.ticker!
             self.EPS_Rating = fields["EPS_Rating"] as? String ?? "N/A"
             self.Sales_FQ3 = fields["Sales_FQ3"] as? String ?? "N/A"
             self.MarketCap = fields["MarketCap"] as? String ?? "N/A"

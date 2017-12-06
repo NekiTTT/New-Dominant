@@ -347,7 +347,7 @@ class DMQuickBloxService: NSObject {
     }
     
     
-    //MARK : Trial Period Calls
+    //MARK: Trial Period Calls
     
     open func getTrialObject(completion : @escaping (DMTrialModel?) -> Void) {
         QBRequest.objects(withClassName: "Trial", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
@@ -377,6 +377,7 @@ class DMQuickBloxService: NSObject {
                 quickblox.fields!.setObject(date, forKey: "trialStarted" as NSCopying)
                 quickblox.fields!.setObject(false, forKey: "trialBuyed" as NSCopying)
                 quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
+                quickblox.fields!.setObject(UIDevice.current.identifierForVendor!.uuidString, forKey: "deviceUDID" as NSCopying)
                 QBRequest.createObject(quickblox, successBlock: { (response, object) in
                     print("SUCCESS")
                     completion(DMTrialModel.init(response: DMResponseObject.init(customObject: object!)))
@@ -389,13 +390,15 @@ class DMQuickBloxService: NSObject {
 
     }
     
-    open func checkTrialPeriodStartedExpired(userName : String, completion : @escaping (DMTrialModel?) -> Void) {
-        self.getTrialObject { (trialObject) in
-            if trialObject != nil {
-                completion(trialObject)
-            } else {
-                completion(nil)
+    open func checkTrialPeriodStartedExpired(userName : String, completion : @escaping ([DMTrialModel]?) -> Void) {
+        QBRequest.objects(withClassName: "Trial", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
+            var array = [DMTrialModel]()
+            for object in objects! {
+                array.append(DMTrialModel.init(response: DMResponseObject.init(customObject: object)))
             }
+            completion(array)
+        }) { (error) in
+            completion(nil)
         }
     }
     
@@ -407,6 +410,7 @@ class DMQuickBloxService: NSObject {
                 quickblox.fields!.setObject(trialObject?.trialStarted as Any, forKey: "trialStarted" as NSCopying)
                 quickblox.fields!.setObject(true, forKey: "trialBuyed" as NSCopying)
                 quickblox.fields!.setObject(DMAuthorizationManager.sharedInstance.userProfile.userName, forKey: "name" as NSCopying)
+                quickblox.fields!.setObject(UIDevice.current.identifierForVendor!.uuidString, forKey: "deviceUDID" as NSCopying)
                 quickblox.id = trialObject?.id
                 QBRequest.update(quickblox, successBlock: { (response, object) in
                     print("SUCCESS")

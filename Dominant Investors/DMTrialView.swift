@@ -45,5 +45,9 @@ class DMTrialView: UIView {
     @IBAction func restoreAction(sender : UIButton) {
         self.delegate?.showAlertWith(title: "Info".localized, message: "Nothing to restore".localized, cancelButton: false)
     }
+    
+    @IBAction func changeAccountAction(sender : UIButton) {
+        self.delegate?.changeAccount()
+    }
 
 }

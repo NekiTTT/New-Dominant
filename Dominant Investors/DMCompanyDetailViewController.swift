@@ -28,9 +28,11 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     @IBOutlet weak var chartContainer           : UIView!
     
     @IBOutlet weak var statsContainer           : DMStatsContainer!
+    @IBOutlet weak var tradingViewContainer     : UIView!
     @IBOutlet weak var cryptoContainer          : DMCryptoInfoContainer!
     @IBOutlet weak var buttonsContainer         : UIView!
     @IBOutlet weak var buttonsContainerHeight   : NSLayoutConstraint!
+    @IBOutlet weak var chartContainerHeight     : NSLayoutConstraint!
     
     @IBOutlet weak var buyPointLabel            : UILabel!
     @IBOutlet weak var growthPotential          : UILabel!
@@ -55,6 +57,14 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        if let chartVC = segue.destination as? DMTradingViewChartViewController {
+            chartVC.ticker = self.company.tradingViewTicker
+            chartVC.isBlack = true
+        }
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -91,11 +101,11 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
 
         fillCompanyData()
         
-        self.revenueEstimizeButton.layer.cornerRadius = 20.0
+        self.revenueEstimizeButton.layer.cornerRadius = 25.0
         self.revenueEstimizeButton.layer.borderColor = UIColor.red.cgColor
         self.revenueEstimizeButton.layer.borderWidth = 1.0
         
-        self.epsEstimizeButton.layer.cornerRadius = 20.0
+        self.epsEstimizeButton.layer.cornerRadius = 25.0
         self.epsEstimizeButton.layer.borderColor = UIColor.red.cgColor
         self.epsEstimizeButton.layer.borderWidth = 1.0
     }
@@ -107,11 +117,13 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
             self.statsContainer.isHidden = true
             self.buttonsContainer.isHidden = true
             self.buttonsContainerHeight.constant = 0
+            self.chartContainerHeight.setMultiplier(multiplier: 0)
         } else {
             self.cryptoContainer.isHidden = true
             self.statsContainer.isHidden = false
             self.buttonsContainer.isHidden = false
-            self.buttonsContainerHeight.constant = 48
+            self.buttonsContainerHeight.constant = 80
+            self.chartContainerHeight.setMultiplier(multiplier: 0.25)
         }
         
         DMAPIService.sharedInstance.downloadCompanyLogoWith(ID: company.id) { (image) in
@@ -129,27 +141,33 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     
     private func loadChart() {
         
-        chartView = ChartView.create()
-        chartView?.delegate = self
-        chartView?.frame = CGRect(x: 24, y: 0, width: self.chartContainer.frame.width-48, height: self.chartContainer.frame.height)
-        chartContainer?.addSubview(chartView!)
-
-        chart = SwiftStockChart(frame: CGRect(x : 16, y :  10, width : self.chartContainer.bounds.size.width - 60, height : chartContainer.frame.height - 80))
-
-        chartView?.backgroundColor = UIColor.clear
-
-        chart.axisColor = UIColor.red
-        chart.verticalGridStep = 3
-
-        loadChartWithRange(range: .OneDay)
-
-        chartView?.addSubview(chart)
-        chartView?.backgroundColor = UIColor.black
-
-
-        self.view.setNeedsLayout()
-        self.view.layoutIfNeeded()
-    }
+        if self.company.isCrypto == false {
+            self.tradingViewContainer.isHidden = true
+            chartView = ChartView.create()
+            chartView?.delegate = self
+            chartView?.frame = CGRect(x: 24, y: 0, width: self.chartContainer.frame.width-48, height: self.chartContainer.frame.height)
+            chartContainer?.addSubview(chartView!)
+            
+            chart = SwiftStockChart(frame: CGRect(x : 16, y :  10, width : self.chartContainer.bounds.size.width - 60, height : chartContainer.frame.height - 80))
+            
+            chartView?.backgroundColor = UIColor.clear
+            
+            chart.axisColor = UIColor.red
+            chart.verticalGridStep = 3
+            
+            loadChartWithRange(range: .OneDay)
+            
+            chartView?.addSubview(chart)
+            chartView?.backgroundColor = UIColor.black
+            
+            
+            self.view.setNeedsLayout()
+            self.view.layoutIfNeeded()
+        } else {
+            self.tradingViewContainer.isHidden = false
+        }
+    
+}
     
     
     // MARK: ChartViewDelegate
@@ -170,7 +188,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         }
         
         
-        SwiftStockKit.fetchChartPoints(symbol: self.company.yahoochartTicker, range: range, crypto: self.company.isCrypto) { (chartPoints) -> () in
+        SwiftStockKit.fetchChartPoints(symbol: self.company.tradingViewTicker, range: range, crypto: self.company.isCrypto) { (chartPoints) -> () in
             self.chart.clearChartData()
             self.chart.setChartPoints(points: chartPoints)
         }

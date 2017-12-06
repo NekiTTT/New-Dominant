@@ -18,8 +18,8 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     var containers      : [UIView]!
     var loaded          = false
     
-    let tabIcons    = [UIImage(named: "analytic"), UIImage(named: "folio"), UIImage(named: "ideas"), UIImage(named: "screener")]
-    let activeIcons = [UIImage(named: "analytic_active"), UIImage(named: "folio_active"), UIImage(named: "ideas_active"), UIImage(named: "screener_active")]
+    let tabIcons    = [UIImage(named: "ideas"), UIImage(named: "screener"), UIImage(named: "folio"), UIImage(named: "rating")]
+    let activeIcons = [UIImage(named: "ideas_active"), UIImage(named: "screener_active"), UIImage(named: "folio_active"), UIImage(named: "rating_active")]
     
     //MARK: SKProduct
     
@@ -65,12 +65,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
             loaded = true
         }
         
-        let introShowed = UserDefaults.standard.bool(forKey: "kIntroInfoShowed")
-        if (introShowed == false) {
-            let introView = Bundle.main.loadNibNamed("DMInfoIntroView", owner: nil, options: nil)![0] as! DMInfoIntroView
-            introView.addTo(superview: self.view)
-            UserDefaults.standard.set(true, forKey: "kIntroInfoShowed")
-        }
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -113,7 +108,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     }
     
     private func setupContainers() {
-        self.containers = [self.analyticsContainer, self.portfolioContainer, self.ratingsContainer, self.screenerContainer]
+        self.containers = [self.analyticsContainer, self.screenerContainer, self.portfolioContainer, self.ratingsContainer]
     }
     
     private func setupNotificationCenterObserving() {
@@ -129,9 +124,9 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
         for cont in self.viewControllers {
             if cont is DMAnalyticsViewController {
                 actualCont[0] = cont
-            } else if cont is DMPortfolioViewController {
+            } else if cont is DMScreenerViewController {
                 actualCont[1] = cont
-            } else if cont is DMRatingsViewController {
+            } else if cont is DMPortfolioViewController {
                 actualCont[2] = cont
             } else {
                 actualCont[3] = cont
@@ -149,8 +144,10 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     
     @objc private func showSignalsHistory() {
         self.showTab(index: Values.DMPortfolioScreen)
-        for button in buttons { button.setImage(tabIcons[button.tag], for: .normal) }
-        buttons[1].setImage(activeIcons[1], for: .normal)
+        for button in buttons {
+            button.setImage(tabIcons[button.tag], for: .normal)
+        }
+        buttons[2].setImage(activeIcons[2], for: .normal)
     }
     
     @objc private func showTab(index : Int) {
@@ -187,35 +184,73 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
             }
         }
         
-        DMAPIService.sharedInstance.checkTrialPeriodStartedExpired(userName: DMAuthorizationManager.sharedInstance.userProfile.userName) { (trialObject) in
+        //HARD TRIAL LOGIC
+        DMAPIService.sharedInstance.checkTrialPeriodStartedExpired(userName: DMAuthorizationManager.sharedInstance.userProfile.userName) { (trialObjects) in
             DispatchQueue.main.async {
                 
-                if trialObject != nil {
+                if trialObjects?.count != 0 {
                     
-                    if trialObject?.trialBuyed == true {
-                        return
-                    }
-                    
-                    let dateRangeStart = Date()
-                    let dateRangeEnd = trialObject?.trialStarted
-                    let components = Calendar.current.dateComponents([.day, .hour], from:dateRangeEnd! , to: dateRangeStart)
-                    
-                    if let differense = components.day {
-                        if (differense > 0) {
-                            let trialView = Bundle.main.loadNibNamed("DMTrialView", owner: nil, options: nil)![0] as! DMTrialView
-                            trialView.delegate = self
-                            trialView.addTo(superview: self.view)
+                    for object in trialObjects! {
+                        
+                        //AKK EXIST
+                        
+                        if object.name == DMAuthorizationManager.sharedInstance.userProfile.userName {
+                            if object.trialBuyed == true {
+                                return
+                            }
+                            
+                            let dateRangeStart = Date()
+                            let dateRangeEnd = object.trialStarted
+                            let components = Calendar.current.dateComponents([.day, .hour], from:dateRangeEnd! , to: dateRangeStart)
+                            if let differense = components.day {
+                                if (differense > 0) {
+                                    self.proposeToBuy()
+                                    return
+                                } else {
+                                    return
+                                }
+                            }
                         }
+                        //
+                        
+                        //DEVICE EXIST
+                        
+                        if object.deviceUDID == UIDevice.current.identifierForVendor!.uuidString {
+                            if object.trialBuyed == true && object.name == DMAuthorizationManager.sharedInstance.userProfile.userName {
+                                return
+                            }
+                            
+                            let dateRangeStart = Date()
+                            let dateRangeEnd = object.trialStarted
+                            let components = Calendar.current.dateComponents([.day, .hour], from:dateRangeEnd! , to: dateRangeStart)
+                            if let differense = components.day {
+                                if (differense > 0) {
+                                    self.proposeToBuy()
+                                    return
+                                } else {
+                                    return
+                                }
+                            }
+                        }
+                        //
                     }
-                    
-                } else {
-                    let trialView = Bundle.main.loadNibNamed("DMTrialUsageView", owner: nil, options: nil)![0] as! DMTrialUsageView
-                    trialView.delegate = self
-                    trialView.addTo(superview: self.view)
                 }
                 
+                self.proposeTrial()
             }
         }
+    }
+    
+    open func proposeToBuy() {
+        let trialView = Bundle.main.loadNibNamed("DMTrialView", owner: nil, options: nil)![0] as! DMTrialView
+        trialView.delegate = self
+        trialView.addTo(superview: self.view)
+    }
+    
+    open func proposeTrial() {
+        let trialView = Bundle.main.loadNibNamed("DMTrialUsageView", owner: nil, options: nil)![0] as! DMTrialUsageView
+        trialView.delegate = self
+        trialView.addTo(superview: self.view)
     }
     
     //MARK: SKPaymentTransactionObserver
@@ -357,6 +392,14 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
         present(actionSheetController, animated: true, completion: nil)
     }
     
-
+    open func changeAccount() {
+        DMAuthorizationManager.sharedInstance.signOut()
+        DMPersonalPortfolioService.sharedInstance.changeUser()
+        
+        let auth = UIStoryboard(name: "Authorization", bundle: nil).instantiateInitialViewController()
+        let navigation = UINavigationController.init(rootViewController: auth!)
+        navigation.setNavigationBarHidden(true, animated: false)
+        self.present(navigation, animated: true, completion: nil)
+    }
 
 }

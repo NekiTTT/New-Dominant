@@ -106,6 +106,7 @@
 		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
 		9667CC741FCCB314006E8071 /* DMTrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667CC731FCCB314006E8071 /* DMTrialView.swift */; };
 		9667CC771FCCB390006E8071 /* DMTrialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9667CC761FCCB390006E8071 /* DMTrialView.xib */; };
+		9672676B1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672676A1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift */; };
 		967A2DAB1FD1CF7D00E1E941 /* DMStatsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DAA1FD1CF7D00E1E941 /* DMStatsContainer.swift */; };
 		967A2DAE1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DAD1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift */; };
 		967A2DB11FD430E600E1E941 /* DMInfoIntroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967A2DB01FD430E600E1E941 /* DMInfoIntroView.swift */; };
@@ -238,6 +239,7 @@
 		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
 		9667CC731FCCB314006E8071 /* DMTrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialView.swift; sourceTree = "<group>"; };
 		9667CC761FCCB390006E8071 /* DMTrialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMTrialView.xib; sourceTree = "<group>"; };
+		9672676A1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
 		967A2DAA1FD1CF7D00E1E941 /* DMStatsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMStatsContainer.swift; sourceTree = "<group>"; };
 		967A2DAD1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMCryptoInfoContainer.swift; sourceTree = "<group>"; };
 		967A2DB01FD430E600E1E941 /* DMInfoIntroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMInfoIntroView.swift; sourceTree = "<group>"; };
@@ -614,6 +616,7 @@
 				45D73F751E636D1B001BB511 /* Dominant+String.swift */,
 				456F07AB1EDDB6AA00DABE35 /* Dominant+UIImageView.swift */,
 				965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */,
+				9672676A1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -889,6 +892,7 @@
 				964A40FA1FCF54AC006A5C8C /* DMTrialModel.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
+				9672676B1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,
 				967A2DB11FD430E600E1E941 /* DMInfoIntroView.swift in Sources */,
 				45B7A02B1E591458000CB062 /* DMPortfolioViewController.swift in Sources */,

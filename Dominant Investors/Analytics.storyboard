@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KW0-Jp-fxF">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -35,11 +35,11 @@
                         <viewControllerLayoutGuide type="bottom" id="bb6-eL-2se"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kKl-Td-hu2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="T3M-xc-S0X">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wod-dv-lrW">
                                     <size key="itemSize" width="199" height="170"/>
@@ -49,7 +49,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="BOV-Ip-CB7" customClass="CompanyCell" customModule="Dominant_Investors" customModuleProvider="target">
-                                        <rect key="frame" x="88" y="0.0" width="199" height="170"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="199" height="170"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="199" height="170"/>
@@ -75,7 +75,7 @@
                                 </connections>
                             </collectionView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CLn-ep-mfy">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <connections>
                                     <segue destination="Hv5-R0-Csu" kind="embed" identifier="contanerSegue" id="WNx-3b-Uxj"/>
                                 </connections>
@@ -115,12 +115,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="companyInfoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="az3-Y8-Sxc">
-                                <rect key="frame" x="0.0" y="20" width="320" height="1280"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="1300"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x54-v7-C6y">
                                 <rect key="frame" x="0.0" y="20" width="320" height="325"/>
+                                <subviews>
+                                    <containerView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3d-Jb-q0h">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="325"/>
+                                        <connections>
+                                            <segue destination="fVX-UF-6LJ" kind="embed" id="ORq-vz-N69"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="t3d-Jb-q0h" secondAttribute="trailing" id="OSN-B5-Jhh"/>
+                                    <constraint firstAttribute="bottom" secondItem="t3d-Jb-q0h" secondAttribute="bottom" id="c11-bY-AYF"/>
+                                    <constraint firstItem="t3d-Jb-q0h" firstAttribute="leading" secondItem="x54-v7-C6y" secondAttribute="leading" id="nfQ-oH-a5R"/>
+                                    <constraint firstItem="t3d-Jb-q0h" firstAttribute="top" secondItem="x54-v7-C6y" secondAttribute="top" id="zmu-Bu-yFo"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,16 +151,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RJx-Ku-X34">
-                                <rect key="frame" x="0.0" y="345" width="320" height="955"/>
+                                <rect key="frame" x="0.0" y="365" width="320" height="935"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drF-Pq-Qnw">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="808"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="926"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="242" verticalHuggingPriority="243" horizontalCompressionResistancePriority="741" verticalCompressionResistancePriority="740" translatesAutoresizingMaskIntoConstraints="NO" id="UBr-Y0-7ym">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="242" verticalHuggingPriority="243" horizontalCompressionResistancePriority="741" verticalCompressionResistancePriority="740" image="launchScreeniPad" translatesAutoresizingMaskIntoConstraints="NO" id="UBr-Y0-7ym">
                                                 <rect key="frame" x="16" y="24" width="140" height="70"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="UBr-Y0-7ym" secondAttribute="height" multiplier="2:1" id="rha-Ce-Hje"/>
+                                                    <constraint firstAttribute="width" secondItem="UBr-Y0-7ym" secondAttribute="height" multiplier="2:1" id="lOc-9T-hiX"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="242" verticalHuggingPriority="243" horizontalCompressionResistancePriority="741" verticalCompressionResistancePriority="740" text="(MXL) NYSE ELEC-SEMICONONDOCTOR  FABLSS" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZpM-Hv-tg1">
@@ -156,9 +170,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4c-or-5w8">
-                                                <rect key="frame" x="8.5" y="110" width="303.5" height="151.5"/>
+                                                <rect key="frame" x="8" y="110" width="304" height="179.5"/>
                                                 <string key="text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.</string>
-                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
+                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="14"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -174,27 +188,27 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07J-OC-Frp" userLabel="StatsContaine" customClass="DMStatsContainer" customModule="Dominant_Investors" customModuleProvider="target">
-                                                <rect key="frame" x="20.5" y="309.5" width="279.5" height="150"/>
+                                                <rect key="frame" x="5" y="337.5" width="310" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZU-O2-3u9">
-                                                        <rect key="frame" x="4" y="4" width="140" height="47"/>
+                                                        <rect key="frame" x="0.0" y="4" width="155" height="47.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nz0-wI-sQi">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="46"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="77.5" y="0.0" width="77.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-m0-1Vd">
-                                                                <rect key="frame" x="4" y="46" width="132" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DVC-m0-1Vd">
+                                                                <rect key="frame" x="4" y="46.5" width="147" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="gdQ-vL-V3E"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Cap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njs-t4-PWj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="46"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -216,24 +230,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVb-cX-fvi">
-                                                        <rect key="frame" x="160" y="4" width="115.5" height="47"/>
+                                                        <rect key="frame" x="171" y="4" width="135" height="47.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7B-gl-Szd">
-                                                                <rect key="frame" x="57.5" y="0.0" width="58" height="46"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="67.5" y="0.0" width="67.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42n-7d-2vh">
-                                                                <rect key="frame" x="4" y="46" width="107.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="42n-7d-2vh">
+                                                                <rect key="frame" x="4" y="46.5" width="127" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="oMe-c7-rR1"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P/E Ratio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kGH-5T-I7b">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="46"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -255,24 +269,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDR-Wg-Efx">
-                                                        <rect key="frame" x="0.0" y="53" width="140" height="47.5"/>
+                                                        <rect key="frame" x="0.0" y="53.5" width="155" height="47"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8D-0o-zUs">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="77.5" y="0.0" width="77.5" height="46"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Dq-qb6">
-                                                                <rect key="frame" x="4" y="46.5" width="132" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ebf-Dq-qb6">
+                                                                <rect key="frame" x="4" y="46" width="147" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="2Y4-ia-mAA"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EPS FQ3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxZ-6b-N0A">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="46"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -294,24 +308,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gI5-BN-Bso">
-                                                        <rect key="frame" x="0.0" y="102.5" width="140" height="47.5"/>
+                                                        <rect key="frame" x="0.0" y="102.5" width="155" height="47.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eR1-yk-sH2">
-                                                                <rect key="frame" x="70" y="0.0" width="70" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="77.5" y="0.0" width="77.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OE2-fL-6xH">
-                                                                <rect key="frame" x="4" y="46.5" width="132" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OE2-fL-6xH">
+                                                                <rect key="frame" x="4" y="46.5" width="147" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="c2a-Kh-jSg"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sales FQ3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vn9-bZ-RMz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="77.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -333,24 +347,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nal-vT-dQz">
-                                                        <rect key="frame" x="160" y="53" width="115.5" height="47.5"/>
+                                                        <rect key="frame" x="171" y="53.5" width="135" height="47"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4i-6w-XfM">
-                                                                <rect key="frame" x="57.5" y="0.0" width="58" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="67.5" y="0.0" width="67.5" height="46"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsd-Eo-Dhu">
-                                                                <rect key="frame" x="4" y="46.5" width="107.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsd-Eo-Dhu">
+                                                                <rect key="frame" x="4" y="46" width="127" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="rqQ-Pr-QlM"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EPS Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbC-Kg-cTb">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="46"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -372,24 +386,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FtJ-pb-SQv">
-                                                        <rect key="frame" x="160" y="102.5" width="115.5" height="47.5"/>
+                                                        <rect key="frame" x="171" y="102.5" width="135" height="47.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jz9-Wz-hM3">
-                                                                <rect key="frame" x="57.5" y="0.0" width="58" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                                <rect key="frame" x="67.5" y="0.0" width="67.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nj3-fx-jDx">
-                                                                <rect key="frame" x="4" y="46.5" width="107.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nj3-fx-jDx">
+                                                                <rect key="frame" x="4" y="46.5" width="127" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="U7A-3l-VKb"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Rat." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q6c-Yq-PaR">
-                                                                <rect key="frame" x="0.0" y="0.0" width="57.5" height="46.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="67.5" height="46.5"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -425,7 +439,7 @@
                                                     <constraint firstItem="FtJ-pb-SQv" firstAttribute="top" secondItem="Nal-vT-dQz" secondAttribute="bottom" constant="2" id="WNQ-ae-mBo"/>
                                                     <constraint firstItem="Nal-vT-dQz" firstAttribute="leading" secondItem="KVb-cX-fvi" secondAttribute="leading" id="aR0-lx-j3B"/>
                                                     <constraint firstItem="gI5-BN-Bso" firstAttribute="height" secondItem="EDR-Wg-Efx" secondAttribute="height" id="awc-jL-M56"/>
-                                                    <constraint firstItem="eZU-O2-3u9" firstAttribute="leading" secondItem="07J-OC-Frp" secondAttribute="leading" constant="4" id="bkL-Np-7Z1"/>
+                                                    <constraint firstItem="eZU-O2-3u9" firstAttribute="leading" secondItem="07J-OC-Frp" secondAttribute="leading" id="bkL-Np-7Z1"/>
                                                     <constraint firstItem="EDR-Wg-Efx" firstAttribute="width" secondItem="eZU-O2-3u9" secondAttribute="width" id="cSU-qC-AOf"/>
                                                     <constraint firstAttribute="height" constant="150" id="eJJ-jM-zry"/>
                                                     <constraint firstAttribute="bottom" secondItem="gI5-BN-Bso" secondAttribute="bottom" id="efS-Mq-gBx"/>
@@ -436,6 +450,7 @@
                                                     <constraint firstItem="KVb-cX-fvi" firstAttribute="top" secondItem="eZU-O2-3u9" secondAttribute="top" id="q3k-FC-fXq"/>
                                                     <constraint firstItem="FtJ-pb-SQv" firstAttribute="trailing" secondItem="Nal-vT-dQz" secondAttribute="trailing" id="snj-PY-JjU"/>
                                                     <constraint firstItem="KVb-cX-fvi" firstAttribute="leading" secondItem="eZU-O2-3u9" secondAttribute="trailing" constant="16" id="uJM-Ce-thC"/>
+                                                    <constraint firstAttribute="width" constant="310" id="wiO-35-J6p"/>
                                                     <constraint firstItem="EDR-Wg-Efx" firstAttribute="top" secondItem="eZU-O2-3u9" secondAttribute="bottom" constant="2" id="xOq-Oc-IxD"/>
                                                     <constraint firstItem="FtJ-pb-SQv" firstAttribute="height" secondItem="Nal-vT-dQz" secondAttribute="height" id="xpi-JG-JpL"/>
                                                     <constraint firstItem="gI5-BN-Bso" firstAttribute="top" secondItem="EDR-Wg-Efx" secondAttribute="bottom" constant="2" id="zRg-bI-UoO"/>
@@ -450,27 +465,27 @@
                                                 </connections>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCk-FE-xGy" userLabel="CryptoContainer" customClass="DMCryptoInfoContainer" customModule="Dominant_Investors" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="309.5" width="279.5" height="150"/>
+                                                <rect key="frame" x="5" y="337.5" width="310" height="150"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hmZ-7Z-Ojf">
-                                                        <rect key="frame" x="0.0" y="0.0" width="279.5" height="49.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="310" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-6I-GbX">
-                                                                <rect key="frame" x="140" y="0.0" width="139.5" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJT-6I-GbX">
+                                                                <rect key="frame" x="155" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvU-6L-K9P">
-                                                                <rect key="frame" x="84" y="48.5" width="111.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dvU-6L-K9P">
+                                                                <rect key="frame" x="0.0" y="49" width="311" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="byN-n7-KNb"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Cap" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvC-mj-dlG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Market Cap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvC-mj-dlG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -479,7 +494,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="pJT-6I-GbX" secondAttribute="trailing" id="Bwg-8C-zJ3"/>
                                                             <constraint firstAttribute="bottom" secondItem="dvU-6L-K9P" secondAttribute="bottom" id="Dc6-To-AjY"/>
-                                                            <constraint firstItem="dvU-6L-K9P" firstAttribute="width" secondItem="hmZ-7Z-Ojf" secondAttribute="width" multiplier="0.4" id="GyO-sG-t5E"/>
+                                                            <constraint firstItem="dvU-6L-K9P" firstAttribute="width" secondItem="hmZ-7Z-Ojf" secondAttribute="width" constant="1" id="GyO-sG-t5E"/>
                                                             <constraint firstItem="pJT-6I-GbX" firstAttribute="leading" secondItem="xvC-mj-dlG" secondAttribute="trailing" id="KIB-Pv-eo1"/>
                                                             <constraint firstItem="xvC-mj-dlG" firstAttribute="leading" secondItem="hmZ-7Z-Ojf" secondAttribute="leading" id="OEs-pP-0qp"/>
                                                             <constraint firstAttribute="bottom" secondItem="pJT-6I-GbX" secondAttribute="bottom" constant="1" id="R0N-N2-mKg"/>
@@ -492,24 +507,24 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHu-Ca-vlT">
-                                                        <rect key="frame" x="0.0" y="50" width="279.5" height="49.5"/>
+                                                        <rect key="frame" x="0.0" y="50" width="310" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-QP-8Q3">
-                                                                <rect key="frame" x="140" y="0.0" width="139.5" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-QP-8Q3">
+                                                                <rect key="frame" x="155" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcc-4V-jVo">
-                                                                <rect key="frame" x="84" y="48.5" width="111.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcc-4V-jVo">
+                                                                <rect key="frame" x="0.0" y="49" width="310" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="GQr-Rh-gLa"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating supply" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpv-Uu-BmE">
-                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Circulating supply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpv-Uu-BmE">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -525,30 +540,30 @@
                                                             <constraint firstAttribute="trailing" secondItem="oUO-QP-8Q3" secondAttribute="trailing" id="f7P-tH-HJC"/>
                                                             <constraint firstItem="bpv-Uu-BmE" firstAttribute="leading" secondItem="rHu-Ca-vlT" secondAttribute="leading" id="hIC-y0-WTc"/>
                                                             <constraint firstAttribute="bottom" secondItem="oUO-QP-8Q3" secondAttribute="bottom" constant="1" id="hod-xQ-vGj"/>
-                                                            <constraint firstItem="jcc-4V-jVo" firstAttribute="width" secondItem="rHu-Ca-vlT" secondAttribute="width" multiplier="0.4" id="onV-j5-T8W"/>
+                                                            <constraint firstItem="jcc-4V-jVo" firstAttribute="width" secondItem="rHu-Ca-vlT" secondAttribute="width" id="onV-j5-T8W"/>
                                                             <constraint firstItem="oUO-QP-8Q3" firstAttribute="width" secondItem="bpv-Uu-BmE" secondAttribute="width" id="toM-LX-ElQ"/>
                                                             <constraint firstItem="oUO-QP-8Q3" firstAttribute="leading" secondItem="bpv-Uu-BmE" secondAttribute="trailing" id="uHh-wS-Lss"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ogk-y1-nyN">
-                                                        <rect key="frame" x="0.0" y="99.5" width="279.5" height="49.5"/>
+                                                        <rect key="frame" x="0.0" y="100" width="310" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-pd-hM1">
-                                                                <rect key="frame" x="140" y="0.0" width="139.5" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="12"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 486 Bil" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD7-pd-hM1">
+                                                                <rect key="frame" x="155" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="14"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view hidden="YES" alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-zJ-R6C">
-                                                                <rect key="frame" x="84" y="48.5" width="111.5" height="1"/>
+                                                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-zJ-R6C">
+                                                                <rect key="frame" x="0.0" y="49" width="310" height="1"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="3S3-GI-RRA"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max supply" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGf-f9-gzr">
-                                                                <rect key="frame" x="0.0" y="0.0" width="140" height="48.5"/>
-                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="11"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max supply" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mGf-f9-gzr">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="49"/>
+                                                                <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="13"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -557,7 +572,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="trailing" secondItem="HD7-pd-hM1" secondAttribute="trailing" id="0Yj-y0-b5K"/>
                                                             <constraint firstAttribute="bottom" secondItem="mGf-f9-gzr" secondAttribute="bottom" constant="1" id="2EJ-g0-jN6"/>
-                                                            <constraint firstItem="zZe-zJ-R6C" firstAttribute="width" secondItem="Ogk-y1-nyN" secondAttribute="width" multiplier="0.4" id="2wB-5e-uYB"/>
+                                                            <constraint firstItem="zZe-zJ-R6C" firstAttribute="width" secondItem="Ogk-y1-nyN" secondAttribute="width" id="2wB-5e-uYB"/>
                                                             <constraint firstAttribute="bottom" secondItem="zZe-zJ-R6C" secondAttribute="bottom" id="3Wf-CI-LrZ"/>
                                                             <constraint firstItem="HD7-pd-hM1" firstAttribute="width" secondItem="mGf-f9-gzr" secondAttribute="width" id="GRs-y4-ThI"/>
                                                             <constraint firstAttribute="bottom" secondItem="HD7-pd-hM1" secondAttribute="bottom" constant="1" id="Ilb-L0-LvJ"/>
@@ -592,20 +607,20 @@
                                                 </connections>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sIO-lu-2bn">
-                                                <rect key="frame" x="73" y="539.5" width="175" height="27"/>
+                                                <rect key="frame" x="73" y="625.5" width="175" height="27"/>
                                                 <state key="normal" image="interactive"/>
                                                 <connections>
                                                     <action selector="tradingViewChartButtonPressedWithSender:" destination="qHz-7G-Xpw" eventType="touchUpInside" id="w8R-Ti-gcg"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signal information" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujq-cS-ETx">
-                                                <rect key="frame" x="75" y="598.5" width="170" height="24.5"/>
+                                                <rect key="frame" x="75.5" y="716.5" width="170" height="24.5"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sr5-JS-m0Z">
-                                                <rect key="frame" x="40.5" y="635" width="240" height="125"/>
+                                                <rect key="frame" x="40" y="753" width="240" height="125"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVq-tR-v20">
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="62.5"/>
@@ -745,10 +760,17 @@
                                                 </constraints>
                                             </view>
                                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLq-Io-N4W">
-                                                <rect key="frame" x="20.5" y="475.5" width="279.5" height="48"/>
+                                                <rect key="frame" x="5" y="511.5" width="310" height="90"/>
                                                 <subviews>
+                                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuR-ie-nHj">
+                                                        <rect key="frame" x="68" y="89" width="175" height="1"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="MeI-hk-zW6"/>
+                                                        </constraints>
+                                                    </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bah-cV-Voq">
-                                                        <rect key="frame" x="135.5" y="0.0" width="8" height="45"/>
+                                                        <rect key="frame" x="151" y="0.0" width="8" height="45"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="8" id="0R0-sy-kU1"/>
@@ -757,12 +779,11 @@
                                                         </constraints>
                                                     </view>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZ8-Ws-sI7" userLabel="TradingView">
-                                                        <rect key="frame" x="155.5" y="8" width="125" height="40"/>
+                                                        <rect key="frame" x="171" y="8" width="139" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="WpJ-32-23y"/>
                                                             <constraint firstAttribute="height" constant="38" id="b10-0s-Qfx"/>
                                                             <constraint firstAttribute="height" constant="40" id="dk7-UT-Vi4"/>
-                                                            <constraint firstAttribute="width" constant="125" id="hZf-13-nCX"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
                                                         <state key="normal" title="EPS FORECAST">
@@ -788,11 +809,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wR4-Q1-DSP" userLabel="Estimaze">
-                                                        <rect key="frame" x="-1.5" y="8" width="125" height="40"/>
+                                                        <rect key="frame" x="0.0" y="8" width="139" height="58"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="5GO-WS-hpS"/>
                                                             <constraint firstAttribute="height" constant="38" id="DZU-Tw-2KS"/>
-                                                            <constraint firstAttribute="width" constant="125" id="ZWq-KK-bno"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="dna-3j-xkc"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="11"/>
@@ -821,19 +841,24 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <constraints>
+                                                    <constraint firstItem="fuR-ie-nHj" firstAttribute="centerX" secondItem="DLq-Io-N4W" secondAttribute="centerX" id="6Ku-EW-MKl"/>
                                                     <constraint firstItem="bah-cV-Voq" firstAttribute="centerX" secondItem="DLq-Io-N4W" secondAttribute="centerX" id="7Qm-kH-gVW"/>
+                                                    <constraint firstAttribute="bottom" secondItem="fuR-ie-nHj" secondAttribute="bottom" id="Flb-dB-Rra"/>
                                                     <constraint firstItem="bah-cV-Voq" firstAttribute="top" secondItem="DLq-Io-N4W" secondAttribute="top" id="IHH-EI-saf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="wR4-Q1-DSP" secondAttribute="bottom" id="Jvt-Hx-aks"/>
-                                                    <constraint firstAttribute="height" constant="48" id="Omq-O7-Ica"/>
+                                                    <constraint firstAttribute="bottom" secondItem="wR4-Q1-DSP" secondAttribute="bottom" constant="24" id="Jvt-Hx-aks"/>
+                                                    <constraint firstItem="wR4-Q1-DSP" firstAttribute="width" secondItem="cZ8-Ws-sI7" secondAttribute="width" id="Ln6-5w-qsr"/>
                                                     <constraint firstItem="cZ8-Ws-sI7" firstAttribute="leading" secondItem="bah-cV-Voq" secondAttribute="trailing" constant="12" id="P2I-h3-Its"/>
                                                     <constraint firstItem="cZ8-Ws-sI7" firstAttribute="top" secondItem="wR4-Q1-DSP" secondAttribute="top" id="Pqk-0z-Xml"/>
                                                     <constraint firstItem="bah-cV-Voq" firstAttribute="leading" secondItem="wR4-Q1-DSP" secondAttribute="trailing" constant="12" id="Q9w-hP-UEg"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cZ8-Ws-sI7" secondAttribute="bottom" id="ZXN-3J-2K6"/>
+                                                    <constraint firstAttribute="trailing" secondItem="cZ8-Ws-sI7" secondAttribute="trailing" id="SpI-bl-KbP"/>
+                                                    <constraint firstAttribute="width" constant="310" id="WSl-io-4ip"/>
+                                                    <constraint firstAttribute="height" constant="90" id="qZk-hA-aj7"/>
                                                     <constraint firstItem="wR4-Q1-DSP" firstAttribute="top" secondItem="DLq-Io-N4W" secondAttribute="top" constant="8" id="umo-UZ-CKK"/>
+                                                    <constraint firstItem="cZ8-Ws-sI7" firstAttribute="bottom" secondItem="wR4-Q1-DSP" secondAttribute="bottom" id="x1r-4g-EPh"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stats" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYJ-7U-EuE">
-                                                <rect key="frame" x="136" y="285.5" width="49" height="20"/>
+                                                <rect key="frame" x="136" y="313.5" width="49" height="20"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="21"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -843,42 +868,41 @@
                                         <constraints>
                                             <constraint firstItem="M4c-or-5w8" firstAttribute="top" secondItem="UBr-Y0-7ym" secondAttribute="bottom" constant="16" id="0H1-O6-GCM"/>
                                             <constraint firstItem="M4c-or-5w8" firstAttribute="top" secondItem="dQl-Uz-xeE" secondAttribute="bottom" id="0qR-rh-pit"/>
+                                            <constraint firstItem="fuR-ie-nHj" firstAttribute="width" secondItem="sIO-lu-2bn" secondAttribute="width" id="0zy-e2-yf0"/>
+                                            <constraint firstItem="rCk-FE-xGy" firstAttribute="width" secondItem="07J-OC-Frp" secondAttribute="width" id="20F-aQ-3pn"/>
                                             <constraint firstItem="M4c-or-5w8" firstAttribute="top" secondItem="uCc-K6-AaD" secondAttribute="bottom" id="82p-wh-2PL"/>
+                                            <constraint firstItem="rCk-FE-xGy" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="8ed-g0-wOA"/>
                                             <constraint firstItem="ZpM-Hv-tg1" firstAttribute="width" secondItem="UBr-Y0-7ym" secondAttribute="width" id="CSo-Bq-dgw"/>
                                             <constraint firstItem="07J-OC-Frp" firstAttribute="top" secondItem="uYJ-7U-EuE" secondAttribute="bottom" constant="4" id="Cre-29-AXZ"/>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="M4c-or-5w8" secondAttribute="trailing" constant="8" id="Dhz-DQ-dng"/>
-                                            <constraint firstItem="sIO-lu-2bn" firstAttribute="top" secondItem="DLq-Io-N4W" secondAttribute="bottom" constant="16" id="Dv3-Y5-G6L"/>
+                                            <constraint firstItem="sIO-lu-2bn" firstAttribute="top" secondItem="DLq-Io-N4W" secondAttribute="bottom" constant="24" id="Dv3-Y5-G6L"/>
                                             <constraint firstItem="uYJ-7U-EuE" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="E8D-iQ-J7D"/>
+                                            <constraint firstItem="DLq-Io-N4W" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="EQG-WD-me7"/>
                                             <constraint firstItem="Sr5-JS-m0Z" firstAttribute="width" secondItem="drF-Pq-Qnw" secondAttribute="width" multiplier="0.75" id="Gof-w2-Sae"/>
                                             <constraint firstItem="dQl-Uz-xeE" firstAttribute="height" secondItem="uCc-K6-AaD" secondAttribute="height" id="JV0-n9-yOn"/>
                                             <constraint firstItem="Sr5-JS-m0Z" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="K4N-K0-0gF"/>
                                             <constraint firstItem="dQl-Uz-xeE" firstAttribute="top" secondItem="drF-Pq-Qnw" secondAttribute="top" id="LhB-bn-EkT"/>
                                             <constraint firstItem="sIO-lu-2bn" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="MEN-1c-Csn"/>
+                                            <constraint firstItem="07J-OC-Frp" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="MUf-s6-dal"/>
                                             <constraint firstItem="dQl-Uz-xeE" firstAttribute="width" secondItem="uCc-K6-AaD" secondAttribute="width" id="OB5-rv-OHu"/>
-                                            <constraint firstItem="rCk-FE-xGy" firstAttribute="leading" secondItem="07J-OC-Frp" secondAttribute="leading" id="OWO-Vz-dW1"/>
                                             <constraint firstItem="rCk-FE-xGy" firstAttribute="top" secondItem="07J-OC-Frp" secondAttribute="top" id="PLa-4B-dAx"/>
                                             <constraint firstItem="M4c-or-5w8" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="Pc5-hz-cYK"/>
-                                            <constraint firstItem="DLq-Io-N4W" firstAttribute="top" secondItem="07J-OC-Frp" secondAttribute="bottom" constant="16" id="QLQ-AI-xNd"/>
+                                            <constraint firstItem="DLq-Io-N4W" firstAttribute="top" secondItem="07J-OC-Frp" secondAttribute="bottom" constant="24" id="QLQ-AI-xNd"/>
                                             <constraint firstItem="uYJ-7U-EuE" firstAttribute="top" secondItem="M4c-or-5w8" secondAttribute="bottom" constant="24" id="RPN-JI-jU6"/>
                                             <constraint firstItem="uCc-K6-AaD" firstAttribute="leading" secondItem="ZpM-Hv-tg1" secondAttribute="trailing" id="UuP-FH-jxy"/>
-                                            <constraint firstItem="ujq-cS-ETx" firstAttribute="top" secondItem="sIO-lu-2bn" secondAttribute="bottom" constant="32" id="X6I-dk-CSJ"/>
+                                            <constraint firstItem="ujq-cS-ETx" firstAttribute="top" secondItem="sIO-lu-2bn" secondAttribute="bottom" constant="64" id="X6I-dk-CSJ"/>
                                             <constraint firstItem="UBr-Y0-7ym" firstAttribute="top" secondItem="drF-Pq-Qnw" secondAttribute="top" constant="24" id="XUg-fp-y3L"/>
-                                            <constraint firstItem="DLq-Io-N4W" firstAttribute="leading" secondItem="07J-OC-Frp" secondAttribute="leading" id="Xn6-FH-q2A"/>
                                             <constraint firstItem="UBr-Y0-7ym" firstAttribute="leading" secondItem="dQl-Uz-xeE" secondAttribute="trailing" id="XzR-79-PXP"/>
                                             <constraint firstItem="dQl-Uz-xeE" firstAttribute="leading" secondItem="drF-Pq-Qnw" secondAttribute="leading" id="aRR-73-NH6"/>
                                             <constraint firstItem="ZpM-Hv-tg1" firstAttribute="top" secondItem="UBr-Y0-7ym" secondAttribute="top" id="eVh-9J-Zi2"/>
                                             <constraint firstItem="uCc-K6-AaD" firstAttribute="top" secondItem="drF-Pq-Qnw" secondAttribute="top" id="fMa-vt-5r9"/>
                                             <constraint firstItem="ZpM-Hv-tg1" firstAttribute="leading" secondItem="UBr-Y0-7ym" secondAttribute="trailing" constant="8" id="g5p-jz-t6n"/>
-                                            <constraint firstItem="rCk-FE-xGy" firstAttribute="trailing" secondItem="07J-OC-Frp" secondAttribute="trailing" id="gDw-iR-OSF"/>
-                                            <constraint firstItem="07J-OC-Frp" firstAttribute="leading" secondItem="M4c-or-5w8" secondAttribute="leading" constant="12" id="gb2-Gk-WOK"/>
                                             <constraint firstAttribute="height" constant="511" id="guG-6v-Ech"/>
-                                            <constraint firstItem="DLq-Io-N4W" firstAttribute="trailing" secondItem="07J-OC-Frp" secondAttribute="trailing" id="hQA-0u-Ebn"/>
                                             <constraint firstItem="Sr5-JS-m0Z" firstAttribute="top" secondItem="ujq-cS-ETx" secondAttribute="bottom" constant="12" id="i46-pF-vWU"/>
                                             <constraint firstItem="ujq-cS-ETx" firstAttribute="centerX" secondItem="drF-Pq-Qnw" secondAttribute="centerX" id="kzw-ga-mcd"/>
                                             <constraint firstItem="rCk-FE-xGy" firstAttribute="bottom" secondItem="07J-OC-Frp" secondAttribute="bottom" id="sdK-68-ZiN"/>
                                             <constraint firstItem="07J-OC-Frp" firstAttribute="top" secondItem="M4c-or-5w8" secondAttribute="bottom" constant="48" id="uCF-PK-RI7"/>
                                             <constraint firstItem="M4c-or-5w8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="drF-Pq-Qnw" secondAttribute="leading" constant="8" id="uk8-3G-3uA"/>
-                                            <constraint firstItem="07J-OC-Frp" firstAttribute="trailing" secondItem="M4c-or-5w8" secondAttribute="trailing" constant="-12" id="w0o-Tu-J2M"/>
                                             <constraint firstAttribute="bottom" secondItem="Sr5-JS-m0Z" secondAttribute="bottom" constant="48" id="xUl-Q7-uQK"/>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="414" id="xVB-9M-gQ4"/>
                                             <constraint firstAttribute="trailing" secondItem="uCc-K6-AaD" secondAttribute="trailing" id="yBX-uT-Y6C"/>
@@ -901,13 +925,14 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFt-zh-tsO">
-                                <rect key="frame" x="0.0" y="24" width="44" height="44"/>
+                                <rect key="frame" x="4" y="24" width="33" height="33"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="PWl-at-hJt"/>
+                                    <constraint firstAttribute="height" constant="33" id="PWl-at-hJt"/>
                                     <constraint firstAttribute="width" secondItem="ZFt-zh-tsO" secondAttribute="height" multiplier="1:1" id="twy-2M-2ex"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MuseoCyrl-900" family="Museo Cyrl" pointSize="17"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="1" green="0.55775282120000003" blue="0.001346542883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" backgroundImage="backArrow">
                                     <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </state>
@@ -920,29 +945,29 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="x54-v7-C6y" secondAttribute="trailing" id="6j5-ts-oqm"/>
                             <constraint firstItem="ZFt-zh-tsO" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" constant="4" id="8NY-MH-cAU"/>
-                            <constraint firstItem="az3-Y8-Sxc" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" id="BKd-d0-Ex6"/>
-                            <constraint firstItem="RJx-Ku-X34" firstAttribute="top" secondItem="x54-v7-C6y" secondAttribute="bottom" id="Bwp-cz-RE2"/>
+                            <constraint firstItem="RJx-Ku-X34" firstAttribute="top" secondItem="x54-v7-C6y" secondAttribute="bottom" constant="20" id="Bwp-cz-RE2"/>
                             <constraint firstAttribute="trailing" secondItem="az3-Y8-Sxc" secondAttribute="trailing" id="Epz-np-RIG"/>
                             <constraint firstItem="RJx-Ku-X34" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" id="FfH-Qi-X1t"/>
                             <constraint firstItem="x54-v7-C6y" firstAttribute="top" secondItem="eRn-57-sZw" secondAttribute="bottom" id="Hs5-PJ-4wp"/>
                             <constraint firstItem="x54-v7-C6y" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" id="Hta-UK-HKp"/>
+                            <constraint firstItem="az3-Y8-Sxc" firstAttribute="top" secondItem="Fv9-cX-ixT" secondAttribute="top" id="Sil-gb-AsK"/>
                             <constraint firstItem="x54-v7-C6y" firstAttribute="height" secondItem="Fv9-cX-ixT" secondAttribute="height" multiplier="0.25" id="Tsq-sK-VaP"/>
                             <constraint firstItem="RJx-Ku-X34" firstAttribute="width" secondItem="x54-v7-C6y" secondAttribute="width" id="VpV-VJ-b9L"/>
                             <constraint firstItem="9Xo-L2-Iqs" firstAttribute="top" secondItem="az3-Y8-Sxc" secondAttribute="bottom" id="YTI-6e-sRn"/>
                             <constraint firstAttribute="trailing" secondItem="RJx-Ku-X34" secondAttribute="trailing" id="aIE-uw-Ydt"/>
                             <constraint firstItem="az3-Y8-Sxc" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" id="i0P-nV-9O1"/>
-                            <constraint firstItem="ZFt-zh-tsO" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" id="ppF-cw-h7k"/>
+                            <constraint firstItem="ZFt-zh-tsO" firstAttribute="leading" secondItem="Fv9-cX-ixT" secondAttribute="leading" constant="4" id="ppF-cw-h7k"/>
                             <constraint firstItem="9Xo-L2-Iqs" firstAttribute="top" secondItem="RJx-Ku-X34" secondAttribute="bottom" id="uyT-02-sLx"/>
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="1300"/>
                     <connections>
                         <outlet property="buttonsContainer" destination="DLq-Io-N4W" id="S2p-qb-tbS"/>
-                        <outlet property="buttonsContainerHeight" destination="Omq-O7-Ica" id="KIU-Zs-hko"/>
+                        <outlet property="buttonsContainerHeight" destination="qZk-hA-aj7" id="ZgO-Pj-iyC"/>
                         <outlet property="buyPointLabel" destination="TKx-8X-cpN" id="hhG-Fn-kZe"/>
                         <outlet property="chartContainer" destination="x54-v7-C6y" id="yLI-9J-3K0"/>
+                        <outlet property="chartContainerHeight" destination="Tsq-sK-VaP" id="Ptf-dv-XEx"/>
                         <outlet property="companyLogo" destination="UBr-Y0-7ym" id="01n-hN-8Pl"/>
                         <outlet property="companyNameLabel" destination="ZpM-Hv-tg1" id="6Wp-8A-x3d"/>
                         <outlet property="cryptoContainer" destination="rCk-FE-xGy" id="CIM-sM-qTx"/>
@@ -954,11 +979,20 @@
                         <outlet property="statsContainer" destination="07J-OC-Frp" id="yNa-PM-ILY"/>
                         <outlet property="stopLoss" destination="rmq-JO-MRd" id="eW0-U8-cl2"/>
                         <outlet property="tradingViewButton" destination="sIO-lu-2bn" id="qNR-Bl-8zN"/>
+                        <outlet property="tradingViewContainer" destination="t3d-Jb-q0h" id="glB-Dh-jW9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICZ-5X-7uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-470.39999999999998" y="628.78560719640188"/>
+            <point key="canvasLocation" x="-471.09375" y="628.7109375"/>
+        </scene>
+        <!--Сharts-->
+        <scene sceneID="nQm-Oy-Q0U">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Сharts" id="fVX-UF-6LJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yxw-Lf-VmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="337" y="155"/>
         </scene>
         <!--Signals-->
         <scene sceneID="bNZ-ds-eAG">
@@ -979,20 +1013,20 @@
                         <viewControllerLayoutGuide type="bottom" id="NFO-pg-vIi"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="eAL-xr-fVP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ona-qn-uSp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreeniPhone" translatesAutoresizingMaskIntoConstraints="NO" id="NOe-re-oVb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                                     </imageView>
                                     <view opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NAv-5x-STk" customClass="FXBlurView">
-                                        <rect key="frame" x="38" y="134" width="300" height="400"/>
+                                        <rect key="frame" x="85" y="113.5" width="599" height="798"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zY-lg-ovb">
-                                                <rect key="frame" x="52.5" y="275" width="195" height="45"/>
+                                                <rect key="frame" x="105" y="673" width="389" height="45"/>
                                                 <color key="backgroundColor" red="0.84705882349999995" green="0.1450980392" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="45" id="WMQ-fu-AwJ"/>
@@ -1010,13 +1044,13 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upgrade you account and get a list of companies with a growth potential of 40% and more" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="KBv-8k-qYh">
-                                                <rect key="frame" x="23" y="32" width="255" height="52.5"/>
+                                                <rect key="frame" x="45.5" y="32" width="509" height="35"/>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-100" family="Museo Cyrl" pointSize="15"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1b0-rh-dNf">
-                                                <rect key="frame" x="93.5" y="142.5" width="114.5" height="75"/>
+                                                <rect key="frame" x="243" y="332.5" width="114.5" height="75"/>
                                                 <string key="text">8.99$
 monthly</string>
                                                 <fontDescription key="fontDescription" name="MuseoCyrl-300" family="Museo Cyrl" pointSize="32"/>
@@ -1024,7 +1058,7 @@ monthly</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-2g-oxo">
-                                                <rect key="frame" x="82.5" y="344" width="135" height="32"/>
+                                                <rect key="frame" x="165" y="742" width="269" height="32"/>
                                                 <color key="backgroundColor" red="0.20741689205169678" green="0.23425078392028809" blue="0.29716792702674866" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="UN9-3m-LqI"/>
@@ -1043,11 +1077,11 @@ monthly</string>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9l4-FG-glm">
-                                                <rect key="frame" x="0.0" y="84.5" width="300" height="58"/>
+                                                <rect key="frame" x="0.0" y="67" width="599" height="265.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t3D-wX-qZd">
-                                                <rect key="frame" x="0.0" y="217.5" width="300" height="57.5"/>
+                                                <rect key="frame" x="0.0" y="407.5" width="599" height="265.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -1082,7 +1116,7 @@ monthly</string>
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bha-0O-6nQ">
-                                        <rect key="frame" x="326" y="522" width="24" height="24"/>
+                                        <rect key="frame" x="672" y="899.5" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="4qt-hG-EDs"/>
                                             <constraint firstAttribute="height" constant="24" id="oRd-Yt-C2N"/>
@@ -1138,10 +1172,11 @@ monthly</string>
         </scene>
     </scenes>
     <resources>
-        <image name="backArrow" width="64" height="64"/>
+        <image name="backArrow" width="96" height="96"/>
         <image name="cancel_buy" width="56" height="56"/>
         <image name="companyInfoBackground" width="479" height="280"/>
         <image name="interactive" width="175" height="27"/>
+        <image name="launchScreeniPad" width="768" height="1024"/>
         <image name="launchScreeniPhone" width="250" height="444"/>
     </resources>
 </document>

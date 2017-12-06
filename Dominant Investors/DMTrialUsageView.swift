@@ -24,10 +24,16 @@ class DMTrialUsageView: UIView {
     }
     
     open func dissmisTrialView() {
+        
+      
+        
         DispatchQueue.main.async {
+            
             UIView.animate(withDuration: 0.3, animations: {
                 self.alpha = 0
             }) { (completed) in
+                let introView = Bundle.main.loadNibNamed("DMInfoIntroView", owner: nil, options: nil)![0] as! DMInfoIntroView
+                introView.addTo(superview: self.superview!)
                 self.removeFromSuperview()
             }
         }

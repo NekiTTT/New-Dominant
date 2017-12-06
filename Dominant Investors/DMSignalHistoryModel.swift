@@ -30,19 +30,19 @@ class DMSignalHistoryModel: NSObject {
             self.ticker = ""
         }
         
-        var buy : Double  = 0.0
+        var buy  : Double = 0.0
         var sell : Double = 0.0
         
-        if let buyPoint = response.fields["buyPoint"] as? Double {
-            buy = buyPoint
-            self.buyPoint = String(buyPoint)
+        if let buyPoint = response.fields["buyPoint"] as? Float {
+            buy = Double(buyPoint)
+            self.buyPoint = String(format : "%.2f", buyPoint)
         } else {
             self.buyPoint = ""
         }
         
-        if let sellPoint = response.fields["sellPoint"] as? Double {
-            self.sellPoint = String(sellPoint)
-            sell = sellPoint
+        if let sellPoint = response.fields["sellPoint"] as? Float {
+            self.sellPoint = String(format : "%.2f", sellPoint)
+            sell = Double(sellPoint)
         } else {
             self.sellPoint = ""
         }
