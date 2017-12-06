@@ -57,7 +57,7 @@
                                     <rect key="frame" x="0.0" y="8" width="310" height="167"/>
                                     <string key="text">Get free access to the app
 functionality right now!</string>
-                                    <fontDescription key="fontDescription" name="MuseoCyrl-500" family="Museo Cyrl" pointSize="15"/>
+                                    <fontDescription key="fontDescription" name="MuseoCyrl-500" family="Museo Cyrl" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <userDefinedRuntimeAttributes>

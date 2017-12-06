@@ -292,8 +292,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="stocks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-Pv-nRe">
-                                        <rect key="frame" x="56" y="65.5" width="39.5" height="16"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="investors" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYB-Pv-nRe">
+                                        <rect key="frame" x="40.5" y="65.5" width="55" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -775,7 +775,7 @@
     </scenes>
     <resources>
         <image name="Ellipse 4" width="94" height="94"/>
-        <image name="backArrow" width="64" height="64"/>
+        <image name="backArrow" width="96" height="96"/>
         <image name="pro" width="34" height="28"/>
     </resources>
 </document>
