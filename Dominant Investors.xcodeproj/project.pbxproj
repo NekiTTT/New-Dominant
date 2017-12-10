@@ -63,7 +63,6 @@
 		45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */; };
 		45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76C1E58FC0400D56BDE /* Launch.storyboard */; };
 		45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E76E1E58FC1100D56BDE /* Signals.storyboard */; };
-		45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45B4E7701E58FCB000D56BDE /* Analytics.storyboard */; };
 		45B4E7731E58FCF600D56BDE /* DMDominantPortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */; };
 		45B4E7751E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */; };
 		45B4E7771E58FD3F00D56BDE /* DMInvestmentSignalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */; };
@@ -103,7 +102,6 @@
 		964A40FA1FCF54AC006A5C8C /* DMTrialModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 964A40F91FCF54AC006A5C8C /* DMTrialModel.swift */; };
 		965DCF2E1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */; };
 		965DCF301FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */; };
-		965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 965DCF311FC1AE71003E74C1 /* Сharts.storyboard */; };
 		9667CC741FCCB314006E8071 /* DMTrialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9667CC731FCCB314006E8071 /* DMTrialView.swift */; };
 		9667CC771FCCB390006E8071 /* DMTrialView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9667CC761FCCB390006E8071 /* DMTrialView.xib */; };
 		9672676B1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9672676A1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift */; };
@@ -114,6 +112,8 @@
 		968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
+		96CD23D31FDA8E6800FBBEB3 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */; };
+		96CD23D61FDAB73700FBBEB3 /* OutsourceCharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
 		BE53AF2C1F5E7D2A002B485F /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53AF291F5E7D2A002B485F /* FBAudienceNetwork.framework */; };
 		BE53AF2D1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE53AF2A1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework */; };
@@ -193,7 +193,6 @@
 		45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Portfolio.storyboard; sourceTree = "<group>"; };
 		45B4E76C1E58FC0400D56BDE /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
 		45B4E76E1E58FC1100D56BDE /* Signals.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Signals.storyboard; sourceTree = "<group>"; };
-		45B4E7701E58FCB000D56BDE /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		45B4E7721E58FCF600D56BDE /* DMDominantPortfolioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMDominantPortfolioModel.swift; sourceTree = "<group>"; };
 		45B4E7741E58FD1B00D56BDE /* DMPersonalPortfolioModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMPersonalPortfolioModel.swift; sourceTree = "<group>"; };
 		45B4E7761E58FD3F00D56BDE /* DMInvestmentSignalModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DMInvestmentSignalModel.swift; sourceTree = "<group>"; };
@@ -236,7 +235,6 @@
 		964A40F91FCF54AC006A5C8C /* DMTrialModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialModel.swift; sourceTree = "<group>"; };
 		965DCF2D1FC1AB8B003E74C1 /* Dominant+UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+UINavigationController.swift"; sourceTree = "<group>"; };
 		965DCF2F1FC1ADE9003E74C1 /* DMEstimazeChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMEstimazeChartViewController.swift; sourceTree = "<group>"; };
-		965DCF311FC1AE71003E74C1 /* Сharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Сharts.storyboard"; sourceTree = "<group>"; };
 		9667CC731FCCB314006E8071 /* DMTrialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTrialView.swift; sourceTree = "<group>"; };
 		9667CC761FCCB390006E8071 /* DMTrialView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DMTrialView.xib; sourceTree = "<group>"; };
 		9672676A1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dominant+NSLayoutConstraint.swift"; sourceTree = "<group>"; };
@@ -247,6 +245,8 @@
 		968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerTypeViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
+		96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
+		96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OutsourceCharts.storyboard; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
 		BE53AF291F5E7D2A002B485F /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		BE53AF2A1F5E7D2A002B485F /* FBSDKMessengerShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKMessengerShareKit.framework; sourceTree = "<group>"; };
@@ -470,8 +470,8 @@
 				45B4E76A1E58FBD500D56BDE /* Portfolio.storyboard */,
 				45B4E7831E59106B00D56BDE /* Ratings.storyboard */,
 				45B4E76E1E58FC1100D56BDE /* Signals.storyboard */,
-				45B4E7701E58FCB000D56BDE /* Analytics.storyboard */,
-				965DCF311FC1AE71003E74C1 /* Сharts.storyboard */,
+				96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */,
+				96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -781,14 +781,14 @@
 				964A40F81FCF0D3D006A5C8C /* DMTrialUsageView.xib in Resources */,
 				45B4E7691E58FBC900D56BDE /* TabBar.storyboard in Resources */,
 				45A107BA1E59DF9B00591170 /* DMCompanyCollectionCell.xib in Resources */,
-				45B4E7711E58FCB000D56BDE /* Analytics.storyboard in Resources */,
 				968D5D111FA711A5007970CE /* Screener.storyboard in Resources */,
 				45B4E76F1E58FC1100D56BDE /* Signals.storyboard in Resources */,
 				45B4E73A1E58ED5C00D56BDE /* LaunchScreen.storyboard in Resources */,
 				45B4E76B1E58FBD500D56BDE /* Portfolio.storyboard in Resources */,
+				96CD23D31FDA8E6800FBBEB3 /* Analytics.storyboard in Resources */,
 				967A2DB31FD4310100E1E941 /* DMInfoIntroView.xib in Resources */,
 				45B4E76D1E58FC0400D56BDE /* Launch.storyboard in Resources */,
-				965DCF321FC1AE71003E74C1 /* Сharts.storyboard in Resources */,
+				96CD23D61FDAB73700FBBEB3 /* OutsourceCharts.storyboard in Resources */,
 				452A43FB1E5A4DCD0058D11C /* ChartView.xib in Resources */,
 				45B4E7841E59106B00D56BDE /* Ratings.storyboard in Resources */,
 				45B4E7671E58FBB100D56BDE /* Authorization.storyboard in Resources */,

@@ -30,7 +30,7 @@ class DMScreenerTypeViewController: DMViewController, UIWebViewDelegate {
     
     open func openChartFor(ticker : String) {
         
-        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
             chartVC.ticker = ticker
             if let parent = self.parentContainer {

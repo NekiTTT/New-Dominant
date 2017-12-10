@@ -212,7 +212,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         guard let estimazeURL = self.company.estimazeURL else { return }
         
        
-        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
             chartVC.estimazeImageURL = estimazeURL
             chartVC.ticker = self.company.ticker
@@ -224,7 +224,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         guard let estimazeURL = self.company.estimaze_EPS_URL else { return }
         
         
-        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMEstimazeChartViewController") as? DMEstimazeChartViewController {
             chartVC.estimazeImageURL = estimazeURL
             chartVC.ticker = self.company.ticker
@@ -233,7 +233,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     }
     
     @IBAction func tradingViewChartButtonPressed(sender : UIButton) {
-        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
             chartVC.ticker = self.company.ticker
             self.showChart(chart: chartVC)

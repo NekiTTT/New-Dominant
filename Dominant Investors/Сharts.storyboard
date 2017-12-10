@@ -1,104 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tuK-fl-BFf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
     </dependencies>
-    <scenes>
-        <!--Estimaze Chart View Controller-->
-        <scene sceneID="wqz-Rp-qfQ">
-            <objects>
-                <viewController storyboardIdentifier="DMEstimazeChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YWY-rk-1uQ" customClass="DMEstimazeChartViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aeC-yc-l3v"/>
-                        <viewControllerLayoutGuide type="bottom" id="BlG-67-g2b"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Wal-lC-6ad">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Oqn-ab-8RE">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jR7-2n-8De">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xce-pf-ioy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="xce-pf-ioy" firstAttribute="top" secondItem="jR7-2n-8De" secondAttribute="top" id="7ml-4A-oln"/>
-                                    <constraint firstItem="xce-pf-ioy" firstAttribute="leading" secondItem="jR7-2n-8De" secondAttribute="leading" id="Zoo-ND-gsQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="xce-pf-ioy" secondAttribute="trailing" id="k70-SX-Hg0"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="xce-pf-ioy" firstAttribute="width" secondItem="Wal-lC-6ad" secondAttribute="width" id="3BG-yg-w6n"/>
-                            <constraint firstItem="RbL-5h-pw6" firstAttribute="bottom" secondItem="jR7-2n-8De" secondAttribute="bottom" id="Ft6-7E-84X"/>
-                            <constraint firstItem="xce-pf-ioy" firstAttribute="height" secondItem="Wal-lC-6ad" secondAttribute="height" multiplier="0.5" id="MuX-Fl-slS"/>
-                            <constraint firstAttribute="trailing" secondItem="Oqn-ab-8RE" secondAttribute="trailing" id="P2Z-GN-XsR"/>
-                            <constraint firstItem="jR7-2n-8De" firstAttribute="top" secondItem="RbL-5h-pw6" secondAttribute="top" id="QHU-lZ-we2"/>
-                            <constraint firstItem="jR7-2n-8De" firstAttribute="leading" secondItem="RbL-5h-pw6" secondAttribute="leading" id="bsa-u1-S4i"/>
-                            <constraint firstAttribute="bottom" secondItem="Oqn-ab-8RE" secondAttribute="bottom" id="hYz-Sh-1op"/>
-                            <constraint firstItem="Oqn-ab-8RE" firstAttribute="top" secondItem="aeC-yc-l3v" secondAttribute="bottom" id="px9-2f-sE8"/>
-                            <constraint firstItem="RbL-5h-pw6" firstAttribute="trailing" secondItem="jR7-2n-8De" secondAttribute="trailing" id="wTA-bL-RBV"/>
-                            <constraint firstItem="Oqn-ab-8RE" firstAttribute="leading" secondItem="Wal-lC-6ad" secondAttribute="leading" id="zlO-Yc-ULg"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="RbL-5h-pw6"/>
-                    </view>
-                    <connections>
-                        <outlet property="scrollView" destination="jR7-2n-8De" id="dyn-Nl-4HA"/>
-                        <outlet property="webView" destination="Oqn-ab-8RE" id="fzC-YY-247"/>
-                        <outlet property="webimageView" destination="xce-pf-ioy" id="pDy-ZJ-s2W"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="O8T-VB-k4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2772" y="1088.9055472263869"/>
-        </scene>
-        <!--Trading View Chart View Controller-->
-        <scene sceneID="v8V-1i-mOw">
-            <objects>
-                <viewController storyboardIdentifier="DMTradingViewChartViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tuK-fl-BFf" customClass="DMTradingViewChartViewController" customModule="Dominant_Investors" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qtn-Xl-Zgn"/>
-                        <viewControllerLayoutGuide type="bottom" id="afs-y3-ITF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="YOF-S5-3cN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J6y-6T-ViU">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.062745098040000002" green="0.070588235289999995" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="J6y-6T-ViU" firstAttribute="top" secondItem="qtn-Xl-Zgn" secondAttribute="bottom" id="Uw0-ft-19X"/>
-                            <constraint firstItem="J6y-6T-ViU" firstAttribute="leading" secondItem="YOF-S5-3cN" secondAttribute="leading" id="WwP-Iq-3a0"/>
-                            <constraint firstAttribute="bottom" secondItem="J6y-6T-ViU" secondAttribute="bottom" id="Yy4-fR-S6b"/>
-                            <constraint firstAttribute="trailing" secondItem="J6y-6T-ViU" secondAttribute="trailing" id="fGq-di-tm0"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Zzk-Zg-MWO"/>
-                    </view>
-                    <connections>
-                        <outlet property="webView" destination="J6y-6T-ViU" id="223-0p-Bjx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WEM-GL-dPM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1833" y="1089"/>
-        </scene>
-    </scenes>
+    <scenes/>
 </document>

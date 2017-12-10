@@ -158,7 +158,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
     }
     
     private func showChartFor(ticker : String) {
-        let storyboard = UIStoryboard.init(name: "Сharts", bundle: nil)
+        let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
             chartVC.ticker = ticker
             self.userInterface?.showStockChart(vc: chartVC)
