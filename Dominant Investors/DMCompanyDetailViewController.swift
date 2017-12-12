@@ -188,7 +188,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
         }
         
         
-        SwiftStockKit.fetchChartPoints(symbol: self.company.tradingViewTicker, range: range, crypto: self.company.isCrypto) { (chartPoints) -> () in
+        SwiftStockKit.fetchChartPoints(symbol: self.company.ticker, range: range, crypto: self.company.isCrypto) { (chartPoints) -> () in
             self.chart.clearChartData()
             self.chart.setChartPoints(points: chartPoints)
         }
@@ -235,7 +235,7 @@ class DMCompanyDetailViewController: DMViewController, ChartViewDelegate, UIWebV
     @IBAction func tradingViewChartButtonPressed(sender : UIButton) {
         let storyboard = UIStoryboard.init(name: "OutsourceCharts", bundle: nil)
         if let chartVC = storyboard.instantiateViewController(withIdentifier: "DMTradingViewChartViewController") as? DMTradingViewChartViewController {
-            chartVC.ticker = self.company.ticker
+            chartVC.ticker = self.company.tradingViewTicker
             self.showChart(chart: chartVC)
         }
     }

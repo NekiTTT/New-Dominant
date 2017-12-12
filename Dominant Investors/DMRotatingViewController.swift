@@ -54,7 +54,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.showTrial()
+        //self.showTrial()
         
         if (!loaded) {
             setupControllers()
