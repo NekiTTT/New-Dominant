@@ -191,6 +191,7 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.tableView.dataSource = DMSignalsHistoryService.sharedInstance
         
         DMDominantPortfolioService.sharedInstance.userInterface = self
+        self.showActivityIndicator()
         
         self.reloadData()
         
@@ -377,6 +378,10 @@ class DMPortfolioViewController: DMViewController, DMDropdownListDelegate, DMPor
         self.navigationController?.navigationBar.barTintColor = UIColor.init(red: 16/255, green: 18/255, blue: 26/255, alpha: 1)
         self.navigationController?.navigationBar.barStyle = .blackTranslucent
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func showError(message: String) {
+        self.showAlertWith(title: "Error".localized, message: message, cancelButton: false)
     }
 
     // MARK: UIAlertViewController action

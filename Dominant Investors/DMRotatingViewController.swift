@@ -54,7 +54,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //self.showTrial()
+        self.showTrial()
         
         if (!loaded) {
             setupControllers()
@@ -174,11 +174,13 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
         }
         
         if let registrationDate = DMAuthorizationManager.sharedInstance.userProfile.createdAt {
-            let dateRangeStart = Date() //APP VERSION WITH TRIAL RELEASE DATE
+         
+
+            let dateRangeStart = Date(timeIntervalSinceReferenceDate: 536850000) //APP VERSION WITH TRIAL RELEASE DATE
             let components = Calendar.current.dateComponents([.day, .hour], from: registrationDate, to: dateRangeStart)
             
             if let differense = components.day {
-                if (differense <= 0) {
+                if (differense > 0) {
                     return
                 }
             }

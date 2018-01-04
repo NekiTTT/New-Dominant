@@ -34,7 +34,7 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.downloadCompanyLogoWith(ID : ID, completion : completion)
     }
     
-    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]?, String?) -> Void) {
         DMQuickBloxService.sharedInstance.addNew(personalStock: personalStock, completion: completion)
     }
     

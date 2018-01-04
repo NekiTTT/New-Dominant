@@ -98,11 +98,16 @@ class DMQuickBloxService: NSObject {
     
     // MARK: Set Data
     
-    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+    open func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]?, String?) -> Void) {
         
         SwiftStockKit.fetchDataForStocks(symbols: [personalStock.ticker!]) { (chartPoints) in
           
-            let valuePrice = Double((chartPoints[personalStock.ticker!]?.close!)!)
+            guard let valuePriceValue = chartPoints[personalStock.ticker!]?.close else {
+                completion(nil, "Sorry, price for this ticker now is unavailable".localized)
+                return
+            }
+            
+            let valuePrice = Double(valuePriceValue)
             let quickbloxStock = QBCOCustomObject()
             quickbloxStock.className = "personal2"
             quickbloxStock.fields!.setObject(personalStock.ticker!, forKey: "ticker" as NSCopying)
@@ -111,10 +116,10 @@ class DMQuickBloxService: NSObject {
             
             QBRequest.createObject(quickbloxStock, successBlock: { (response, object) in
                 if (object != nil) {
-                    completion([DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object!))])
+                    completion([DMPersonalPortfolioModel.init(response: DMResponseObject.init(customObject: object!))], nil)
                 }
             }) { (error) in
-                print(error.error.debugDescription)
+                completion(nil, error.error.debugDescription)
             }
         }
     }

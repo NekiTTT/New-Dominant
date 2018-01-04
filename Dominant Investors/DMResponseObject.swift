@@ -28,9 +28,9 @@ class DMResponseObject: NSObject {
         self.email  = user.email
     
         
-//        if let registrationDate = user.createdAt {
-//            self.createdAt = registrationDate
-//        }
+        if let registrationDate = user.createdAt {
+            self.createdAt = registrationDate
+        }
 
         self.customData = user.customData
     }

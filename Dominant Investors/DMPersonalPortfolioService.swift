@@ -63,10 +63,16 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         let newStock = DMPersonalPortfolioModel.init(stockSearch: self.selectedTicker!)
         self.userInterface?.didReloaded()
         
-        self.addNew(personalStock: newStock) { (newPortfolios) in
+        self.addNew(personalStock: newStock) { (newPortfolios, error) in
+            
+            if error != nil {
+                self.userInterface?.showError(message: error!)
+                return
+            } else if newPortfolios != nil {
+            
             self.selectedTicker = nil
             self.ratingUploaded = false
-            var newVarPortfolios = newPortfolios
+            var newVarPortfolios = newPortfolios!
             newVarPortfolios.append(contentsOf: self.portfolios)
             self.portfolios = newVarPortfolios
         
@@ -76,6 +82,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
                     self.userInterface?.reloadData()
                 }
             })
+            }
         }
     }
     
@@ -108,7 +115,7 @@ class DMPersonalPortfolioService: NSObject, UITableViewDataSource, UITableViewDe
         DMQuickBloxService.sharedInstance.clearPortfolio(IDs : IDs, completion: completion)
     }
     
-    private func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]) -> Void) {
+    private func addNew(personalStock : DMPersonalPortfolioModel, completion : @escaping ([DMPersonalPortfolioModel]?, String?) -> Void) {
          DMAPIService.sharedInstance.addNew(personalStock: personalStock, completion: completion)
     }
     
