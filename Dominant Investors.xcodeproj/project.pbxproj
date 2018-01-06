@@ -112,6 +112,7 @@
 		968303F41FC4496700BCBBBD /* DMScreenerTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */; };
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
+		9699E34D2000D434000C90F2 /* DMServerAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */; };
 		96CD23D31FDA8E6800FBBEB3 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */; };
 		96CD23D61FDAB73700FBBEB3 /* OutsourceCharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
@@ -245,6 +246,7 @@
 		968303F31FC4496700BCBBBD /* DMScreenerTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerTypeViewController.swift; sourceTree = "<group>"; };
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
+		9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMServerAPIManager.swift; sourceTree = "<group>"; };
 		96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OutsourceCharts.storyboard; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
@@ -399,8 +401,7 @@
 		45B4E7411E58ED6900D56BDE /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				45B4E7491E58EE9E00D56BDE /* DMAPIService.swift */,
-				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
+				9699E34E2000E1C7000C90F2 /* API */,
 				45B4E74D1E58EECE00D56BDE /* DMAuthorizationManager.swift */,
 				45B4E74F1E58EF4200D56BDE /* DMDominantPortfolioService.swift */,
 				4509E8C81EF68824002CC7C4 /* DMSignalsHistoryService.swift */,
@@ -702,6 +703,16 @@
 			name = Screener;
 			sourceTree = "<group>";
 		};
+		9699E34E2000E1C7000C90F2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7491E58EE9E00D56BDE /* DMAPIService.swift */,
+				9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */,
+				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -886,6 +897,7 @@
 				4581D6C41E624192005F2173 /* Dominant+UIView.swift in Sources */,
 				452A43FA1E5A4DCD0058D11C /* ChartView.swift in Sources */,
 				45D73F761E636D1B001BB511 /* Dominant+String.swift in Sources */,
+				9699E34D2000D434000C90F2 /* DMServerAPIManager.swift in Sources */,
 				961074401FBA469A0022A8BB /* DMTradingViewGraphViewController.swift in Sources */,
 				454E086E1E601BE0004767E9 /* DMStockDetailViewController.swift in Sources */,
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,

@@ -210,7 +210,7 @@ class SwiftStockKit {
             chartURL = chartURL.replacingOccurrences(of: "marketdata", with: "ondemand")
             chartURL = chartURL.replacingOccurrences(of: "key", with: "apikey")
             
-            chartURL = "https://ondemand.websol.barchart.com/getCryptoHistory.json?apikey=\(APIReqests.DMUniqueAPIKey)&symbol=%5EBTCUSD&type=minutes&startDate=20171201&endDate=20171202&maxRecords=10&interval=60&order=asc"
+            chartURL = "https://ondemand.websol.barchart.com/getCryptoHistory.json?apikey=\(Network.DMUniqueAPIKey)&symbol=%5EBTCUSD&type=minutes&startDate=20171201&endDate=20171202&maxRecords=10&interval=60&order=asc"
             
         }
         
@@ -301,7 +301,7 @@ class SwiftStockKit {
         
         let dateString = String(format : "%d%@%@", year, month, day)
      
-        let usl = "https://marketdata.websol.barchart.com/getHistory.json?key=\(APIReqests.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
+        let usl = "https://marketdata.websol.barchart.com/getHistory.json?key=\(Network.DMUniqueAPIKey)&symbol=\(symbol)&type=\(timeString)&startDate=\(dateString)"
         
         //let usl = "https://chartapi.finance.yahoo.com/instrument/1.0/\(symbol)/chartdata;type=quote;range=\(timeString)/json"
         
@@ -381,7 +381,7 @@ class SwiftStockKit {
         
         let symbolsString = symbols.joined(separator: ",")
         
-        let url = "http://marketdata.websol.barchart.com/getQuote.json?key=\(APIReqests.DMUniqueAPIKey)&symbols=\(symbolsString)"
+        let url = "http://marketdata.websol.barchart.com/getQuote.json?key=\(Network.DMUniqueAPIKey)&symbols=\(symbolsString)"
         
         return url
     }

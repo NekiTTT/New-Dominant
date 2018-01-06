@@ -39,8 +39,22 @@ struct Strings {
     static let DMStandartSignUpError = NSLocalizedString("Account with provided username or e-mail already exist.", comment: "")
 }
 
-struct APIReqests {
+struct Network {
+    
     static let DMUniqueAPIKey = "bd8faf666cb58d501e9078b4dd1bc78a"
+    
+    static let baseURL = "http://172.104.22.205/api"
+    static let APIVersion = "v1"
+    
+    static let authAPIModule = "accounts"
+    static let mainAPIModule = "main"
+    
+    static let loginEndPoint = "login"
+    static let logoutEndPoint = "logout"
+    
+    static let signals = "signal"
+    
+    
 }
 
 

@@ -44,7 +44,7 @@ class DMAuthorizationManager: NSObject {
     }
     
     open func loginWith(login : String, password : String, completion : @escaping (Bool, String?) -> Void) {
-        DMQuickBloxService.sharedInstance.loginWith(login: login, password: password, competion: completion)
+        DMServerAPIManager.sharedInstance.loginWith(login: login, password: password, completion: completion)
     }
     
     open func signUpWith(login : String, email : String, password : String, confirm : String , inviterID : String?, completion : @escaping (Bool, String?) -> Void) {
