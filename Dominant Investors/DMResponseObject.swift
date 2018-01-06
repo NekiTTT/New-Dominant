@@ -20,6 +20,9 @@ class DMResponseObject: NSObject {
     
     var fields = [String : Any]()
     
+    init (response : [String : Any]) {
+        
+    }
     
     init(user : QBUUser) {
         super.init()

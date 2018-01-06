@@ -113,6 +113,8 @@
 		968D5D111FA711A5007970CE /* Screener.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 968D5D101FA711A5007970CE /* Screener.storyboard */; };
 		968D5D141FA71400007970CE /* DMScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968D5D131FA71400007970CE /* DMScreenerViewController.swift */; };
 		9699E34D2000D434000C90F2 /* DMServerAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */; };
+		9699E3532000ED22000C90F2 /* DMServerAuthRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699E3522000ED22000C90F2 /* DMServerAuthRequests.swift */; };
+		9699E3552000EEA3000C90F2 /* DMServerMainSignalsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9699E3542000EEA3000C90F2 /* DMServerMainSignalsRequests.swift */; };
 		96CD23D31FDA8E6800FBBEB3 /* Analytics.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */; };
 		96CD23D61FDAB73700FBBEB3 /* OutsourceCharts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */; };
 		96D31D931F799DC900980BBB /* DMTradingViewChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */; };
@@ -247,6 +249,8 @@
 		968D5D101FA711A5007970CE /* Screener.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Screener.storyboard; sourceTree = "<group>"; };
 		968D5D131FA71400007970CE /* DMScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMScreenerViewController.swift; sourceTree = "<group>"; };
 		9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMServerAPIManager.swift; sourceTree = "<group>"; };
+		9699E3522000ED22000C90F2 /* DMServerAuthRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMServerAuthRequests.swift; sourceTree = "<group>"; };
+		9699E3542000EEA3000C90F2 /* DMServerMainSignalsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMServerMainSignalsRequests.swift; sourceTree = "<group>"; };
 		96CD23D11FDA8E6700FBBEB3 /* Analytics.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Analytics.storyboard; sourceTree = "<group>"; };
 		96CD23D51FDAB73700FBBEB3 /* OutsourceCharts.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = OutsourceCharts.storyboard; sourceTree = "<group>"; };
 		96D31D921F799DC900980BBB /* DMTradingViewChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMTradingViewChartViewController.swift; sourceTree = "<group>"; };
@@ -706,11 +710,37 @@
 		9699E34E2000E1C7000C90F2 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				45B4E7491E58EE9E00D56BDE /* DMAPIService.swift */,
-				9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */,
-				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
+				9699E3512000ECD3000C90F2 /* Quickblox (DEPRECATED) */,
+				9699E3502000ECCE000C90F2 /* Base */,
+				9699E34F2000ECC1000C90F2 /* ServerRequests */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		9699E34F2000ECC1000C90F2 /* ServerRequests */ = {
+			isa = PBXGroup;
+			children = (
+				9699E3522000ED22000C90F2 /* DMServerAuthRequests.swift */,
+				9699E3542000EEA3000C90F2 /* DMServerMainSignalsRequests.swift */,
+			);
+			name = ServerRequests;
+			sourceTree = "<group>";
+		};
+		9699E3502000ECCE000C90F2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E7491E58EE9E00D56BDE /* DMAPIService.swift */,
+				9699E34C2000D434000C90F2 /* DMServerAPIManager.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		9699E3512000ECD3000C90F2 /* Quickblox (DEPRECATED) */ = {
+			isa = PBXGroup;
+			children = (
+				45B4E74B1E58EEB200D56BDE /* DMQuickBloxService.swift */,
+			);
+			name = "Quickblox (DEPRECATED)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -903,6 +933,7 @@
 				45D070491E5E1F2E00B6CAC5 /* DMResponseObject.swift in Sources */,
 				964A40FA1FCF54AC006A5C8C /* DMTrialModel.swift in Sources */,
 				45A107AE1E59D3E600591170 /* DMRatingModel.swift in Sources */,
+				9699E3532000ED22000C90F2 /* DMServerAuthRequests.swift in Sources */,
 				45B7A0391E5916B0000CB062 /* DMSignUpViewController.swift in Sources */,
 				9672676B1FD827260070EAC2 /* Dominant+NSLayoutConstraint.swift in Sources */,
 				45B4E74C1E58EEB200D56BDE /* DMQuickBloxService.swift in Sources */,
@@ -915,6 +946,7 @@
 				45C7D6E71E5E516A0089E8C7 /* Dominant+Double.swift in Sources */,
 				45A107AC1E59D35400591170 /* DMRatingTableViewCell.swift in Sources */,
 				967A2DAE1FD1D2BF00E1E941 /* DMCryptoInfoContainer.swift in Sources */,
+				9699E3552000EEA3000C90F2 /* DMServerMainSignalsRequests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

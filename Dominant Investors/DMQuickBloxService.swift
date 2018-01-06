@@ -143,7 +143,7 @@ class DMQuickBloxService: NSObject {
     open func loginWith(login : String, password : String, competion : @escaping (Bool, String?) -> Void) {
         QBRequest.logIn(withUserLogin: login, password: password, successBlock: { (response, user) in
             let userModel = DMUserProfileModel.init(response: DMResponseObject.init(user: user!))
-            DMAuthorizationManager.sharedInstance.userID = (user?.id)!
+            DMAuthorizationManager.sharedInstance.userID = userModel.userID
             DMAuthorizationManager.sharedInstance.userProfile = userModel
             let data  = NSKeyedArchiver.archivedData(withRootObject: userModel)
             UserDefaults.standard.set(data, forKey : "Authorized")
@@ -347,7 +347,7 @@ class DMQuickBloxService: NSObject {
     }
     
     private func personalLimit() -> NSMutableDictionary {
-        let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id" : NSNumber.init(value: DMAuthorizationManager.sharedInstance.userID)])
+        let personalLimit = NSMutableDictionary(dictionary: ["limit" : "1000", "user_id" : DMAuthorizationManager.sharedInstance.userID])
         return personalLimit
     }
     

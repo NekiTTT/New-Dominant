@@ -174,7 +174,7 @@ class SwiftStockKit {
                         var newDataFields = [[String : String]]()
                         
                         newDataFields.append(["Symbol" : stockData["symbol"] as? String ?? "N/A"])
-                        newDataFields.append(["Percent Change" : String(describing: stockData["percentChange"] as! CGFloat) ?? "N/A"])
+                        newDataFields.append(["Percent Change" : String(describing: stockData["percentChange"] as! CGFloat) ])
                         newDataFields.append(["Stock Exchange" : stockData["exchange"] as? String ?? "N/A"])
                         newDataFields.append(["Net Change" : String(describing: stockData["netChange"] as! CGFloat) ?? "N/A"])
                         newDataFields.append(["Name" : stockData["name"] as? String ?? "N/A"])

@@ -52,27 +52,35 @@ class DMServerAPIManager : NSObject {
     
     //MARK: - Base request
     
-    private func performRequest(endPoint : String,
+    public func performRequest(endPoint : String,
                                 method : HTTPMethod,
                                 params : [String : Any]? = nil,
                                 headers : HTTPHeaders? = nil,
                                 completion : @escaping ([String : Any]?, NSError?) -> Void) {
         
+        if (self.isInternetAvailable() == true) {
+            
+            let url = String(format : "%@/%@/" , Network.baseURL, Network.APIVersion).appending(endPoint)
+            
+            Alamofire.request(url, method: method, parameters: params, headers: headers).responseJSON(completionHandler: { (response) in
+                
+                if (response.result.value != nil) {
+                    if let resultJSON = response.result.value as? [String : Any] {
+                        if (resultJSON["error_code"] as? NSNumber) != nil {
+                            //completion(nil, self.getErrorFrom(code: errorCode))
+                        } else {
+                            completion(resultJSON, nil)
+                        }
+                    }
+                }
+            })
+        } else {
+            let description = "Please check internet connection".localized
+            let userInfo = [NSLocalizedDescriptionKey : description]
+            let error = NSError.init(domain: "Connection error".localized, code: 999, userInfo: userInfo)
+            completion(nil, error)
+        }
         
     }
     
-    
-    //MARK: - Authorization requests
-    
-    open func loginWith(login : String, password : String, completion : @escaping (Bool, String?) -> Void) {
-        
-    }
-
-    open func signUpWith(login : String, email : String, password : String, confirm : String , inviterID : String?, completion : @escaping (Bool, String?) -> Void) {
-
-    }
-
-    open func signOut() {
-
-    }
 }
