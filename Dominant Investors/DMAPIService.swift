@@ -18,8 +18,8 @@ class DMAPIService: NSObject {
         DMQuickBloxService.sharedInstance.getUserRatings(completion: completion)
     }
     
-    open func getAnalyticsCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
-        DMQuickBloxService.sharedInstance.getAnalyticsCompanies(completion: completion)
+    open func getSignalCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
+        DMServerAPIManager.sharedInstance.getSignalCompanies(completion: completion)
     }
     
     open func getInvestmentSignals(completion : @escaping ([DMInvestmentSignalModel]) -> Void) {

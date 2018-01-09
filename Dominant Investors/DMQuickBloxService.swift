@@ -72,7 +72,7 @@ class DMQuickBloxService: NSObject {
         }
     }
     
-    open func getAnalyticsCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
+    open func getSignalCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
         QBRequest.objects(withClassName: "CompaniesSignals", extendedRequest: DMQuickBloxService.limit, successBlock: { (response, objects, page) in
             var companies = [DMCompanyModel]()
             for object in objects! {

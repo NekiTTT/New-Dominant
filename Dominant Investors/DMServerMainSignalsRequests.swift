@@ -10,5 +10,8 @@ import Foundation
 
 extension DMServerAPIManager {
 
+    open func getSignalCompanies(completion : @escaping ([DMCompanyModel]) -> Void) {
+        
+    }
 
 }

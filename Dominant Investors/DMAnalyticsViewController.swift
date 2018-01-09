@@ -23,7 +23,7 @@ class DMAnalyticsViewController: DMViewController, UICollectionViewDelegate, UIC
         self.hideContainer()
         
         self.showActivityIndicator()
-        DMAPIService.sharedInstance.getAnalyticsCompanies { (companies) in
+        DMAPIService.sharedInstance.getSignalCompanies { (companies) in
             DispatchQueue.main.async {
                 self.companies = companies.reversed()
                 self.collectionView?.reloadData()
