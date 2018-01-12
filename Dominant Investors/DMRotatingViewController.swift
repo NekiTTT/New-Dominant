@@ -54,7 +54,7 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.showTrial()
+//        self.showTrial()
         
         if (!loaded) {
             setupControllers()
@@ -65,6 +65,13 @@ class DMRotatingViewController: DMViewController, SKProductsRequestDelegate, SKP
             loaded = true
         }
         
+        let showed = UserDefaults.standard.bool(forKey: "kInfoShowed")
+        
+        if !showed {
+            let introView = Bundle.main.loadNibNamed("DMInfoIntroView", owner: nil, options: nil)![0] as! DMInfoIntroView
+            introView.addTo(superview: self.view)
+            UserDefaults.standard.set(true, forKey: "kInfoShowed")
+        }
         
     }
     

@@ -25,10 +25,7 @@ class DMTrialUsageView: UIView {
     
     open func dissmisTrialView() {
         
-      
-        
         DispatchQueue.main.async {
-            
             UIView.animate(withDuration: 0.3, animations: {
                 self.alpha = 0
             }) { (completed) in
